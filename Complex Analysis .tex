@@ -1,0 +1,326 @@
+\documentclass{article}
+\usepackage{amsmath} 
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{amssymb}
+ \usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{romannum}
+
+\sectionfont{\fontsize{12}{15}\selectfont}
+\title{Introduction to Complex Analysis}
+\author{Qitian Liao}
+\date{Aug 3, 2020} 
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+\setlength\parindent{0pt}
+\begin{document}
+%\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\def\Arg{\mathop{\operator@font Arg}\nolimits}
+%\newpage
+\pagenumbering{arabic}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+
+\titlespacing\section{0pt}{5pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{5pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
+
+\newpage
+\section{Algebra of the Complex Plane}
+\subsection{Introduction to Complex Numbers}
+Let $z = a + ib \in \mathbb{C}$ where $a, b \in \mathbb{R}$ and $i ^ 2 = -1$. \\
+This number can be thought of as a point in 2-space, $\mathbb{R} ^ 2$, $(a, b)$ or as a position in $\mathbb{C}$. \\ 
+$\mathbb{R} ^ 2$: $\oplus$ addition; $\odot$ scalar multiplication. \\
+$\mathbb{C}$ : $\oplus$ addition; $\odot$ scalar multiplication; a vector space; have multiplication of elements, $\mathbb{C}$ is a field. \\
+\begin{equation*} 
+\mbox{If } z = a + ib \mbox{, } w = c + id \mbox{, then }zw = (ac - bd) + i(ad + cb)
+\end{equation*}
+$$zw = wz$$
+$$z(w + \alpha) = zw + z\alpha$$ 
+$$(zw)\alpha = z(w\alpha)$$ 
+
+\subsection{Conjugate of Complex Numbers} 
+\newcommand*\conj[1]{\overline{#1}}
+\subsubsection{Definition of Conjugate} 
+The complex conjugate of $z$, $\conj{z}$, is defined by 
+$$\conj{z} = a - ib$$ 
+Geometric representation: The image of $\bar z$ is the reflection of z about the Real axis.
+\subsubsection{Properties of Conjugate} 
+$$\conj{\conj{z}} = z$$
+$$\conj{zw} = \conj{z}\conj{w}$$
+$$\conj{z + w} = \conj{z} + \conj{w}$$
+\begin{equation*}
+\overline{z} = z \mbox{ if and only if } z \in \mathbb{R}
+\end{equation*}
+\subsubsection{Real and Imaginary Parts}
+\noindent We can project $z$ onto the Real or Imaginary axis and measure its distance from 0: 
+$$\Re(z) = a$$
+\begin{equation*}
+\Im(z) = b \mbox{, not } ib
+\end{equation*}
+
+Each function is a map $\mathbb{C} \to \mathbb{R}$. Then 
+$$\Re(z) = \frac{z + \conj{z}}{2}$$
+$$\Im(z) = \frac{z - \conj{z}}{2i}$$
+This is similar to the pattern with even/odd functions. 
+
+\subsection{Modulus of Complex Numbers}
+Note: $z\conj{z} = (a + ib)(a - ib) = a^2 + b^2 \in \mathbb{R}$ 
+
+\subsubsection{Definition of Modulus}
+$|z|$ length/modulus of $z$ is defined by:
+$$|z| = (a^2 + b^2)^{\frac{1}{2}} = (z\conj{z})^{\frac{1}{2}} \in \mathbb{R}$$
+
+\subsubsection{Properties of Modulus} 
+$$|zw| = |z||w|$$ 
+$$|z| = |\conj{z}|$$  
+$$|z| \geqslant 0$$
+\begin{equation*}
+|z| = 0 \mbox{ if and only if } z = 0
+\end{equation*}
+
+\subsubsection{Triangle Inequality}
+Triangle Inequality: 
+$$|z + w| \leqslant |z| + |w|$$ 
+ 
+Reverse Triangle Inequality: 
+$$|z| - |w| \leqslant |z - w|$$
+$z = z - w + w \Rightarrow |z| = |z - w + w| \Rightarrow |z| \leqslant |z - w| + |w| \Rightarrow |z| - |w| \leqslant |z - w|$. 
+
+\subsubsection{Complex Division} 
+With $z\conj{z} \in \mathbb{R}$, we can define complex division by reducing it to a multiplication problem. 
+$$\frac{z}{w} = \frac{z\conj{w}}{w\conj{w}} = \frac{1}{w\conj{w}}(z\conj{w})$$ 
+We also have 
+\begin{equation*} 
+|\frac{z}{w}| = \frac{|z|}{|w|} \mbox{ for } w \neq 0 
+\end{equation*}
+
+\subsubsection{Distance in the plane} 
+A disk in the complex plane centered at $c$ of radius $r \in \mathbb{R}$ is of the form 
+$$\{z \in \mathbb{C} \mid |z - c| \leqslant r\}$$
+
+\subsection{Complex Polynomial}
+A complex polynomial $p(z)$ of degree n is of the form: 
+$$p(z) = a_nz^n + a_{n - 1}z^{n - 1} + ... + a_1z + a_0$$
+where $a_n \neq 0$ and $a_i \in \mathbb{C}$ for $ i = 0, ... , n$
+
+\subsubsection{Fundamental Theorem of Algebra} 
+
+The factorization of $p(z)$ factors over $\mathbb{C}$ is unique, 
+$$p(z) = c(z - z_1)^{m_1}...(z - z_k)^{m_k}$$
+We have roots $z_i \in \mathbb{C}$ of $p(z)$ with order $m_i \in \mathbb{N}$. \\
+For example, if $p(z) = z^2 + 4 = (z + 2i)(z - 2i)$, then it factors over $\mathbb{C}$ but not $\mathbb{R}$. \\
+\textbf{Note}: 
+$\mathbb{C}$ is an algebraically closed field, there are no irreducible polynomials in $\mathbb{C}$. \\
+\textbf{Note}: 
+$\mathbb{R}$,  $\mathbb{Q}$, $\mathbb{Z}$, $\mathbb{N}$ are not algebraically closed. \\
+
+\newpage
+\section{Geometry of the Complex Plane}
+\subsection{Properties of Polar Forms} 
+Complex numbers can be represented in polar forms: 
+$$z = |z|(\cos\theta + i\sin\theta)$$
+with modulus $|z|$ and argument $\theta$. To change between the coordinate systems it follows: 
+$$|z| = (a^2 + b^2)^{\frac{1}{2}}$$
+$$\tan\theta = \frac{b}{a}$$
+$$a = |z|\cos\theta= \Re(z)$$
+$$b = |z|\sin\theta = \Im(z)$$
+\textbf{Note}: $\theta_R = \arctan(\frac{b}{a})$ is a reference angle of $z$. To find $\theta$ from $\theta_R$, you need to consider the signs of $a$ and $b$. \\
+Example: \\
+$z = -3 + 3i = 3\sqrt2(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4})$ \\
+$\theta_R = \arctan(\frac{3}{-3})= -\frac{\pi}{4}$ \\
+$\theta = \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4}$, since $\theta$ is in $\Romannum{2}$.
+
+\subsection{Definition of Argument and argument}
+$\operatorname{Arg}(z)$ is $z$'s principle polar angle $\theta$, $z \neq 0$, where $\theta \in (-\pi, \pi]$. \\
+$\operatorname{arg}(z)$ is all of $z$'s polar angles, $\theta + 2k\pi$, $k \in \mathbb{Z}$. 
+
+\subsection{Euler's Formula} 
+Euler's Formula is defined as a linear combination of $\cos\theta$ and $\sin\theta$, $\mathbb{R}$-valued functions. 
+$$ e^{i\theta}= \cos\theta + i\sin\theta $$
+It allows us to express $z$ in polar form by 
+$$ z = |z|e^{i\theta}$$
+-1 has polar angle $\pi$ and modulus 1, 
+\begin{equation*}
+-1 = e^{i\pi} \mbox{ or } e^{i\pi} + 1 = 0
+\end{equation*}
+By the angle addition formulas from trigonometry we find: 
+$$e^{i\theta}e^{i\varphi} = e^{i(\theta + \varphi)}$$
+$$(e^{i\theta})^k = e^{i\theta k}$$
+
+\subsection{Geometric Understanding of Multiplication}
+The polar angle of $zw$ is the sum of the polar angles of $z$ and $w$. The modulus is the product of the moduli. 
+$$ \operatorname{Arg}(zw) = \operatorname{Arg}(z) + \operatorname{Arg}(w)$$
+$$ \operatorname{Arg}(\conj{z}) = -\operatorname{Arg}(z)$$
+Question: How about $\frac{z}{w}$ and $z^4$? \\
+It follows from trigonometry that $|e^{i\theta}| = 1$, if $\theta \in (-\pi, \pi]$ we get a parametrization of the unit circle. \\
+\newline
+\textbf{Example}: Discover all solutions to $w^3 = i = z$ \\
+Let $p(z) = w^3 - i$. By Fundamental Theorem of Algebra, there are 3 roots of $p(z)$. \\
+Therefore, $3\theta= \frac{\pi}{2} + 2\pi k$, $k \in \mathbb{Z}$ \\
+This gives us infinitely many solutions, but the solutions form 3 equivalence classes. \\
+All we need is $k = 0, 1, 2$, which gives $\theta_1 = \frac{\pi}{6}$, $\theta_2 = \frac{5\pi}{6}$, $\theta_3 = \frac{3\pi}{2}$ \\
+Our solutions partitioned the unit circle into 3 equally spaced wedges. \\
+The solutions to $w^3 = i$ are $w_1 = \frac{\sqrt3}{2} + \frac{1}{2}i$, $w_2 = -\frac{\sqrt3}{2} + \frac{1}{2}i$ and $w_3 = -i$. \\
+This problem of unity can be extended to solving $w^k = z$ for $k \in \mathbb{N}$, $z \in \mathbb{C}$ for unknown k-solutions w.  
+
+
+\newpage
+\section{Stereographic Projections, Exponentials and Logs}
+\subsection{Stereographic Projections} 
+We can express the complex plane on the unit sphere in $\mathbb{R}^3$. To perform this we project points on the surface of the sphere along the line from the North Pole $(0, 0, 1)$ through the point and onto the plane $z = 0, \mathbb{C}$ \\ 
+$p_1 = (x_1, x_2, x_3) \to z = a + ib = \frac{x_1 + ix_2}{1 - x_3}$ \\
+$x_1 = \frac{2a}{|z|^2 + 1}$, $x_2 = \frac{2b}{|z|^2 + 1}$, $x_3 = \frac{|z|^2 - 1}{|z|^2 + 1}$ \\
+Points in the northern hemisphere $P_1$, have $|z_1| > 1$; while points in the southern hemisphere $P_2$, have $|z_2| < 1$. 
+\subsubsection{Mapping} 
+$\mathbb{S}^2 \to \mathbb{C}$ \\ 
+$N = (0, 0, 1) \to \infty$ \\
+$S = (0, 0, -1) \to 0$ \\ 
+lines of latitude $\to$ $|z| = r$, circles \\
+lines of longitude $\to$ $\operatorname{Arg}(z) = \pm\theta$, lines through $(0, 0)$ \\
+\textbf{Note}: In general, circles on $\mathbb{S}^2$ map to circles and lines in $\mathbb{C}$, orientation is not always preserved. 
+
+\subsection{Complex Logarithm}
+\subsubsection{Logarithm of Real Numbers}
+Anytime we are dealing with power, the log function is very useful. 
+\begin{equation}
+\log{x} = \int_{1}^{x} \frac{1}{t} dt \mbox{ for } x \in \mathbb{R}
+\end{equation}
+$$\frac{d}{dx}x^x = \frac{d}{dx}e^{\ln{x^x}} = \frac{d}{dx}e^{x\ln x} = e^{x\ln x}(x \cdot \frac{1}{x} + \ln{x}) = x^x(1 + \ln{x})$$
+
+\subsubsection{Logarithm of Complex Numbers} 
+Remember from Euler's Formula, $e^{i\theta}= \cos\theta + i\sin\theta$. \\
+$e^z = e^{a + ib} = e^ae^{ib}$ \\
+$\operatorname{Arg}(e^z) = b$, $|e^z| = e^a > 0$ \\
+Therefore, if $a$ is held fixed, $e^z$ maps to a circle as $b$ changes. \\
+On the other hand, if $b$ is held fixed, $e^z$ maps to a line through $(0, 0)$. 
+
+\subsubsection{Derivation of Complex Logarithm}
+We want $e^{\log{(z)}} = z$ for all $z \neq 0$, and thus 
+$$e^{\Re(\log{(z)}) + i\Im(\log{(z)})} = e^{\Re(\log{(z)})}e^{i\Im(\log{(z)})} = |z|e^{i\theta} = z$$
+$$\Rightarrow |z| = e^{\Re(\log{(z)})}$$ 
+$$\Rightarrow \Re(\log{(z)}) = \log{|z|}$$
+From the imaginary part we find 
+$$e^{i\theta} = e^{i\Im(\log{(z)})}$$
+$$\Rightarrow \operatorname{arg}(z) = \theta = \Im(\log{(z)})$$
+$$\Rightarrow \Im(\log{(z)}) = \operatorname{Arg}(z)$$ 
+because $arg(z)$ is not well defined. \\
+Our constructed inverse of $e^z$ is a multi-valued function 
+$$\log(z) = \log|z| + i\operatorname{arg}(z)$$
+
+\subsubsection{Conclusion from Derivation}
+$$\log(z) = \log|z| + i\operatorname{arg}(z)$$
+$$\operatorname{Log} (z) = \log|z| + i\operatorname{Arg}(z)$$
+\textbf{Note}: $\operatorname{Log}(z)$ does not have all the nice behavior as $\mathbb{R}$-valued $\log(x)$: $\operatorname{Log}{(z^k)}$. \\
+Sometimes they are co-terminal angles, but they are not equal. See the following example: \\
+\[ \begin{cases} 
+      \operatorname{Log}(i^3) = \operatorname{Log}(-i) = -i\frac{\pi}{2} \\
+      3\operatorname{Log}(i) = 3 \cdot (i\frac{\pi}{2}) = i\frac{3\pi}{2}
+   \end{cases}
+\]
+\textbf{Example}: Compute $3^i$: \\
+$$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operatorname{Log}{3})} + i \sin{(\operatorname{Log}{3})}$$
+
+\subsubsection{How Logarithm acts on curves}
+\[ \begin{cases} 
+      \mbox{Maps a circle with radius } r \mbox{ to a vertical line passing through } (\ln(r), 0)\\
+      \mbox{Maps a line with angle } \theta \mbox{ passing through the origin to a horizontal line passing through } (0, i\theta)
+   \end{cases}
+\]
+
+\newpage
+\section{Topology in C}
+\subsection{Complex Sequence}
+Let $\{Z_n\}$ be a sequence in $\mathbb{C}$. 
+\subsubsection{Cauchy Sequence}
+The sequence is Cauchy if for all $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for all $n, m > N$, $|z_n - z_m| < \epsilon$. 
+\subsubsection{Sequence Convergence}
+The sequence converges if $|z_n - z| \to 0$ as $n \to \infty$. The distance between $z_n$ and $z$ vanishes. 
+\subsubsection{Completeness of $\mathbb{C}$}
+$\{z_n\}$ converges if and only if $\{z_n\}$ is Cauchy. \\
+\textbf{Proof}:\\
+We show this by treating $\mathbb{C}$ as $\mathbb{R}^2$ and exploiting $\{X_n\}$ converges if and only if $\{X_n\}$ is Cauchy. \\
+($\Longrightarrow$) (If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
+$|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$ \\
+Upper bounds can be picked to be less than $\frac{\epsilon}{2}$ for some $N$. Therefore $|Z_n - Z_m| \to 0$. 
+
+
+\newpage
+\section{Continuity and Branch Cuts}
+\section{Differentiability in C}
+\section{The Cauchy Riemann equations}
+\section{Harmonic Functions}
+\section{Conformal Maps}
+\section{Bilinear Transformations}
+\section{Contour Integral in C}
+\section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
+\section{Cauchy's Integral Formula}
+\section{Growth Conditions of Holomorphic Functions}
+\section{Convergence of Infinite Series in C}
+\section{Power Series in C}
+\section{Series Expansion of Holomorphic Functions}
+\section{Open Mapping Theorem and Reflection Principle}
+\section{Laurent Series}
+\section{Residue Theorem}
+\section{Improper Integrals}
+\section{Argument Principle and Rouche's Theorem}
+
+\iffalse
+Introduction to Myself
+\subsection{Subsection}
+Education Background
+\subsubsection{Subsubsection} 
+More Text
+\paragraph{Paragraph}
+Some more text 
+\subparagraph{Subparagraph} 
+Even more text 
+\section{Another Section} 
+\fi
+
+\newpage
+\title{Chapter 1: Algebra in C}
+
+ 
+\begin{equation*}
+	f(x) = x^2
+\end{equation*}
+this formula is an example $f(x) = x$
+\begin{align*}
+1 + 2 &= 3\\
+1 &= 3 - 2
+\end{align*}
+\begin{align*}
+f(x) &= x ^ 2\\
+g(x) &= \frac{1}{x}\\
+h(x) &= \int^a_b \frac{1}{x}x^3\\
+F(x) &= \frac{1}{\sqrt{x}}
+\end{align*}
+
+\begin{align*}
+\left[
+\begin{matrix}
+1 & 0\\
+0 & 1
+\end{matrix}
+\right] \\
+\left(\frac{1}{\sqrt{x}}\right)
+\end{align*}
+
+\newpage
+Core Material:
+1. Finding patterns in data; using them to make predictions. 
+2. Models and statistics help us understand patterns. 
+3. Optimization algorithms "learn" the patterns.
+
+Classification: 
+1. 
+
+\end{document}
