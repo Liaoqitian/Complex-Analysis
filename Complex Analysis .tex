@@ -258,7 +258,7 @@ Let $\Omega \subset \mathbb{C}$. Sets can be open, closed, both, or neither.
 \subsubsection{Open Set} 
 If for any $z_0 \in \mathbb{C}$, there exist some $\epsilon > 0$, such that the set $B_\epsilon(z_0) = \{z||z - z_0| < \epsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
 $\Omega$ is open if and only if $\Omega^c$ is closed. \\ 
-$\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$. 
+$\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$, i.e. it does not contain its closure. 
 \subsubsection{Closed Set} 
 If $\Omega$ contains its limit point, then $\Omega$ is closed. \\
 $\Omega$ is closed if and only if $\Omega^c$ is open. \\ 
@@ -282,9 +282,66 @@ The closure of $\Omega$ is the union of $\Omega$ and its boundary $\partial \Ome
 If a set is open and connected in $\mathbb{C}$, it is a domain. \\
 A domain can be traversed by a path of horizontal and vertical line segments. 
 
+\subsubsection{Practice Examples} 
+Determine whether the following sets are open or closed. 
+\begin{enumerate}
+  \item $\Omega = \mathbb{C} \backslash \{0\}$ \\
+  $\Omega$ is open since it does not contain its closure, the point 0. \\
+  $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{n}$. Then $z_n = \frac{1}{n} \to 0 \notin \Omega$. \\
+  Therefore, $\Omega$ is open. 
+  \item $\Omega = \{z||z| \geqslant 1\}$ \\
+  $\Omega$ is not open since any $\epsilon$-ball at 1 intersects $\Omega^c$. \\
+  $\Omega$ is closed since $\Omega^c$ is open. \\
+  Therefore, $\Omega$ is closed. 
+  \item $\Omega = \{z||z| > 1\}$ \\
+  $\Omega$ is open since $\Omega^c$ is closed. \\
+  $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{n} + 1$. Then $z_n = \frac{1}{n} + 1 \to 1 \notin \Omega$.
+  \item $\Omega = \mathbb{C} \backslash (0, 1)$ \\ 
+  $\Omega$ is not open. Its complement is $[0, 1]$. Even though it is closed in $\mathbb{R}$, it is not closed in $\mathbb{C}$, because any 2D $\epsilon$-ball will always extend outside of the set $z \in (0, i)$. Hence, $\Omega^c$ is not open and not closed. \\
+  $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{3} + i\frac{1}{n}$. Then $z_n = \frac{1}{3} + i\frac{1}{n} \to \frac{1}{3} \notin \Omega$. \\
+  Therefore, $\Omega$ is neither open nor closed. 
+  \item $\Omega = \mathbb{C} \backslash [0, 1]$
+  $\Omega$ is open since $\Omega^c = [0, 1]$ is closed in $\mathbb{C}$. \\ 
+  $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{3} + i\frac{1}{n}$. Then $z_n = \frac{1}{3} + i\frac{1}{n} \to \frac{1}{3} \notin \Omega$. \\
+  Therefore, $\Omega$ is open. \\ 
+  Note: $\Omega^c$ is not open in $\mathbb{C}$. 
+\end{enumerate}
+
 
 \newpage
 \section{Continuity and Branch Cuts}
+\subsection{Complex Continuity} 
+Let $f:\Omega \to \mathbb{C}$, $\Omega$ is open and connected. If $z_n \to z_0$ implies $f(z_n) \to f(z_0)$, then $f$ is continuous at $z_0$. Also, $f$ is bounded near $z_0$. \\
+$f$ is continuous if for every $\epsilon > 0$, there is $\delta > 0$ such that $|z - z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \epsilon$. \\
+\newline 
+$\bullet$ In either case, $\Re(f(z))$ and $\Im(f(z))$ are each continuous if and only if $f(z)$ is continuous. This follows the pattern as $\mathbb{C}$ being complete. \\
+\newline
+$\bullet$ If $f$ and $g$ are continuous, then so are $f + g$m $f \times g$ and $\frac{f}{g}$ (provided $g(z) \nrightarrow 0$)
+
+\subsection{Complex Limits}
+Just like in $\mathbb{R}^2$, limits are direction independent. Do not restrict limits to just $\Re \to 0$ or $\Im \to 0$. See the following example. \\
+\begin{equation*}
+\lim_{(x, y) \to (0, 0)} \frac{2x^2y}{x^4 + y^2} \mbox{ does not exist}
+\end{equation*} 
+as $x \to 0$, $y = 0$, then $f \to 0$, while $y = x^2, x \to 0$, then $f \to 1$.
+
+\subsection{Branch Cuts}
+$\operatorname{Log}$, $z^\frac{1}{2}$ and $\arctan(z)$ are constructed by restricting the range of $e^z$, $z^2$ and $\tan(z)$. \\
+For example, in creating $\operatorname{Log}(z) = \ln|z| + i\operatorname{Arg}(z)$, we made a choice that $\operatorname{Arg}(z) \in (-\pi, \pi]$, $\operatorname{Arg}(0)$ does not exist. \newline 
+Consider a path around $z_0 \neq 0$, $\gamma(t) = z_0 + re^{it}$. $\theta(t) = \operatorname{arg}(\gamma(t))$ \\
+As we traverse the circle, $t \in (-\pi, \pi]$, \\
+$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(z_0 + re^{it}) + 2\pi k = \operatorname{Arg}(z_0 + re^{i(t + 2\pi)}) + 2\pi k = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
+Therefore, the angle $\theta(t)$ changes smoothly for all $t$ and we stay on the same branch of $\operatorname{Arg}(\gamma(t))$. That is to say, the $k \in \mathbb{Z}$ is the same for all $t$.\\
+\newline
+Compare this with any circular path about $z = 0$, $\gamma_0$. Let $\gamma_0(t) = re^{it}$, $t \in (-\pi, \pi]$. As we traverse the circle once, we have a discontinuity in the principal angle of $\gamma_0(t)$. In particular, $\theta(\gamma_0(t)) \neq \theta(\gamma_0(t + 2\pi))$ \\
+$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(re^{it}) + 2\pi k \neq \operatorname{Arg}(re^{i(t + 2\pi)}) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
+We jump from the $k$th to the $(k+1)$th branch of $\operatorname{Arg}$. Therefore, $\operatorname{Arg}(z)$ has a branch point at $z = 0$. \\
+If every neighborhood of $z_0$ contains a path $\gamma(t)$ around $z_0$ that leads to a jump discontinuity in $f$, then $z_0$ is a branch point of $f(z)$. \\ 
+At this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. 
+
+
+
+\newpage
 \section{Differentiability in C}
 \section{The Cauchy Riemann equations}
 \section{Harmonic Functions}
