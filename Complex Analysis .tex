@@ -249,7 +249,38 @@ $\{z_n\}$ converges if and only if $\{z_n\}$ is Cauchy. \\
 We show this by treating $\mathbb{C}$ as $\mathbb{R}^2$ and exploiting $\{X_n\}$ converges if and only if $\{X_n\}$ is Cauchy. \\
 ($\Longrightarrow$) (If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
 $|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$ \\
-Upper bounds can be picked to be less than $\frac{\epsilon}{2}$ for some $N$. Therefore $|Z_n - Z_m| \to 0$. 
+Upper bounds can be picked to be less than $\frac{\epsilon}{2}$ for some $N$. Therefore, $|Z_n - Z_m| \to 0$. \\
+\newline 
+($\Longleftarrow$) If $\{Z_n\}$ is Cauchy, so are $\{\Re(Z_n)\}$ and $\{\Im(Z_n)\}$. But these are $\mathbb{R}$-sequences that converge. Therefore, $\{Z_n\}$ converges. 
+
+\subsection{Complex Set} 
+Let $\Omega \subset \mathbb{C}$. Sets can be open, closed, both, or neither. 
+\subsubsection{Open Set} 
+If for any $z_0 \in \mathbb{C}$, there exist some $\epsilon > 0$, such that the set $B_\epsilon(z_0) = \{z||z - z_0| < \epsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
+$\Omega$ is open if and only if $\Omega^c$ is closed. \\ 
+$\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$. 
+\subsubsection{Closed Set} 
+If $\Omega$ contains its limit point, then $\Omega$ is closed. \\
+$\Omega$ is closed if and only if $\Omega^c$ is open. \\ 
+$\Omega$ is closed if and only if $\Omega$ contains its boundary points. 
+\subsubsection{Compact Set} 
+If $\Omega$ can be contained in a disk of finite radius, then $\Omega$ is bounded. 
+\subsubsection{Compact Set} 
+If $\Omega$ is closed and bounded, then $\Omega$ is compact. This resembles $[a, b]$ in $\mathbb{R}$. 
+\subsubsection{Connected Set} 
+If any two points in $\Omega$ can be connected by a path, then $\Omega$ is connected. \\
+\underline{Simply Connected Set}: A simply connected set has no "holes" in it. For example, $\Omega = \{z||z - c|<4\}$. \\
+A connected but not simply connected set is an annulus, $\Omega = \{z|2< |z - c|<4\}$
+
+\subsubsection{Boundary of Set}
+The boundary of $\Omega$, $\partial \Omega$ is all points with $\epsilon$-balls intersecting $\Omega$ and $\Omega^c$ for all $\epsilon > 0$. 
+\subsubsection{Interior of Set} 
+The interior of $\Omega$, Int$(\Omega)$, is all points in $\Omega$ with a $\epsilon$-ball contained in $\Omega$ for some $\epsilon > 0$. "Largest open set in $\Omega$". 
+\subsubsection{Closure of Set} 
+The closure of $\Omega$ is the union of $\Omega$ and its boundary $\partial \Omega$. 
+\subsubsection{Domain}
+If a set is open and connected in $\mathbb{C}$, it is a domain. \\
+A domain can be traversed by a path of horizontal and vertical line segments. 
 
 
 \newpage
