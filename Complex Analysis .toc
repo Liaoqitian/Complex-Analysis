@@ -26,7 +26,7 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Derivation of Complex Logarithm}{5}
 \contentsline {subsubsection}{\numberline {3.2.4}Conclusion from Derivation}{6}
 \contentsline {subsubsection}{\numberline {3.2.5}How Logarithm acts on curves}{6}
-\contentsline {section}{\numberline {4}Topology in C}{7}
+\contentsline {section}{\numberline {4}Topology in $\mathbb {C}$}{7}
 \contentsline {subsection}{\numberline {4.1}Complex Sequence}{7}
 \contentsline {subsubsection}{\numberline {4.1.1}Cauchy Sequence}{7}
 \contentsline {subsubsection}{\numberline {4.1.2}Sequence Convergence}{7}
@@ -46,20 +46,23 @@
 \contentsline {subsection}{\numberline {5.1}Complex Continuity}{9}
 \contentsline {subsection}{\numberline {5.2}Complex Limits}{9}
 \contentsline {subsection}{\numberline {5.3}Branch Cuts}{9}
-\contentsline {section}{\numberline {6}Differentiability in C}{10}
-\contentsline {section}{\numberline {7}The Cauchy Riemann equations}{10}
-\contentsline {section}{\numberline {8}Harmonic Functions}{10}
-\contentsline {section}{\numberline {9}Conformal Maps}{10}
-\contentsline {section}{\numberline {10}Bilinear Transformations}{10}
-\contentsline {section}{\numberline {11}Contour Integral in C}{10}
-\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{10}
-\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{10}
-\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{10}
-\contentsline {section}{\numberline {15}Convergence of Infinite Series in C}{10}
-\contentsline {section}{\numberline {16}Power Series in C}{10}
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{10}
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{10}
-\contentsline {section}{\numberline {19}Laurent Series}{10}
-\contentsline {section}{\numberline {20}Residue Theorem}{10}
-\contentsline {section}{\numberline {21}Improper Integrals}{10}
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{10}
+\contentsline {subsubsection}{\numberline {5.3.1}Example of a Branch Cut}{9}
+\contentsline {subsubsection}{\numberline {5.3.2}Definition of Branch Cuts and Branch Points}{9}
+\contentsline {section}{\numberline {6}Differentiability in $\mathbb {C}$}{10}
+\contentsline {subsection}{\numberline {6.1}Difference between $\mathbb {R}$ and $\mathbb {C}$ differentiability}{10}
+\contentsline {section}{\numberline {7}The Cauchy Riemann equations}{11}
+\contentsline {section}{\numberline {8}Harmonic Functions}{11}
+\contentsline {section}{\numberline {9}Conformal Maps}{11}
+\contentsline {section}{\numberline {10}Bilinear Transformations}{11}
+\contentsline {section}{\numberline {11}Contour Integral in $\mathbb {C}$}{11}
+\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{11}
+\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{11}
+\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{11}
+\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{11}
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{11}
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{11}
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{11}
+\contentsline {section}{\numberline {19}Laurent Series}{11}
+\contentsline {section}{\numberline {20}Residue Theorem}{11}
+\contentsline {section}{\numberline {21}Improper Integrals}{11}
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{11}

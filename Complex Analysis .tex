@@ -7,6 +7,10 @@
  \usepackage{lipsum}
 \usepackage{titlesec}
 \usepackage{romannum}
+\usepackage{enumitem}
+
+\setlist[itemize,1]{leftmargin=\dimexpr 26pt-.5in}
+
 
 \sectionfont{\fontsize{12}{15}\selectfont}
 \title{Introduction to Complex Analysis}
@@ -108,8 +112,8 @@ $$\{z \in \mathbb{C} \mid |z - c| \leqslant r\}$$
 
 \subsection{Complex Polynomial}
 A complex polynomial $p(z)$ of degree n is of the form: 
-$$p(z) = a_nz^n + a_{n - 1}z^{n - 1} + ... + a_1z + a_0$$
-where $a_n \neq 0$ and $a_i \in \mathbb{C}$ for $ i = 0, ... , n$
+$$p(z) = a_nz^n + a_{n - 1}z^{n - 1} + \cdots + a_1z + a_0$$
+where $a_n \neq 0$ and $a_i \in \mathbb{C}$ for $ i = 0, \cdots , n$
 
 \subsubsection{Fundamental Theorem of Algebra} 
 
@@ -236,7 +240,7 @@ $$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operat
 \]
 
 \newpage
-\section{Topology in C}
+\section{Topology in $\mathbb{C}$}
 \subsection{Complex Sequence}
 Let $\{Z_n\}$ be a sequence in $\mathbb{C}$. 
 \subsubsection{Cauchy Sequence}
@@ -327,7 +331,8 @@ as $x \to 0$, $y = 0$, then $f \to 0$, while $y = x^2, x \to 0$, then $f \to 1$.
 
 \subsection{Branch Cuts}
 $\operatorname{Log}$, $z^\frac{1}{2}$ and $\arctan(z)$ are constructed by restricting the range of $e^z$, $z^2$ and $\tan(z)$. \\
-For example, in creating $\operatorname{Log}(z) = \ln|z| + i\operatorname{Arg}(z)$, we made a choice that $\operatorname{Arg}(z) \in (-\pi, \pi]$, $\operatorname{Arg}(0)$ does not exist. \newline 
+For example, in creating $\operatorname{Log}(z) = \ln|z| + i\operatorname{Arg}(z)$, we made a choice that $\operatorname{Arg}(z) \in (-\pi, \pi]$, $\operatorname{Arg}(0)$ does not exist. 
+\subsubsection{Example of a Branch Cut}
 Consider a path around $z_0 \neq 0$, $\gamma(t) = z_0 + re^{it}$. $\theta(t) = \operatorname{arg}(\gamma(t))$ \\
 As we traverse the circle, $t \in (-\pi, \pi]$, \\
 $$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(z_0 + re^{it}) + 2\pi k = \operatorname{Arg}(z_0 + re^{i(t + 2\pi)}) + 2\pi k = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
@@ -336,23 +341,69 @@ Therefore, the angle $\theta(t)$ changes smoothly for all $t$ and we stay on the
 Compare this with any circular path about $z = 0$, $\gamma_0$. Let $\gamma_0(t) = re^{it}$, $t \in (-\pi, \pi]$. As we traverse the circle once, we have a discontinuity in the principal angle of $\gamma_0(t)$. In particular, $\theta(\gamma_0(t)) \neq \theta(\gamma_0(t + 2\pi))$ \\
 $$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(re^{it}) + 2\pi k \neq \operatorname{Arg}(re^{i(t + 2\pi)}) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
 We jump from the $k$th to the $(k+1)$th branch of $\operatorname{Arg}$. Therefore, $\operatorname{Arg}(z)$ has a branch point at $z = 0$. \\
+
+\subsubsection{Definition of Branch Cuts and Branch Points}
 If every neighborhood of $z_0$ contains a path $\gamma(t)$ around $z_0$ that leads to a jump discontinuity in $f$, then $z_0$ is a branch point of $f(z)$. \\ 
-At this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. 
+$\bullet$ At this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. \\
+$\bullet$ $\operatorname{Arg}$ is discontinuous for all $x$ on the negative $\mathbb{R}$-axis, $\mathbb{R}^-$. We call this the principal branch cut of the multi-valued function $\operatorname{arg}$. Specifically, \\
+$\operatorname{Arg}(\gamma_0(t)) \to \pi$ as $t \to \pi^-$ \\
+$\operatorname{Arg}(\gamma_0(t)) \to -\pi$ as $t \to -\pi^+$ \\
+but $\gamma_0(\pi) = \gamma_0(-\pi)$ since $\pi$ and $-\pi$ are coterminal. \\
+$\mathbb{R}^-$ is the principal branch of $\operatorname{Log}$, $\operatorname{Arg}$, and $z^{\frac{1}{2}}$. \\
+$\bullet$ The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and $\infty$ as its branch points. 
+
+\newpage
+\section{Differentiability in $\mathbb{C}$}
+Let $f: \Omega \to \mathbb{C}$ for some domain $\Omega$. Then $f$ is differentiable at $z_0$ if the following exists. $$\frac{d}{dz}f(z)|_{z = z_0} = f'(z_0) = \lim_{h\to0}\frac{f(z + h) - f(z)}{h}$$
+This limit must exist on all paths to $z_0$, since $h \in \mathbb{C}$. We could also take $z_n \to z_0$ and use $\frac{f(z_0) - f(z_n)}{z_0 - z_n} \to f'(z_0)$. 
+Remember limits are computed by looking at the difference in the modulus, $|\frac{f(z_0) - f(z_n)}{z_0 - z_n} - f'(z_0)| \to 0$ as $n \to \infty$. \\
+If $f'(z_0)$ exists on all points $z_0 \in \Omega$, open and connected in $\mathbb{C}$, then $f$ is holomorphic/$\mathbb{C}$-differentiable/analytic on $\Omega$. The connection between $\mathbb{R}$ and $\mathbb{C}$ analytic will be clear when we cover $\mathbb{C}$-power series. \\
+If $f'(z)$ exists everywhere in $\mathbb{C}$, then $f$ is an entire/meromorphic function.  
+
+\subsection{Difference between $\mathbb{R}$ and $\mathbb{C}$ differentiability}
+$\bullet$ $f: \mathbb{R} \to \mathbb{R}$ 
+$$\lim_{h\to0}\frac{f(x+h) - f(x)}{h} = f'(x)$$ 
+has only two paths to $x$, namely $h \to 0^+$ and $h \to 0^-$. \\ 
+Tangent plane or linear approximation: 
+$$f(x) \approx f(a) + f'(a)(x - a)$$
+$\bullet$ $f: \mathbb{R}^2 \to \mathbb{R}$
+$$\lim_{h\to0}\frac{f(x+h, y) - f(x, y)}{h} = f_x$$ 
+is also a 1D limit and a partial derivative. \\
+Tangent plane or linear approximation: 
+$$f(x,y) \approx f(a,b) + f_x(a,b)(x - a) + f_y(a, b)(y - b)$$
+$\bullet$ $f: \mathbb{R}^2 \to \mathbb{R}^2$ $f(x, y) = (u(x, y),v(x,y))$ \\
+Then $f$ is differentiable if the Jacobian Matrix
+\begin{equation*}
+J(f) = 
+\begin{bmatrix}
+ u_x & u_y \\
+ v_x & v_y
+\end{bmatrix}
+\end{equation*}
+can approximate the local change in $f$. \\
+In each of the cases above, we are only measuring change in a few directions. However, $h \to0$ in $\mathbb{C}$ can be from any direction in 2-space. Therefore, $f'(z)$ existing is a much stronger condition for $f$ on $\mathbb{C}$ than on $\mathbb{R}$. Consider the following example: \\
+Let $g(z) = \Re(z) = \frac{z + \conj{z}}{2}$, which is a linear combination of continuous functions. Assume $h \in \mathbb{R}$, 
+$\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) - \Re(z)}{h} \to 0$ as $h \to 0$ \\
+Compare this with $\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) + h -\Re(z)}{h} = 1 \to 1$ as $h \to 0$. Therefore, the function is nowhere differentiable in $\mathbb{C}$. The problem with $g'(z)$ had to do with $\conj{z}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter.  \\
+If $f$ is differentiable on $\Omega$, it is continuous on $\Omega$. \\
+The power rule holds too: $\frac{d}{dz}z^n = nz^{z - 1}$\\
+As does the product, quotient, L'Hospital's and chain rule. In fact, most old results hold as well. \\
+If $f(z) = \operatorname{Log}(z)$, then $f'(z) = \frac{1}{z}$ \\
+If $f(z) = \tan^{-1}(z)$, then $f'(z) = \frac{1}{z^2 + 1} = \frac{1}{(z + i)(z - i)}$, which does not exist for $z = \pm i$
 
 
 
 \newpage
-\section{Differentiability in C}
 \section{The Cauchy Riemann equations}
 \section{Harmonic Functions}
 \section{Conformal Maps}
 \section{Bilinear Transformations}
-\section{Contour Integral in C}
+\section{Contour Integral in $\mathbb{C}$}
 \section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
 \section{Cauchy's Integral Formula}
 \section{Growth Conditions of Holomorphic Functions}
-\section{Convergence of Infinite Series in C}
-\section{Power Series in C}
+\section{Convergence of Infinite Series in $\mathbb{C}$}
+\section{Power Series in $\mathbb{C}$}
 \section{Series Expansion of Holomorphic Functions}
 \section{Open Mapping Theorem and Reflection Principle}
 \section{Laurent Series}
