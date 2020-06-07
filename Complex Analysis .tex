@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage{amsmath} 
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -8,6 +8,13 @@
 \usepackage{titlesec}
 \usepackage{romannum}
 \usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[super]{nth}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
 
 \setlist[itemize,1]{leftmargin=\dimexpr 26pt-.5in}
 
@@ -18,6 +25,11 @@
 \date{Aug 3, 2020} 
 \usepackage[left=2cm, right=2cm, top=2cm]{geometry}
 \setlength\parindent{0pt}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+
 \begin{document}
 %\pagenumbering{gobble}
 \maketitle
@@ -103,7 +115,7 @@ With $z\conj{z} \in \mathbb{R}$, we can define complex division by reducing it t
 $$\frac{z}{w} = \frac{z\conj{w}}{w\conj{w}} = \frac{1}{w\conj{w}}(z\conj{w})$$ 
 We also have 
 \begin{equation*} 
-|\frac{z}{w}| = \frac{|z|}{|w|} \mbox{ for } w \neq 0 
+\abs[\Big]{\frac{z}{w}} = \frac{|z|}{|w|} \mbox{ for } w \neq 0 
 \end{equation*}
 
 \subsubsection{Distance in the plane} 
@@ -344,7 +356,7 @@ We jump from the $k$th to the $(k+1)$th branch of $\operatorname{Arg}$. Therefor
 
 \subsubsection{Definition of Branch Cuts and Branch Points}
 If every neighborhood of $z_0$ contains a path $\gamma(t)$ around $z_0$ that leads to a jump discontinuity in $f$, then $z_0$ is a branch point of $f(z)$. \\ 
-$\bullet$ At this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. \\
+\textbf{Finding branches}: At this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. \\
 $\bullet$ $\operatorname{Arg}$ is discontinuous for all $x$ on the negative $\mathbb{R}$-axis, $\mathbb{R}^-$. We call this the principal branch cut of the multi-valued function $\operatorname{arg}$. Specifically, \\
 $\operatorname{Arg}(\gamma_0(t)) \to \pi$ as $t \to \pi^-$ \\
 $\operatorname{Arg}(\gamma_0(t)) \to -\pi$ as $t \to -\pi^+$ \\
@@ -381,23 +393,343 @@ J(f) =
 \end{bmatrix}
 \end{equation*}
 can approximate the local change in $f$. \\
-In each of the cases above, we are only measuring change in a few directions. However, $h \to0$ in $\mathbb{C}$ can be from any direction in 2-space. Therefore, $f'(z)$ existing is a much stronger condition for $f$ on $\mathbb{C}$ than on $\mathbb{R}$. Consider the following example: \\
-Let $g(z) = \Re(z) = \frac{z + \conj{z}}{2}$, which is a linear combination of continuous functions. Assume $h \in \mathbb{R}$, 
-$\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) - \Re(z)}{h} \to 0$ as $h \to 0$ \\
-Compare this with $\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) + h -\Re(z)}{h} = 1 \to 1$ as $h \to 0$. Therefore, the function is nowhere differentiable in $\mathbb{C}$. The problem with $g'(z)$ had to do with $\conj{z}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter.  \\
-If $f$ is differentiable on $\Omega$, it is continuous on $\Omega$. \\
-The power rule holds too: $\frac{d}{dz}z^n = nz^{z - 1}$\\
-As does the product, quotient, L'Hospital's and chain rule. In fact, most old results hold as well. \\
-If $f(z) = \operatorname{Log}(z)$, then $f'(z) = \frac{1}{z}$ \\
-If $f(z) = \tan^{-1}(z)$, then $f'(z) = \frac{1}{z^2 + 1} = \frac{1}{(z + i)(z - i)}$, which does not exist for $z = \pm i$
+In each of the cases above, we are only measuring change in a few directions. However, $h \to0$ in $\mathbb{C}$ can be from any direction in 2-space. Therefore, $f'(z)$ existing is a much stronger condition for $f$ on $\mathbb{C}$ than on $\mathbb{R}$. 
+\subsubsection{Complications with $\conj{z}$}
+
+Consider the following example: \\
+Let $g(z) = \Re(z) = \frac{z + \conj{z}}{2}$, which is a linear combination of continuous functions. \\
+Assume $h \in \mathbb{R}$, $\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) - \Re(z)}{h} \to 0$ as $h \to 0$ \\
+Compare this with $\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) + h -\Re(z)}{h} = 1 \to 1$ as $h \to 0$. \\
+Therefore, the function is nowhere differentiable in $\mathbb{C}$. The problem with $g'(z)$ had to do with $\conj{z}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter.  \\
+
+\subsection{Properties of $f'(z)$}
+\textbf{Proposition}: If $f$ is differentiable on $\Omega$, it is continuous on $\Omega$. \\
+\textbf{Proposition}: The power rule holds too: $\frac{d}{dz}z^n = nz^{z - 1}$\\
+As does the product, quotient, L'Hospital's and chain rule. In fact, most old results hold as well. 
+In each of the following cases, there are branch points where $f'(z)$ does not exist. \\
+1. If $f(z) = \operatorname{Log}(z)$, then $f'(z) = \frac{1}{z}$ \\
+2. If $f(z) = \tan^{-1}(z)$, then $f'(z) = \frac{1}{z^2 + 1} = \frac{1}{(z + i)(z - i)}$, which does not exist for $z = \pm i$ \\
+3. If $f(z) = z^\frac{1}{2}$, then $f'(z) = \frac{1}{2}z^{-\frac{1}{2}}$ \\
+
+\textbf{Proposition}: Suppose $f(z)$ is holomorphic on $\Omega$. then $g(z) = \conj{f(\conj{z})}$ is holomorphic on $\Omega^{\ast} = \{z|\conj{z} \in \Omega\}$ \\
+\textbf{Proof}: \\
+Suppose $f$ is holomorphic on $\Omega$. Let $z_0 \in \Omega^{\ast}$ and $z_n \in \Omega^{\ast}$ for all $n$ and $z_n \to z$. Then $\conj{z_n} \to \conj{z_0}$ in $\Omega$ and for $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for $n > N$. 
+$$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} < \epsilon$$ 
+$$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} = \conj{\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})}} = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{\conj{\conj{z_0} - \conj{z_n}}} - \conj{f'(\conj{z_0})}} $$
+$$ = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{z_0 - z_n} - \conj{f'(\conj{z_0})}} = \abs*{\frac{g(z_0) - g(z_n)}{z_0 - z_n} - \conj{f'(\conj{z_0})}} < \epsilon$$
+$$\Longrightarrow g'(z_0) = \conj{f'(\conj{z_0})}$$
+Therefore, $g$ is holomorphic on $\Omega^\ast$. \\
+This proof is different from when we showed $\frac{d}{dz}\conj{z}$ does not exist. Conjugation must be handled with care. 
+%\abs[\Big]
+\subsection{Geometric behavior of $f'(z)$}
+\subsubsection{Dilation} 
+$w = f(z) \approx f'(a)(z - a) + f(a)$. Small changes in $z$ should give small changes in $w$. \\
+The functions $|z|$ and $\operatorname{Arg}(z)$ are continuous on their domains. \\
+If $f'(z_0) \neq 0$ and $f'$ exists on $\Omega$, then 
+$$ |f'(z_0)| = \abs*{\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0} \abs*{\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0}\frac{|f(z_0 + h) - f(z_0)|}{|h|}$$
+$$\Longrightarrow |f'(z_0)||h| \approx |f(z + h) - f(z)|$$
+The size of $|f'(z_0)|$ tells us how much $f$ is contracting/dilating near $z_0$. \\
+\subsubsection{Rotation}
+$$\operatorname{Arg}(f'(z_0)) = \operatorname{Arg}\left(\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}\right) = \lim_{h \to 0}\operatorname{Arg}\left(\frac{f(z_0 + h) - f(z)}{h}\right)$$
+$$ = \lim_{h \to 0} \operatorname{Arg}(f(z_0 + h) - f(z_0)) - \operatorname{Arg}(h)$$
+$$\Longrightarrow \operatorname{Arg}(f'(z_0)) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0))$$ 
+$$\Longrightarrow \operatorname{Arg}(f'(z_0)) + \operatorname{Arg}(h) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0))$$
+Therefore, $f$ rotates vectors from $z_0$ to $z_0 + h$ by the angle $\operatorname{Arg}(f'(z_0))$. \\
+\subsubsection{Conclusion}
+In conclusion, $w = f(z) \approx f(z_0) + f'(z_0)(z - z_0) = c + \rho e^{i\theta}(z - z_0)$ \\
+\[ \begin{cases} 
+c\mbox{: Translation }\\
+\rho \mbox{: Dilation }\\
+e^{i\theta} \mbox{: rotation about $z_0$ or complex multiplication. }
+   \end{cases}
+\]
+
+\newpage
+\section{The Cauchy Riemann Equations}
+\subsection{The Cauchy Riemann Equations}
+Let $f(z) = f(x + iy) = u(x, y) + iv(x, y)$, then $f(z)$ is holomorphic implies the Cauchy Riemann Equations: 
+\[ \begin{cases} 
+	u_x = v_y \\
+	u_y = -v_x
+   \end{cases}
+\]
+\textbf{Proof}:
+For $f$, which is $\mathbb{C}$-differentiable, the following representation of $f'(z)$ holds for any path to $z$. 
+$$f'(z) = \lim_{h \to 0} \frac{f(z + h) - f(z)}{h}$$
+\\
+Along the path $x + h + iy \to x + iy$, we get 
+$$\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \to 0} \frac{f(x + h + iy) - f(x + iy)}{h} = f_x = u_x(x,y) + iv_x(x, y)$$
+Along the path $x + iy +ih \to x + iy$, we get 
+$$\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \to 0} \frac{f(x + i(y + h)) - f(x + iy)}{ih} = \frac{f_y}{i} = -if_y = -i(u_y(x,y) + iv_y(x, y)) = v_y(x, y) -iu_y(x, y)$$
+Equate components in $f_x = -if_y$, and it is proven that $u_x = v_y$ and $u_y = -v_x$. 
+
+\subsubsection{Properties of the Cauchy Riemann Equations} 
+\textbf{Proposition}: If the Cauchy Riemann Equations do not hold at $z_0$, then $f'(z_0)$ does not exist. \\
+\textbf{Proposition}: If $f$ is holomorphic on a domain $\Omega$, an open and connected set in $\mathbb{C}$, then the Cauchy Riemann Equations hold at all points in $\Omega$. \\
+\newline
+\textbf{Example}: \\
+If $f(x + iy) = x^2 + iy^2$, $u_x = 2x$, $v_x = 0$, $u_y = 0$, $v_y = 2y$. Then $2x = 2y \Rightarrow x = y$, which is a line. \\
+The set of points on the line is not open in $\mathbb{C}$. Therefore, $f$ is nowhere holomorphic in $\mathbb{C}$. However, we will see that $f'(z)$ does exist on the line $y = x$. \\
+
+\subsubsection{Sufficiency of the Cauchy Riemann Equations to $f'$}
+\textbf{Follow-Up Question}: The Cauchy Riemann Equations do a great job showing $f'$ does not exist. But what about it being sufficient for $f'$? \\
+\textbf{Claim}: Satisfying the Cauchy Riemann Equations at $z_0$ implies that $f'$ exists at $z_0$. \\
+\textbf{Proof}:\\
+$f$ is $\mathbb{C}$-differentiable at $z_0$ if and only if $u(x, y)$ and $v(x, y)$ have continuous partial derivatives that satisfy the Cauchy Riemann Equations at $z_0$. 
+This requires us to treat $f(x + iy)$ as a function on $\mathbb{R} ^ 2$, or $f(z)$ induces a map on $\mathbb{R} ^ 2$. \\
+Let $ h = \Delta x + i\Delta y$, 
+$$ \frac{f(z + h) - f(z)}{h} = \frac{u(x + \Delta x, y + \Delta y) + iv(x + \Delta x, y + \Delta y)}{\Delta x + i \Delta y} - \frac{u(x, y) + iv(x, y)}{\Delta x + i \Delta y}$$
+$$u(x + \Delta x, y + \Delta y) - u(x, y) = u(x + \Delta x, y + \Delta y) - u(x, y + \Delta y) + u(x, y + \Delta y) - u(x, y)$$ 
+The function $u(\cdot, \cdot)$ is differentiable in $x$ and $y$, we can use the M.V.T (Mean Value Theorem) from $\mathbb{R}$ to rewrite our difference in $u$ by \\
+$$u(x + \Delta x, y + \Delta y) - u(x, y + \Delta y) = \Delta xU_x(\underline x, y + \Delta y)$$
+where $\underline x \in (x, x + \Delta x)$. \\
+\newline 
+If $u_x$ is continuous, $u_x(\underline x, y + \Delta y) \approx u_x(x, y) + \epsilon_1$, and as $\Delta y \to 0$ and $\underline x \to x$, by Taylor approximation and linear approximation on $u_x$, we have the error function $\epsilon_1 \to 0$. \\
+Next $u(x, y + \Delta y) - u(x, y) = \Delta y u_y(x, \overline y)$ and $u_y(x, \overline y) \approx u_y(x, y) + \epsilon_2$. \\
+Likewise, for the function $v(x, y)$, we get a $v_x$ and $v_y$ with error terms $\epsilon_3$ and $\epsilon_4$. s
+$$\frac{f(z + h) - f(z)}{h} = \frac{\Delta x(u_x + \epsilon_1 + iv_x + i\epsilon_3) + \Delta y(u_y + \epsilon_2 + iv_y + i\epsilon_4)}{\Delta x + i \Delta y}$$
+From the Cauchy Riemann Equations, we get $f_x = \frac{f_y}{i} \Rightarrow if_x = f_y \Rightarrow i(u_x + iv_x) = u_y + iv_y$. Substituting the terms, we have 
+$$f'(z) = \frac{\Delta x(u_x + iv_x) + i \Delta y(u_x + iv_x)}{\Delta x + i \Delta y} + \frac{\lambda}{\Delta x + i\Delta y}$$
+where $\lambda = \Delta x(\epsilon_1 + i\epsilon_2) + \Delta y(\epsilon_3 + i\epsilon_4)$. However, \\
+$$\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \leqslant \abs*{\frac{\Delta x(\epsilon_1 + i\epsilon_2)}{\Delta x + i\Delta y}} + \abs*{\frac{\Delta y(\epsilon_3 + i\epsilon_4)}{\Delta x + i \Delta y}} \leqslant |\epsilon_1 + i\epsilon_2| + |\epsilon_3 + i\epsilon_4|$$ 
+because $\abs*{\frac{\Delta x}{\Delta x + i\Delta y}} \leqslant 1$. \\
+As $\Delta z \to 0$, $\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \to 0$, and thus $f'(z) = u_x + iv_x = f_x = \frac{f_y}{i}$. \\
+Therefore, the Cauchy Riemann Equations are an easy way to show $f'(z)$ exists and they provide a set of partial differential equations that $f$ must satisfy. \\
+\newline
+\textbf{Example}: Let $f(z) = e^z = e^x(\cos(y) + i\sin(y))$ \\
+$u = e^x\cos(y)$, $v = e^x\sin(y)$ \\
+$u_x = e^x\cos(y)$, $v_x = e^x\sin(y)$ \\
+$u_y = e^x\sin(y)$, $v_x = e^x\cos(y)$ \\
+Therefore, $f(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C}$, $f$ is entire/meromorphic. $f'(z) = f_x = u_x + iv_x = f(z)$
+
+\subsection{Cauchy Riemann with Logarithm}
+$$e^{\operatorname{Log(z)}} = z \Rightarrow \frac{d}{dz}e^{\operatorname{Log(z)}} = 1 \Rightarrow z\frac{d}{dz}\operatorname{Log}(z) = 1 \Rightarrow \frac{d}{dz}\operatorname{Log}(z) = \frac{1}{z}$$
+We have a branch point in $\operatorname{Log}(z)$ where its derivative is undefined. Then $\operatorname{Log}(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C} \backslash \{0\}$. This is true regardless of the branch cut on $\operatorname{Log}(z)$. 
+
+\subsection{Lack of Complex Mean Value Theorem}
+\textbf{Claim}: $\frac{f(z) - f(w)}{z - w} \neq f'(c)$ for some $c$ between $z$ and $w$. \\
+\textbf{Proof}: Let $z = 1$, $w = 0$ and $f(t) = e^{i\pi t}$, then $f(1) - f(0) = e^{i\pi} - 1 = -2$. However, $|f'(t)| = \pi$ for all $t \in [0, 1]$. \\
+\textbf{Follow-Up Question}: Does the lack of a Mean Value Theorem for $f'(z)$ suggest $f'(z) = 0$ not imply $f$ is constant?  \\
+\textbf{Answer}: Suppose $f$ is $\mathbb{C}$-differentiable on $\Omega$ and one of the following holds, then $f$ is constant on $\Omega$. 
+\[ \begin{cases} 
+	f'(z) = 0 \\
+	|f(z)| \mbox{ is constant} \\ 
+	Re(f(z)) \mbox{ is constant} \\ 
+	$f$ \mbox{'s conjugate is } \mathbb{C} \mbox{-differentiable on } \Omega
+   \end{cases}
+\]
+
+\subsection{Wirtinger Equations}
+There is another way to study the Cauchy Riemann Equations by introducing two operators: 
+\begin{equation*}
+	\frac{\partial f}{\partial z} = f_z \mbox{ and } \frac{\partial f}{\partial \conj{z}} = f_{\conj{z}}
+\end{equation*}
+$$ f(x, y) \equiv f(x + iy) = u(x, y) + iv(x, y)$$
+$$f(x, y) = f(\Re(z), \Im(z)) = f(\frac{z + \conj{z}}{2}, \frac{z - \conj{z}}{2i})$$
+From the chain rule, we get 
+$$f_z = f_xx_z + f_yy_z = \frac{1}{2}f_x + \frac{1}{2i}f_y = \frac{1}{2}f_x - \frac{i}{2}f_y$$
+$$f_{\conj{z}} = f_xx_{\conj{z}} + f_yy_{\conj{z}} = \frac{1}{2}f_x - \frac{1}{2i}f_y = \frac{1}{2}f_x + \frac{i}{2}f_y$$
+where $f_x = u_x + iv_x $ and $f_y = u_y + iv_y$ \\
+These are the Wirtinger Equations. 
+\[ \begin{cases} 
+	\frac{\partial}{\partial z}  = \frac{1}{2}(\frac{\partial}{\partial x} - i\frac{\partial}{\partial y}) \\ 
+	\frac{\partial}{\partial \conj{z}}  = \frac{1}{2}(\frac{\partial}{\partial x} + i\frac{\partial}{\partial y})
+   \end{cases}
+\]
+\subsubsection{Relationship with the Cauchy Riemann Equations}
+From the Cauchy Riemann Equations $if_x = f_y$ we get:
+$$f_{\conj{z}} = \frac{1}{2}f_x + \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{1}{2}f_x = 0$$
+$$f_z = \frac{1}{2}f_x - \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{i^2}{2}f_x = f_x = f'(z)$$
+f is $\mathbb{C}$-differentiable at $z_0$ if and only if $f(x, y) = u(x, y) + iv(x, y)$ is $\mathbb{R}$-differentiable at $z_0$ and $f_{\conj{z}}(z_0) = 0$. Then $f'(z_0) = f_z(z_0)$. In other words, $f(z)$ does not depend on $\conj{z}$. 
+
+\newpage
+\section{Harmonic Functions}
+\subsection{Laplacian}
+Let $u: \mathbb{R}^2 \to \mathbb{R}$, then the Laplacian of $u$ is 
+$$\Delta u = u_{xx} + u_{yy} = \nabla \cdot \nabla u$$
+ where 
+$\nabla = [\frac{\partial}{\partial x}, \frac{\partial}{\partial y}]^T$ is the divergence operator and $\nabla u = [u_x, u_y]^T$ is the gradient of $u$. \\
+\subsection{Harmonic Functions}
+If $\Delta u = 0$, then $u(x, y)$ satisfies Laplace's (partial differential) equation or $u$ is a harmonic function. \\
+This means: 
+\[ \begin{cases} 
+	u \mbox{ is continuous} \\
+	u \mbox{'s } \nth{1} \mbox{ and } \nth{2} \mbox{ order partial derivatives exist and are smooth. }
+   \end{cases}
+\]
+\newline
+\textbf{Proposition}: Suppose $f = u + iv$ is holomorphic on $\Omega$ where $u(x, y)$ and $v(x, y)$ have continuous $\nth{2}$ order partial derivatives, then $u$ and $v$ are harmonic and $v$ is the harmonic conjugate of $u$. \\
+\textbf{Proof}: \\
+By the Cauchy Riemann Equations, $u_x = v_y$ and $v_x = -u_y$, then $u_{xx} = v_{yx}$ and $v_{xy} = -u_{yy}$. By continuity of $v_{yx}$ and $v_{xy}$, $v_{yx} = v_{xy}$. This implies $u_{xx} = -u_{yy} \Rightarrow u_{xx} + u_{yy} = 0$ \\
+Later on, we will find that the conditions on $\nth{2}$ order partial derivatives is implied by $f$ being holomorphic on $\Omega$, or $f''$ exists. \\
+\newline
+\textbf{Definition: Harmonic Conjugate} \\
+The harmonic conjugate to $u(x,y)$ is a function $v(x,y)$, such that $f(x,y) = u(x,y) + iv(x,y)$ is holomorphic. \\
+
+\textbf{Example.} Show that $u(x, y) = x^3 -3xy^2 + y$ is a harmonic function. \\
+$u_x = 3x^2 - 3y^2$, $u_y = -6xy + 1$ \\
+$u_{xx} = 6x$, $u_{yy} = -6x$. Therefore, $u_{xx} + u_{yy} = 0$ \\
+
+\textbf{Example.} Find the harmonic conjugate of $u(x, y) = x^3 - 3xy^2 + y$. \\
+$u_x = 3x^2 - 3y^2 = v_y$ \\
+$u_y = -6xy + 1 = -v_x$ \\
+$\Rightarrow$ $v = 3x^2y - y^3 + C(x)$ or $v = 3x^2y - x + C(y)$ \\
+Therefore, $v = 3x^2y - y^3 - x + C$ is $u$'s harmonic conjugate. \\
+\newline 
+\textbf{Proposition}: \\ 
+If $u$ is harmonic on a domain $\Omega$, then $u_x$ is the real part of a holomorphic function on $\Omega$. If $\Omega$ is simply connected, unlike $\mathbb{C} \backslash \{0\}$, then $u$ is the real part of a holomorphic function on $\Omega$. \\
+\textbf{Proof}: \\
+Assume $u$ is harmonic and $\Omega$ is connected. If $f = u_x - iu_y$, then $f_y = if_x$. Hence, $f$ is differentiable on $\Omega$. \\
+The simply connected statement requires future theorems to show $F'(z) = f(z)$ for some holomorphic antiderivative $F(z)$. 
+
+\newpage
+\section{Conformal Maps}
+\textbf{Example.} Let $f(z) - (x + iy)^2 + 2(x +iy) = (x^2 + 2x - y^2) + i2(xy + y)$. When are the component functions, $u(x, y)$ and $v(x, y)$ constant? \\
+When are the component functions , $u(x, y)$ and $v(x, y)$, constant? \\
+The function $f(z) = e^z = e^x(\cos(y) + i\sin(y))$ maps the set $\Omega = \{z: \abs{\Im(z)} < \pi \}$ to circles of radius $r \in (-\infty, \infty)$, or all points in $\mathbb{C} \backslash \mathbb{R}^-$. This coincides with the branch cut of $\operatorname{Log}(z)$, or how we made $e^z$ invertible. \\
+
+\subsection{Preservation of Angles}
+
+We will now show $e^z$ preserves the angles between curves in $\Omega$. Let us first look at the following example. \\ 
+Let $\gamma_1(t) = 2i\pi t - i\pi$, $\gamma_2(t) = t + i\frac{\pi}{4}$. $\gamma_1(0) = -i\pi$, $\gamma_1(1) = i\pi$. \\
+The curves $\gamma_1$ and $\gamma_2$ intersect at an angle $\frac{\pi}{2}$. Also $f(\gamma_1)$ is a circle centered at 0 while $f(\gamma_2)$ is a line through $z = 0$. Their intersection in the $w$-plane is $\frac{\pi}{2}$ as well. \\
+We will show why $f(z) = e^z$ does this by studying the angles between curves $\gamma_1$ and $\gamma_2$ and curves $\tau_1 = f(\gamma_1)$ and $\tau_2 = f(\gamma_2)$. 
+If $\gamma(t)$ parameterizes a smooth curve in $\mathbb{C}$, then its tangent vector is $\gamma'(t)$. The angle between any two curves at $z_0$ is the angle between their tangent vectors at $z_0$. \\
+Assume the curves intersect at $\gamma(r_0) = \gamma(s_0) = z_0$. \\
+Let the angle of intersection, $\theta$, measured from $\gamma_1'$ to $\gamma_2'$ in the counter-clockwise direction. \\
+Let the angle of intersection after transformation of $f$, $\varphi$, measured from $\tau_1'$ to $\tau_2'$ in the counter-clockwise direction. From past chapters, we know $\theta \approx \varphi$ if $f$ is holomorphic. Now, let us assume $f$ is only $\mathbb{R}$-differentiable and see how $f$ acts on the angle $\theta$. \\
+Curve: $\gamma(t) = (x(t), y(t))$ \\
+New curve, $f$ on $\gamma$: $\tau(t) = f(\gamma(t)) = u(\gamma(t)) + iv(\gamma(t)) = (\overline{\underline {X}}(t), \overline{\underline {Y}}(t))$ \\
+New tangent vector: $\tau'(t) = \frac{t}{dt}\tau(t) = (\overline{\underline {X}}'(t), \overline{\underline {Y}}'(t))$, where we can invoke the chain rule: \\
+$$\overline{\underline {X}}'(t) = u_x(\gamma(t))x'(t) + u_y(\gamma(t))y'(t)$$ 
+$$\overline{\underline {Y}}'(t) = v_x(\gamma(t))x'(t) + v_y(\gamma(t))y'(t)$$
+If we have $f = u(x, y) + iv(x, y)$ is $\mathbb{R}$-differentiable, then 
+\begin{equation*}
+J(f) = 
+\begin{bmatrix}
+ u_x & u_y \\
+ v_x & v_y
+\end{bmatrix}
+\end{equation*}
+is the Jacobian Matrix of $f$ and $\tau'(t) = \gamma'(t) \cdot J(f)^T$ \\
+If $f$ is $\mathbb{C}$-differentiable and $\gamma(r_0) = z_0$ where $\gamma(t) = x(t) + iy(t)$, then $f'(z) = u_x + iv_x$ and $\gamma'(t) = x' + iy'$. \\
+$$f'(z_0)\gamma'(r_0) = f'(\gamma(r_0))\gamma'(r_0) = (u_x + iv_x)(x' + iy') = (u_xx' - v_xy') + i(u_xy' + v_xx')$$
+Applying the Cauchy Riemann Equations, 
+\begin{equation*}
+(u_xx' - v_xy') + i(u_xy' + v_xx') = (u_xx' + u_yy') + i(v_xx' + v_yy') = (u_xx' + u_yy', v_xx' + v_yy') \mbox{ in } \mathbb{R}^2 
+\end{equation*}
+$$ = \gamma'(r_0) \mbox{Jf}(z_0)^T = \tau'$$ 
+By now, we have an understanding of how $f$ acts on tangent vectors when $f' \neq 0$, namely $\theta = \varphi$.
+
+\subsection{Conformal Function}
+\subsubsection{Conditions of Conformal Functions}
+We say $f$ is a conformal map at $z_0$ if the following hold: \\
+\circled{1} $f$ is $\mathbb{R}^2$-differentiable at $z_0$ \\
+\circled{2} $\abs{\mbox{Jf}} \neq 0$ \\
+\circled{3} $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. 
+\subsubsection{$e^z$ is conformal}
+Now let us take a closer look at $e^z$ and figure out why it is conformal. \\
+\circled{1} holds apparently. \\
+\circled{2} $f(z) = e^z = e^x\cos(y) + ie^x\sin(y)$, then 
+\begin{equation*}
+J(f(x, y)) = 
+\begin{bmatrix}
+ e^x\cos(y) & -e^x\sin(y) \\
+ e^x\sin(y) & e^x\cos(y)
+\end{bmatrix}
+=e^x
+\begin{bmatrix}
+\cos(y) & -\sin(y) \\
+\sin(y) & \cos(y)
+\end{bmatrix}
+\end{equation*}
+$\Rightarrow \abs{J(f(x,y))} \neq 0$\\
+\circled{3} Now we have shown in the previous part that Jf is the product of a dilation matrix, $e^xI$, and a rotation matrix, which means $f$ preserves the angles between $\gamma_1'$ and $\gamma_2'$. Their image under $f$: \\
+$$\tau_1'(t) = \gamma_1'(t) \cdot J(f)^T$$
+$$\tau_2'(t) = \gamma_2'(t) \cdot J(f)^T$$
+In fact, $f$ preserving oriented angles implies Jf is a rotation $\otimes$ dilation matrix. \\
+Hence, it is proven that $e^z$ is conformal.
+\subsection{Conformal Map} 
+
+\textbf{Definition}: If $f$ is conformal, infinitely differentiable, and one-to-one on a domain $\Omega$ to $V$, then $f$ is a conformal map from $\Omega$ to $V$. \\
+For example, $e^z$ is conformal map from $\Omega = \{z:\abs{\Im(z)} < \pi \}$ to $V = \mathbb{C} \backslash \mathbb{R}^-$. \\
+\textbf{Proposition}: If $f$ is complex differentiable and $f'(z_0) \neq 0$, it is a linear transform of a dilation by $\abs{f'(z_0)}$ and a rotation by $\operatorname{Arg}(f'(z_0))$. Hence, $f$ is conformal because \circled{3} is satisfied. \\
+\textbf{Example.} $f(z) = z^2$ on $\Omega = \{z| 1< |z| < 3 \mbox{ and } \Im(z) > 0 \}$ is conformal. \\
+\newline
+\textbf{Inverse Function Theorem}: \\ 
+If $f$ is a continuously differentiable function with nonzero derivative at the point $a$, then $f$ is invertible in a neighborhood of a, the inverse is continuously differentiable, and the derivative of the inverse function at $b=f(a)$ is the reciprocal of the derivative of $f$ at $a$: 
+$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
+\textbf{Proposition}: If $f$ is invertible at $z_0$ and conformal, then $f^{-1}$ is conformal at $f(z_0)$ by the inverse function theorem provided $f$ is continuously differentiable. \\
+\newline 
+From the proposition above, we know that $\operatorname{Log}(z)$ is conformal on $\mathbb{C} \backslash \mathbb{R}^-$.
+
+\newpage
+\section{Bilinear Transformations}
+In complex analysis, the term linear transformation is used to describe affine transformations, $f(z) = az + b$. \\
+A bilinear/Möbius transformation is of the form 
+$$\frac{az + b}{cz + d}$$
+where $a, b, c, d \in \mathbb{C}$. \\
+Now, $f(\infty) = \frac{a}{c}$ by L'Hospital argument and we say $f(-\frac{d}{c}) = \infty$. \\
+If $ad - bc \neq 0$, then $f' \neq 0$ by the quotient rule and $f$ is not constant. The constants are not unique, as $f(z) = \frac{az + b}{cz + d} = \frac{(az+b)k}{(cz + d)k}$. Therefore, we only have 3 degrees of freedom. \\
+We have already seen these functions of this form before $f$ is: \\
+\circled{1} Composition of a finite number of 
+\[ \begin{cases} 
+	\mbox{Translations}, f(z) = z + k \\
+	\mbox{Rotations}, f(z) = e^{i\theta}z \\
+	\mbox{Dilations}, f(z) = kz, k \in \mathbb{R} \\
+	\mbox{Inversions}, f(z) = \frac{1}{z}\\
+   \end{cases}
+\]
+\circled{2} Conformal, $f$ is holomorphic away from $z = -\frac{d}{c}$, $f' \neq 0$, and f is one-to-one. \\
+\circled{3} Maps circles/lines to either lines or circles, "lines are circles of $\infty$-radius in $\mathbb{C}$ or $\mathbb{C} \cup \{\infty\}$. \\
+If the line or circle passes through $z = -\frac{d}{c}$, where $f$ is undefined, then it will be mapped to a line. Otherwise, it is mapped to a circle. \\
+\circled{4} $f$ can be identified by 
+\begin{equation*}
+A = 
+\begin{bmatrix}
+ a & b \\
+ c & d
+\end{bmatrix}
+\end{equation*}
+Then,
+\[ \begin{cases} 
+	f \circ f \equiv A \circ A = A^2 \\
+	f^{-1} \equiv A^{-1} \\
+	f \circ g \equiv AB \\
+   \end{cases}
+\]
+and so there is a group homomorphism with Möbius transforms and invertible matrices in $\mathbb{C}^{2 \times 2}$. \\
+$f(z) = (3 + 2i)z - i^3 = \frac{(3 + 2i)z - i^3}{\delta z + 1}$ \\
+\circled{5} We can conformally map 3 points in $\mathbb{C} \cup \{\infty\}$ to any 3 points in $\mathbb{C} \cup \{\infty\}$. \\
+This type of argument is similar to showing norms are equivalent in $\mathbb{R}^n$ or uniqueness of power series expansions. \\
+Given any 3 points $z_0$, $z_1$, $z_2$ $\in \mathbb{C}$, we can create a Möbius transformation $T$ such that 
+\[ \begin{cases} 
+	T(z_0) = 0 \\
+	T(z_1) = 1 \\
+	T(z_2) = \infty \\
+   \end{cases}
+\]
+then 
+$T(z) = (z, z_0, z_1, z_2) = \frac{(z -z_0)(z_1 - z_2)}{(z - z_2)(z_1 - z_0)}$ is called the cross-ratio of $z$, $z_0$, $z_1$, and $z_2$. \\
+Special cases: 
+\[ \begin{cases} 
+	(z, \infty, z_1, z_2) = \frac{z_1 - z_2}{z - z_2} \\
+	(z, z_0, \infty, z_2) = \frac{z - z_0}{z - z_2} \\
+	(z, z_0, z_1, \infty) = \frac{z - z_0}{z_1 - z_0}\\
+   \end{cases}
+\]
+Then
+\[ \begin{cases} 
+	T^{-1}(0) = z_0 \\
+	T^{-1}(1) = z_1 \\
+	T^{-1}(\infty) = z_2
+   \end{cases}
+\]
+
 
 
 
 \newpage
-\section{The Cauchy Riemann equations}
-\section{Harmonic Functions}
-\section{Conformal Maps}
-\section{Bilinear Transformations}
 \section{Contour Integral in $\mathbb{C}$}
 \section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
 \section{Cauchy's Integral Formula}
