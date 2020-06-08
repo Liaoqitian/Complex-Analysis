@@ -64,18 +64,20 @@ $$(zw)\alpha = z(w\alpha)$$
 
 \subsection{Conjugate of Complex Numbers} 
 \newcommand*\conj[1]{\overline{#1}}
-\subsubsection{Definition of Conjugate} 
+\textbf{Definition of Conjugate.} \\
 The complex conjugate of $z$, $\conj{z}$, is defined by 
 $$\conj{z} = a - ib$$ 
-Geometric representation: The image of $\bar z$ is the reflection of z about the Real axis.
-\subsubsection{Properties of Conjugate} 
+Geometric representation: The image of $\bar z$ is the reflection of z about the Real axis. \\
+\newline
+\textbf{Properties of Conjugate.} \\
 $$\conj{\conj{z}} = z$$
 $$\conj{zw} = \conj{z}\conj{w}$$
 $$\conj{z + w} = \conj{z} + \conj{w}$$
 \begin{equation*}
 \overline{z} = z \mbox{ if and only if } z \in \mathbb{R}
 \end{equation*}
-\subsubsection{Real and Imaginary Parts}
+\textbf{Real and Imaginary Parts.} \\
+\newline
 \noindent We can project $z$ onto the Real or Imaginary axis and measure its distance from 0: 
 $$\Re(z) = a$$
 \begin{equation*}
@@ -87,30 +89,32 @@ $$\Re(z) = \frac{z + \conj{z}}{2}$$
 $$\Im(z) = \frac{z - \conj{z}}{2i}$$
 This is similar to the pattern with even/odd functions. 
 
-\subsection{Modulus of Complex Numbers}
-Note: $z\conj{z} = (a + ib)(a - ib) = a^2 + b^2 \in \mathbb{R}$ 
+\subsection{Modulus of Complex Numbers.}
+Note: $z\conj{z} = (a + ib)(a - ib) = a^2 + b^2 \in \mathbb{R}$  \\
 
-\subsubsection{Definition of Modulus}
+\textbf{Definition of Modulus.} \\
 $|z|$ length/modulus of $z$ is defined by:
 $$|z| = (a^2 + b^2)^{\frac{1}{2}} = (z\conj{z})^{\frac{1}{2}} \in \mathbb{R}$$
-
-\subsubsection{Properties of Modulus} 
+\newline
+\textbf{Properties of Modulus.} \\
 $$|zw| = |z||w|$$ 
 $$|z| = |\conj{z}|$$  
 $$|z| \geqslant 0$$
 \begin{equation*}
 |z| = 0 \mbox{ if and only if } z = 0
 \end{equation*}
+\newline
+\textbf{Triangle Inequality and Reverse Triangle Inequality.} \\
 
-\subsubsection{Triangle Inequality}
-Triangle Inequality: 
-$$|z + w| \leqslant |z| + |w|$$ 
- 
-Reverse Triangle Inequality: 
-$$|z| - |w| \leqslant |z - w|$$
-$z = z - w + w \Rightarrow |z| = |z - w + w| \Rightarrow |z| \leqslant |z - w| + |w| \Rightarrow |z| - |w| \leqslant |z - w|$. 
+\[ \begin{cases} 
+      |z + w| \leqslant |z| + |w| \\
+      |z| - |w| \leqslant |z - w|
+   \end{cases}
+\]
 
-\subsubsection{Complex Division} 
+$$z = z - w + w \Rightarrow |z| = |z - w + w| \Rightarrow |z| \leqslant |z - w| + |w| \Rightarrow |z| - |w| \leqslant |z - w|$$. 
+\newline
+\textbf{Complex Division.} \\
 With $z\conj{z} \in \mathbb{R}$, we can define complex division by reducing it to a multiplication problem. 
 $$\frac{z}{w} = \frac{z\conj{w}}{w\conj{w}} = \frac{1}{w\conj{w}}(z\conj{w})$$ 
 We also have 
@@ -118,16 +122,16 @@ We also have
 \abs[\Big]{\frac{z}{w}} = \frac{|z|}{|w|} \mbox{ for } w \neq 0 
 \end{equation*}
 
-\subsubsection{Distance in the plane} 
+\textbf{Distance in the plane.} \\
 A disk in the complex plane centered at $c$ of radius $r \in \mathbb{R}$ is of the form 
 $$\{z \in \mathbb{C} \mid |z - c| \leqslant r\}$$
-
+\\
 \subsection{Complex Polynomial}
 A complex polynomial $p(z)$ of degree n is of the form: 
 $$p(z) = a_nz^n + a_{n - 1}z^{n - 1} + \cdots + a_1z + a_0$$
-where $a_n \neq 0$ and $a_i \in \mathbb{C}$ for $ i = 0, \cdots , n$
-
-\subsubsection{Fundamental Theorem of Algebra} 
+where $a_n \neq 0$ and $a_i \in \mathbb{C}$ for $ i = 0, \cdots , n$ \\
+\newline
+\textbf{Fundamental Theorem of Algebra.} \\
 
 The factorization of $p(z)$ factors over $\mathbb{C}$ is unique, 
 $$p(z) = c(z - z_1)^{m_1}...(z - z_k)^{m_k}$$
@@ -178,7 +182,7 @@ $$ \operatorname{Arg}(\conj{z}) = -\operatorname{Arg}(z)$$
 Question: How about $\frac{z}{w}$ and $z^4$? \\
 It follows from trigonometry that $|e^{i\theta}| = 1$, if $\theta \in (-\pi, \pi]$ we get a parametrization of the unit circle. \\
 \newline
-\textbf{Example}: Discover all solutions to $w^3 = i = z$ \\
+\textbf{Example.} Discover all solutions to $w^3 = i = z$ \\
 Let $p(z) = w^3 - i$. By Fundamental Theorem of Algebra, there are 3 roots of $p(z)$. \\
 Therefore, $3\theta= \frac{\pi}{2} + 2\pi k$, $k \in \mathbb{Z}$ \\
 This gives us infinitely many solutions, but the solutions form 3 equivalence classes. \\
@@ -194,31 +198,35 @@ This problem of unity can be extended to solving $w^k = z$ for $k \in \mathbb{N}
 We can express the complex plane on the unit sphere in $\mathbb{R}^3$. To perform this we project points on the surface of the sphere along the line from the North Pole $(0, 0, 1)$ through the point and onto the plane $z = 0, \mathbb{C}$ \\ 
 $p_1 = (x_1, x_2, x_3) \to z = a + ib = \frac{x_1 + ix_2}{1 - x_3}$ \\
 $x_1 = \frac{2a}{|z|^2 + 1}$, $x_2 = \frac{2b}{|z|^2 + 1}$, $x_3 = \frac{|z|^2 - 1}{|z|^2 + 1}$ \\
-Points in the northern hemisphere $P_1$, have $|z_1| > 1$; while points in the southern hemisphere $P_2$, have $|z_2| < 1$. 
-\subsubsection{Mapping} 
-$\mathbb{S}^2 \to \mathbb{C}$ \\ 
-$N = (0, 0, 1) \to \infty$ \\
-$S = (0, 0, -1) \to 0$ \\ 
-lines of latitude $\to$ $|z| = r$, circles \\
-lines of longitude $\to$ $\operatorname{Arg}(z) = \pm\theta$, lines through $(0, 0)$ \\
+Points in the northern hemisphere $P_1$, have $|z_1| > 1$; while points in the southern hemisphere $P_2$, have $|z_2| < 1$. \\
+\newline
+\textbf{Mapping from Stereographic Space to the Complex Plane.} 
+\begin{align*}
+\mathbb{S}^2 &\to \mathbb{C}\\
+N = (0, 0, 1) &\to \infty \\
+S = (0, 0, -1) &\to 0 \\
+\mbox{lines of latitude } &\to |z| = r \mbox{, circles} \\
+\mbox{lines of longitude } &\to \operatorname{Arg}(z) = \pm\theta \mbox{, lines through } (0, 0) 
+\end{align*}
 \textbf{Note}: In general, circles on $\mathbb{S}^2$ map to circles and lines in $\mathbb{C}$, orientation is not always preserved. 
 
 \subsection{Complex Logarithm}
-\subsubsection{Logarithm of Real Numbers}
+\textbf{Logarithm of Real Numbers.} \\
 Anytime we are dealing with power, the log function is very useful. 
-\begin{equation}
+\begin{equation*}
 \log{x} = \int_{1}^{x} \frac{1}{t} dt \mbox{ for } x \in \mathbb{R}
-\end{equation}
+\end{equation*}
 $$\frac{d}{dx}x^x = \frac{d}{dx}e^{\ln{x^x}} = \frac{d}{dx}e^{x\ln x} = e^{x\ln x}(x \cdot \frac{1}{x} + \ln{x}) = x^x(1 + \ln{x})$$
-
-\subsubsection{Logarithm of Complex Numbers} 
-Remember from Euler's Formula, $e^{i\theta}= \cos\theta + i\sin\theta$. \\
-$e^z = e^{a + ib} = e^ae^{ib}$ \\
-$\operatorname{Arg}(e^z) = b$, $|e^z| = e^a > 0$ \\
+\newline
+\textbf{Logarithm of Complex Numbers.} \\
+Remember from Euler's Formula, $e^{i\theta}= \cos\theta + i\sin\theta$. 
+$$e^z = e^{a + ib} = e^ae^{ib}$$ 
+$$\operatorname{Arg}(e^z) = b$$
+$$|e^z| = e^a > 0$$ 
 Therefore, if $a$ is held fixed, $e^z$ maps to a circle as $b$ changes. \\
-On the other hand, if $b$ is held fixed, $e^z$ maps to a line through $(0, 0)$. 
-
-\subsubsection{Derivation of Complex Logarithm}
+On the other hand, if $b$ is held fixed, $e^z$ maps to a line through $(0, 0)$. \\
+\newline
+\textbf{Derivation of Complex Logarithm.} \\
 We want $e^{\log{(z)}} = z$ for all $z \neq 0$, and thus 
 $$e^{\Re(\log{(z)}) + i\Im(\log{(z)})} = e^{\Re(\log{(z)})}e^{i\Im(\log{(z)})} = |z|e^{i\theta} = z$$
 $$\Rightarrow |z| = e^{\Re(\log{(z)})}$$ 
@@ -230,8 +238,8 @@ $$\Rightarrow \Im(\log{(z)}) = \operatorname{Arg}(z)$$
 because $arg(z)$ is not well defined. \\
 Our constructed inverse of $e^z$ is a multi-valued function 
 $$\log(z) = \log|z| + i\operatorname{arg}(z)$$
-
-\subsubsection{Conclusion from Derivation}
+\newline
+\textbf{Conclusion from Derivation.}\\
 $$\log(z) = \log|z| + i\operatorname{arg}(z)$$
 $$\operatorname{Log} (z) = \log|z| + i\operatorname{Arg}(z)$$
 \textbf{Note}: $\operatorname{Log}(z)$ does not have all the nice behavior as $\mathbb{R}$-valued $\log(x)$: $\operatorname{Log}{(z^k)}$. \\
@@ -241,10 +249,10 @@ Sometimes they are co-terminal angles, but they are not equal. See the following
       3\operatorname{Log}(i) = 3 \cdot (i\frac{\pi}{2}) = i\frac{3\pi}{2}
    \end{cases}
 \]
-\textbf{Example}: Compute $3^i$: \\
+\textbf{Example.} Compute $3^i$: \\
 $$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operatorname{Log}{3})} + i \sin{(\operatorname{Log}{3})}$$
-
-\subsubsection{How Logarithm acts on curves}
+\newline
+\textbf{How Logarithm acts on curves. }\\
 \[ \begin{cases} 
       \mbox{Maps a circle with radius } r \mbox{ to a vertical line passing through } (\ln(r), 0)\\
       \mbox{Maps a line with angle } \theta \mbox{ passing through the origin to a horizontal line passing through } (0, i\theta)
@@ -253,15 +261,18 @@ $$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operat
 
 \newpage
 \section{Topology in $\mathbb{C}$}
-\subsection{Complex Sequence}
-Let $\{Z_n\}$ be a sequence in $\mathbb{C}$. 
-\subsubsection{Cauchy Sequence}
-The sequence is Cauchy if for all $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for all $n, m > N$, $|z_n - z_m| < \epsilon$. 
-\subsubsection{Sequence Convergence}
-The sequence converges if $|z_n - z| \to 0$ as $n \to \infty$. The distance between $z_n$ and $z$ vanishes. 
-\subsubsection{Completeness of $\mathbb{C}$}
+\subsection{Sequence}
+Let $\{Z_n\}$ be a sequence in $\mathbb{C}$. \\
+\newline
+\textbf{Cauchy Sequence. }\\
+The sequence is Cauchy if for all $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for all $n, m > N$, $|z_n - z_m| < \epsilon$. \\
+\newline
+\textbf{Convergence of Sequence.}\\ 
+The sequence converges if $|z_n - z| \to 0$ as $n \to \infty$. The distance between $z_n$ and $z$ vanishes. \\
+\newline
+\textbf{Completeness of $\mathbb{C}$.} \\
 $\{z_n\}$ converges if and only if $\{z_n\}$ is Cauchy. \\
-\textbf{Proof}:\\
+\textbf{Proof.}\\
 We show this by treating $\mathbb{C}$ as $\mathbb{R}^2$ and exploiting $\{X_n\}$ converges if and only if $\{X_n\}$ is Cauchy. \\
 ($\Longrightarrow$) (If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
 $|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$ \\
@@ -270,35 +281,43 @@ Upper bounds can be picked to be less than $\frac{\epsilon}{2}$ for some $N$. Th
 ($\Longleftarrow$) If $\{Z_n\}$ is Cauchy, so are $\{\Re(Z_n)\}$ and $\{\Im(Z_n)\}$. But these are $\mathbb{R}$-sequences that converge. Therefore, $\{Z_n\}$ converges. 
 
 \subsection{Complex Set} 
-Let $\Omega \subset \mathbb{C}$. Sets can be open, closed, both, or neither. 
-\subsubsection{Open Set} 
+Let $\Omega \subset \mathbb{C}$. Sets can be open, closed, both, or neither. \\
+\newline
+\textbf{Open Set.} \\ 
 If for any $z_0 \in \mathbb{C}$, there exist some $\epsilon > 0$, such that the set $B_\epsilon(z_0) = \{z||z - z_0| < \epsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
 $\Omega$ is open if and only if $\Omega^c$ is closed. \\ 
-$\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$, i.e. it does not contain its closure. 
-\subsubsection{Closed Set} 
+$\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$, i.e. it does not contain its closure. \\
+\newline
+\textbf{Closed Set.} \\ 
 If $\Omega$ contains its limit point, then $\Omega$ is closed. \\
 $\Omega$ is closed if and only if $\Omega^c$ is open. \\ 
-$\Omega$ is closed if and only if $\Omega$ contains its boundary points. 
-\subsubsection{Compact Set} 
-If $\Omega$ can be contained in a disk of finite radius, then $\Omega$ is bounded. 
-\subsubsection{Compact Set} 
-If $\Omega$ is closed and bounded, then $\Omega$ is compact. This resembles $[a, b]$ in $\mathbb{R}$. 
-\subsubsection{Connected Set} 
+$\Omega$ is closed if and only if $\Omega$ contains its boundary points. \\
+\newline
+\textbf{Compact Set.}\\ 
+If $\Omega$ can be contained in a disk of finite radius, then $\Omega$ is bounded. \\
+\newline
+\textbf{Compact Set.} \\ 
+If $\Omega$ is closed and bounded, then $\Omega$ is compact. This resembles $[a, b]$ in $\mathbb{R}$. \\
+\newline
+\textbf{Connected Set.}\\ 
 If any two points in $\Omega$ can be connected by a path, then $\Omega$ is connected. \\
 \underline{Simply Connected Set}: A simply connected set has no "holes" in it. For example, $\Omega = \{z||z - c|<4\}$. \\
-A connected but not simply connected set is an annulus, $\Omega = \{z|2< |z - c|<4\}$
-
-\subsubsection{Boundary of Set}
-The boundary of $\Omega$, $\partial \Omega$ is all points with $\epsilon$-balls intersecting $\Omega$ and $\Omega^c$ for all $\epsilon > 0$. 
-\subsubsection{Interior of Set} 
-The interior of $\Omega$, Int$(\Omega)$, is all points in $\Omega$ with a $\epsilon$-ball contained in $\Omega$ for some $\epsilon > 0$. "Largest open set in $\Omega$". 
-\subsubsection{Closure of Set} 
-The closure of $\Omega$ is the union of $\Omega$ and its boundary $\partial \Omega$. 
-\subsubsection{Domain}
+A connected but not simply connected set is an annulus, $\Omega = \{z|2< |z - c|<4\}$ \\
+\newline
+\textbf{Boundary of Set.}\\
+The boundary of $\Omega$, $\partial \Omega$ is all points with $\epsilon$-balls intersecting $\Omega$ and $\Omega^c$ for all $\epsilon > 0$. \\
+\newline
+\textbf{Interior of Set.} \\
+The interior of $\Omega$, Int$(\Omega)$, is all points in $\Omega$ with a $\epsilon$-ball contained in $\Omega$ for some $\epsilon > 0$. "Largest open set in $\Omega$". \\
+\newline
+\textbf{Closure of Set.} \\ 
+The closure of $\Omega$ is the union of $\Omega$ and its boundary $\partial \Omega$. \\
+\newline
+\textbf{Domain.} \\
 If a set is open and connected in $\mathbb{C}$, it is a domain. \\
-A domain can be traversed by a path of horizontal and vertical line segments. 
-
-\subsubsection{Practice Examples} 
+A domain can be traversed by a path of horizontal and vertical line segments. \\
+\newline
+\textbf{Example.}\\
 Determine whether the following sets are open or closed. 
 \begin{enumerate}
   \item $\Omega = \mathbb{C} \backslash \{0\}$ \\
@@ -330,9 +349,9 @@ Determine whether the following sets are open or closed.
 Let $f:\Omega \to \mathbb{C}$, $\Omega$ is open and connected. If $z_n \to z_0$ implies $f(z_n) \to f(z_0)$, then $f$ is continuous at $z_0$. Also, $f$ is bounded near $z_0$. \\
 $f$ is continuous if for every $\epsilon > 0$, there is $\delta > 0$ such that $|z - z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \epsilon$. \\
 \newline 
-$\bullet$ In either case, $\Re(f(z))$ and $\Im(f(z))$ are each continuous if and only if $f(z)$ is continuous. This follows the pattern as $\mathbb{C}$ being complete. \\
+In either case, $\Re(f(z))$ and $\Im(f(z))$ are each continuous if and only if $f(z)$ is continuous. This follows the pattern as $\mathbb{C}$ being complete. \\
 \newline
-$\bullet$ If $f$ and $g$ are continuous, then so are $f + g$m $f \times g$ and $\frac{f}{g}$ (provided $g(z) \nrightarrow 0$)
+If $f$ and $g$ are continuous, then so are $f + g$m $f \times g$ and $\frac{f}{g}$ (provided $g(z) \nrightarrow 0$)
 
 \subsection{Complex Limits}
 Just like in $\mathbb{R}^2$, limits are direction independent. Do not restrict limits to just $\Re \to 0$ or $\Im \to 0$. See the following example. \\
@@ -343,9 +362,10 @@ as $x \to 0$, $y = 0$, then $f \to 0$, while $y = x^2, x \to 0$, then $f \to 1$.
 
 \subsection{Branch Cuts}
 $\operatorname{Log}$, $z^\frac{1}{2}$ and $\arctan(z)$ are constructed by restricting the range of $e^z$, $z^2$ and $\tan(z)$. \\
-For example, in creating $\operatorname{Log}(z) = \ln|z| + i\operatorname{Arg}(z)$, we made a choice that $\operatorname{Arg}(z) \in (-\pi, \pi]$, $\operatorname{Arg}(0)$ does not exist. 
-\subsubsection{Example of a Branch Cut}
-Consider a path around $z_0 \neq 0$, $\gamma(t) = z_0 + re^{it}$. $\theta(t) = \operatorname{arg}(\gamma(t))$ \\
+For example, in creating $\operatorname{Log}(z) = \ln|z| + i\operatorname{Arg}(z)$, we made a choice that $\operatorname{Arg}(z) \in (-\pi, \pi]$, $\operatorname{Arg}(0)$ does not exist. \\
+\newline
+\textbf{Example.} 
+Consider a path around $z_0 \neq 0$, $\gamma(t) = z_0 + re^{it}$. $\theta(t) = \operatorname{arg}(\gamma(t))$. \\
 As we traverse the circle, $t \in (-\pi, \pi]$, \\
 $$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(z_0 + re^{it}) + 2\pi k = \operatorname{Arg}(z_0 + re^{i(t + 2\pi)}) + 2\pi k = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
 Therefore, the angle $\theta(t)$ changes smoothly for all $t$ and we stay on the same branch of $\operatorname{Arg}(\gamma(t))$. That is to say, the $k \in \mathbb{Z}$ is the same for all $t$.\\
@@ -354,15 +374,21 @@ Compare this with any circular path about $z = 0$, $\gamma_0$. Let $\gamma_0(t) 
 $$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(re^{it}) + 2\pi k \neq \operatorname{Arg}(re^{i(t + 2\pi)}) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
 We jump from the $k$th to the $(k+1)$th branch of $\operatorname{Arg}$. Therefore, $\operatorname{Arg}(z)$ has a branch point at $z = 0$. \\
 
-\subsubsection{Definition of Branch Cuts and Branch Points}
+\textbf{Definition of Branch Cuts and Branch Points.}\\
 If every neighborhood of $z_0$ contains a path $\gamma(t)$ around $z_0$ that leads to a jump discontinuity in $f$, then $z_0$ is a branch point of $f(z)$. \\ 
-\textbf{Finding branches}: At this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. \\
-$\bullet$ $\operatorname{Arg}$ is discontinuous for all $x$ on the negative $\mathbb{R}$-axis, $\mathbb{R}^-$. We call this the principal branch cut of the multi-valued function $\operatorname{arg}$. Specifically, \\
-$\operatorname{Arg}(\gamma_0(t)) \to \pi$ as $t \to \pi^-$ \\
-$\operatorname{Arg}(\gamma_0(t)) \to -\pi$ as $t \to -\pi^+$ \\
+In order to find branches, at this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. \\
+\newline
+\textbf{Example.} $\operatorname{Arg}$ is discontinuous for all $x$ on the negative $\mathbb{R}$-axis, $\mathbb{R}^-$. \\
+We call this the principal branch cut of the multi-valued function $\operatorname{arg}$. Specifically, \\
+\begin{equation*} 
+\operatorname{Arg}(\gamma_0(t)) \to \pi \mbox{ as } t \to \pi^- 
+\end{equation*}
+\begin{equation*} 
+\operatorname{Arg}(\gamma_0(t)) \to -\pi \mbox{ as } t \to -\pi^+
+\end{equation*} 
 but $\gamma_0(\pi) = \gamma_0(-\pi)$ since $\pi$ and $-\pi$ are coterminal. \\
 $\mathbb{R}^-$ is the principal branch of $\operatorname{Log}$, $\operatorname{Arg}$, and $z^{\frac{1}{2}}$. \\
-$\bullet$ The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and $\infty$ as its branch points. 
+The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and $\infty$ as its branch points. 
 
 \newpage
 \section{Differentiability in $\mathbb{C}$}
@@ -393,13 +419,19 @@ J(f) =
 \end{bmatrix}
 \end{equation*}
 can approximate the local change in $f$. \\
-In each of the cases above, we are only measuring change in a few directions. However, $h \to0$ in $\mathbb{C}$ can be from any direction in 2-space. Therefore, $f'(z)$ existing is a much stronger condition for $f$ on $\mathbb{C}$ than on $\mathbb{R}$. 
-\subsubsection{Complications with $\conj{z}$}
-
+In each of the cases above, we are only measuring change in a few directions. However, $h \to0$ in $\mathbb{C}$ can be from any direction in 2-space. Therefore, $f'(z)$ existing is a much stronger condition for $f$ on $\mathbb{C}$ than on $\mathbb{R}$. \\
+\newline
+\textbf{Complications with $\conj{z}$.}\\
 Consider the following example: \\
 Let $g(z) = \Re(z) = \frac{z + \conj{z}}{2}$, which is a linear combination of continuous functions. \\
-Assume $h \in \mathbb{R}$, $\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) - \Re(z)}{h} \to 0$ as $h \to 0$ \\
-Compare this with $\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) + h -\Re(z)}{h} = 1 \to 1$ as $h \to 0$. \\
+Assume $h \in \mathbb{R}$, 
+\begin{equation*}
+\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) - \Re(z)}{h} \to 0 \mbox{ as } h \to 0 
+\end{equation*}
+Compare this with 
+\begin{equation*} 
+\frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) + h -\Re(z)}{h} = 1 \to 1 \mbox{ as } h \to 0
+\end{equation*}
 Therefore, the function is nowhere differentiable in $\mathbb{C}$. The problem with $g'(z)$ had to do with $\conj{z}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter.  \\
 
 \subsection{Properties of $f'(z)$}
@@ -422,20 +454,22 @@ Therefore, $g$ is holomorphic on $\Omega^\ast$. \\
 This proof is different from when we showed $\frac{d}{dz}\conj{z}$ does not exist. Conjugation must be handled with care. 
 %\abs[\Big]
 \subsection{Geometric behavior of $f'(z)$}
-\subsubsection{Dilation} 
+\textbf{Dilation.}\\ 
 $w = f(z) \approx f'(a)(z - a) + f(a)$. Small changes in $z$ should give small changes in $w$. \\
 The functions $|z|$ and $\operatorname{Arg}(z)$ are continuous on their domains. \\
 If $f'(z_0) \neq 0$ and $f'$ exists on $\Omega$, then 
 $$ |f'(z_0)| = \abs*{\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0} \abs*{\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0}\frac{|f(z_0 + h) - f(z_0)|}{|h|}$$
 $$\Longrightarrow |f'(z_0)||h| \approx |f(z + h) - f(z)|$$
 The size of $|f'(z_0)|$ tells us how much $f$ is contracting/dilating near $z_0$. \\
-\subsubsection{Rotation}
+\newline
+\textbf{Rotation.}\\
 $$\operatorname{Arg}(f'(z_0)) = \operatorname{Arg}\left(\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}\right) = \lim_{h \to 0}\operatorname{Arg}\left(\frac{f(z_0 + h) - f(z)}{h}\right)$$
 $$ = \lim_{h \to 0} \operatorname{Arg}(f(z_0 + h) - f(z_0)) - \operatorname{Arg}(h)$$
 $$\Longrightarrow \operatorname{Arg}(f'(z_0)) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0))$$ 
 $$\Longrightarrow \operatorname{Arg}(f'(z_0)) + \operatorname{Arg}(h) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0))$$
 Therefore, $f$ rotates vectors from $z_0$ to $z_0 + h$ by the angle $\operatorname{Arg}(f'(z_0))$. \\
-\subsubsection{Conclusion}
+\newline
+\textbf{Conclusion.} \\
 In conclusion, $w = f(z) \approx f(z_0) + f'(z_0)(z - z_0) = c + \rho e^{i\theta}(z - z_0)$ \\
 \[ \begin{cases} 
 c\mbox{: Translation }\\
@@ -453,7 +487,7 @@ Let $f(z) = f(x + iy) = u(x, y) + iv(x, y)$, then $f(z)$ is holomorphic implies 
 	u_y = -v_x
    \end{cases}
 \]
-\textbf{Proof}:
+\textbf{Proof.}
 For $f$, which is $\mathbb{C}$-differentiable, the following representation of $f'(z)$ holds for any path to $z$. 
 $$f'(z) = \lim_{h \to 0} \frac{f(z + h) - f(z)}{h}$$
 \\
@@ -461,20 +495,18 @@ Along the path $x + h + iy \to x + iy$, we get
 $$\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \to 0} \frac{f(x + h + iy) - f(x + iy)}{h} = f_x = u_x(x,y) + iv_x(x, y)$$
 Along the path $x + iy +ih \to x + iy$, we get 
 $$\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \to 0} \frac{f(x + i(y + h)) - f(x + iy)}{ih} = \frac{f_y}{i} = -if_y = -i(u_y(x,y) + iv_y(x, y)) = v_y(x, y) -iu_y(x, y)$$
-Equate components in $f_x = -if_y$, and it is proven that $u_x = v_y$ and $u_y = -v_x$. 
+Equate components in $f_x = -if_y$, and it is proven that $u_x = v_y$ and $u_y = -v_x$. \\
 
-\subsubsection{Properties of the Cauchy Riemann Equations} 
-\textbf{Proposition}: If the Cauchy Riemann Equations do not hold at $z_0$, then $f'(z_0)$ does not exist. \\
-\textbf{Proposition}: If $f$ is holomorphic on a domain $\Omega$, an open and connected set in $\mathbb{C}$, then the Cauchy Riemann Equations hold at all points in $\Omega$. \\
+\textbf{Proposition.} If the Cauchy Riemann Equations do not hold at $z_0$, then $f'(z_0)$ does not exist. \\
+\textbf{Proposition.} If $f$ is holomorphic on a domain $\Omega$, an open and connected set in $\mathbb{C}$, then the Cauchy Riemann Equations hold at all points in $\Omega$. \\
 \newline
-\textbf{Example}: \\
+\textbf{Example.} \\
 If $f(x + iy) = x^2 + iy^2$, $u_x = 2x$, $v_x = 0$, $u_y = 0$, $v_y = 2y$. Then $2x = 2y \Rightarrow x = y$, which is a line. \\
 The set of points on the line is not open in $\mathbb{C}$. Therefore, $f$ is nowhere holomorphic in $\mathbb{C}$. However, we will see that $f'(z)$ does exist on the line $y = x$. \\
-
-\subsubsection{Sufficiency of the Cauchy Riemann Equations to $f'$}
-\textbf{Follow-Up Question}: The Cauchy Riemann Equations do a great job showing $f'$ does not exist. But what about it being sufficient for $f'$? \\
-\textbf{Claim}: Satisfying the Cauchy Riemann Equations at $z_0$ implies that $f'$ exists at $z_0$. \\
-\textbf{Proof}:\\
+\newline
+\textbf{Sufficiency of the Cauchy Riemann Equations to $f'$.} \\
+The Cauchy Riemann Equations do a great job showing $f'$ does not exist. But what about it being sufficient for $f'$? We claim that satisfying the Cauchy Riemann Equations at $z_0$ implies that $f'$ exists at $z_0$. \\
+\textbf{Proof.}\\
 $f$ is $\mathbb{C}$-differentiable at $z_0$ if and only if $u(x, y)$ and $v(x, y)$ have continuous partial derivatives that satisfy the Cauchy Riemann Equations at $z_0$. 
 This requires us to treat $f(x + iy)$ as a function on $\mathbb{R} ^ 2$, or $f(z)$ induces a map on $\mathbb{R} ^ 2$. \\
 Let $ h = \Delta x + i\Delta y$, 
@@ -496,11 +528,11 @@ because $\abs*{\frac{\Delta x}{\Delta x + i\Delta y}} \leqslant 1$. \\
 As $\Delta z \to 0$, $\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \to 0$, and thus $f'(z) = u_x + iv_x = f_x = \frac{f_y}{i}$. \\
 Therefore, the Cauchy Riemann Equations are an easy way to show $f'(z)$ exists and they provide a set of partial differential equations that $f$ must satisfy. \\
 \newline
-\textbf{Example}: Let $f(z) = e^z = e^x(\cos(y) + i\sin(y))$ \\
-$u = e^x\cos(y)$, $v = e^x\sin(y)$ \\
-$u_x = e^x\cos(y)$, $v_x = e^x\sin(y)$ \\
-$u_y = e^x\sin(y)$, $v_x = e^x\cos(y)$ \\
-Therefore, $f(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C}$, $f$ is entire/meromorphic. $f'(z) = f_x = u_x + iv_x = f(z)$
+\textbf{Example.} Let $f(z) = e^z = e^x(\cos(y) + i\sin(y))$ 
+$$u = e^x\cos(y), v = e^x\sin(y)$$ 
+$$u_x = e^x\cos(y), v_x = e^x\sin(y)$$
+$$u_y = e^x\sin(y), v_x = e^x\cos(y)$$
+Therefore, $f(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C}$, $f$ is entire/meromorphic. $f'(z) = f_x = u_x + iv_x = f(z)$.
 
 \subsection{Cauchy Riemann with Logarithm}
 $$e^{\operatorname{Log(z)}} = z \Rightarrow \frac{d}{dz}e^{\operatorname{Log(z)}} = 1 \Rightarrow z\frac{d}{dz}\operatorname{Log}(z) = 1 \Rightarrow \frac{d}{dz}\operatorname{Log}(z) = \frac{1}{z}$$
@@ -536,7 +568,8 @@ These are the Wirtinger Equations.
 	\frac{\partial}{\partial \conj{z}}  = \frac{1}{2}(\frac{\partial}{\partial x} + i\frac{\partial}{\partial y})
    \end{cases}
 \]
-\subsubsection{Relationship with the Cauchy Riemann Equations}
+\newline
+\textbf{Relationship with the Cauchy Riemann Equations.}\\
 From the Cauchy Riemann Equations $if_x = f_y$ we get:
 $$f_{\conj{z}} = \frac{1}{2}f_x + \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{1}{2}f_x = 0$$
 $$f_z = \frac{1}{2}f_x - \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{i^2}{2}f_x = f_x = f'(z)$$
@@ -558,12 +591,12 @@ This means:
    \end{cases}
 \]
 \newline
-\textbf{Proposition}: Suppose $f = u + iv$ is holomorphic on $\Omega$ where $u(x, y)$ and $v(x, y)$ have continuous $\nth{2}$ order partial derivatives, then $u$ and $v$ are harmonic and $v$ is the harmonic conjugate of $u$. \\
-\textbf{Proof}: \\
+\textbf{Proposition.} Suppose $f = u + iv$ is holomorphic on $\Omega$ where $u(x, y)$ and $v(x, y)$ have continuous $\nth{2}$ order partial derivatives, then $u$ and $v$ are harmonic and $v$ is the harmonic conjugate of $u$. \\
+\textbf{Proof.} \\
 By the Cauchy Riemann Equations, $u_x = v_y$ and $v_x = -u_y$, then $u_{xx} = v_{yx}$ and $v_{xy} = -u_{yy}$. By continuity of $v_{yx}$ and $v_{xy}$, $v_{yx} = v_{xy}$. This implies $u_{xx} = -u_{yy} \Rightarrow u_{xx} + u_{yy} = 0$ \\
 Later on, we will find that the conditions on $\nth{2}$ order partial derivatives is implied by $f$ being holomorphic on $\Omega$, or $f''$ exists. \\
 \newline
-\textbf{Definition: Harmonic Conjugate} \\
+\textbf{Definition of Harmonic Conjugate.} \\
 The harmonic conjugate to $u(x,y)$ is a function $v(x,y)$, such that $f(x,y) = u(x,y) + iv(x,y)$ is holomorphic. \\
 
 \textbf{Example.} Show that $u(x, y) = x^3 -3xy^2 + y$ is a harmonic function. \\
@@ -576,9 +609,9 @@ $u_y = -6xy + 1 = -v_x$ \\
 $\Rightarrow$ $v = 3x^2y - y^3 + C(x)$ or $v = 3x^2y - x + C(y)$ \\
 Therefore, $v = 3x^2y - y^3 - x + C$ is $u$'s harmonic conjugate. \\
 \newline 
-\textbf{Proposition}: \\ 
+\textbf{Proposition.} \\ 
 If $u$ is harmonic on a domain $\Omega$, then $u_x$ is the real part of a holomorphic function on $\Omega$. If $\Omega$ is simply connected, unlike $\mathbb{C} \backslash \{0\}$, then $u$ is the real part of a holomorphic function on $\Omega$. \\
-\textbf{Proof}: \\
+\textbf{Proof.} \\
 Assume $u$ is harmonic and $\Omega$ is connected. If $f = u_x - iu_y$, then $f_y = if_x$. Hence, $f$ is differentiable on $\Omega$. \\
 The simply connected statement requires future theorems to show $F'(z) = f(z)$ for some holomorphic antiderivative $F(z)$. 
 
@@ -622,12 +655,13 @@ $$ = \gamma'(r_0) \mbox{Jf}(z_0)^T = \tau'$$
 By now, we have an understanding of how $f$ acts on tangent vectors when $f' \neq 0$, namely $\theta = \varphi$.
 
 \subsection{Conformal Function}
-\subsubsection{Conditions of Conformal Functions}
+\textbf{Conditions of Conformal Functions.}\\
 We say $f$ is a conformal map at $z_0$ if the following hold: \\
 \circled{1} $f$ is $\mathbb{R}^2$-differentiable at $z_0$ \\
 \circled{2} $\abs{\mbox{Jf}} \neq 0$ \\
-\circled{3} $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. 
-\subsubsection{$e^z$ is conformal}
+\circled{3} $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. \\
+\newline
+\textbf{$e^z$ is conformal.}\\
 Now let us take a closer look at $e^z$ and figure out why it is conformal. \\
 \circled{1} holds apparently. \\
 \circled{2} $f(z) = e^z = e^x\cos(y) + ie^x\sin(y)$, then 
@@ -651,26 +685,28 @@ In fact, $f$ preserving oriented angles implies Jf is a rotation $\otimes$ dilat
 Hence, it is proven that $e^z$ is conformal.
 \subsection{Conformal Map} 
 
-\textbf{Definition}: If $f$ is conformal, infinitely differentiable, and one-to-one on a domain $\Omega$ to $V$, then $f$ is a conformal map from $\Omega$ to $V$. \\
+\textbf{Definition.} If $f$ is conformal, infinitely differentiable, and one-to-one on a domain $\Omega$ to $V$, then $f$ is a conformal map from $\Omega$ to $V$. \\
 For example, $e^z$ is conformal map from $\Omega = \{z:\abs{\Im(z)} < \pi \}$ to $V = \mathbb{C} \backslash \mathbb{R}^-$. \\
-\textbf{Proposition}: If $f$ is complex differentiable and $f'(z_0) \neq 0$, it is a linear transform of a dilation by $\abs{f'(z_0)}$ and a rotation by $\operatorname{Arg}(f'(z_0))$. Hence, $f$ is conformal because \circled{3} is satisfied. \\
+\textbf{Proposition.} If $f$ is complex differentiable and $f'(z_0) \neq 0$, it is a linear transform of a dilation by $\abs{f'(z_0)}$ and a rotation by $\operatorname{Arg}(f'(z_0))$. Hence, $f$ is conformal because \circled{3} is satisfied. \\
 \textbf{Example.} $f(z) = z^2$ on $\Omega = \{z| 1< |z| < 3 \mbox{ and } \Im(z) > 0 \}$ is conformal. \\
 \newline
-\textbf{Inverse Function Theorem}: \\ 
+\textbf{Inverse Function Theorem.} \\ 
 If $f$ is a continuously differentiable function with nonzero derivative at the point $a$, then $f$ is invertible in a neighborhood of a, the inverse is continuously differentiable, and the derivative of the inverse function at $b=f(a)$ is the reciprocal of the derivative of $f$ at $a$: 
 $$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
-\textbf{Proposition}: If $f$ is invertible at $z_0$ and conformal, then $f^{-1}$ is conformal at $f(z_0)$ by the inverse function theorem provided $f$ is continuously differentiable. \\
+\textbf{Proposition.} If $f$ is invertible at $z_0$ and conformal, then $f^{-1}$ is conformal at $f(z_0)$ by the inverse function theorem provided $f$ is continuously differentiable. \\
 \newline 
 From the proposition above, we know that $\operatorname{Log}(z)$ is conformal on $\mathbb{C} \backslash \mathbb{R}^-$.
 
 \newpage
 \section{Bilinear Transformations}
 In complex analysis, the term linear transformation is used to describe affine transformations, $f(z) = az + b$. \\
+\subsection{Definition of a Möbius transformation}
 A bilinear/Möbius transformation is of the form 
 $$\frac{az + b}{cz + d}$$
 where $a, b, c, d \in \mathbb{C}$. \\
 Now, $f(\infty) = \frac{a}{c}$ by L'Hospital argument and we say $f(-\frac{d}{c}) = \infty$. \\
 If $ad - bc \neq 0$, then $f' \neq 0$ by the quotient rule and $f$ is not constant. The constants are not unique, as $f(z) = \frac{az + b}{cz + d} = \frac{(az+b)k}{(cz + d)k}$. Therefore, we only have 3 degrees of freedom. \\
+\subsection{Brief Review of other Transformations}
 We have already seen these functions of this form before $f$ is: \\
 \circled{1} Composition of a finite number of 
 \[ \begin{cases} 
@@ -702,35 +738,195 @@ and so there is a group homomorphism with Möbius transforms and invertible matr
 $f(z) = (3 + 2i)z - i^3 = \frac{(3 + 2i)z - i^3}{\delta z + 1}$ \\
 \circled{5} We can conformally map 3 points in $\mathbb{C} \cup \{\infty\}$ to any 3 points in $\mathbb{C} \cup \{\infty\}$. \\
 This type of argument is similar to showing norms are equivalent in $\mathbb{R}^n$ or uniqueness of power series expansions. \\
-Given any 3 points $z_0$, $z_1$, $z_2$ $\in \mathbb{C}$, we can create a Möbius transformation $T$ such that 
-\[ \begin{cases} 
-	T(z_0) = 0 \\
-	T(z_1) = 1 \\
-	T(z_2) = \infty \\
-   \end{cases}
-\]
-then 
-$T(z) = (z, z_0, z_1, z_2) = \frac{(z -z_0)(z_1 - z_2)}{(z - z_2)(z_1 - z_0)}$ is called the cross-ratio of $z$, $z_0$, $z_1$, and $z_2$. \\
-Special cases: 
+\subsection{Möbius transforming of a function}
+Given any 3 points $z_0$, $z_1$, $z_2$ $\in \mathbb{C}$, we can create a Möbius transformation $T$ such that  
+
+\begin{alignat*}{2}
+    & \begin{aligned} & \begin{cases}
+  T(z_0) = 0\\
+  T(z_1) = 1\\
+  T(z_2) = \infty \\
+  \end{cases}\\
+  \MoveEqLeft[-1]\text{}
+  \end{aligned}
+    & \hskip 6em &
+  \begin{aligned}
+  & \begin{cases}
+  T^{-1}(0) = z_0\\
+  T^{-1}(1) = z_1\\
+  T^{-1}(\infty) = z_2\\
+  \end{cases} \\[0ex]
+  \MoveEqLeft[-1]\text{}
+  \end{aligned}
+\end{alignat*}
+
+Then 
+$$T(z) = (z, z_0, z_1, z_2) = \frac{(z -z_0)(z_1 - z_2)}{(z - z_2)(z_1 - z_0)}$$
+is called the cross-ratio of $z$, $z_0$, $z_1$, and $z_2$. \\
+There are some special cases: 
 \[ \begin{cases} 
 	(z, \infty, z_1, z_2) = \frac{z_1 - z_2}{z - z_2} \\
 	(z, z_0, \infty, z_2) = \frac{z - z_0}{z - z_2} \\
 	(z, z_0, z_1, \infty) = \frac{z - z_0}{z_1 - z_0}\\
    \end{cases}
 \]
-Then
-\[ \begin{cases} 
-	T^{-1}(0) = z_0 \\
-	T^{-1}(1) = z_1 \\
-	T^{-1}(\infty) = z_2
-   \end{cases}
-\]
+Given 3 more points $w_0, w_1, w_2 \in \mathbb{C}$, we get $S(w) = (w, w_0, w_1, w_2)$. Then, we can construct the function map: 
+$$ z_0 \overset{T}{\longrightarrow} 0 \overset{S}{\longleftarrow} w_0 $$
+$$ z_1 \longrightarrow 0 \longleftarrow w_1$$
+$$ z_2 \longrightarrow 0 \longleftarrow w_2$$
 
+%$$A\xleftarrow{n+\mu-1}B \xrightarrow[T]{n\pm i-1}C$$
+%$\overset{x}{\longrightarrow} ( $ \overset{x}{\longrightarrow}$).$
+Then $w = f(z) = S^{-1} \circ T(z)$ maps $z_0 \to w_0$, $z_1 \to w_1$, and $z_2 \to w_2$. \\
+The points must be distinct, because $f$ is one-to-one. \\
+To find $f$ from above, we solve $(z, z_0, z_1, z_2) = (w, w_0, w_1, w_2)$ for $w$. \\
+\newline
+\textbf{Example.} \\
+Suppose 
+$$z_0 = 1 \to i = w_0$$
+$$z_1 = -1 \to 1 = w_1$$
+$$z_2 = 1 \to -1 = w_2$$
+then 
+$$\frac{(w - i)(1 - (-1))}{(w - (-1))(1-i)} = \frac{2(w - i)}{(w + 1)(1 - i)} = \frac{(z - i)(-1-1)}{(z - 1)(-1 - i)} = \frac{-2(z - i)}{(z-1)(-1-i)} = \frac{2(z-i)}{(z-1)(1+i)}$$
+$$ \Rightarrow \frac{w - i}{(w +1)(1 -i )} = \frac{z - i}{(z - 1)(1 + i)}$$
+$$ \Rightarrow (w - i)(z - 1)(1 + i) = (w + 1)(1 - i)(z - i)$$
+$$ \Rightarrow w = -\frac{1}{z}$$
+It is much work to find a simple function. Mapping a set of three points to another set of three points is time-consuming. If we study Möbius transforms as conformal mappings, then we can introduce another way to move the three points around. \\
 
+\textbf{Example.} Find a Möbius transform to map the unit disk $|z| < 1$ to $\Im(z) > 0$. \\
+If we pick where 3 points go, say on the boundary of $\Omega$, to the boundary of $\Im(z) > 0$, which is the $\mathbb{R}$-axis, then we can construct $f(z)$. We also need one point to get mapped to $\infty$, but we have $\infty$-many choices for the three points. \\
+We want $f(-1) = 0$, $f(-1) = 1$, and $f(1) = \infty$, that will be 
+$$f(z) = (z, -1, -i, 1) = \frac{(z - z_0)(z_1 - z_2)}{(z - z_2)(z_1 - z_0)} = \frac{(z + 1)(-i - 1)}{(z - 1)(-i + 1)} = -i\frac{z + 1}{z - 1}$$
+Our path's direction around the circle has to be preserved because $f$ is conformal. \\
+This means points on the interior of the circle will get mapped to the upper half of $\mathbb{C}$. \\
+To check, we see that $f(0) = i, \Im(f(0)) > 0$. Therefore, the function we found out is correct. \\
 
+\textbf{Example.} Find a Möbius transform to map the unit disk $|z| < 1$ to $\Im(z) > 0$ and $\Re(z) > 0$. \\
+Using the conclusion from the example above, the new desired function is simply 
+$g(z) = (f(z))^{\frac{1}{2}}$.
 
 \newpage
 \section{Contour Integral in $\mathbb{C}$}
+Let $\gamma(t) = x(t) + iy(t)$ be a curve in $\mathbb{C}$ where $\gamma(a) = z_0$ and $\gamma(b) = z_1$. \\
+Let $C$ be the graph of $\gamma(t)$, $C = \{z | z = \gamma(t) \mbox{ for some } t \in [a, b] \}$. 
+\subsection{Piecewise Differentiable, Smooth, Simple, Closed curves}
+\textbf{Piecewise Differentiable curves.} \\
+The curve determined by $\gamma$, its graph $C$, is considered piecewise differentiable if 
+\begin{enumerate}
+\item $x$ and $y$ are continuous on [a, b]
+\item $x'$ and $y'$ are continuous on a partition of $[a, b]$, $[x_0, x_1] \cup [x_1, x_2] \cup [x_2, x_3] \cup \cdots \cup [x_{n - 1}, x_n]$
+\end{enumerate} 
+
+\textbf{Smooth curves.} \\
+If $\gamma' \neq 0$ for only finitely many points, then the curve is considered smooth. \\
+
+\textbf{Simple curves.} \\
+A curve is simple if it does not intersect itself, i.e. $\gamma(t) = \gamma(s)$ if and only if $s = t$. \\
+
+\textbf{Closed curves.} \\
+$C$ is a closed curve if it starts and stops at the same point, i.e. $\gamma(a) = \gamma(b), t \in [a, b]$ 
+
+\subsection{Interior and Exterior of curves} 
+A closed and simple curve keeps the interior of the set on its left side and its exterior to the right. \\
+This means we traverse circles counter-clockwise to describe their interior correctly. \\
+\newline
+\textbf{Jordan Curve Theorem.} \\
+A closed and simple curve partitions $\mathbb{C}$ into two regions, one of them bounded, defined as the interior of the curve. 
+
+\subsection{Smoothly Equivalent}
+The parameter $t$ provides an orientation or direction to $C$. \\
+Let 
+\[ \begin{cases} 
+	C_1: \gamma_1(t), t \in [a, b] \\
+	C_2: \gamma_2(t), t \in [c, d]\\
+   \end{cases}
+\]
+We say $C_1$ and $C_2$ are smoothly equivalent if there exists a one-to-one, continuous derivative mapping $\lambda(t)$, 
+$$\lambda(t): [c, d] \to [a, b]$$ 
+$$\lambda(c) = a$$
+$$\lambda(d) = b$$ 
+$$\lambda'(t) > 0$$
+\begin{equation*}
+\mbox{where } \gamma_1(\lambda(t)) = \gamma_2(t)
+\end{equation*}
+\textbf{Example.}
+\[ \begin{cases} 
+	C_1: \gamma_1(t) = \cos(t) + i\sin(t), t \in [0, 2\pi] \\
+	C_2: \gamma_2(t) = \cos(2t) + i\sin(2t),  t \in [0, \pi]\\
+   \end{cases}
+\]
+Here $C_1$ and $C_2$ are smoothly equivalent, since we can let $\lambda(t) = 2t$. \\
+Both parametrize the unit circle, preserve the orientation, and pass through each point the same number of times. \\
+Let us look at other two curves: 
+\[ \begin{cases} 
+	\gamma_3(t) = \cos(4t) + i\sin(4t), t \in [0, \pi] \\
+	\gamma_4(t) = \cos(t) + i\sin(-t),  t \in [0, 2\pi]\\
+   \end{cases}
+\]
+$\gamma_3$ traverses the circle multiple times and $\gamma_4$ has the opposite orientation of $\gamma_1$ and $\gamma_2$. \\
+\newline
+Let $-C$ be the curve $C$ but with a reversed orientation, $\gamma_{R}(t) = \gamma(b + a -t)$. 
+\[ \begin{cases} 
+	C_1: \gamma_1(t) = \cos(t) + i\sin(t), t \in [0, 2\pi] \\
+	-C_1: \gamma_4(t) = \cos(t) + i\sin(-t),  t \in [0, 2\pi]\\
+   \end{cases}
+\]
+We want to integrate $f(z)$ over curves $C$ in $\mathbb{C}$. These will factor into the computation: 
+\[ \begin{cases} 
+	\mbox{Orientation of } C\\
+	\mbox{Number of times } C \mbox{ traverses itself} \\
+	C \mbox{ is closed} \\
+	f \mbox{ is holomorphic on the interior of } C \mbox{ and } C
+   \end{cases}
+\]
+\subsection{Line Integral}
+The line integral of $f$ over $C$ is given by 
+$$\int_C f(z) \,dz = \int_C u(z) + iv(z) \,dz = \int_C u(z) + iv(z) \,{(dx + idy)} = \int_{a}^{b} f(\gamma(t))\gamma'(t) \,dt$$
+If $C$ is a closed curve, $\gamma(a) = \gamma(b)$, then we can use a closed loop in our $\int$ symbol, $\oint_C f(z) \,dz$ \\
+The term $\gamma'(t)dt$ controls for how fast we traverse the curve. The integral is independent of our choice of smoothly equivalent curve, $C_1$ or $C_2$. \\
+\newline
+\textbf{Proposition.} Let $C_1$ and $C_2$ be smoothly equivalent, \\
+$$\int_{C_1} f(z) \,dz = \int_{C_2} f(z) \,dz$$
+\textbf{Proof.} Let $\gamma_1(\lambda(t)) = \gamma_2(t)$ and apply change of variables. \\
+Because $u = \lambda(t), u(c) = a, u(d) = b$ and $\gamma_1'(\lambda(t))\lambda'(t) = \gamma_2'(t)$, 
+$$\int_{c}^{d} f(\gamma_2(t))\gamma_2'(t)\,dt = \int_{c}^{d}f(\gamma_1(\lambda(t)))\gamma_1'(\lambda(t))\lambda'(t)\,dt = \int_{a}^{b}f(\gamma_1(u))\gamma_1'(u)\,du$$
+\textbf{Proposition.} 
+$$-\int_{C} f(z) \,dz = \int_{-C} f(z) \,dz$$
+\textbf{Proof.}
+$$\int_{-C} f(z) \,dz = \int_{b}^{a}f(\gamma_R(t))\gamma_R'(t) \,dt = \int_{b}^{a}f(\gamma(t))\gamma'(t) \,dt$$
+\newline
+\textbf{Proposition.} Linearity holds: 
+$$\int_C \alpha f(z) + g(z) \,dz = \alpha \int_C f(z) \,dz + \int_C g(z) \,dz$$
+
+\textbf{Example.} Find $\oint_{|z| = 1} \frac{1}{z} \,dz = \int_{0}^{2\pi} f(\gamma(t))\gamma'(t) \,dt$ \\
+We parametrize the curve as follows: \\
+$C$: $\gamma(t) = \cos(t) + i\sin(t)$, $t \in [0, 2\pi]$,  $\gamma'(t) = -\sin(t) + i\cos(t)$ \\
+$$\frac{1}{z} = \frac{x}{x^2 + y^2} - i\frac{y}{x^2 + y^2}$$
+$$\int_0^{2\pi}f(\gamma(t))\gamma'(t) \,dt = \int_0^{2\pi}(\cos(t) - i\sin(t))(-\sin(t) + i\cos(t)) \,dt = \int_0^{2\pi}i \,dt = 2\pi i$$
+There is another way to parametrize the curve: \\
+$\gamma(t) = re^{it}$, $\gamma'(t) = ire^{it}$
+$$\oint_{|z| = r} \frac{1}{z} \,dz = \int_0^{2\pi} f(re^{it})ire^{it} \,dt = i\int_0^{2\pi}e^{-it}e^{it} \,dt = \int_0^{2\pi}i \,dt = 2\pi i$$
+From this example, we have the following famous result. \\
+\newline
+\textbf{Proposition.} The following holds with proof shown above.
+\begin{equation*} 
+\oint_{|z| = r} z^k \,dz = 0 \mbox{ for all } k \in \mathbb{Z}, k \neq -1, r > 0. 
+\end{equation*}
+\begin{equation*}
+\oint_{|z| = r} \frac{1}{z} \,dz = \int_0^{2\pi} i \,dt = 2\pi i \mbox{ for r} > 0 
+\end{equation*}
+\newline
+\textbf{ML Estimate.} \\
+Let $|f(z)| < M$ on $C$, a curve of length $L$, then 
+$$|\int_Cf(z) \,dz| \leqslant M \cdot L$$
+\textbf{Proof.}
+$$ \abs*{\int_a^b f(\gamma(t))\gamma'(t) \,dt} \leqslant \int_a^b|f(\gamma(t))\gamma'(t)| \,dt \leqslant M\int_a^b|\gamma_1'(t)| \,dt = M \cdot L$$
+where $\int_a^b|\gamma_1'(t)| \,dt$ is the arclength of $\gamma$. \\
+We do not have to worry about the orientation of $C$, 
+$$ \abs*{\int_{-C}f(z) \,dz} \leqslant M \cdot L$$
+
+
+\newpage
 \section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
 \section{Cauchy's Integral Formula}
 \section{Growth Conditions of Holomorphic Functions}
