@@ -1224,8 +1224,8 @@ If $|g(z_0)| = 1$, then $g$ has a local maximum for $|z| < 1$,
 &\Rightarrow f(z) = e^{i\theta}z
 \end{align*} 
 \newline 
-\textbf{Example.} Consider $B_a(z): \{z| |z| < 1\} \to \{z| |z| < 1\}$
-It is a invertible, bilinear transform 
+\textbf{Unit Circle Mapping (Schwarz's Lemma).} Consider $B_a(z): \{z| |z| < 1\} \to \{z| |z| < 1\}$ \\
+It is a invertible, bilinear transform from the unit disk to itself, or an automorphism on the unit disk. 
 $$B_a(z) = \frac{z - a}{1 - \conj{a}z}, |a| < 1$$
 The function has several interesting qualities. 
 \begin{align*}
@@ -1236,7 +1236,21 @@ B_a(0) &= -a \Rightarrow B_a^{-1}(z) = B_{-a}(z) \\
 B_a'(0) &= 1 - |a|^2 \\
 B_a'(a) &= \frac{1}{1 - |a|^2}
 \end{align*}
-
+To use Schwarz's Lemma if $|f(z)| < 1$, but $f(z_0) = 0$, for $z \neq 0$, we try to study \\
+$g(z) = f \circ B_{z_0}(z)$, $\frac{f(z)}{b_{z_0}(z)}$ or $f(z)B_{z_0}(z)$.\\
+If $|f(z)| < 1$ on $\Re(z) > 0$, then consider 
+$$g(z) = \frac{z + 1}{z - 1}$$
+which maps $|z| < 1$ to $\Re(z) > 0$. Then we have $f \circ g^{-1}: \{z| |z| < 1\} \to \{z| |z| < 1\}$.\\
+\newline
+\textbf{Example.} Assume $f$ is holomorphic and bounded by 1 for $|z| < 1$, $f(\frac{1}{2}) = 0$. Estimate $|f(\frac{3}{5})|$.
+Let 
+\[ 
+g(z) = 
+\begin{cases} 
+	\frac{f(z)}{B_{1/2}(z)}, z \neq \frac{1}{2} \\
+	\frac{f'(\frac{1}{2})}{B_{1/2}(z)} = \frac{3}{4}f'(\frac{1}{2}), z = \frac{1}{2}\\
+   \end{cases}
+\]
 
 \newpage
 \section{Convergence of Infinite Series in $\mathbb{C}$}
