@@ -11,13 +11,15 @@
 \usepackage{mathtools}
 \usepackage[super]{nth}
 \usepackage{tikz}
+\usepackage{ragged2e}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
-
+%Antiderivative Line
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
 
 \setlist[itemize,1]{leftmargin=\dimexpr 26pt-.5in}
-
 
 \sectionfont{\fontsize{12}{15}\selectfont}
 \title{Introduction to Complex Analysis}
@@ -28,7 +30,6 @@
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
-
 
 \begin{document}
 %\pagenumbering{gobble}
@@ -90,7 +91,7 @@ $$\Im(z) = \frac{z - \conj{z}}{2i}$$
 This is similar to the pattern with even/odd functions. 
 
 \subsection{Modulus of Complex Numbers.}
-Note: $z\conj{z} = (a + ib)(a - ib) = a^2 + b^2 \in \mathbb{R}$  \\
+$z\conj{z} = (a + ib)(a - ib) = a^2 + b^2 \in \mathbb{R}$  \\
 
 \textbf{Definition of Modulus.} \\
 $|z|$ length/modulus of $z$ is defined by:
@@ -152,12 +153,14 @@ $$|z| = (a^2 + b^2)^{\frac{1}{2}}$$
 $$\tan\theta = \frac{b}{a}$$
 $$a = |z|\cos\theta= \Re(z)$$
 $$b = |z|\sin\theta = \Im(z)$$
-\textbf{Note}: $\theta_R = \arctan(\frac{b}{a})$ is a reference angle of $z$. To find $\theta$ from $\theta_R$, you need to consider the signs of $a$ and $b$. \\
-Example: \\
-$z = -3 + 3i = 3\sqrt2(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4})$ \\
-$\theta_R = \arctan(\frac{3}{-3})= -\frac{\pi}{4}$ \\
-$\theta = \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4}$, since $\theta$ is in $\Romannum{2}$.
-
+Note that $\theta_R = \arctan(\frac{b}{a})$ is a reference angle of $z$. To find $\theta$ from $\theta_R$, you need to consider the signs of $a$ and $b$. \\
+\newline
+\textbf{Example.} \\
+$$z = -3 + 3i = 3\sqrt2(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4})$$
+$$\theta_R = \arctan(\frac{3}{-3})= -\frac{\pi}{4}$$
+\begin{equation*}
+\theta = \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4} \mbox{, since } \theta \mbox{ is in } \Romannum{2} .
+\end{equation*}
 \subsection{Definition of Argument and argument}
 $\operatorname{Arg}(z)$ is $z$'s principle polar angle $\theta$, $z \neq 0$, where $\theta \in (-\pi, \pi]$. \\
 $\operatorname{arg}(z)$ is all of $z$'s polar angles, $\theta + 2k\pi$, $k \in \mathbb{Z}$. 
@@ -196,9 +199,12 @@ This problem of unity can be extended to solving $w^k = z$ for $k \in \mathbb{N}
 \section{Stereographic Projections, Exponentials and Logs}
 \subsection{Stereographic Projections} 
 We can express the complex plane on the unit sphere in $\mathbb{R}^3$. To perform this we project points on the surface of the sphere along the line from the North Pole $(0, 0, 1)$ through the point and onto the plane $z = 0, \mathbb{C}$ \\ 
-$p_1 = (x_1, x_2, x_3) \to z = a + ib = \frac{x_1 + ix_2}{1 - x_3}$ \\
-$x_1 = \frac{2a}{|z|^2 + 1}$, $x_2 = \frac{2b}{|z|^2 + 1}$, $x_3 = \frac{|z|^2 - 1}{|z|^2 + 1}$ \\
-Points in the northern hemisphere $P_1$, have $|z_1| > 1$; while points in the southern hemisphere $P_2$, have $|z_2| < 1$. \\
+$$p_1 = (x_1, x_2, x_3) \to z = a + ib = \frac{x_1 + ix_2}{1 - x_3}$$
+$$x_1 = \frac{2a}{|z|^2 + 1}$$
+$$x_2 = \frac{2b}{|z|^2 + 1}$$
+$$x_3 = \frac{|z|^2 - 1}{|z|^2 + 1}$$
+Points in the northern hemisphere $P_1$, have $|z_1| > 1$. \\
+Points in the southern hemisphere $P_2$, have $|z_2| < 1$. \\
 \newline
 \textbf{Mapping from Stereographic Space to the Complex Plane.} 
 \begin{align*}
@@ -208,7 +214,7 @@ S = (0, 0, -1) &\to 0 \\
 \mbox{lines of latitude } &\to |z| = r \mbox{, circles} \\
 \mbox{lines of longitude } &\to \operatorname{Arg}(z) = \pm\theta \mbox{, lines through } (0, 0) 
 \end{align*}
-\textbf{Note}: In general, circles on $\mathbb{S}^2$ map to circles and lines in $\mathbb{C}$, orientation is not always preserved. 
+Note that in general, circles on $\mathbb{S}^2$ map to circles and lines in $\mathbb{C}$, orientation is not always preserved. 
 
 \subsection{Complex Logarithm}
 \textbf{Logarithm of Real Numbers.} \\
@@ -235,7 +241,7 @@ From the imaginary part we find
 $$e^{i\theta} = e^{i\Im(\log{(z)})}$$
 $$\Rightarrow \operatorname{arg}(z) = \theta = \Im(\log{(z)})$$
 $$\Rightarrow \Im(\log{(z)}) = \operatorname{Arg}(z)$$ 
-because $arg(z)$ is not well defined. \\
+because $\operatorname{arg}(z)$ is not well defined. \\
 Our constructed inverse of $e^z$ is a multi-valued function 
 $$\log(z) = \log|z| + i\operatorname{arg}(z)$$
 \newline
@@ -272,7 +278,7 @@ The sequence converges if $|z_n - z| \to 0$ as $n \to \infty$. The distance betw
 \newline
 \textbf{Completeness of $\mathbb{C}$.} \\
 $\{z_n\}$ converges if and only if $\{z_n\}$ is Cauchy. \\
-\textbf{Proof.}\\
+\textbf{Proof.} 
 We show this by treating $\mathbb{C}$ as $\mathbb{R}^2$ and exploiting $\{X_n\}$ converges if and only if $\{X_n\}$ is Cauchy. \\
 ($\Longrightarrow$) (If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
 $|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$ \\
@@ -435,17 +441,16 @@ Compare this with
 Therefore, the function is nowhere differentiable in $\mathbb{C}$. The problem with $g'(z)$ had to do with $\conj{z}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter.  \\
 
 \subsection{Properties of $f'(z)$}
-\textbf{Proposition}: If $f$ is differentiable on $\Omega$, it is continuous on $\Omega$. \\
-\textbf{Proposition}: The power rule holds too: $\frac{d}{dz}z^n = nz^{z - 1}$\\
+\textbf{Proposition.} If $f$ is differentiable on $\Omega$, it is continuous on $\Omega$. \\
+\textbf{Proposition.} The power rule holds too: $\frac{d}{dz}z^n = nz^{z - 1}$\\
 As does the product, quotient, L'Hospital's and chain rule. In fact, most old results hold as well. 
 In each of the following cases, there are branch points where $f'(z)$ does not exist. \\
 1. If $f(z) = \operatorname{Log}(z)$, then $f'(z) = \frac{1}{z}$ \\
 2. If $f(z) = \tan^{-1}(z)$, then $f'(z) = \frac{1}{z^2 + 1} = \frac{1}{(z + i)(z - i)}$, which does not exist for $z = \pm i$ \\
 3. If $f(z) = z^\frac{1}{2}$, then $f'(z) = \frac{1}{2}z^{-\frac{1}{2}}$ \\
 
-\textbf{Proposition}: Suppose $f(z)$ is holomorphic on $\Omega$. then $g(z) = \conj{f(\conj{z})}$ is holomorphic on $\Omega^{\ast} = \{z|\conj{z} \in \Omega\}$ \\
-\textbf{Proof}: \\
-Suppose $f$ is holomorphic on $\Omega$. Let $z_0 \in \Omega^{\ast}$ and $z_n \in \Omega^{\ast}$ for all $n$ and $z_n \to z$. Then $\conj{z_n} \to \conj{z_0}$ in $\Omega$ and for $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for $n > N$. 
+\textbf{Proposition.} Suppose $f(z)$ is holomorphic on $\Omega$. then $g(z) = \conj{f(\conj{z})}$ is holomorphic on $\Omega^{\ast} = \{z|\conj{z} \in \Omega\}$ \\
+\textbf{Proof.} Suppose $f$ is holomorphic on $\Omega$. Let $z_0 \in \Omega^{\ast}$ and $z_n \in \Omega^{\ast}$ for all $n$ and $z_n \to z$. Then $\conj{z_n} \to \conj{z_0}$ in $\Omega$ and for $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for $n > N$. 
 $$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} < \epsilon$$ 
 $$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} = \conj{\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})}} = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{\conj{\conj{z_0} - \conj{z_n}}} - \conj{f'(\conj{z_0})}} $$
 $$ = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{z_0 - z_n} - \conj{f'(\conj{z_0})}} = \abs*{\frac{g(z_0) - g(z_n)}{z_0 - z_n} - \conj{f'(\conj{z_0})}} < \epsilon$$
@@ -657,14 +662,14 @@ By now, we have an understanding of how $f$ acts on tangent vectors when $f' \ne
 \subsection{Conformal Function}
 \textbf{Conditions of Conformal Functions.}\\
 We say $f$ is a conformal map at $z_0$ if the following hold: \\
-\circled{1} $f$ is $\mathbb{R}^2$-differentiable at $z_0$ \\
-\circled{2} $\abs{\mbox{Jf}} \neq 0$ \\
-\circled{3} $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. \\
+\circled{\scriptsize1} $f$ is $\mathbb{R}^2$-differentiable at $z_0$ \\
+\circled{\scriptsize2} $\abs{\mbox{Jf}} \neq 0$ \\
+\circled{\scriptsize3} $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. \\
 \newline
 \textbf{$e^z$ is conformal.}\\
 Now let us take a closer look at $e^z$ and figure out why it is conformal. \\
-\circled{1} holds apparently. \\
-\circled{2} $f(z) = e^z = e^x\cos(y) + ie^x\sin(y)$, then 
+\circled{\scriptsize1} holds apparently. \\
+\circled{\scriptsize2} $f(z) = e^z = e^x\cos(y) + ie^x\sin(y)$, then 
 \begin{equation*}
 J(f(x, y)) = 
 \begin{bmatrix}
@@ -678,7 +683,7 @@ J(f(x, y)) =
 \end{bmatrix}
 \end{equation*}
 $\Rightarrow \abs{J(f(x,y))} \neq 0$\\
-\circled{3} Now we have shown in the previous part that Jf is the product of a dilation matrix, $e^xI$, and a rotation matrix, which means $f$ preserves the angles between $\gamma_1'$ and $\gamma_2'$. Their image under $f$: \\
+\circled{\scriptsize3} Now we have shown in the previous part that Jf is the product of a dilation matrix, $e^xI$, and a rotation matrix, which means $f$ preserves the angles between $\gamma_1'$ and $\gamma_2'$. Their image under $f$: \\
 $$\tau_1'(t) = \gamma_1'(t) \cdot J(f)^T$$
 $$\tau_2'(t) = \gamma_2'(t) \cdot J(f)^T$$
 In fact, $f$ preserving oriented angles implies Jf is a rotation $\otimes$ dilation matrix. \\
@@ -708,7 +713,7 @@ Now, $f(\infty) = \frac{a}{c}$ by L'Hospital argument and we say $f(-\frac{d}{c}
 If $ad - bc \neq 0$, then $f' \neq 0$ by the quotient rule and $f$ is not constant. The constants are not unique, as $f(z) = \frac{az + b}{cz + d} = \frac{(az+b)k}{(cz + d)k}$. Therefore, we only have 3 degrees of freedom. \\
 \subsection{Brief Review of other Transformations}
 We have already seen these functions of this form before $f$ is: \\
-\circled{1} Composition of a finite number of 
+\circled{\scriptsize1} Composition of a finite number of 
 \[ \begin{cases} 
 	\mbox{Translations}, f(z) = z + k \\
 	\mbox{Rotations}, f(z) = e^{i\theta}z \\
@@ -716,10 +721,10 @@ We have already seen these functions of this form before $f$ is: \\
 	\mbox{Inversions}, f(z) = \frac{1}{z}\\
    \end{cases}
 \]
-\circled{2} Conformal, $f$ is holomorphic away from $z = -\frac{d}{c}$, $f' \neq 0$, and f is one-to-one. \\
-\circled{3} Maps circles/lines to either lines or circles, "lines are circles of $\infty$-radius in $\mathbb{C}$ or $\mathbb{C} \cup \{\infty\}$. \\
+\circled{\scriptsize2} Conformal, $f$ is holomorphic away from $z = -\frac{d}{c}$, $f' \neq 0$, and f is one-to-one. \\
+\circled{\scriptsize3} Maps circles/lines to either lines or circles, "lines are circles of $\infty$-radius in $\mathbb{C}$ or $\mathbb{C} \cup \{\infty\}$. \\
 If the line or circle passes through $z = -\frac{d}{c}$, where $f$ is undefined, then it will be mapped to a line. Otherwise, it is mapped to a circle. \\
-\circled{4} $f$ can be identified by 
+\circled{\scriptsize4} $f$ can be identified by 
 \begin{equation*}
 A = 
 \begin{bmatrix}
@@ -736,7 +741,7 @@ Then,
 \]
 and so there is a group homomorphism with Möbius transforms and invertible matrices in $\mathbb{C}^{2 \times 2}$. \\
 $f(z) = (3 + 2i)z - i^3 = \frac{(3 + 2i)z - i^3}{\delta z + 1}$ \\
-\circled{5} We can conformally map 3 points in $\mathbb{C} \cup \{\infty\}$ to any 3 points in $\mathbb{C} \cup \{\infty\}$. \\
+\circled{\scriptsize5} We can conformally map 3 points in $\mathbb{C} \cup \{\infty\}$ to any 3 points in $\mathbb{C} \cup \{\infty\}$. \\
 This type of argument is similar to showing norms are equivalent in $\mathbb{R}^n$ or uniqueness of power series expansions. \\
 \subsection{Möbius transforming of a function}
 Given any 3 points $z_0$, $z_1$, $z_2$ $\in \mathbb{C}$, we can create a Möbius transformation $T$ such that  
@@ -917,18 +922,177 @@ From this example, we have the following famous result. \\
 \end{equation*}
 \newline
 \textbf{ML Estimate.} \\
-Let $|f(z)| < M$ on $C$, a curve of length $L$, then 
+Let $f$ be a complex-valued, continuous function and $|f(z)| < M$ on $C$, a curve of length $L$, then 
 $$|\int_Cf(z) \,dz| \leqslant M \cdot L$$
 \textbf{Proof.}
 $$ \abs*{\int_a^b f(\gamma(t))\gamma'(t) \,dt} \leqslant \int_a^b|f(\gamma(t))\gamma'(t)| \,dt \leqslant M\int_a^b|\gamma_1'(t)| \,dt = M \cdot L$$
 where $\int_a^b|\gamma_1'(t)| \,dt$ is the arclength of $\gamma$. \\
 We do not have to worry about the orientation of $C$, 
 $$ \abs*{\int_{-C}f(z) \,dz} \leqslant M \cdot L$$
+\newpage
+
+\section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
+We now study contour integrals of holomorphic functions over closed curves. 
+\subsection{Cauchy's Closed Curve Theorem}
+\textbf{Green's Theorem.} \\
+If $P(x, y)$ and $Q(x, y)$ have continuous first order derivatives on $\Omega$ and its boundary $\partial \Omega$, $\Omega$ is a domain, 
+$$\oint_{\partial \Omega} P \,dx + Q \,dy = \int_\Omega Q_x - P_y \,dxdy$$
+\newline
+\textbf{Cauchy-Goursat Theorem.} \\
+If $f(z)$ is holomorphic on $\Omega$ and $C$ is any closed curve in $\Omega$, where $\Omega$ is simply connected. Then
+$$\oint_{C} f(z) \, dz = 0$$
+\textbf{Proof.}
+$$\oint_{\partial \Omega} f(z) \, dz = \oint_{\partial \Omega} u + iv \,{(dx + idy)} = \int_{\Omega}{if_x - f_y} \, dA$$
+and the Cauchy Riemann Equations imply 
+$$if_x = f_y$$
+Therefore, 
+$$\oint_{\partial \Omega} f(z) \, dz = 0$$
+\newline
+\textbf{Corollary of Cauchy's Theorem.} \\
+Let $C_1$ and $C_2$ be paths from $z_0$ to $z_1$. Then $C_1 \cup -C_2$ is a closed loop in $\mathbb{C}$. $C_1$ and $C_2$ are in a simply connected subset of where $f$ is holomorphic. Then by Cauchy-Goursat Theorem, 
+$$ 0 = \oint_{C_1 \cup -C_2}f(z) \,dz  = \int_{C_1}f(z) \,dz + \int_{-C_2}f(z) \,dz = \int_{C_1}f(z) \,dz - \int_{C_2}f(z) \,dz$$ 
+Hence, 
+$$\int_{C_1}f(z) \,dz = \int_{C_2}f(z) \,dz$$
+\newline
+This means it does not matter how you go from $z_0$ to $z_1$ as long as $f$ is $\mathbb{C}$ -differentiable along the way. This means we can use 
+$$\int_{z_0}^{z_1}f(z)\,dz$$ 
+to denote the integral from $z_0$ to $z_1$. But we still have to watch out for branch cuts. \\
+Even non-simple curves are allowed, because Cauchy-Goursat Theorem tells us the integral over the loops in the non-simple curves are 0. \\
+\newline
+\textbf{Path Independence.} We can characterize Cauchy-Goursat Theorem with path independence. We have path independence of $\int_{z_0}^{z_1}f(z) \,dz$ in $\Omega$ if and only if 
+\begin{equation*}
+\oint_C f(z) \,dz = 0 \mbox{ for all closed curves } C \mbox{ in } \Omega
+\end{equation*}
+These conditions tell us holomorphic functions must have antiderivatives. 
+\subsection{Fundamental Theorem of Calculus} 
+Path independence leads to introduction of Fundamental Theorem of Calculus. \\
+\newline
+\textbf{Fundamental Theorem of Calculus (Part One).} \\
+Assume $f$ is holomorphic on $\Omega$, open and simply connected in $\mathbb{C}$. The function 
+$$F(z) = \int_a^z f(u) \,du$$
+is holomorphic on $\Omega$ and $F'(z) = f(z)$. \\
+\textbf{Proof.} This is completely analogous to the proof on $\mathbb{R}$, which has two steps.
+\begin{enumerate}
+\item Compute difference quotient 
+\item Bound integrand by invoking continuity of $f$ 
+\end{enumerate}
+\circled{\scriptsize1}
+\begin{equation*}
+\frac{F(z+h) - F(z)}{h} = \frac{1}{h}\int_z^{z+h} f(u) \,du 
+\end{equation*}
+$$\frac{1}{h}\int_z^{z+h}\,du = \frac{h}{h} = 1$$
+implies
+$$f(z) = f(z)\frac{1}{h}\int_z^{z+h}\,du = \frac{1}{h}\int_z^{z+h}f(z) \,du$$
+Then 
+$$\frac{F(z+h) - F(z)}{h} - f(z) = \frac{1}{h}\int_z^{z+h}f(u) - f(z) \,du$$
+\circled{\scriptsize2} Since integrating over any closed curve $C$ gives 
+$$\oint_C f(z) \,dz = 0$$
+We can pick how we go from $z$ to $z +h$, say along a line from $z$ to $z + h$. We can do this for $h$ sufficiently small so that our path is in $\Omega$. This path is selected to make our upcoming estimate on $f(u) - f(z)$ easier to work with. \\
+Along the path we can have $|u - z| < \delta$, which implies $|f(z) - f(u)| < \epsilon$ by continuity of $f$ where $u$ is on the path. From ML-Estimate, we get 
+$$\abs*{\frac{F(z+h) - F(z)}{h} - f(z)} \leqslant \frac{1}{|h|}\int_z^{z+h}|f(u) - f(z)|\,du < \frac{1}{|h|}|h|\epsilon = \epsilon$$
+Therefore, it is proven that $F'(z) = f(z)$. \\
+\newline
+Let us take a closer look at our proof above. We needed $f$ to be continuous so that we could invoke ML-Estimate. We also needed to pick a nice path from $z$ to $z + h$. But we did not need $f$ to be holomorphic. This leads to the next Theorem. \\
+\newline
+\newline
+\textbf{Morera's Theorem.} Let $f$ be a continuous, complex-valued function defined on an open set D in the complex plane. If for all closed paths $C$ in $\Omega$, $\oint_C f(z) \,dz = 0$, then $F(z)$ is holomorphic on $\Omega$, $F'(z) = f(z)$ and $f$ is holomorphic. \\
+Later we will show that $f'(z)$ is holomorphic when $f$ is holomorphic. \\
+\newline
+Let $f_n \to f$ uniformly on every compact subset of $\Omega$. We say $f_n$ converges on compacta to $f$. If $f_n$ is holomorphic on $\Omega$ for all $n$ and $C$ is any closed curve in $\Omega$, 
+\begin{equation*}
+\oint_C f_n(z) \,dz = 0 \mbox{ for all } n
+\end{equation*}
+$$\Rightarrow \lim_{n\to \infty}{\oint_Cf_n(z) \, dz} = 0$$
+Since the convergence is uniform, $f$ is continuous and 
+$$ \lim_{n\to \infty}{\oint_C f_n(z) \,dz} = \oint_C f(z) \, dz = 0$$
+Hence $f$ is holomorphic on $\Omega$ by Morera's Theorem. \\
+\newline 
+\textbf{Example.} Let $f(z) = \int_0^{\infty} \frac{e^{zt}}{1 + t} \, dt$, $\Re(z) < 0$. \\
+Because $\Re(z) < 0$, 
+$$\int_0^{\infty} \frac{|e^{zt}|}{1 + t} \,dt \leqslant \int_0^{\infty} e^{\Re(z)t} \,dt = \Eval{\frac{e^{\Re(z)t}}{\Re(z)}}{\infty}{t = 0} = \frac{-1}{\Re(z)}$$
+And so we have an absolute convergent integral that is bounded. 
+$$|f(z)| \leqslant \frac{1}{|\Re(z)|}$$
+Then, since the integral converges absolutely,
+$$\oint_C f(z) \,dz = \oint_C \int_0^{\infty} \frac{e^{zt}}{1 + t}\,dtdz = \int_0^{\infty} \frac{1}{1+t} \oint_C e^{zt} \,dzdt = \int_0^{\infty} \frac{1}{1+t}0 \,dt = 0$$
+by Cauchy-Goursat Theorem since $e^zt$ is entire for $t$ fixed. Therefore, $f(z)$ is holomorphic on $\Re(z) < 0$. \\
+\newline 
+We can generalize our result to handle other types of integral transforms $F(z) = \int_0^{\infty} K(t, z, f(t)) \,dt$. \\
+We also have an easy way to evaluate the line integrals. \\
+\newline
+\textbf{Fundamental Theorem of Calculus (Part Two).} \\
+Let $F(z)$ be $\mathbb{C}$-differentiable on a smooth curve $C$ where $F'(z) = f(z)$, then
+$$\int_a^b f(z) \,dz = F(z)\Big|_{z = a}^{b}$$
+\textbf{Proof.} Let $a, b, c \in \Omega$, where $c$ is in the middle of $a$ and $b$. Then, \\
+$$F(b) - F(a) = \int_c^b f(u) \,du - \int_c^a f(u) \,du = \int_c^b f(u) \,du + \int_a^c f(u) \,du = \int_a^b f(z) \,dz$$
+The result can also be shown with variable substitution. 
+$$ \int_b^a f(z) \,dz = \int_0^1 f(\gamma(t))\gamma'(t) \,dt = F(\gamma(t))\Big|_{t = 0}^{1} = F(b) - F(a)$$
+\newline
+\textbf{Proposition.} If $f'(z) = 0$ on $\Omega$, then $f$ is constant on $\Omega$. i.e. $0 = u_x = v_y$ and $u_y = -v_x = 0$. \\
+\textbf{Proof.} Integrate $f'$ along a staircase path in $\Omega$, 
+$$f(z) = f(a) + \int_a^z 0 \, du = f(a)$$
+Or we can use the Cauchy Riemann Equations.\\
+\newline
+Let $F'(z) = G'(z) = f(z)$, then $H(z) = F(z) - G(z)$ satisfies $H'(z) = F'(z) - G'(z) = 0$. This means $H$ is constant. This leads to the theorem below.  \\
+\newline
+\textbf{Theorem.} Any antiderivative of holomorphic $f(z)$ is of the form 
+$$F(z) = \int_a^z f(u) \, du + C, C \in \mathbb{C}$$ 
+\newline
+\textbf{Proposition.} Let $\Omega$ be simply-connected, $0 \notin \Omega$. Fix $z_0 \in \Omega$ and pick the value of $\operatorname{log}z_0$. Then 
+$$F(z) = \int_{z_0}^z \frac{1}{w} \,dw + \operatorname{log} z_0$$
+is a branch of $\operatorname{Log} z $ in $\Omega$.\\
+\textbf{Proof.} $F$ is well-defined since $\frac{1}{w}$ is holomorphic in $\Omega$, we have path independence from $z_0$ to $z$, $f' = \frac{1}{z}$. 
+We still need $e^{F(z)} = z$.
+Define 
+$$g(z) = ze^{-F(z)}$$
+$$g'(z) = e^{-F(z)}(1 - zF'(z)) = e^{-F(z)}(1 - \frac{z}{z}) = 0$$
+Therefore, $g(z)$ is constant. 
+$$g(z) = g(z_0) = z_0e^{-F(z_0)} = z_0 e^{-\operatorname{log}(z_0)} = 1$$
+Therefore, 
+$$e^{F(z)} = z$$
 
 
 \newpage
-\section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
 \section{Cauchy's Integral Formula}
+\textbf{First Extension of Cauchy-Goursat Theorem.} \\
+Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, each oriented counter-clockwise. If $f$ is holomorphic on $\Omega$, then 
+$$ \oint_{C_1}f(z) \,dz = \oint_{C_2}f(z) \,dz $$
+or
+$$\oint_{C_1 \cup -C_2}f(z) \, dz$$
+\newline
+\newline
+\textbf{Second Extension of Cauchy-Goursat Theorem. } \\
+Let $g(z)$ be holomorphic on $\Omega \backslash \{z_0\}$, $g(z)$ is continuous on $\Omega$, $g(z_0)$ is finite. Then
+$$\oint_C g(z) \,dz = 0$$
+for any closed curve $C$ in $\Omega$ and $g(z)$ is holomorphic in $\Omega$. \\
+\textbf{Proof.} By First Extension of Cauchy-Goursat Theorem 
+$$\oint_C g(z) \,dz = \oint_{|z - z_0| = \epsilon} g(z) \, dz$$
+and 
+$$\oint_{|z - z_0| = \epsilon} |g(z)| \, dz \leqslant M_{\epsilon}\cdot 2\pi \cdot \epsilon$$
+Since $g$ is continuous, $M_\epsilon$ is bounded and as $\epsilon \to 0$, we have 
+$$\oint_C g(z) \,dz = 0$$
+Therefore, $g$ is holomorphic on $\Omega$, $g'(z_0)$ exists by Morera's Theorem. \\
+\newline
+The second extension of Cauchy-Goursat Theorem gives us Cauchy Integral Formula. \\
+Assume $f$ is holomorphic on $\Omega$, $0 \in \Omega$. Let 
+$$g(z) = \frac{f(z) - f(0)}{z - 0} = \frac{f(z) - f(0)}{z}$$ 
+as $z \to 0$, $g(0) = f'(0)$. Our function $g(z)$ is holomorphic on $\Omega \backslash \{z_0\}$ and continuous on $\Omega$, so the second extension of Cauchy-Goursat Theorem holds. \\
+Let $C$ be a curve in $\Omega$, by our last result 
+$$\oint_C g(z) \, dz = \oint_C \frac{f(z) - f(0)}{z} \, dz = 0$$
+$$\Rightarrow \oint_C \frac{f(z)}{z} \, dz = \oint_C \frac{f(0)}{z} \, dz = f(0)\oint_C \frac{dz}{z} = 2\pi if(0)$$
+We showed before that 
+$$ \oint_C \frac{dz}{z} = 2\pi i$$
+Therefore, 
+$$ f(0) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z} \,dz$$
+This means that the value of $f$ at $z = 0$ only depends on the value of $\frac{f(z)}{z}$ over circles centered at 0. This result can be further generalized to Cauchy Integral Formula. \\
+\newline
+\textbf{Cauchy Integral Formula.} \\
+Let $C$ be a smooth closed curve with interior domain $\Omega$. If $f$ is holomorphic on $\Omega$ and continuous on $\Omega$'s closure, 
+$$f(z) = \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \, dw, z \in \Omega$$
+\newline 
+\textbf{Example.}
+
+
+\newpage
 \section{Growth Conditions of Holomorphic Functions}
 \section{Convergence of Infinite Series in $\mathbb{C}$}
 \section{Power Series in $\mathbb{C}$}
