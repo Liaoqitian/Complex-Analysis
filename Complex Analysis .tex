@@ -964,7 +964,7 @@ Even non-simple curves are allowed, because Cauchy-Goursat Theorem tells us the 
 \oint_C f(z) \,dz = 0 \mbox{ for all closed curves } C \mbox{ in } \Omega
 \end{equation*}
 These conditions tell us holomorphic functions must have antiderivatives. 
-\subsection{Fundamental Theorem of Calculus} 
+\subsection{Fundamental Theorem of Calculus (F.T.C)} 
 Path independence leads to introduction of Fundamental Theorem of Calculus. \\
 \newline
 \textbf{Fundamental Theorem of Calculus (Part One).} \\
@@ -1143,6 +1143,67 @@ f(z_0) &= \frac{1}{2\pi i} \oint_{\partial \Omega} \frac{f(z)}{z - z_0} \,dz \\
 
 \newpage
 \section{Growth Conditions of Holomorphic Functions}
+If $f$ has an antiderivative on a domain $\Omega$, then $f$ is holomorphic on $\Omega$. However, its converse is not true. \\
+If $f$ is holomorphic on $\Omega$, $f$ does not necessarily have an antiderivative. Here is a counter-example.\\
+\newline
+\textbf{Example.} Let $f(z) = \frac{1}{z}, \Omega = \mathbb{C} \backslash \{0\}$. \\
+$f(z)$ does not have an antiderivative on $\Omega$ because 
+$$\oint_{|z| = r}\frac{1}{z} \,dz = 2\pi i \neq 0$$
+\newline
+The problem above is with $\Omega$, which is not simply-connected. \\
+\newline
+\textbf{Proposition.} If $\Omega$ is simply-connected and $f$ is holomorphic on $\Omega$, then $f$ has an antiderivative by F.T.C, a corollary of Cauchy-Goursat Theorem. \\
+\newline
+\textbf{Maximum Modulus Principle.} \\
+Let $f$ be holomorphic on a bounded domain $\Omega$. If $|f|$ has a local maximum at $z_0$, or in other words, 
+$$|f(z_0)| > |f(z)|$$
+for all $z$ in the neighborhood of $z_0$, 
+then $f$ is constant near $z_0$. \\
+In fact this also implies $f$ is constant in $\Omega$ with some additional theorems about uniqueness of holomorphic functions. \\
+If $f$ is continuous on $\partial \Omega$, then either $f$ is constant or the absolute maximum of $|f|$ occurs only on the boundary of $\Omega$, $\partial \Omega$. \\
+\textbf{Proof.} Let $f$ be holomorphic on a domain $\Omega$ and suppose the function $|f|$ takes on a local maximum value at $z_0$. Near $z_0$, 
+$$|z -z_0| < r \Rightarrow |f(z)| \leqslant |f(z_0)|$$
+Then by Gauss's Mean Value Theorem, 
+$$|f(z_0)| = \abs*{\frac{1}{2\pi} \int_0^{2\pi}f(z_0 + re^{it}) \,dt} \leqslant \frac{1}{2\pi}\int_0^{2\pi} |f(z_0 + re^{it})| \,dt \leqslant \frac{1}{2\pi}\int_0^{2\pi}|f(z_0)| \,dt = |f(z_0)|$$
+$$\Rightarrow |f(z_0)| =  \frac{1}{2\pi}\int_0^{2\pi} |f(z_0 + re^{it})| \,dt = \frac{1}{2\pi}\int_0^{2\pi}|f(z_0)| \,dt$$
+Therefore, 
+$$\int_0^{2\pi}|f(z_0)| - |f(z_0 + re^{it})| \,dt = 0$$
+But 
+$$ |f(z_0)| \geqslant |f(z_0 + re^{it})| $$
+by our hypothesis and so our integrand is nonnegative. Therefore, the integral is zero.
+$$\Rightarrow |f(z_0)| - |f(z_0 + re^{it})| = 0 \Rightarrow |f(z_0)| = |f(z_0 + re^{it})| $$
+Hence, the Maximum Modulus Principle is proven. \\
+\newline
+\textbf{Claim.} If $f$ and $\conj{f}$ are holomorphic on $\Omega$, then $f$ is constant on $\Omega$. \\
+\textbf{Proof.} By Cauchy Riemann Equations, \\
+$f$ is holomorphic $\Rightarrow$ $u_x = v_y$ and $u_y = -v_x$. \\
+$\conj{f}$ is holomorphic $\Rightarrow$ $u_x = -v_y$ and $u_y = v_x$. \\
+This means $u_x = -u_x$, $u_y = -u_y$, $v_x = -v_x$, $v_y = -v_y$ in $\Omega$. \\
+Therefore, $u$ and $v$ are constant, and so is $f(z)$. \\
+\newline
+\textbf{Claim.} If $|f| = C$ on $\Omega$, then $f$ is constant on $\Omega$. If $f(z_0) = 0$, then $f(z) = 0$ everywhere in $\Omega$ because $|f(z_0)| = 0$. \\
+\textbf{Proof.} Let $f(z) = C$, then $g(z) = \frac{1}{f(z)}$ is holomorphic, since it is a ratio of holomorphic functions. \\
+Since $|f|^2 = C^2$, then 
+$$\conj{f(z)} = \frac{f(z)\conj{f(z)}}{f(z)} = \frac{|f(z)|^2}{f(z)} = C^2g(z)$$ 
+is holomorphic too. Hence, $f$ is constant by the first claim. \\
+Therefore, $f$ is constant along all points of distance $r$ from $z_0$. \\
+\newline
+\textbf{Minimum Modulus Principle.} \\
+Let $f$ be analytic on a domain $\Omega \subseteq \mathbb{C}$, and assume that $f$ never vanishes. Then if there is a point $z_0 \in \Omega$ such that $|f(z_0)| \leqslant |f(z)|$ for all $z \in \Omega$, then $f$ is constant.
+
+Let $\Omega \subseteq \mathbb{C}$ be a bounded domain, let $f$ be a continuous function on the closed set $\conj{\Omega}$ that is analytic on $\Omega$, and assume that $f$ never vanishes on $\conj{\Omega}$. Then the minimum value of $|f|$ on $\conj{\Omega}$ (which always exists) must occur on $\partial \Omega$. \\
+\newline
+Next we want to study functions that map the open disk to itself where $f(0) = 0$. \\
+\newline
+\textbf{Schwarz's Lemma.}\\
+If $f$ is holomorphic, $|f(z)| \leqslant 1$ on $|z| < 1$, and $f(0) = 0$, then 
+\begin{equation*}
+|f'(0)| \leqslant 1 \mbox{ and } |f(z)| \leqslant |z| \mbox{ on } |z| < 1
+\end{equation*}
+Moreover, if $|f(z_0)| = |z_0|$ for some non-zero $z_0$ or $|f'(0)| = 1$, then 
+$$f(z) = e^{i\theta}z, \theta \in [0, 2\pi)$$
+
+
 \newpage
 \section{Convergence of Infinite Series in $\mathbb{C}$}
 \section{Power Series in $\mathbb{C}$}
@@ -1166,10 +1227,6 @@ Even more text
 \section{Another Section} 
 \fi
 
-\newpage
-\title{Chapter 1: Algebra in C}
-
- 
 \begin{equation*}
 	f(x) = x^2
 \end{equation*}
