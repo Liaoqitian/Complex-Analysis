@@ -1223,6 +1223,19 @@ If $|g(z_0)| = 1$, then $g$ has a local maximum for $|z| < 1$,
 &\Rightarrow |f(z)| = |z| \\
 &\Rightarrow f(z) = e^{i\theta}z
 \end{align*} 
+\newline 
+\textbf{Example.} Consider $B_a(z): \{z| |z| < 1\} \to \{z| |z| < 1\}$
+It is a invertible, bilinear transform 
+$$B_a(z) = \frac{z - a}{1 - \conj{a}z}, |a| < 1$$
+The function has several interesting qualities. 
+\begin{align*}
+|B_a(z)| &< 1 \mbox{ for } |z| < 1 \\
+|B_a(z)| &= 1 \mbox{ for } |z| = 1 \\
+B_a(a) &= 0\\
+B_a(0) &= -a \Rightarrow B_a^{-1}(z) = B_{-a}(z) \\
+B_a'(0) &= 1 - |a|^2 \\
+B_a'(a) &= \frac{1}{1 - |a|^2}
+\end{align*}
 
 
 \newpage

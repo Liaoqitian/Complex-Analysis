@@ -48,11 +48,11 @@
 \contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{29}
 \contentsline {section}{\numberline {13}Cauchy's Integral Formula}{32}
 \contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{35}
-\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{37}
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{37}
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{37}
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{37}
-\contentsline {section}{\numberline {19}Laurent Series}{37}
-\contentsline {section}{\numberline {20}Residue Theorem}{37}
-\contentsline {section}{\numberline {21}Improper Integrals}{37}
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{37}
+\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{38}
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{38}
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{38}
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{38}
+\contentsline {section}{\numberline {19}Laurent Series}{38}
+\contentsline {section}{\numberline {20}Residue Theorem}{38}
+\contentsline {section}{\numberline {21}Improper Integrals}{38}
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{38}
