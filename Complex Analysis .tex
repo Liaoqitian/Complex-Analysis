@@ -1202,6 +1202,27 @@ If $f$ is holomorphic, $|f(z)| \leqslant 1$ on $|z| < 1$, and $f(0) = 0$, then
 \end{equation*}
 Moreover, if $|f(z_0)| = |z_0|$ for some non-zero $z_0$ or $|f'(0)| = 1$, then 
 $$f(z) = e^{i\theta}z, \theta \in [0, 2\pi)$$
+\textbf{Proof.} Consider
+\[ 
+g(z) = 
+\begin{cases} 
+	\frac{f(z) - f(0)}{z - 0} = \frac{f(z)}{z}, z \neq 0 \\
+	f'(0), z = 0\\
+   \end{cases}
+\]
+which we know is holomorphic on $|z| < 1$. \\
+By Maximum Modulus for all $|z| < r$,
+$$|g(z)| \leqslant |g(z_r)|$$
+for some fixed $|z_r| = r$. 
+Therefore, 
+$$\frac{|f(z_r)|}{|z_r|} \leqslant \frac{1}{|z_r|} = \frac{1}{r}$$
+as $r \to 1$ we have $|g(z)| \leqslant 1$ or $|f(z)$ $\leqslant |z|$ and $|f'(0)| \leqslant 1$ since $g(0) = f'(0)$. \\
+If $|g(z_0)| = 1$, then $g$ has a local maximum for $|z| < 1$, 
+\begin{align*}
+&\Rightarrow \mbox{g is constant on } |z| < 1, |g(z)| = 1\\
+&\Rightarrow |f(z)| = |z| \\
+&\Rightarrow f(z) = e^{i\theta}z
+\end{align*} 
 
 
 \newpage
