@@ -1477,8 +1477,11 @@ $$ f(z) = \sum_{n = 0}^{\infty} a_n(z - z_0)^n $$
 be a power series centered at $z_0$. \\
 The coefficients are unique: 
 $$ a = \frac{f^{(n)} (z_0)}{n!} = \frac{1}{2\pi i} \oint_C \frac{f(w)}{(w - z_0)^{n + 1}} \, dw$$
-
-
+where $C$ is a path about $z_0$. \\
+$f'(z)$ and $F(z)$ are given by 
+$$f'(z) = \sum_{n = 0}^{\infty} a_n \cdot n(z-z_0)^{n -1}$$
+$$F(z) = \int f(z) \, dz = \sum_{n = 0}^{\infty} \frac{a_n}{n + 1}(z - z_0)^{n + 1} + C_0$$
+and are holomorphic and converge for $|z -z _0| < R$.
 
 
 
