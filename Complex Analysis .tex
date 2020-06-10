@@ -20,6 +20,10 @@
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
 
 \setlist[itemize,1]{leftmargin=\dimexpr 26pt-.5in}
+%Set Equation Space above and Below
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+
 
 \sectionfont{\fontsize{12}{15}\selectfont}
 \title{Introduction to Complex Analysis}
@@ -1143,6 +1147,7 @@ f(z_0) &= \frac{1}{2\pi i} \oint_{\partial \Omega} \frac{f(z)}{z - z_0} \,dz \\
 
 \newpage
 \section{Growth Conditions of Holomorphic Functions}
+\subsection{Maximum/Minimum Modulus Principles}
 If $f$ has an antiderivative on a domain $\Omega$, then $f$ is holomorphic on $\Omega$. However, its converse is not true. \\
 If $f$ is holomorphic on $\Omega$, $f$ does not necessarily have an antiderivative. Here is a counter-example.\\
 \newline
@@ -1192,7 +1197,7 @@ Therefore, $f$ is constant along all points of distance $r$ from $z_0$. \\
 Let $f$ be analytic on a domain $\Omega \subseteq \mathbb{C}$, and assume that $f$ never vanishes. Then if there is a point $z_0 \in \Omega$ such that $|f(z_0)| \leqslant |f(z)|$ for all $z \in \Omega$, then $f$ is constant.
 
 Let $\Omega \subseteq \mathbb{C}$ be a bounded domain, let $f$ be a continuous function on the closed set $\conj{\Omega}$ that is analytic on $\Omega$, and assume that $f$ never vanishes on $\conj{\Omega}$. Then the minimum value of $|f|$ on $\conj{\Omega}$ (which always exists) must occur on $\partial \Omega$. \\
-\newline
+\subsection{Mapping and $\mathbb{C}$-differentiability}
 Next we want to study functions that map the open disk to itself where $f(0) = 0$. \\
 \newline
 \textbf{Schwarz's Lemma.}\\
@@ -1251,9 +1256,96 @@ g(z) =
 	\frac{f'(\frac{1}{2})}{B_{1/2}(z)} = \frac{3}{4}f'(\frac{1}{2}), z = \frac{1}{2}\\
    \end{cases}
 \]
+is holomorphic on $|z| < 1$. (We used L'Hospital's Rule to define $g(\frac{1}{2})$). \\
+As $|z| \to 1$, $|g| \leqslant 1$ since $|f| \leqslant 1 $ and $|B_{\frac{1}{2}}(e^{i\theta})| = 1$. \\
+This means $|f(z)| \leqslant |B_{\frac{1}{2}}(z)|$ for all $|z| < 1$. \\
+Hence, 
+$$\abs*{f\left(\frac{3}{5}\right)} \leqslant \abs*{B_{\frac{1}{2}}\left(\frac{3}{5}\right)} = \abs*{\frac{\frac{3}{5} - \frac{1}{2}}{1 - \frac{1}{2}\cdot \frac{3}{5}}} = \frac{1}{7}$$
+Note $B_{\frac{1}{2}}(z)$ is a holomorphic function with $B_{\frac{1}{2}}(\frac{1}{2}) = 0$ that hits the upper bound. Therefore, we cannot estimate better than that. \\
+\newline
+Now we want to use bounds on $f$ to bound $f^{(k)}$. \\
+\newline
+\textbf{Cauchy's Inequality.} \\
+If $|f(z)| \leqslant M$ on $|z - z_0| < R$, then for $r < R$ and $C_r = \{z||z - z_0| = r\}$, 
+$$\abs*{f^{(k)}(z_0)} \leqslant \frac{k!M}{R^k}$$
+\textbf{Proof.}
+\begin{align*}
+\abs*{f^{(k)}(z_0)} &\leqslant \frac{k!}{2\pi} \oint_{C_r} \frac{|f(w)|}{|w-z_0|^{k + 1}} \, dw \\
+&\leqslant \frac{k!}{2\pi}\frac{M_R}{r^{k + 1}} \oint_{C_r} \,dw\\
+&=\frac{k!}{2\pi}\frac{M}{r^{k + 1}}2\pi \\
+&=\frac{k!M}{r^k}
+\end{align*}
+Let $r \to R^-$, then 
+$$\abs*{f^{(k)}(z_0)} \leqslant \frac{k!M}{R^k}$$
+\newline
+\textbf{Liouville's Theorem.}\\
+A bounded entire function is constant. \\
+\textbf{Proof.} From Cauchy's Inequality, 
+$$|f'(z_0)| \leqslant \frac{M}{R}$$
+then as $R \to \infty$, $f'(z_0) \to 0$. Therefore, $f$ is constant. \\
+\newline
+\textbf{Lemma.} Let $p(z)$ be a non-constant polynomial, then 
+$$\lim_{z \to \infty} |p(z)| = \infty$$
+\textbf{Proof.}
+\begin{align*}
+p(z) &= a_0 + a_1z + \cdots + a_nz^n\\
+&= z^n(a_0z^{-n} + a_1z^{-n + 1} + \cdots + a_n)
+\end{align*}
+Then 
+\begin{equation*}
+|p(z)| = |z^n||a_0z^{-n} + a_1z^{-n + 1} + \cdots + a_n| \to \infty \mbox{ as } n \to \infty
+\end{equation*}
+\newline
+\textbf{Proof of the Fundamental Theorem of Algebra (F.T.A).} \\
+The last two results have major consequences. Let $p(z)$ be a non-constant polynomial and $p(z) \neq 0$ for all $z \in \mathbb{C}$. Then
+$$f(z) = \frac{1}{p(z)}$$ 
+is entire and non-constant and thus unbounded. 
+As $z \to \infty$, $p(z) \to \infty$ and hence 
+$$\lim_{z \to \infty} f(z) = 0$$ 
+or $|f(z)| < 1$ for $|z| > R$. \\
+Since $f$ is continuous on $|z| \leqslant R$, it has a bound $|f(z)| \leqslant M$, for $|z| < R$. Hence, $f(z)$ is constant and thus, $p(z)$ is constant. This is a contradiction. Therefore, $f(z)$ must not be entire. \\
+Hence, the F.T.A is proven. All non-constant polynomials have a root in $\mathbb{C}$. \\
+Let $p(z)$ be of degree $n$. For each root $z_i$ of $p(z)$, we can compute 
+$$p(z) - p(z_i) = (z - z_i)q(z)$$
+Repeat the process of $q(z)$ and show that we have exactly $n$ roots.\\
+\newline
+\textbf{Example.} Suppose $f$ is entire, 
+$$|f'(z)| < |f(z)|$$ 
+Then 
+$$\frac{f'(z)}{f(z)} $$
+is entire and bounded. By Liouville's Theorem, $f'(z) = kf(z)$ and $|k| < 1$. \\
+Therefore, 
+$$f(z) = e^{kz}, |k| > 1$$ 
+\newline
+\textbf{Proposition.} Suppose $f$ is entire and $|f(z)| > 1$, then $\frac{1}{f(z)}$ is entire and bounded and thus constant. \\
+\newline
+\textbf{Example.} Non-constant entire functions are unbounded. Therefore, $\sin(z)$ and $\cos(z)$ are unbounded since $\sin(0) \neq \sin(\frac{\pi}{2})$ and $\cos(0) \neq \cos(\frac{\pi}{2})$ \\
+\newline
+\textbf{Example.} Let $f$ and $g$ be entire, $\Re(h(z)) \leqslant k\Re(g(z))$ for some fixed $k$. Consider 
+$$h(z) = f(z) - kg(z)$$ entire where $\Re(h(z)) < 0$. Then $e^{h(z)}$ is bounded by 1. 
+$$|e^{h(z)}| \leqslant e^{\Re(h(z))} \leqslant 1$$
+Therefore, $h(z)$ is constant. This means $f(z) - kg(z) = C$ for some constant $C$. 
+$$f(z) = kg(z) + C$$
 
 \newpage
 \section{Convergence of Infinite Series in $\mathbb{C}$}
+We want to study series in $\mathbb{C}$. 
+$$\sum_{k = 0}^{\infty}a_k$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Power Series in $\mathbb{C}$}
 \section{Series Expansion of Holomorphic Functions}
 \section{Open Mapping Theorem and Reflection Principle}
