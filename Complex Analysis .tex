@@ -1497,12 +1497,43 @@ A reminder about upper and lower limits. Let
 then 
 $$ L = \sup_{n \geqslant 0}(\inf_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\inf \{ |a_n|, |a_{n + 1}|, \cdots \})$$
 $$ U = \inf_{n \geqslant 0}(\sup_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\sup \{ |a_n|, |a_{n + 1}|, \cdots \}) $$
+and $L \leqslant U$. For $n$ large and $\epsilon_0$, $\epsilon_1 > 0$, 
+$$L - \epsilon_0 \leqslant |a_n| \leqslant U + \epsilon_1$$
+If we show that $U \leqslant L$, then $|a_n|$ converges.
+$$\lim_{n \to \infty}|a_n| = L = U$$ 
+\newline
 \textbf{Hadamard's Formula for $R$.} 
 $$\lim_{n\to \infty} \sup|a_n|^{\frac{1}{n}} = \frac{1}{R}$$
 Just like with the geometric series, 
 $$ \sum_{n = 0}^{\infty} a_n(z - z_0)^n $$
-converges uniformly for $|z - z_0| \leqslant r < R$ and pointwise $|z - z_0| < R$.
-
+converges uniformly for $|z - z_0| \leqslant r < R$ and pointwise $|z - z_0| < R$. \\
+\textbf{Proof.} In this proof about convergence of power series, we could assume 
+$$\lim_{n \to \infty} |a_n|^{\frac{1}{n}} = \frac{1}{R}$$
+Assume $z_0 = 0$ and 
+$$ L = \frac{1}{R} = \lim_{n \to \infty} \sup |a_n|^{\frac{1}{n}}$$
+$L \neq 0$ or $\infty$. Let $|z| \leqslant r < R$, and from $\lim \sup$, we have 
+$$|a_n|^{\frac{1}{n}} \leqslant L + \epsilon $$
+for $n$ large and $\epsilon > 0$. 
+Therefore, 
+$$ |a_n| \leqslant (L + \epsilon)^n $$
+and 
+$$ |a_n||z|^n \leqslant ((L + \epsilon)|z|)^n \leqslant ((L + \epsilon)r)^n $$
+Since $(L + \epsilon)r = \frac{r}{R} + \epsilon r$ and $\frac{r}{R} < 1$, we can pick $\epsilon$ small enough such that the geometric series 
+$$ \sum_{n = 0}^{\infty} ((L + \epsilon)r)^n$$
+converges for $|(L + \epsilon)r| < 1$. Therefore, the partial sums 
+$$ |S_n(z)| = \sum_{k = 0}^n |a_kz^k|$$
+are increasing sequence with respect to $n$, $z$-fixed, and bounded by a convergent sum. By the monotone convergence theorem, the series converges for $|z| < R$. By the Weierstrass M-Test, the convergence is uniform on $|z| \leqslant r < R$ but not on $|z| < R$, since we need a fixed radius. \\
+\newline
+\textbf{Example.} If 
+$$f(z) = \sum_{n = 1}^{\infty} \frac{z^n}{n!} $$
+Then $a_n = \frac{1}{n!}$
+$$ \lim_{n \to \infty} \abs*{\frac{a_{n + 1}}{a_n}} = \lim_{n \to \infty} \frac{n!}{(n+1)!} = \lim_{n \to \infty} \frac{1}{n + 1} = 0 = \frac{1}{R}, R = \infty$$
+Therefore, 
+$$ f(z) = \sum_{n = 1}^{\infty} \frac{z^n}{n!} = e^z - 1$$
+converges for all $z \in \mathbb{C}$. \\
+\newpage
+\textbf{Example.} If 
+$$ f(z) = \sum_{n = 0}^{\infty} (-1)^n \frac{z^{2n}}{3^{2n}} $$
 
 
 
