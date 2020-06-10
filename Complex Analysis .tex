@@ -1331,18 +1331,142 @@ $$f(z) = kg(z) + C$$
 \section{Convergence of Infinite Series in $\mathbb{C}$}
 We want to study series in $\mathbb{C}$. 
 $$\sum_{k = 0}^{\infty}a_k$$
-
-
-
-
-
-
-
-
-
-
-
-
+We start with the most famous series. \\
+\newline
+\textbf{Geometric Series.}
+$$S_n = a + ar + \cdots ar^n = \sum_{k = 0}^n ar^k$$
+Observe 
+\begin{align*}
+(1 - r)S_n &= S_n - rS_n \\ 
+&= a + ar + \cdots + ar^n - (ar + \cdots + ar^{n + 1}) \\ 
+&= a(1 - r^{n + 1})
+\end{align*}
+Thus 
+$$S_n = \sum_{k = 0}^n ar^k = \frac{a(1-r^{n + 1})}{1 - r}$$
+r is the ratio of the geometric sum. \\
+The geometric series is 
+\begin{equation*}
+S = \sum_{k = 0}^{\infty}ar^k = \frac{a}{1 - r} \mbox{ provided } |r| < 1
+\end{equation*}
+If $|r| \geqslant 1$, then the sum diverges and does not converge. \\
+\newline
+\textbf{Absolute Convergence.} \\
+If $\sum {|a_n|}$ converges, then $\sum {a_n}$ converges absolutely. \\
+\newline
+\textbf{Example.} The following series converges absolutely. 
+$$\sum \frac{(-1)^n}{n^2}$$ 
+\textbf{Conditional Convergence.} \\
+If $\sum {|a_n|}$ diverges and $\sum {a_n}$ converges, then the series converges conditionally. \\
+\newline 
+\textbf{Example.} The following series converges conditionally. 
+$$ \sum \frac{(-1)^n}{n}$$
+\newpage
+\subsection{Convergence Tests}
+\textbf{Alternating Series Test (A.S.T).} \\
+Suppose that we have a series $\sum {a_n}$ and either $a_n = (-1)^nb_n$ or $a_n = (-1)^{n + 1}b_n$ where $b_n > 0$ for all n. Then if,
+\begin{enumerate}[nolistsep]
+\item $\lim_{n \to \infty} b_n = 0$ and,
+\item$ \{b_n\}$ is a decreasing sequence
+\end{enumerate}
+the series $\sum a_n$ is convergent. \\
+\newline
+\textbf{Root Test.} \\
+Suppose that we have a series $\sum {a_n}$. Define 
+$$L = \lim_{n \to \infty} \sqrt[n]{|a_n|} = \lim_{n \to \infty} |a_n|^{\frac{1}{n}}$$
+Then, 
+\begin{enumerate}[nolistsep]
+\item if $L < 1$, the series is absolutely convergent (and hence convergent). 
+\item if $L > 1$, the series is divergent.  
+\item if $L = 1$, the series may be divergent, conditionally convergent, or absolutely convergent. 
+\end{enumerate} 
+$$ \lim_{n \to \infty}n ^ {\frac{1}{n}} = 1$$ 
+\textbf{Ratio Test.} \\
+Suppose that we have a series $\sum {a_n}$. Define 
+$$L = \lim_{n \to \infty} {\abs*{\frac{a_{n+1}}{a_n}}} $$
+Then, 
+\begin{enumerate}[nolistsep] 
+\item if $L < 1$ the series is absolutely convergent (and hence convergent). 
+\item if $L > 1$, the series is divergent.  
+\item if $L = 1$, the series may be divergent, conditionally convergent, or absolutely convergent. 
+\end{enumerate}
+\  \\
+\textbf{Basic Comparison Test (B.S.T).} \\
+Suppose that we have two series $\sum {a_n}$ and $\sum {b_n}$ with $a_n, b_n \geqslant 0$ for all $n$ and $a_n < b_n$ for all $n$. Then, 
+\begin{enumerate}
+\item If $\sum{b_n}$ is convergent, then so is $\sum a_n$. 
+\item If $\sum{a_n}$ is divergent, then so is $\sum b_n$.
+\end{enumerate}
+\  \\
+\textbf{Limit Comparison Test (L.S.T).} \\
+Suppose that we have two series $\sum {a_n}$ and $\sum {b_n}$ with $a_n \geqslant 0$, $b_n > 0$ for all $n$. Define, 
+$$c = \lim_{n \to \infty} \frac{a_n}{b_n} $$
+If $c$ is positive and is finite, then either both series converge or both series diverge. \\
+\newline
+\textbf{Integral Test.}
+Suppose that $f(x)$ is a continuous, positive and decreasing function on the interval $[k, \infty)$ and that $f(n) = a_n$ then, 
+\begin{enumerate}
+\item If $\int_k^\infty f(x) \, dx$ is convergent so is $\sum_{n = k}^{\infty} a_n$.
+\item If $\int_k^\infty f(x) \, dx$ is divergent so is $\sum_{n = k}^{\infty} a_n$.
+\end{enumerate}
+\newpage
+\textbf{Example.} p-series. 
+\begin{equation*}
+\sum_{n = 1}^{\infty} \frac{1}{n^p} \mbox{ converges if and only if } p > 1.
+\end{equation*}
+\newline
+\textbf{Monotone Convergence Theorem.} \\
+If $(a_n)$ is a monotone sequence of real numbers, then $(a_n)$ is convergent if and only if $(a_n)$ is bounded. \\
+Let $a_n > 0$, then $S_n = \sum_{k = 1}^n a_k$ is increasing and if it is bounded, $S_n \to S$. \\
+\newline 
+\textbf{Weierstrass M-Test.} \\
+If $\{f_n(z)\}$ be a sequence of functions with $|f_n(z)| \leqslant M_n, z \in \Omega$ and $\sum {M_n} < \infty$, then $\sum {f_n(z)}$ converges uniformly on $\Omega$. \\
+\newline
+\textbf{Proposition.} \\
+In general, $f_n \to f$ uniformly does imply $\int f_n \to \int f$ uniformly, but $f_n' \nrightarrow f'$, even pointwise. \\
+However, for holomorphic functions $f_n \to f$ uniformly on compacta implies $f_n' \to f'$ uniformly. \\
+\newline
+\textbf{Example.}\\
+Let 
+\begin{equation*}
+f_n(z) = \frac{\sin(nz)}{\sqrt{n}} \to 0 \mbox{ uniformly }
+\end{equation*}
+and 
+$$f_n'(z) = \sqrt{n}\cos(nz), f_n'(0) \to \infty \neq f'(0)$$
+\newline 
+\textbf{Cauchy Condensation Test.} \\
+Let $\{a_n\}$ be a series of positive terms with $a_{n + 1} \leqslant a_n$. Then $\sum_{n = 1}^{\infty} a_n$ converges if and only if 
+$$\sum_{k = 0}^{\infty} 2^ka_{2^k}$$ converges. \\
+\textbf{Proof.} 
+\begin{align*}
+&\hspace{9mm} \sum {2^nf(2^n)} < \infty \\
+&\Longleftrightarrow \int_{1}^{\infty}2^x f(2^x)\,dx \\ 
+&\Longleftrightarrow \log{(2)}\int_1^{\infty}2^x f(2^x) \,dx < \infty \\
+&\Longleftrightarrow \int_2^{\infty} f(u) \, du < \infty \\
+&\Longleftrightarrow \sum f(n) < \infty
+\end{align*}
+\textbf{Example.} Use Cauchy Condensation Test to prove $f(n) = \frac{1}{n}$ diverges. \\
+$$f(n) = \frac{1}{n} \Rightarrow \frac{2^n}{2^n} = 1$$
+\begin{equation*}
+\sum_{n = 1}^{\infty} 1 = \infty \mbox{ if and only if } \sum_{n = 1}^{\infty} \frac{1}{n} = \infty
+\end{equation*}
+Despite $\frac{1}{n} \to 0$, the harmonic series 
+$$ \sum_{n = 1}^{\infty} \frac{1}{n} = \infty$$ 
+\newline
+\textbf{Dirichlet Test.} \\
+Let $a_1, a_2, \cdots$ be a monotonically decreasing infinite real sequence. \\
+Let $\sum {b_n}$ be an infinite complex series such that its partial sums are bounded. i.e. 
+$$\abs*{\sum_{n = 1}^N {b_n}} \leqslant M $$
+for all $N \in \mathbb{N}$. \\
+Then 
+$$\sum_{n = 1}^{\infty} a_nb_n$$
+converges. \\
+\newline
+\textbf{Example.} Determine whether the following series converge. 
+$$\sum_{n = 1}^{\infty} \frac{(e^{2\pi i /3})}{\sqrt{n}}$$
+When viewed as vectors, $b_1 + b_2 + b_3 = 0$ and $\sum_{n = 1}^{3k} b_n = 0$\\
+We have $\abs*{\sum_{n = 1}^{\infty} b_n}$ is bounded but does not converge, just like $\abs*{\sum_{n = 1}^{\infty} (-1)^n}$. \\
+Therefore, $\frac{b_n}{\sqrt{n}}$ converges. \\
+Using the same technique, one can also show $\sum_{n = 1}^{\infty} \frac{\sin(n)}{n}$ converges.
 
 
 \newpage

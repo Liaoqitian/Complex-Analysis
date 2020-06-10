@@ -51,10 +51,11 @@
 \contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{35}
 \contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{36}
 \contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{40}
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{41}
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{41}
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{41}
-\contentsline {section}{\numberline {19}Laurent Series}{41}
-\contentsline {section}{\numberline {20}Residue Theorem}{41}
-\contentsline {section}{\numberline {21}Improper Integrals}{41}
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{41}
+\contentsline {subsection}{\numberline {15.1}Convergence Tests}{41}
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{44}
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{44}
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{44}
+\contentsline {section}{\numberline {19}Laurent Series}{44}
+\contentsline {section}{\numberline {20}Residue Theorem}{44}
+\contentsline {section}{\numberline {21}Improper Integrals}{44}
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{44}
