@@ -1481,7 +1481,27 @@ where $C$ is a path about $z_0$. \\
 $f'(z)$ and $F(z)$ are given by 
 $$f'(z) = \sum_{n = 0}^{\infty} a_n \cdot n(z-z_0)^{n -1}$$
 $$F(z) = \int f(z) \, dz = \sum_{n = 0}^{\infty} \frac{a_n}{n + 1}(z - z_0)^{n + 1} + C_0$$
-and are holomorphic and converge for $|z -z _0| < R$.
+and are holomorphic and converge for $|z -z _0| < R$. $R$ denotes the radius of convergence. \\
+We have no clue about what happens with $|z - z_0| = R$, then we have to check for each $f(z)$ and point. \\
+If $R = \infty$, then $f(z)$ is entire. \\
+If $R = 0$, then $f$ is not holomorphic on disks centered at $z_0$. \\
+\newline
+Before we move on to more specifics about the radius of convergence, a brief review of terminology is in order. \\ 
+A reminder about upper and lower limits. Let 
+\begin{equation*}
+\mbox{Largest lower bound: } \lim_{n \to \infty} \inf|a_n| = L
+\end{equation*}
+\begin{equation*}
+\mbox{Smallest upper bound: }\lim_{n \to \infty} \sup|a_n| = U
+\end{equation*}
+then 
+$$ L = \sup_{n \geqslant 0}(\inf_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\inf \{ |a_n|, |a_{n + 1}|, \cdots \})$$
+$$ U = \inf_{n \geqslant 0}(\sup_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\sup \{ |a_n|, |a_{n + 1}|, \cdots \}) $$
+\textbf{Hadamard's Formula for $R$.} 
+$$\lim_{n\to \infty} \sup|a_n|^{\frac{1}{n}} = \frac{1}{R}$$
+Just like with the geometric series, 
+$$ \sum_{n = 0}^{\infty} a_n(z - z_0)^n $$
+converges uniformly for $|z - z_0| \leqslant r < R$ and pointwise $|z - z_0| < R$.
 
 
 
