@@ -1402,7 +1402,7 @@ Suppose that we have two series $\sum {a_n}$ and $\sum {b_n}$ with $a_n \geqslan
 $$c = \lim_{n \to \infty} \frac{a_n}{b_n} $$
 If $c$ is positive and is finite, then either both series converge or both series diverge. \\
 \newline
-\textbf{Integral Test.}
+\textbf{Integral Test.} \\
 Suppose that $f(x)$ is a continuous, positive and decreasing function on the interval $[k, \infty)$ and that $f(n) = a_n$ then, 
 \begin{enumerate}
 \item If $\int_k^\infty f(x) \, dx$ is convergent so is $\sum_{n = k}^{\infty} a_n$.
@@ -1700,6 +1700,7 @@ But $\sin \left(\frac{1}{0}\right)$ does not exist and $\sin \left(\frac{1}{z}\r
 
 \newpage
 \section{Open Mapping Theorem and Reflection Principle}
+\subsection{Open Mapping Theorem}
 \textbf{Question.} Let $f$ be continuous on $\mathbb{R}$, does $f$ map open sets to open sets? \\
 \textbf{Answer.} No. See the following counter-example. \\
 Let $ f(x) = |x| $, then $ f(-3) = f(3)$ and $f((-3, 3)) = [0, 3)$ \\
@@ -1713,10 +1714,96 @@ Let $f$ be non-constant. Then Cauchy-Riemann Equations imply $|f(z)|$ is not con
 Let $f(z)$ be non-constant and holomorphic on $\Omega$. Let $U$ be open in $\Omega$ then, 
 $$ f(U) = \{w| f(z) = w \mbox{ for some z } \in \Omega \} $$ 
 is open. \\
-\textbf{Proof.} Let $a \in \Omega$, then a neighborhood of $a$ under $f$ will contain a neighborhood of $f(a)$. Assume $f(a) = 0$. If this is not the case, we can study $g(z) = f(z) - f(a)$. Since $f$ is not constant, by the Uniqueness Theorem there is $r > 0$ such that $f(z) \neq 0$ for all $z$ where $|z - a| = r$
-
-
-
+\textbf{Proof.} Let $a \in \Omega$, then a neighborhood of $a$ under $f$ will contain a neighborhood of $f(a)$. Assume $f(a) = 0$. If this is not the case, we can study $g(z) = f(z) - f(a)$. Since $f$ is not constant, by the Uniqueness Theorem there is $r > 0$ such that $f(z) \neq 0$ for all $z$ where $|z - a| = r$. Consider 
+$$ 0 < 2\epsilon = \min_{|z - a| = r}|f(z)|$$
+We will show the image of the disk $B_r(a) = U$ contains $B_\epsilon(f(a)) = B_\epsilon(0)$ in the $w$-plane. Or in other words, interior points are mapped to interior points. Let $w \in B_\epsilon(0)$ and look at $f(z) - w$. If $|z - a| = r$, 
+$$|f(z) - w| \geqslant |f(z)| - |w| \geqslant \epsilon$$
+because $|f(z)| \geqslant 2\epsilon$ and $|w| < \epsilon$. Now at $z = a$, we have $|f(a) - w| = |-w| = \epsilon$. \\
+On the boundary of $U$, we have $|f(z) - w| \geqslant \epsilon$. \\
+But at the center of $U$, we have $|f(a) - w| < \epsilon$. 
+To sum up what we have so far: 
+\begin{enumerate}[nolistsep]
+\item $f(z) - w$ is not constant.
+\item $|f(z) - w| < \epsilon$ on $w$.
+\item $|f(z) - w| \geqslant \epsilon$ on $\partial w$.
+\item $|f(z) - w|$ smaller on $U$ than on $\partial U$. 
+\end{enumerate}
+Therefore, $|f(z) - w|$ has a global minimum in $U$. \\
+By Minimum Modulus Principle, $f(z) - w = 0$ or $f(z) = w$ for some $z \in U$. Hence, $f(U)$ contains $B_\epsilon(0)$. \\
+This concludes the proof of Open Mapping Theorem. \\
+We can also prove the Open Mapping Theorem without using Minimum Modulus Principle, and instead prove it by counting zeros. \\
+\newline
+\textbf{Corollary.} \\
+Non-constant holomorphic functions map domains to domains. \\
+\textbf{Proof.} \\
+(Like the Intermediate Value Theorem) The continuous image of a connected set is connected. \\
+\newline
+\textbf{Corollary.} \\
+Non-constant, invertible holomorphic functions map boundary points to boundary points. \\
+\textbf{Proof.} \\
+If $f(z)$ is a boundary point, then any neighborhood of $f(z)$ intersects points not in $f(\Omega)$. Thus $f(z)$ has no open neighborhood in $f(\Omega)$. Therefore, $z$ is not an interior in $\Omega$. 
+\subsection{Reflection Principle.}
+\textbf{Symmetry Principle.} \\
+Let $f$ be continuous on an open set $\Omega$ and holomorphic on $\Omega$ except on a line segment $L$. Then $f$ is holomorphic on $\Omega$. \\
+\textbf{Proof.} 
+Assume $L$ is on $\mathbb{R}-axis$, otherwise apply affine transform to move $L$, $f(z) = f(az + b)$. \\
+Let $z \in L$ and consider a ball about $z$. Let $C$ be a closed loop in the ball. If $C$ does not cross $L$, then 
+$$\oint_C f(z) \, dz = 0$$ 
+by Cauchy's Theorem. If $C$ does pass through $L$, we can break up the curve as follows: 
+%%
+$$ \oint_Cf(z)\,dz = \lim_{\epsilon \to 0} \oint_{U_\epsilon} f(z) \, dz + \oint_{L_\epsilon} f(z) \, dz = 0$$
+because $f$ is continuous. Then by Morera's Theorem, $f$ is holomorphic in the ball. \\
+\newline
+\textbf{Schwarz's Reflection Principle.} \\
+Let $\Omega$ be in the upper half plane and $\Omega$'s boundary contains a line segment $L$ that intersects the $\mathbb{R}$-axis. If $f$ is $\mathbb{R}$ for $z \in L$ and is holomorphic on $\Omega$, then 
+$$
+f(z) = 
+\begin{cases} 
+	f(z), z \in \Omega \cup L \\
+	\conj{f(\conj{z})}, \conj{z} \in \Omega \\
+\end{cases}
+$$
+is holomorphic on $\Omega$ and $\Omega^\ast = \{z|\conj{z} \in \Omega \}$. \\
+\textbf{Note.} To do this extension in a continuous manner is trivial. We are extending $f$ to a holomorphic function below $\mathbb{R}$-axis by reflection. The set $\Omega \cup L \cup \Omega^\ast$ is symmetric about the $\mathbb{R}$-axis. \\
+\textbf{Proof.} Let $z_0, z_1 \in \Omega^\ast$ 
+\begin{align*}
+f(\conj{z}) &= \sum_{n = 0}^{\infty}a_n(\conj{z} - \conj{z_0})^n \\
+\conj{f(\conj{z})} &= \sum_{n = 0}^{\infty} \conj{a_n}(z - z_0)^n
+\end{align*}
+Therefore, $\conj{f(\conj{z})}$ is holomorphic on $\Omega^\ast$ and we assumed 
+$$g(x) = \conj{g(x)}$$
+for $x \in L$. Thus, $g$ extends continuously up to $L$. By Symmetry Principle $g$ is holomorphic. \\
+\newline
+\textbf{Corollary.} 
+If $f$ is holomorphic in a region symmetric with respect to $\mathbb{R}$-axis and $f(z)$ is $\mathbb{R}$ for $z \in \mathbb{R}$, then
+$$f(z) = \conj{f(\conj{z})} $$
+by Uniqueness Theorem. \\
+\newpage
+\textbf{Example.} By the corollary above, 
+$$\cos(z) = \conj{\cos(\conj{z})}$$ 
+for all $z$. \\
+\newline
+\textbf{Example.} Let $f$ be bounded and holomorphic on $\Im(z) \geqslant 0$ and $f(z) \in \mathbb{R}$ for $z \in \mathbb{R}$. Then
+$$
+g(z) = 
+\begin{cases}
+	f(z), \Im(z) \geqslant 0 \\
+	\conj{f(\conj{z})}, \Im(z) < 0\\ 
+\end{cases}
+$$
+is entire and bounded. Then $g(z)$ is constant by Liouville's Theorem. \\
+\newline
+\textbf{Note.} Since we can map $|z| < 1$ to $\Im(z) > 0$, the Reflection Principle can be extended to boundaries of circles and curves. \\
+\newline
+\textbf{Example.} If $f$ is holomorphic, $|f(z)| < 1$ for $|z| < 1$, continuous to the boundary and maps the boundary to the boundary, then 
+$$
+g(z) = 
+\begin{cases}
+	f(z), |z| \leqslant 1 \\ 
+	\frac{1}{\conj{f(\frac{1}{\conj{z}})}}, |z| > 1\\
+\end{cases}
+$$
+is holomorphic except at the reflected zeros in $|z| < 1$. Reflection is about the boundary of $|z| = 1$. 
 
 
 \newpage

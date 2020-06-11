@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  10 JUN 2020 23:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  11 JUN 2020 14:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1411,20 +1411,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 1671--1674
  []
 
 [49] [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1703--1714
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1715
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1703--1714
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1715
 
  []
 
-[51] [52] [53] (./Complex Analysis .aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1731--1745
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1731--1745
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 1754--1759
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1774--1779
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1779--1781
+
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1783--1787
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1799
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1799
+
+ []
+
+[53] [54] [55] (./Complex Analysis .aux) ) 
 Here is how much of TeX's memory you used:
  16269 strings out of 480608
  318321 string characters out of 5903631
- 639947 words of memory out of 5000000
+ 640947 words of memory out of 5000000
  31867 multiletter control sequences out of 15000+600000
  542697 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1449,10 +1489,10 @@ fonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
-Output written on "Complex Analysis .pdf" (55 pages, 365230 bytes).
+Output written on "Complex Analysis .pdf" (57 pages, 371782 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
+ 268 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
