@@ -14,7 +14,7 @@
 \usepackage{ragged2e}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
+\graphicspath{ {./images/} }
 %Antiderivative Line
 \DeclareMathOperator{\di}{d\!}
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
@@ -1805,9 +1805,59 @@ g(z) =
 $$
 is holomorphic except at the reflected zeros in $|z| < 1$. Reflection is about the boundary of $|z| = 1$. 
 
-
 \newpage
 \section{Laurent Series}
+\textbf{Laurent's Theorem.} \\
+For $z \in A$ and $f$ holomorphic in 
+$$A = \{z|r_1 < |z - z_0| < r_2\}$$
+we have 
+\begin{align*}
+f(z) &= \sum_{n = -\infty}^{\infty} a_n(z - z_0)^n \\
+a_n & = \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z_0)^{n + 1}}\, dw
+\end{align*}
+where $C$ is any closed simple path in $A$ about $z_0$. \\
+We may also use different notation for the coefficients with negative indices, $b_n = -a_n$. \\
+\newline
+\begin{minipage}{.5\textwidth}
+       \begin{align*}
+	f(z) &= \sum_{n = 1}^{\infty}\frac{b_n}{(z - z_0)^n} + \sum_{n = 0}^{\infty} a_n (z-z_0)^n \\
+	a_n &= \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z_0)^{n + 1}} \, dw \\
+	b_n &= \frac{1}{2\pi i}\oint_C f(w)(w - z_0)^{n - 1} \, dw \\
+	\end{align*}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale = 0.2]{Laurent}
+\end{minipage}
+
+\iffalse
+\begin{align*}
+f(z) &= \sum_{n = 1}^{\infty}\frac{b_n}{(z - z_0)^n} + \sum_{n = 0}^{\infty} a_n (z-z_0)^n \\
+a_n &= \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z_0)^{n + 1}} \, dw \\
+b_n &= \frac{1}{2\pi i}\oint_C f(w)(w - z_0)^{n - 1} \, dw 
+\end{align*}
+\begin{figure}[h]
+\includegraphics[scale=0.2]{Laurent} 
+\centering
+\end{figure}
+\fi
+\textbf{First Extension of Cauchy's Integral Formula.} \\
+Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, each oriented counter-clockwise. If $f$ is holomorphic on $\Omega$, then
+$$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw, z \in \Omega$$
+\begin{figure}[h]
+\includegraphics[scale=0.2]{p1cif} 
+\centering
+\end{figure}
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Residue Theorem}
 \section{Improper Integrals}
 \section{Argument Principle and Rouche's Theorem}
