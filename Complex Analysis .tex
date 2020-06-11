@@ -1088,7 +1088,7 @@ Therefore,
 $$f(0) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z} \,dz$$
 This means that the value of $f$ at $z = 0$ only depends on the value of $\frac{f(z)}{z}$ over circles centered at 0. This result can be further generalized to Cauchy Integral Formula. \\
 \newline
-\textbf{Cauchy Integral Formula. (C.I.F)} \\
+\textbf{Cauchy's Integral Formula. (C.I.F)} \\
 Let $C$ be a smooth closed curve with interior domain $\Omega$. If $f$ is holomorphic on $\Omega$ and continuous on $\Omega$'s closure, 
 $$f(z) = \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \, dw, z \in \Omega$$
 \newline 
@@ -1100,8 +1100,8 @@ However,
 \end{equation*}
 \newline 
 \newline
-\textbf{Extension of Cauchy Integral Formula.} \\
-Cauchy Integral Formula can be naturally expanded to $f'(z)$, 
+\textbf{Extension of Cauchy's Integral Formula.} \\
+Cauchy's Integral Formula can be naturally expanded to $f'(z)$, 
 $$ f'(z) = \frac{1}{2\pi i}\oint_C \frac{f'(w)}{w - z} \, dw = \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z)^2} \, dw, z \in \Omega$$
 Therefore, the result can be generalized to 
 $$f^{(k)}(z) = \frac{k!}{2\pi i}\oint_C \frac{f(w)}{(w - z)^{k + 1}} \, dw, z \in \Omega$$
@@ -1478,6 +1478,8 @@ be a power series centered at $z_0$. \\
 The coefficients are unique: 
 $$ a = \frac{f^{(n)} (z_0)}{n!} = \frac{1}{2\pi i} \oint_C \frac{f(w)}{(w - z_0)^{n + 1}} \, dw$$
 where $C$ is a path about $z_0$. \\
+\newline
+\textbf{Derivative and Anit-derivative of a Power Series.} \\
 $f'(z)$ and $F(z)$ are given by 
 $$f'(z) = \sum_{n = 0}^{\infty} a_n \cdot n(z-z_0)^{n -1}$$
 $$F(z) = \int f(z) \, dz = \sum_{n = 0}^{\infty} \frac{a_n}{n + 1}(z - z_0)^{n + 1} + C_0$$
@@ -1502,6 +1504,7 @@ $$L - \epsilon_0 \leqslant |a_n| \leqslant U + \epsilon_1$$
 If we show that $U \leqslant L$, then $|a_n|$ converges.
 $$\lim_{n \to \infty}|a_n| = L = U$$ 
 \newline
+\subsection{Radius of Convergence}
 \textbf{Hadamard's Formula for $R$.} 
 $$\lim_{n\to \infty} \sup|a_n|^{\frac{1}{n}} = \frac{1}{R}$$
 Just like with the geometric series, 
@@ -1534,11 +1537,102 @@ converges for all $z \in \mathbb{C}$. \\
 \newpage
 \textbf{Example.} If 
 $$ f(z) = \sum_{n = 0}^{\infty} (-1)^n \frac{z^{2n}}{3^{2n}} $$
-
-
+$$|a_n|^{\frac{1}{n}} = \frac{|z^2|}{|9|} $$
+If $\frac{|z|^2}{|9|} < 1$, the sum converges absolutely on $|z| < 3$. Here, 
+$$ \sum_{n = 0} ^ {\infty} (-1)^n \frac{z^{2n}}{3^{2n}} = \frac{1}{1 - (-\frac{z}{3})^2} = \frac{1}{1 + \frac{z^2}{9}} = \frac{9}{9 + z^2} = \frac{d}{dz}3\arctan(\frac{z}{3})$$
+Most of the power series with reals still work here in complex. 
+$$\sin(z) = \sum_{n = 0}^{\infty} \frac{(-1)^nz^{2n + 1}}{(2n + 1)!}, z \in \mathbb{C}$$
+However, 
+$$ \sqrt{z} \neq \sum_{n = 0}^{\infty} a_nz^n $$ 
+because $\sqrt{z}$ is not differentiable at $z = 0$. \\ 
+\newline
+\subsection{Derivative of Power Series}
+Now let us prove the claim we made before.\\ 
+\textbf{Claim.} The derivative of a power series is given as below. 
+$$f'(z) = \sum_{n = 0}^{\infty}na_nz^{n - 1}, |z| < R$$ 
+\textbf{Proof.} Define 
+$$g(z) = \sum_{n = 0}^{\infty} a_n\cdot nz^{n - 1}$$ 
+and if 
+$$ L = \frac{1}{R} = \lim_{n \to \infty}\sup |a_n|^{\frac{1}{n}} $$
+$$ \Rightarrow \lim_{n \to \infty} \sup |na_n|^{\frac{1}{n}} = \lim_{n \to \infty}\sup |n|^{\frac{1}{n}}|a_n|^{\frac{1}{n}} = \lim_{n \to \infty}\sup|n|^{\frac{1}{n}}\lim_{n \to \infty} \sup |a_n|^{\frac{1}{n}}$$
+because $|n^k|^{\frac{1}{n}} \to 1$ as $n \to \infty$, $k \in \mathbb{R}$, $k \neq 0$. Hence $g(z)$ and $f(z)$ have the same radius of convergence. 
+\iffalse
+$$n ^{\frac{k}{n}} = e^{\ln(n^{\frac{k}{n}})} = e^{\frac{k}{n}\ln(n)}$$
+Then 
+$$ \ln(n) \leqslant \sqrt{n}$$ 
+$$ \ln(1) \leqslant \sqrt{1}$$ 
+\begin{equation*}
+\frac{1}{n} \leqslant \frac{1}{2}\sqrt{n} \mbox{ if and only if } 2\sqrt{n} \leqslant n
+\end{equation*}
+This implies $h(x) = \sqrt{x} - \ln(x)$ is increasing in $x$ by the Mean Value Theorem, $\ln(x) \leqslant \sqrt{x}$. \\
+Therefore, 
+\begin{equation*}
+\frac{\ln(n)}{n} \leqslant \frac{1}{\sqrt{n}} \to 0 \mbox{ as } n\to \infty
+\end{equation*}
+Thus, 
+$$ \lim_{n \to \infty} e^{\frac{k}{n}\ln(n)} = e^0 = 1 = \lim_{n \to \infty} n^{\frac{k}{n}} $$
+by the continuity of $e^x$. \\
+\fi
+Now we must show $g(z)$ is the derivative of $f(z)$, 
+$$f(z) = \sum_{n = 0}^N a_nz^n + \sum_{n = N + 1}^{\infty} a_nz^n = S_n(z) + E_n(z)$$ 
+where $|z| < r < R$, 
+$$ \frac{f(z+h) -f(z)}{h} - g(z) = \frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) + (S_N'(z) - g(z)) + \frac{E_N(z + h) - E_N(z)}{h}$$
+We have three terms to study, and we can set each of them to be $< \frac{\epsilon}{3}$.
+\begin{equation*}
+\frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) \mbox{ derivative of a polynomial, } 
+\end{equation*}
+\begin{equation*}
+S_N'(z) - g(z), S_N'(z) \to g(z) \mbox{ for } N > M \mbox{ for some } M,
+\end{equation*}
+\begin{equation*}
+\frac{E_N(z + h) - E_N(z)}{h}, \mbox{ this is more technical and we will investigate more}
+\end{equation*}
+$$\abs*{\frac{E_N(z + h) - E_N(z)}{h}} \leqslant \sum_{n = N + 1}^{\infty} |a_n|\abs*{\frac{(z + h)^n - z^n}{h}} $$
+This means we need a bound on $(z + h)^n - z^n$. Remember 
+$$1 + x + x^2 + \cdots + x^{n - 1} = \frac{1 - x^n}{1 - x}$$
+$$\Rightarrow (1 - x) (1 + x + x^2 + \cdots + x^{n - 1}) = 1 - x^n$$
+If we let $x = \frac{b}{a}$, then we have a more generalized formula, 
+$$a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + ab^{n - 2} + b^{n - 1})$$
+Apply the formula above to $a = z + h$ and $b = z$, 
+$$|(z + h)^n - z^n| = |h||(z+h)^{n - 1} + (z+h)^{n - 2}z + \cdots + z^{n - 1}|$$
+We have n terms of the form 
+$$(z + h)^{n - 1 - k} \cdot z^k$$
+and if $h$ is small, $|z+h| \leqslant r < R$, then 
+$$|(z + h)^{n - 1 - k} \cdot z^k| \leqslant r^{n -1} \leqslant R^{n - 1}$$
+Therefore, 
+$$ |a_n|\frac{|(z+h)^n - z^n|}{|h|} \leqslant |a_n|\frac{|h|nR^{n - 1}}{|h|} = |a_n|nR^{n -1} $$
+Hence, we have a bound on
+$$\abs*{\frac{E_N(z+h) - E_N(h)}{h}} \leqslant \sum_{n = N + 1}^{\infty} |a_n|nr^{n - 1}$$
+which we know to be the tail of a convergent sum, $g(z)$. Thus, it can be picked such that it is less than $\frac{\epsilon}{3}$ because the tail tends to 0 as $n \to \infty$. Hence, 
+$$\abs*{\frac{f(z+h)-f(z)}{h} - g(z)} < \epsilon$$
+or $f'(z) = g(z)$. \\
+\newline
+\textbf{Proposition.} \\
+Power series functions are holomorphic in $|z - z_0| < R$ and are naturally $\infty$-differentiable, i.e. $\mathbb{C}^\infty$.
 
 \newpage
 \section{Series Expansion of Holomorphic Functions}
+Now we want to show if $f(z)$ is holomorphic on $\Omega$, it has a power series expansion on any disk in $\Omega$. \\
+\newline
+\textbf{Connection of the Geometric Series to Cauchy's Integral Formula.} \\
+$$f(z) = \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \,dw$$
+$$\frac{1}{w - z} = \frac{1}{w} \cdot \frac{1}{1 - \frac{z}{w}} = \frac{1}{w} \left(1 + \frac{z}{w} + \left(\frac{z}{w}\right)^2 + \cdots \right), r = \frac{z}{w}$$
+If $|\frac{z}{w}| < 1$, $|z| < |w|$, the sum converges uniformly, 
+\begin{align*}
+\frac{1}{w - z} &= \frac{1}{w}\sum_{n = 0}^{\infty}\left(\frac{z}{w}\right)^n \\
+\Rightarrow f(z) &= \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \,dw = \frac{1}{2\pi i} \oint_C \frac{1}{w} \sum_{n = 0}^{\infty} f(w) \left(\frac{z}{w} \right)^n \,dw \\
+&= \frac{1}{2\pi i}\sum_{n = 0}^{\infty} \oint_C f(w)\frac{1}{w}\left(\frac{z}{w}\right)^n \,dw \mbox{ because of uniform convergence} \\
+&= \sum_{n = 0}^{\infty} \frac{1}{2\pi i}\oint_C \frac{f(w)}{w^{n + 1}}\,dw z^n \\
+&= \sum_{n = 0}^{\infty}a_nz^n
+\end{align*}
+where 
+$$a_n = \frac{1}{2\pi i}\oint_C\frac{f(w)}{w^{n + 1}}\, dw = \frac{f^{(n)}(0)}{n!}$$
+\newline
+\textbf{Theorem.} \\
+If $f$ is holomorphic on $\Omega$, then for every disk in $\Omega$ centered at $z_0$, $f$ has a unique power series expansion at $z_0$ that converges to $f(z)$. \\
+If the disk is closed and in $\Omega$, then the power series converges uniformly to $f(z)$.
+
+\newpage
 \section{Open Mapping Theorem and Reflection Principle}
 \section{Laurent Series}
 \section{Residue Theorem}
