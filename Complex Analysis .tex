@@ -12,13 +12,14 @@
 \usepackage[super]{nth}
 \usepackage{tikz}
 \usepackage{ragged2e}
+\usepackage{pagecolor,lipsum}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 \graphicspath{ {./images/} }
 %Antiderivative Line
 \DeclareMathOperator{\di}{d\!}
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
-
+\pagecolor{white}
 \setlist[itemize,1]{leftmargin=\dimexpr 26pt-.5in}
 %Set Equation Space above and Below
 \setlength{\abovedisplayskip}{2pt}
@@ -1807,6 +1808,20 @@ is holomorphic except at the reflected zeros in $|z| < 1$. Reflection is about t
 
 \newpage
 \section{Laurent Series}
+
+\textbf{First Extension of Cauchy's Integral Formula.} \\
+Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, each oriented counter-clockwise. If $f$ is holomorphic on $\Omega$, then
+$$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw, z \in \Omega$$
+\textbf{Proof.}\\
+\begin{figure}[h]
+\includegraphics[scale=0.2]{p1cif} 
+\centering
+\end{figure}
+\\
+Let $z \in \Omega$ and $C: C_1 \cup C_3 \cup -C_2 \cup -C_3$ be a closed curve about $z$ in $\Omega$. \\
+Now Cauchy's Integral Formula applies
+$$ f(z) = \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \, dw = \frac{1}{2\pi i}\oint_{C_1\cup -C_2} \frac{f(w)}{w - z} \,dw = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw$$
+\newline
 \textbf{Laurent's Theorem.} \\
 For $z \in A$ and $f$ holomorphic in 
 $$A = \{z|r_1 < |z - z_0| < r_2\}$$
@@ -1828,7 +1843,39 @@ We may also use different notation for the coefficients with negative indices, $
   \begin{minipage}{.5\textwidth}
     \centering
     \includegraphics[scale = 0.2]{Laurent}
-\end{minipage}
+\end{minipage} 
+\newline
+\newline
+\textbf{Proof.}
+Let $A = \{z|r_1 < |z - z_0| < r_2\}$ be an annulus centered at $z_0$. Choose $C_1$ and $C_2$, counter-clockwise circles in $A$ such that $z$ is in the region bounded by between them. We will assume $z_0 = 0$. By First Extension of Cauchy's Integral Formula,
+$$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw$$
+As shown earlier with Taylor Series: 
+\begin{align*}
+\frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw &= \sum_{n = 0}^{\infty} a_n z^n \\
+a_n &= \frac{1}{2\pi i}\oint_{C_1} \frac{f(w)}{w^{n + 1}} \, dw
+\end{align*}
+provided $|z| < r_2$.
+Then we transform the integral over $C_2$ as follows. 
+$$\frac{1}{2\pi i}\oint_{C_2}\frac{f(w)}{w - z} \,dw = \frac{-1}{2\pi i}\oint_{C_2} \frac{f(w)}{z} \cdot \frac{1}{1 - \frac{w}{z}} \, dw = \frac{-1}{2\pi i}\oint_{C_2}\frac{f(w)}{z}\sum_{n = 0}^{\infty} \left(\frac{w}{z}\right)^n \, dw = \frac{-1}{2\pi i}\oint_{C_2}\sum_{n = 0}^{\infty} f(w)\frac{w^n}{z^{n + 1}} \, dw$$
+Because the function $f(w)w^n$ is holomorphic in $A$ for all $n \in \mathbb{z}$, we can change the curve we are integrating over to $C_1$ or any other curve in $A$. Hence 
+$$\frac{-1}{2\pi i}\oint_{C_2}\sum_{n = 0}^{\infty} f(w)\frac{w^n}{z^{n + 1}} \, dw = \frac{-1}{2\pi i}\oint_{C_1}\sum_{n = 0}^{\infty} f(w)\frac{w^n}{z^{n + 1}} \, dw $$
+And since the Geometric Series converges uniformly for $\abs*{\frac{w}{z}} \leqslant r < 1$, we can swap the order of integration and summation.
+$$\frac{-1}{2\pi i}\oint_{C_1}\sum_{n = 0}^{\infty} f(w)\frac{w^n}{z^{n + 1}} \, dw = \frac{-1}{2\pi i}\sum_{n = 0}^{\infty}\oint_{C_1} f(w)w^n \, dw \, \frac{1}{z^{n + 1}}$$
+We rewrite $\frac{1}{z^{n + 1}}$ with $z^{-n - 1}$ and reindex our sum to start at $n = 1$. Therefore, 
+\begin{align*}
+\frac{1}{2\pi i}\oint_{-C_2}\frac{f(w)}{w - z} \,dw &= \sum_{n = 1}^{\infty} b_n z^{-n}, |z| > r \\
+b_n &= \frac{1}{2\pi i}\oint_{C_1}f(w)w^{n - 1}\, dw 
+\end{align*}
+\newline
+\textbf{Techniques.}
+ We have two tricks to transform Power Series into forms we can manipulate. 
+\begin{enumerate}
+\item Treat $r = \frac{z}{w}$. If $|\frac{z}{w}| < 1$, $|z| < |w|$, the sum converges. 
+$$\frac{1}{w - z} = \frac{1}{w}\cdot \frac{1}{1 - \frac{z}{w}} = \frac{1}{w}\left(1 + \frac{z}{w} + \left(\frac{z}{w}\right)^2+\cdots \right)$$
+\item Treat $r = \frac{w}{z}$. If $|\frac{w}{z}| < 1$, $|w| < |z|$, the sum converges. 
+$$\frac{1}{w - z} = \frac{-1}{z}\cdot \frac{1}{1 - \frac{w}{z}} = \frac{-1}{z}\left(1 + \frac{w}{z} + \left(\frac{w}{z}\right)^2+\cdots \right)$$
+\end{enumerate}
+
 
 \iffalse
 \begin{align*}
@@ -1841,21 +1888,6 @@ b_n &= \frac{1}{2\pi i}\oint_C f(w)(w - z_0)^{n - 1} \, dw
 \centering
 \end{figure}
 \fi
-\textbf{First Extension of Cauchy's Integral Formula.} \\
-Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, each oriented counter-clockwise. If $f$ is holomorphic on $\Omega$, then
-$$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw, z \in \Omega$$
-\begin{figure}[h]
-\includegraphics[scale=0.2]{p1cif} 
-\centering
-\end{figure}
-
-
-
-
-
-
-
-
 
 \newpage
 \section{Residue Theorem}
