@@ -1656,7 +1656,6 @@ $$|g(z_k)| < \frac{1}{2} \Rightarrow |1 + g(z_k)| > \frac{1}{2} \Rightarrow 1 + 
 Therefore, $f(z_k) \neq 0$ and $f(z_k) = 0$ for all $k > N$. This is a contradiction. \\
 Hence, it is proven that $a_n = 0$ for all $n \in \mathbb{N}$. \\
 \newline
-
 \textbf{Uniqueness Theorem.} \\
 Let $f$ and $g$ be holomorphic on $\Omega$. The following are equivalent: 
 \begin{enumerate}
@@ -1695,12 +1694,32 @@ Limit points outside of $\Omega$ do not imply $f(z) = 0$. We provide a counter-e
 \begin{align*}
 f(z) &= \sin \left(\frac{1}{z}\right) \\ 
 z_n &= \frac{1}{n\pi} \\
-z_n &\to 0 \\
+z_n &\to 0
 \end{align*}
 But $\sin \left(\frac{1}{0}\right)$ does not exist and $\sin \left(\frac{1}{z}\right) \neq 0$ for all z. 
 
 \newpage
 \section{Open Mapping Theorem and Reflection Principle}
+\textbf{Question.} Let $f$ be continuous on $\mathbb{R}$, does $f$ map open sets to open sets? \\
+\textbf{Answer.} No. See the following counter-example. \\
+Let $ f(x) = |x| $, then $ f(-3) = f(3)$ and $f((-3, 3)) = [0, 3)$ \\
+The continuous function does not map open sets to open sets.\\
+\textbf{Follow-Up (Alternative Definition of Continuity).} \\
+The pre-image of open sets under a continuous function $f$ is open. \\
+\newline
+Let $f$ be non-constant. Then Cauchy-Riemann Equations imply $|f(z)|$ is not constant. Uniqueness Theorem implies $f(\Omega) \neq 0$ on an open subset of $\Omega$. Therefore, non-constant holomorphic functions cannot map open sets to points or arcs. \\
+\newline
+\textbf{Open Mapping Theorem.} \\
+Let $f(z)$ be non-constant and holomorphic on $\Omega$. Let $U$ be open in $\Omega$ then, 
+$$ f(U) = \{w| f(z) = w \mbox{ for some z } \in \Omega \} $$ 
+is open. \\
+\textbf{Proof.} Let $a \in \Omega$, then a neighborhood of $a$ under $f$ will contain a neighborhood of $f(a)$. Assume $f(a) = 0$. If this is not the case, we can study $g(z) = f(z) - f(a)$. Since $f$ is not constant, by the Uniqueness Theorem there is $r > 0$ such that $f(z) \neq 0$ for all $z$ where $|z - a| = r$
+
+
+
+
+
+\newpage
 \section{Laurent Series}
 \section{Residue Theorem}
 \section{Improper Integrals}

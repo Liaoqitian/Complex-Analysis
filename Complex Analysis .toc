@@ -57,7 +57,7 @@
 \contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{46}%
 \contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{48}%
 \contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{51}%
-\contentsline {section}{\numberline {19}Laurent Series}{51}%
-\contentsline {section}{\numberline {20}Residue Theorem}{51}%
-\contentsline {section}{\numberline {21}Improper Integrals}{51}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{51}%
+\contentsline {section}{\numberline {19}Laurent Series}{52}%
+\contentsline {section}{\numberline {20}Residue Theorem}{52}%
+\contentsline {section}{\numberline {21}Improper Integrals}{52}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{52}%
