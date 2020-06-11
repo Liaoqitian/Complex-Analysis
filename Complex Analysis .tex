@@ -1656,9 +1656,7 @@ $$|g(z_k)| < \frac{1}{2} \Rightarrow |1 + g(z_k)| > \frac{1}{2} \Rightarrow 1 + 
 Therefore, $f(z_k) \neq 0$ and $f(z_k) = 0$ for all $k > N$. This is a contradiction. \\
 Hence, it is proven that $a_n = 0$ for all $n \in \mathbb{N}$. \\
 \newline
-\iffalse
-Locally, $f(z) = 0$ near the limit point of zeros. Let $U$ be the interior of the points where $f(z) = 0$, $U$ is open and non-empty from what is showed above. The power series expansion is for the zero function and the expansion is valid on an open disk centered at $z_0$. 
-\fi
+
 \textbf{Uniqueness Theorem.} \\
 Let $f$ and $g$ be holomorphic on $\Omega$. The following are equivalent: 
 \begin{enumerate}
@@ -1667,8 +1665,39 @@ Let $f$ and $g$ be holomorphic on $\Omega$. The following are equivalent:
 \item For some $a \in \Omega$, $f^{n}(a) = g^{n}(a)$ for all $n \in \mathbb{N}$. 
 \item $f(z_n) = g(z_n)$ for some $z_n \to z_0$ in $\Omega$, with $z_n$ distinct. 
 \end{enumerate}
-
-
+\iffalse
+\textbf{Proof.} \\
+Locally, $f(z) = 0$ near the limit point of zeros. Let $U$ be the interior of the points where $f(z) = 0$, $U$ is open and non-empty from what is showed above. The power series expansion is for the zero function and the expansion is valid on an open disk centered at $z_0$. Therefore, $z_0 \in U$. Let $z_n \to z_0$ where $z_n \in U$, $f(z_n) = 0$ for all n and since $f(z)$ is continuous, $f(z_n) \to f(z_0) = 0$. Again expand $f(z)$ about this accumulation point and we have open disk centered at $z_0$ where $f(z) = 0$ on the disk. 
+\fi
+So $f(z)$ is defined on its domain by its behavior near $z_0$. \\
+\newline
+\textbf{Example.}
+\begin{align*}
+f(z) &= 
+\begin{cases} 
+	z &, |z| < 1 \\
+	\frac{z}{|z|} &,|z| \geqslant 1\\
+   \end{cases} \\
+f(z) &= 
+\begin{cases} 
+	e^{-\left(\frac{1}{|z| - 1}\right)^2} &, |z| > 1 \\
+	0 &, |z| \leqslant 1\\
+   \end{cases}
+\end{align*}
+The functions above do not have convergent power series at $z = 1$. 
+\newpage
+\textbf{Note.} $\infty$-many 0's does not imply $f(z) = 0$ for all z. We provide a counter-example below. 
+\begin{equation*}
+f(z) = \sin(z) = 0 \mbox{ if and only if } z = k\pi, k \in \mathbb{Z} 
+\end{equation*}
+\textbf{Note.} A convergent sequence of 0's does mean $f = 0$ provided the limit point is in $\Omega$, $f$'s domain. \\
+Limit points outside of $\Omega$ do not imply $f(z) = 0$. We provide a counter-example below. 
+\begin{align*}
+f(z) &= \sin \left(\frac{1}{z}\right) \\ 
+z_n &= \frac{1}{n\pi} \\
+z_n &\to 0 \\
+\end{align*}
+But $\sin \left(\frac{1}{0}\right)$ does not exist and $\sin \left(\frac{1}{z}\right) \neq 0$ for all z. 
 
 \newpage
 \section{Open Mapping Theorem and Reflection Principle}
