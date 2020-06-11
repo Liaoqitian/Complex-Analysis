@@ -1630,7 +1630,45 @@ $$a_n = \frac{1}{2\pi i}\oint_C\frac{f(w)}{w^{n + 1}}\, dw = \frac{f^{(n)}(0)}{n
 \newline
 \textbf{Theorem.} \\
 If $f$ is holomorphic on $\Omega$, then for every disk in $\Omega$ centered at $z_0$, $f$ has a unique power series expansion at $z_0$ that converges to $f(z)$. \\
-If the disk is closed and in $\Omega$, then the power series converges uniformly to $f(z)$.
+If the disk is closed and in $\Omega$, then the power series converges uniformly to $f(z)$. \\
+\newline
+\textbf{Isolated and Non-isolated Root. } \\
+Let $f(z_0) = 0$. If $f$ does not have a root on $0 < |z - z_0| < \delta$ for some $\delta > 0$, then the zero is \textit{isolated}. This means $f$ does not have a root on punctured disk centered at $z_0$. \\
+If $f$ has a root on $0 < |z - z_0| < \delta$ for all $\delta > 0$, then the zero is \textit{non-isolated}. $f$ has a root on every punctured disk centered at $z_0$. We can say that $f$ has a limit point of zeros at $z_0$. \\
+\newline
+\textbf{Example.} $f(z) = z(z-3) $ has isolated roots at $z = 0, 3$. \\
+\newline
+\textbf{Theorem.} \\
+Suppose $f(z)$ is holomorphic on $\Omega$ and there exists a sequence $\{z_n\}$ in $\Omega$ where $z_n \to z_0 \in \Omega$ and $f(z_n) = 0$ for all $n$. Then $f(z) = 0$ on $\Omega$. \\
+\textbf{Proof.} Let 
+$$f(z) = \sum_{n = 0}^{\infty} a_n(z-z_0)^n$$
+Suppose $f$ is not the zero function in the disk of convergence. That means $a_n \neq 0$ for some $n \in \mathbb{N}$. Let $m \in \mathbb{N}$ be the smallest number such that $a_m \neq 0$. In other words, $f(z)$ has a root of order $m$ at $z_0$. Then, 
+$$f(z) = a_m(z - z_0)^m + \sum_{n = m + 1}^{\infty} a_n(z - z_0)^n = a_m(z - z_0)^m\left(1+\sum_{n = m + 1}^{\infty}\frac{a_n}{a_m}\frac{(z - z_0)^n}{(z - z_0)^m}\right) = a_m(z-z_0)^m(1+g(z))$$
+by letting
+$$g(z) = \sum_{n = m + 1}^{\infty}\frac{a_n}{a_m}\frac{(z - z_0)^n}{(z - z_0)^m}$$
+so $g(z) \to 0$ as $z \to z_0$. The function $g(z)$ exists and is holomorphic and continuous since $m < n$ in the sum and $a_m \neq 0$. \\
+Consider our sequence $z_k$ that converges to $z_0$, then 
+$$a_m(z_k - z_0)^m \neq 0$$ 
+since $z_k \neq z_0$ is clearly not a root of $(z - z_0)^k$ and 
+$$1 + g(z_k) \to 1 + 0 = 1$$
+because $g(z)$ is continuous and is tending to zero. In particular, we can find a neighborhood of $z_0$ containing $z_k$ for $k > N$ such that 
+$$|g(z_k)| < \frac{1}{2} \Rightarrow |1 + g(z_k)| > \frac{1}{2} \Rightarrow 1 + g(z_k) \neq 0$$ 
+Therefore, $f(z_k) \neq 0$ and $f(z_k) = 0$ for all $k > N$. This is a contradiction. \\
+Hence, it is proven that $a_n = 0$ for all $n \in \mathbb{N}$. \\
+\newline
+\iffalse
+Locally, $f(z) = 0$ near the limit point of zeros. Let $U$ be the interior of the points where $f(z) = 0$, $U$ is open and non-empty from what is showed above. The power series expansion is for the zero function and the expansion is valid on an open disk centered at $z_0$. 
+\fi
+\textbf{Uniqueness Theorem.} \\
+Let $f$ and $g$ be holomorphic on $\Omega$. The following are equivalent: 
+\begin{enumerate}
+\item $f(z) = g(z)$ for all $z \in \Omega$.  
+\item $f(z) = g(z)$ for all $z \in U$, where $U$ is a non-empty, open subset of $\Omega$. 
+\item For some $a \in \Omega$, $f^{n}(a) = g^{n}(a)$ for all $n \in \mathbb{N}$. 
+\item $f(z_n) = g(z_n)$ for some $z_n \to z_0$ in $\Omega$, with $z_n$ distinct. 
+\end{enumerate}
+
+
 
 \newpage
 \section{Open Mapping Theorem and Reflection Principle}
