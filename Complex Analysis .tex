@@ -1959,11 +1959,111 @@ If $f$ has an order $n$ root at $z_0$, $ f(z) \approx a_n(z - z_0)^n $ for $ z \
 If $f$ has an order $n$ pole at $z_0$, $f(z) \approx \frac{b_n}{(z - z_0)^n}$ for $z \approx z_0$. \\
 \textbf{Proof.} Suppose $f$ has an order $n$ root at $z_0$. Since $a_n \neq 0$,
 $$f(z) = \sum_{k = n}^{\infty}a_k(z - z_0)^k = a_n(z - z_0)^n\sum_{k = 0}^{\infty}\frac{a_k}{a_n}(z - z_0)^k$$
-The proof with poles follows similarly. 
+The proof with poles follows similarly. \\
+We cannot correct for an essential singularity, but we can predict how the function will behave. \\
+\newline
+\textbf{Picard's Theorem.} \\
+If $f$ has an essential singularity at $z_0$, then $f$ takes on all but possibly one value in $\mathbb{C}$ $\infty$-many times in any neighborhood near $z_0$. \\
+\newline
+\textbf{Meromorphic Function.} \\
+A function is meromorphic on a domain $\Omega$ if $f$ is holomorphic on $\Omega$ except at isolated poles. Informally, these functions are the ratio of two holomorphic functions on $\Omega$. 
+\\
+\newline
+On a bounded domain, a meromorphic function can only have finitely many isolated poles. Similar to the Uniqueness Theorem for holomorphic functions, zeros have to be isolated. \\
+\newline
+\textbf{Example.} \\
+$\frac{1}{z}$ is meromorphic on $\mathbb{C}$. \\
+$\csc(z)$ is meromorphic on $\mathbb{C}$, but it has $\infty$-many poles, namely $z = k\pi$ for $k \in \mathbb{Z}$. \\
+\newline
+\textbf{Example.} The meromorphic function 
+$$ \frac{1}{1 - z} = \sum_{n = 0}^{\infty}z^n$$
+has no singularity at $z = 0$, but does have a simple pole at $z = 1$. 
+$$ \frac{1}{1 - z} = \frac{-1}{z - 1} + 0\cdot (z - 1)^0 + 0\cdot(z - 1)^1 + \cdots $$
+Namely, the function is its singular part at $z = 1$. However, \\
+$$ \frac{1}{1 - z} = \frac{-1}{z}\cdot \frac{1}{1 - \frac{1}{z}} = \sum_{n = 1}^{\infty} \frac{-1}{z^n}, \, |z| > 1$$
+does have an essential singularity under a change of variables $w = \frac{1}{z}$. \\
+Therefore, $\frac{1}{1-z}$ has an essential singularity at $\infty$. \\
+\newline
+For polynomial denominators, poles are easy to classify. \\
+\textbf{Example.} 
+$$ f(z) = \frac{z + 1}{z^3(z^2 + 1)}$$
+has $\nth{3}$-order pole at $z = 0$ and $\nth{1}$-order poles at $z = \pm i$ \\
+\newline
+\textbf{Example.} 
+$$ f(z) = \frac{\sin(z)}{z} = \frac{1}{z}\sum_{n = 0}^{\infty}\frac{z^{2n + 1}}{(2n)!} = 1 - \frac{z^2}{6} + \frac{z^4}{120} + \cdots$$
+has no pole at $z = 0$, since $\sin(z)$ and $z$ have simple roots at 0. \\
+Therefore, $f(z)$ has an isolated, removable singularity at 0.
+\newpage
+\subsection{Residue and Laurent Series}
+\textbf{Residue.} \\
+Suppose $f$ has an isolated singularity at $z_0$ and a Laurent Series on the annulus 
+$$A = \{z\,|\, 0 < |z - z_0| < r\}$$
+(The function has no other singularities in $A$.) \\
+The residue of $f(z)$ at $z_0$ is given by 
+$$Res(f, z_0) = b_1 = a_{-1}$$
+\newline
+Remember 
+$$
+\oint_C z^k \, dz = 
+\begin{cases}
+	0, \mbox{ if } k \neq -1 \\
+	2\pi i \mbox{ if } k = -1
+\end{cases}
+$$
+for any closed simple curve about 0. \\
+\begin{figure}[h]
+\includegraphics[scale=0.1]{20.1} 
+\centering
+\end{figure}
+\\
+For any closed simple counter-clockwise curve $C$ in $A$ about $z_0$, we have 
+$$
+\oint_C (z - z_0)^k \, dz = 
+\begin{cases}
+	0, \mbox{ if } k \neq -1 \\
+	2\pi i \mbox{ if } k = -1
+\end{cases}
+$$
+Therefore, 
+$$ \oint_C f(z) \, dz = \oint_C \sum_{k = -n} ^ {\infty} a_k (z - z_0)^k \, dz = 2\pi i a_{-1} = 2\pi ib_1 = 2\pi i Res(f, z_0)$$
+\newline
+\textbf{Example.} If 
+$$ f(z) = \frac{1}{z^3} + \frac{2}{z^2} + \frac{4}{z} + 5$$
+then we have a pole of order 3 at 0 and $Res(f, 0) = 4$. \\
+\newline
+Not every Laurent expansion about a pole may be used to compute residues. \\
+\newline
+\textbf{Example.} Let 
+$$ f(z) = \frac{-1}{z}\cdot \frac{1}{1-z} = -\frac{1}{z}\sum_{n = 0}^{\infty}z^n = -\frac{1}{z} - 1 - z - z^2 - \cdots$$
+for $0 < |z| < 1$. Therefore, $f(z)$ has a simple pole and $Res(f, 0) = -1$. However, 
+$$ f(z) = \frac{1}{z^2}\cdot \frac{1}{1 - \frac{1}{z}} = \frac{1}{z^2}\sum_{n = 0}^{\infty} \frac{1}{z^n} = \frac{1}{z^2} + \frac{1}{z^3} + \frac{1}{z^4} + \cdots$$
+for $|z| > 1$. But $Res(f, 0) \neq 0$ because this Laurent Series is not valid in a punctured disk containing 0. Hence, we must use the first result. 
+$$ Res\left(\frac{1}{z(z-1)}, 0\right) = -1$$
+\newline
+\textbf{Example.} $\operatorname{Log}(z)$ has a non-isolated singularity at 0. \\
+Therefore, $Res(\operatorname{Log}(z), 0)$ does not exist. \\
+\newline
+\textbf{Empirical Rules.} 
+\begin{enumerate}[leftmargin=*]
+\item If 
+$$ f(z) = \sum_{n = -1}^{\infty} a_n (z-z_0)^n $$
+then 
+$$Res(f(z), z_0) = a_{-1} = b_1$$
+and $f$ has a simple pole at $z_0$.
+\item If $ g(z) = (z - z_0)f(z) $ is $\mathbb{C}$-differentiable at $z_0$, then $ Res(f(z), z_0) = g(z_0)$.
+\item If $f$ has a simple pole at $z_0$, then $$ \lim_{z \to z_0} (z-z_0)f(z) = Res(f(z), z_0)$$
+(The limit exists and we have equality.) \\
+Conversely, if $$ \lim_{z \to z_0} (z-z_0)f(z)$$ exists, then $f$ has a simple pole at $z_0$ or $f$ is $\mathbb{C}$-differentiable at $z_0$ and 
+$$ \lim_{z \to z_0}(z - z_0)f(z) = Res(f(z), z_0)$$
+\item If $f$ has a simple pole at $z_0$ and $g(z)$ is $\mathbb{C}$-differentiable at $z_0$, 
+$$ Res(fg, z_0) = g(z_0)\,Res(f, z_0)$$
+If $g(z_0) \neq 0$, 
+$$ Res\left(\frac{f}{g}, z_0\right) = \frac{Res(f, z_0)}{g(z_0)} $$
+\item If $g$ has a simple root at $z_0$, then $\frac{1}{g}$ has a simple pole at $z_0$ and 
+$$ Res\left(\frac{1}{g}, z_0\right) = \frac{1}{g'(z_0)} $$
+\item If $f$ has a pole of order $k$ at $z_0$, then $g(z) = (z - z_0)^kf(z)$
 
-
-
-
+\end{enumerate}
 \newpage
 \section{Improper Integrals}
 \section{Argument Principle and Rouche's Theorem}

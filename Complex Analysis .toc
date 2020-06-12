@@ -62,5 +62,6 @@
 \contentsline {section}{\numberline {19}Laurent Series}{54}%
 \contentsline {section}{\numberline {20}Residue Theorem}{58}%
 \contentsline {subsection}{\numberline {20.1}Singularity and Root}{58}%
-\contentsline {section}{\numberline {21}Improper Integrals}{59}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{59}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{60}%
+\contentsline {section}{\numberline {21}Improper Integrals}{62}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{62}%
