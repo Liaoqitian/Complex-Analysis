@@ -2012,7 +2012,7 @@ $$
 $$
 for any closed simple curve about 0. \\
 \begin{figure}[h]
-\includegraphics[scale=0.1]{20.1} 
+\includegraphics[scale=0.17]{20_1} 
 \centering
 \end{figure}
 \\
@@ -2061,9 +2061,93 @@ If $g(z_0) \neq 0$,
 $$ Res\left(\frac{f}{g}, z_0\right) = \frac{Res(f, z_0)}{g(z_0)} $$
 \item If $g$ has a simple root at $z_0$, then $\frac{1}{g}$ has a simple pole at $z_0$ and 
 $$ Res\left(\frac{1}{g}, z_0\right) = \frac{1}{g'(z_0)} $$
-\item If $f$ has a pole of order $k$ at $z_0$, then $g(z) = (z - z_0)^kf(z)$
-
+\item If $f$ has a pole of order $k$ at $z_0$, then $g(z) = (z - z_0)^kf(z)$ is holomorphic and for 
+$$g(z) = a_0 + a_1(z - z_0) + \cdots$$
+we have 
+$$ Res(f, z_0) = a_{k - 1} = \frac{g^{k - 1}(z_0)}{(k - 1)!}$$
 \end{enumerate}
+Each of these can be shown by studying $f$'s Laurent expansion in $ 0 < |z - z_0| < \delta$. \\
+\newline
+\textbf{Example.} 
+$$f(z) = \frac{z^2 + z + 2}{(z - 2)(z - 3)(z - 4)(z - 5)}$$ 
+at $z = 2$ we have a simple pole and $g(z) = (z - 2)f(z)$ is holomorphic. \\
+Therefore by \circled{\scriptsize3} $Res(f, 2) = g(2) = -\frac{4}{3}$. \\
+We do not need to compute the Laurent Series at $z_0 = 2$. \\
+\newline
+\textbf{Example.}
+$$ f(z) = \frac{1}{\sin(z)}$$ 
+Then by \circled{\scriptsize5} 
+$$Res(f(z), \pi k) = \frac{1}{\cos(\pi k)} = (-1)^k $$
+\newline
+\textbf{Example.} Since 
+$$\sinh(z) = z + \frac{z^3}{3!} + \frac{z^5}{5!} + \cdots = \sum_{n = 0}^{\infty}\frac{z^{2n + 1}}{(2n + 1)!}$$
+Then 
+$$ f(z) = \frac{\sinh(z)}{z^5} = \frac{1}{z^4} + \frac{1}{6z^2} + \frac{1}{120} + \cdots $$
+Therefore, $Res(f, 0) = 0$. \\
+\newline
+\textbf{Example.}
+$$ f(z) = \frac{1}{z(z - 2)^2}, \, g(z) = (z - 2)^2f(z) = \frac{1}{z}$$
+Then by \circled{\scriptsize 6} 
+$$ Res(f, 2) = g'(2) = \frac{-1}{z^2} \bigg\rvert_{z = 2} = -\frac{1}{4}$$ 
+\newline
+\textbf{Example.} 
+$$ f(z) = \frac{1}{z(z - 2)^3}, \, g(z) = (z - 2)^3f(z) = \frac{1}{z}$$
+Then by \circled{\scriptsize 6} 
+$$ Res(f, 2) = \frac{g''(2)}{2} = \frac{1}{z^3} \bigg\rvert_{z = 2} = \frac{1}{8}$$ 
+\newpage
+\textbf{Example.} 
+$$\cot(z) = \frac{\cos(t)}{\sin(t)} = \frac{b_1}{z} + a_0 + a_1z + a_2z^2 + \cdots = \frac{1 - \frac{z^2}{2} + \frac{z^4}{4!} - \cdots}{z - \frac{z^3}{6} + \frac{z^5}{5!} - \cdots}$$
+We have a system of equations
+$$(\frac{b_1}{z} + a_0 + a_1z + a_2z^2 + \cdots)(z - \frac{z^3}{6} + \frac{z^5}{5!} - \cdots) = 1 - \frac{z^2}{2} + \frac{z^4}{4!} - \cdots$$
+After we equate the powers of $z$, we have
+$$b_1 + a_0z + (-\frac{b_1}{6} + a_1)z^2 + (-\frac{a_0}{6} + a_2)z^3 + (\frac{b_1}{5} - \frac{a_1}{6} + a_3)z^4 = 1 - \frac{z^2}{2} + \frac{z^4}{4!}$$
+Therefore, $a_0 = 0, a_1 = -\frac{1}{3}, a_2 = 0, a_3 = -\frac{1}{45}, b_1 = 1$. This means 
+$$\cot(z) = \frac{1}{z} - \frac{z}{3} - \frac{z^3}{45} + \cdots $$
+\newline
+\textbf{Cauchy's Residue Theorem.} \\
+Let $\Omega$ be a domain in $\mathbb{C}$ and $f$ is holomorphic on $\Omega$ except at finitely many isolated singularities. Then for any simple-closed curve $C$ in $\Omega$ that does not pass through any singularity of $f$, oriented counter-clockwise, we have
+$$ \oint_C f(z) \, dz = 2\pi i \sum \mbox{residues of } f \mbox{ in } C$$
+\textbf{Proof.} Assume $f$ has 2 singularities. This proof extends easily to finitely many. Consider a path around $f$'s singularities, $z_1$ and $z_2$.
+\begin{align*}
+C_0 &= C_1 \cup C_2 \cup -C_3 \cup -C_2 \cup C_4 \cup C_5 \cup -C_6 \cup -C_5 \\
+C &= C_1 \cup C_4
+\end{align*}
+By Cauchy-Goursat Theorem, 
+$$ \oint_{C_0}f(z) \, dz = 0$$
+And the integrals over $\pm C_2$ and $\pm C_5$ sum to zero. Therefore, 
+\begin{align*}
+0 &= \oint_{C_0}f(z) \, dz = \oint_{C_1 \cup -C_3 \cup C_4 \cup -C_6} f(z) \, dz = \oint_{C_1 \cup C_4}f(z) \,dz + \oint_{-C_3 \cup -C_6} f(z) \,dz\\
+\Rightarrow \oint_Cf(z) \, dz &= \oint_{C_3 \cup C_6} f(z) \, dz = \oint_{C_3}f(z) \,dz + \oint_{C_6}f(z)\,dz = 2\pi i(Res(f, z_1) + Res(f, z_2)) 
+\end{align*}
+Hence, this concludes the proof. \\
+\newline
+\textbf{Example.} 
+$$f(z) = \frac{1}{z(z^2 + 1)} $$
+Then we can derive the following residues. 
+\begin{align*}
+Res(f, i) &= (z - i)f(z) \bigg\rvert_{z = i} = \frac{1}{i(i + 1)} = -\frac{1}{2}\\
+Res(f, 0) &= zf(z) \bigg\rvert_{z = 0} = \frac{1}{0 + 1} = 1 \\
+Res(f, -i) &= (z + i)f(z) \bigg\rvert_{z = -i} = \frac{1}{-i(-i - 1)} = -\frac{1}{2}
+\end{align*}
+When we traverse through the contours illustrated in the graph, we have 
+\begin{align*}
+\oint_{C_0}f(z)\,dz &= 0 \, \mbox{ by Cauchy-Goursat Theorem}\\
+\oint_{C_1}f(z)\,dz &= 2\pi i \,Res(f,i) = -\pi i\\
+\oint_{C_2}f(z)\,dz &= 2\pi i\left(Res(f, i) + Res(f, 0)\right) = -\pi i + 2\pi i = \pi i\\
+\oint_{C_3}f(z)\,dz &= 2\pi i\left(Res(f, i) + Res(f, 0) + Res(f, -i)\right) =  -\pi i + 2\pi i - \pi i = 0
+\end{align*}
+But $f$ is not holomorphic on the interior of $C_3$. \\
+\newline
+\textbf{Example.} Integrate
+$$f(z) = \frac{1}{z(z - 2)^4}$$
+over $|z - 2| = \frac{1}{3}$. Therefore, we need $Res(f, 2)$.
+\begin{align*}
+\frac{1}{z} &= \frac{1}{2 + (z - 2)} = \frac{1}{2} \cdot \frac{1}{1 - (-\frac{z - 2}{2})} = \frac{1}{2}\left(1 - \frac{z - 2}{2} + \frac{(z - 2)^2}{4} - \frac{(z - 2)^3}{8} + \cdots\right) \\
+f(z) &= \frac{1}{2(z - 2)^4} - \frac{1}{4(z - 2)^3} + \frac{1}{8(z - 2)^2} - \frac{1}{16(z - 2)} + \cdots 
+\end{align*}
+Therefore, $Res(f, 2) = -\frac{1}{16}$. Hence, 
+$$\oint_{|z - 2| = \frac{1}{3}}f(z) \, dz = 2\pi i \, Res(f, 2) = -\frac{\pi i}{8} $$
+
 \newpage
 \section{Improper Integrals}
 \section{Argument Principle and Rouche's Theorem}
