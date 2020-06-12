@@ -1875,22 +1875,96 @@ $$\frac{1}{w - z} = \frac{1}{w}\cdot \frac{1}{1 - \frac{z}{w}} = \frac{1}{w}\lef
 \item Treat $r = \frac{w}{z}$. If $|\frac{w}{z}| < 1$, $|w| < |z|$, the sum converges. 
 $$\frac{1}{w - z} = \frac{-1}{z}\cdot \frac{1}{1 - \frac{w}{z}} = \frac{-1}{z}\left(1 + \frac{w}{z} + \left(\frac{w}{z}\right)^2+\cdots \right)$$
 \end{enumerate}
-
-
-\iffalse
+\newpage
+Laurent Series can be differentiated and integrated term by term to get $f'(z)$ or $F(z)$, since we have uniform convergence on closed annuli in $A$. We can understand Laurent Series as a "double-ended" Taylor Series. 
 \begin{align*}
-f(z) &= \sum_{n = 1}^{\infty}\frac{b_n}{(z - z_0)^n} + \sum_{n = 0}^{\infty} a_n (z-z_0)^n \\
-a_n &= \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z_0)^{n + 1}} \, dw \\
-b_n &= \frac{1}{2\pi i}\oint_C f(w)(w - z_0)^{n - 1} \, dw 
+f(z) &= \cdots + \frac{a_{-2}}{z^2} + \frac{a_{-1}}{z} + a_0 + a_1z + a_2z^2 + \cdots \\ 
+&= {\underbrace{\cdots + \frac{b_{2}}{z^2} + \frac{b_{1}}{z}}_\text{Singular/Principal Part}} + {\underbrace {a_0 + a_1z + a_2z^2 + \cdots}_\text{Regular/Analytic Part}}
 \end{align*}
+The structure of the principal part will tell us about $f$'s singularities at $z_0$. \\
+We do not often find $a_n$'s from the formula, but follow the three rules. 
+\begin{enumerate}
+\item Break up $f(z)$ by Prime Factor Decomposition. 
+\item Expand each term in $|z - z_0| < r$ or $|z - z_0| > R$. \\
+The radius is often the distance to the next closest singularity of $f(z)$. 
+\item Collect the needed terms from the step above for each element of the Prime Factor Decomposition. 
+\end{enumerate} 
+
+\textbf{Example.} Expand 
+$$\frac{z}{z^2 + 1}, \, z_0 = i$$ 
+There is a root of $z^2 + 1$ at $i$. 
+$$\frac{z}{z^2 + 1} = \frac{1}{2}\cdot \frac{1}{z - i} + \frac{1}{2}\cdot \frac{1}{z + i}$$
+The second term has a Taylor expansion at $z_0 = i$. 
+$$\frac{1}{2}\cdot \frac{1}{z + i} = \frac{1}{2}\cdot \frac{1}{2i}\cdot \frac{1}{1-\left(-\frac{z-i}{2i}\right)} = \frac{1}{4i}\sum_{n = 0}^{\infty}(-1)^n\left(\frac{z - i}{2i}\right)^n $$
+Therefore, we have the Laurent series of $\frac{z}{z^2 + 1}$ around $z_0 = i$ for $\abs*{\frac{z - i}{2i}} < 1$.
+$$\Rightarrow \frac{z}{z^2 + 1} = {\underbrace{\frac{1}{2} \cdot \frac{1}{z - i}}_\text{Principal Part}} + {\underbrace{\frac{1}{4i}\sum_{n = 0}^{\infty}(-1)^n\left(\frac{z - i}{2i}\right)^n}_\text{Regular Part}}$$
+\newline
+\textbf{Example.} Expand 
+$$ f(z) = \frac{1}{z + 1} + \frac{1}{z + 3}, \, z_0 = 0$$
+In this case, we have three annuli. And we have two expressions for each simple partial fraction. 
+
+\begin{align*}
+\mbox{For } |z| < 1: \frac{1}{z + 1} &= \frac{1}{1 - (-z)} = \sum_{n = 0}^{\infty} (-1)^nz^n\\
+\mbox{For } |z| > 1: \frac{1}{z + 1} &= \frac{1}{z} \cdot \frac{1}{1 - \left(\frac{-1}{z}\right)} = \frac{1}{z} \sum_{n = 0}^{\infty}\frac{(-1)^n}{z^n} = \sum_{n = 0}^{\infty}\frac{(-1)^n}{z^{n + 1}}\\ 
+\mbox{For } |z| < 3: \frac{1}{z + 3} &= \frac{1}{3} \cdot \frac{1}{1 - \left(\frac{-z}{3}\right)} = \frac{1}{3} \sum_{n = 0}^{\infty}(-1)^n\left(\frac{z}{3}\right)^n \\
+\mbox{For } |z| > 3: \frac{1}{z + 3} &= \frac{1}{z} \cdot \frac{1}{1 - \left(\frac{-3}{z}\right)} = \frac{1}{z} \sum_{n = 0}^{\infty}(-1)^n\left(\frac{3}{z}\right)^n = \sum_{n = 0}^{\infty}(-1)^n\frac{3^n}{z^{n + 1}}
+\end{align*}
+Therefore, 
+\begin{align*}
+\mbox{If } |z| < 1: f(z) &= \sum_{n = 0}^{\infty}(-1)^nz^n + \frac{1}{3} \sum_{n = 0}^{\infty}(-1)^n\left(\frac{z}{3}\right)^n \\
+\mbox{It only has regular} &\mbox{ terms since } f \mbox{ is holomorphic on } |z| < 1. \\
+\mbox{If } 1 < |z| < 3: f(z) &= \sum_{n = 0}^{\infty} \frac{(-1)^n}{z^{n + 1}} + \frac{1}{3}\sum_{n = 0}^{\infty}(-1)^n\left(\frac{z}{3}\right)^n\\
+\mbox{If } |z| > 3: f(z) &= \sum_{n = 0}^{\infty}\frac{(-1)^n}{z^{n + 1}} + \sum_{n = 0}^{\infty}(-1)^n\frac{3^n}{z^{n + 1}} \\
+\mbox{It only} &\mbox{ has singular terms}. \\
+\end{align*}
+\newline
+\textbf{Example.} If 
+$$f(z) = \frac{1}{\sin(z)}$$ 
+has $\infty$-many singularities in $\mathbb{C}$, we will need expansions for $k\pi < |z| < (k+1)\pi, k \in \mathbb{N}$. 
 \begin{figure}[h]
-\includegraphics[scale=0.2]{Laurent} 
+\includegraphics[scale=0.2]{Laurentsine} 
 \centering
 \end{figure}
-\fi
-
+\\
 \newpage
 \section{Residue Theorem}
+\subsection{Singularity and Root}
+\textbf{Singularity.} \\
+Let $f: \Omega \to \mathbb{C}$. Then $f$ has a singularity at $z_0$ if $f$ is not $\mathbb{C}$-differentiable at $z_0$. \\
+\newline
+\textbf{Isolated Singularity.} \\
+If $f$ is holomorphic on the deleted or punctured disk $0 < |z - z_0| < \delta$ for some $\delta > 0$,  then the singularity is isolated. \\
+\newline
+\textbf{Example.} \\
+$\operatorname{Log}(z)$ has a branch point at $z = 0$, every neighborhood of 0 intersects the branch cut of $\operatorname{Log}(z)$. Therefore, $\operatorname{Log}(z)$ has a non-isolated singularity at 0. \\
+On the other hand, $\frac{1}{z}$ has an isolated singularity at 0. \\
+\newline
+There is a natural connection between an isolated singularity and a root of a holomorphic function. If $f$ is $\mathbb{C}$-differentiable at $z_0$ and its Taylor expansion is of the form 
+$$f(z) = \sum_{k = n}^{\infty} a_k(z - z_0)^k = a_n(z-z_0)^n + a_{n + 1}(z - z_0)^{n + 1}+ \cdots$$
+If $n = 1$, then $f$ has a simple root at $z_0$. \\
+\newline
+\textbf{Pole.} \\
+We want to do the same thing for the principal/singular expansion for $f(z)$. For simplicity, let $b_n = a_{-n}$ to identify the singular coefficients. If 
+$$f(z) = \sum_{k = -n}^{\infty} a_k(z - z_0)^k = \frac{b_n}{(z - z_0)^n} + \frac{b_{n - 1}}{(z - z_0)^{n - 1}} + \cdots$$
+for $n > 0$ and $b_n \neq 0$, then $f$ has a pole of order $n$ at $z_0$. \\
+If $b_n = 0$ for $n > 1$ and $|b_1| \neq 0$, then $f$ has a simple pole at $z_0$. \\
+\newline
+\textbf{Essential Singularity.} \\
+If the principal part of $f(z)$ has $\infty$-many terms in it at $z_0$, then $f$ has an essential singularity or a non-removable pole at $z_0$. On the other hand, order-n poles are removable. \\
+\newline
+\textbf{Example.} $\sin(\frac{1}{x})$ has a non-removable pole at 0. \\
+\newline
+\textbf{Claim.} \\
+If $f$ has an order $n$ root at $z_0$, $ f(z) \approx a_n(z - z_0)^n $ for $ z \approx z_0$. \\
+If $f$ has an order $n$ pole at $z_0$, $f(z) \approx \frac{b_n}{(z - z_0)^n}$ for $z \approx z_0$. \\
+\textbf{Proof.} Suppose $f$ has an order $n$ root at $z_0$. Since $a_n \neq 0$,
+$$f(z) = \sum_{k = n}^{\infty}a_k(z - z_0)^k = a_n(z - z_0)^n\sum_{k = 0}^{\infty}\frac{a_k}{a_n}(z - z_0)^k$$
+The proof with poles follows similarly. 
+
+
+
+
+\newpage
 \section{Improper Integrals}
 \section{Argument Principle and Rouche's Theorem}
 
