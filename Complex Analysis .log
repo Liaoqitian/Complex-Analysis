@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  12 JUN 2020 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  12 JUN 2020 19:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1629,49 +1629,80 @@ File: ./images/20_2.jpg Graphic file (type jpg)
 <use ./images/20_2.jpg>
 Package pdftex.def Info: ./images/20_2.jpg  used on input line 2112.
 (pdftex.def)             Requested size: 331.23163pt x 107.39934pt.
+ [63 <./images/20_2.jpg>]
+<./images/20_3.jpg, id=236, 835.12pt x 774.895pt>
+File: ./images/20_3.jpg Graphic file (type jpg)
+<use ./images/20_3.jpg>
+Package pdftex.def Info: ./images/20_3.jpg  used on input line 2131.
+(pdftex.def)             Requested size: 250.53793pt x 232.47029pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2125--2129
+Underfull \hbox (badness 10000) in paragraph at lines 2146--2148
 
  []
 
-[63 <./images/20_2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 2142--2146
+[64 <./images/20_3.jpg>] [65]
+Underfull \hbox (badness 10000) in paragraph at lines 2169--2173
 
  []
 
-[64] [65] [66] (./Complex Analysis .aux) ) 
+<./images/21_1.jpg, id=244, 1734.48pt x 1053.9375pt>
+File: ./images/21_1.jpg Graphic file (type jpg)
+<use ./images/21_1.jpg>
+Package pdftex.def Info: ./images/21_1.jpg  used on input line 2182.
+(pdftex.def)             Requested size: 294.8577pt x 179.167pt.
+[66 <./images/21_1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 2197--2202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2202--2206
+
+ []
+
+<./images/21_2.jpg, id=248, 778.91pt x 484.81125pt>
+File: ./images/21_2.jpg Graphic file (type jpg)
+<use ./images/21_2.jpg>
+Package pdftex.def Info: ./images/21_2.jpg  used on input line 2215.
+(pdftex.def)             Requested size: 233.6748pt x 145.44449pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2212--2219
+
+ []
+
+[67] [68 <./images/21_2.jpg>] [69] [70] (./Complex Analysis .aux) ) 
 Here is how much of TeX's memory you used:
- 16683 strings out of 480608
- 325375 string characters out of 5903631
+ 16707 strings out of 480608
+ 325732 string characters out of 5903631
  652485 words of memory out of 5000000
- 32259 multiletter control sequences out of 15000+600000
+ 32283 multiletter control sequences out of 15000+600000
  542697 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,60p,561b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2020/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on "Complex Analysis .pdf" (68 pages, 881883 bytes).
+</usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Complex Analysis .pdf" (72 pages, 1196454 bytes).
 PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
+ 324 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

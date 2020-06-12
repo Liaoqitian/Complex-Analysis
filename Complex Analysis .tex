@@ -2123,10 +2123,14 @@ And the integrals over $\pm C_2$ and $\pm C_5$ sum to zero. Therefore,
 0 &= \oint_{C_0}f(z) \, dz = \oint_{C_1 \cup -C_3 \cup C_4 \cup -C_6} f(z) \, dz = \oint_{C_1 \cup C_4}f(z) \,dz + \oint_{-C_3 \cup -C_6} f(z) \,dz\\
 \Rightarrow \oint_Cf(z) \, dz &= \oint_{C_3 \cup C_6} f(z) \, dz = \oint_{C_3}f(z) \,dz + \oint_{C_6}f(z)\,dz = 2\pi i(Res(f, z_1) + Res(f, z_2)) 
 \end{align*}
-Hence, this concludes the proof. \\
-\newline
+Hence, this concludes the proof. 
+\newpage
 \textbf{Example.} 
 $$f(z) = \frac{1}{z(z^2 + 1)} $$
+\begin{figure}[h]
+\includegraphics[scale=0.3]{20_3} 
+\centering
+\end{figure}
 Then we can derive the following residues. 
 \begin{align*}
 Res(f, i) &= (z - i)f(z) \bigg\rvert_{z = i} = \frac{1}{i(i + 1)} = -\frac{1}{2}\\
@@ -2141,7 +2145,7 @@ When we traverse through the contours illustrated in the graph, we have
 \oint_{C_3}f(z)\,dz &= 2\pi i\left(Res(f, i) + Res(f, 0) + Res(f, -i)\right) =  -\pi i + 2\pi i - \pi i = 0
 \end{align*}
 But $f$ is not holomorphic on the interior of $C_3$. \\
-\newline
+\newpage
 \textbf{Example.} Integrate
 $$f(z) = \frac{1}{z(z - 2)^4}$$
 over $|z - 2| = \frac{1}{3}$. Therefore, we need $Res(f, 2)$.
@@ -2154,6 +2158,77 @@ $$\oint_{|z - 2| = \frac{1}{3}}f(z) \, dz = 2\pi i \, Res(f, 2) = -\frac{\pi i}{
 
 \newpage
 \section{Improper Integrals}
+\subsection{Principal Value}
+Suppose 
+$$ I = \int_{\mathbb{R}}f(x) \,dx$$
+converges absolutely. Then
+$$ I = \lim_{R\to\infty}\int_{-R}^{R}f(x) \, dx = P.V.\int_{\mathbb{R}}f(x) \, dx$$
+Here 
+$$ P.V.\int_{\mathbb{R}}f(x) \, dx = \lim_{R\to\infty}\int_{-R}^{R}f(x) \, dx $$ 
+denotes the principal value of 
+$$ \int_{\mathbb{R}}f(x)\, dx$$
+However, without absolute convergence of $I$, this does not hold. \\
+\newline
+\textbf{Example.}
+$$ \lim_{R \to \infty} \int_{-R} ^{R} \sin(x) \,dx = 0$$
+but 
+\begin{align*}
+& \int_{\mathbb{R}}\sin(x) \, dx \text{ does not exist} \\
+& \int_{\mathbb{R}}|\sin(x)| \,dx = \infty
+\end{align*}
+If $f(x)$ is undefined at $c \in (a, b)$, then 
+$$ P.V. \int_b^a f(x) \, dx = \lim_{\epsilon \to 0^+}\left(\int_{a}^{c - \epsilon}f(x) \, dx + \int_{c + \epsilon}^b f(x) \right)$$
+\begin{figure}[h]
+\includegraphics[scale=0.17]{21_1} 
+\centering
+\end{figure}
+\newpage
+\textbf{Example.} Let 
+$$ f(x) = \frac{1}{x^3}$$
+then 
+\begin{align*}
+I &= P.V.\int_{-2}^{3}f(x) \, dx \\
+& = \lim_{\epsilon \to 0^+} {\int_{-2}^{-\epsilon} f(x)\, dx + \int_{\epsilon}^3 f(x) \, dx} \\
+& = \lim_{\epsilon \to 0^+} {F(3) - F(\epsilon) + F(-\epsilon) - F(-2)} \\
+& = \lim_{\epsilon \to 0^+} {F(3) - F(-2)} \\
+& = \frac{-1}{2x^2} \bigg\rvert_{x = -2}^{3}
+\end{align*}
+since $F$ is even. We are "ignoring" the singularity by exploiting 
+$$ \int_{-a}^{a}f(x) \, dx = 0$$
+for $f$ odd and piecewise-smooth. \\
+\newline
+\textbf{Lemma.} \\
+If $|f(x)| \leqslant g(x)$ for all $x \in \mathbb{R}$ and $\int_{\mathbb{R}}g(x) \, dx$ converges, then 
+$$ I = \int_{\mathbb{R}} f(x) \, dx$$ 
+converges absolutely. \\
+\newline
+\textbf{Example.} The improper integral 
+$$ \int_{\mathbb{R}}\frac{1}{(x^2 + 1)^2} \, dx$$
+converges absolutely because 
+$$ \frac{1}{(x^2 + 1)^2} \leqslant \frac{1}{(x^2 + 1)} \text{ and } \int_{\mathbb{R}}\frac{1}{(x^2 + 1)} \, dx < \infty$$
+Let 
+$$ f(z) = \frac{1}{(z^2 + 1)^2} = \frac{1}{(z + i)^2(z - i)^2} $$
+and by Residue Theorem, 
+$$ \oint_C f(z) \,dz = 2\pi i\, Res(f, i)$$
+for any closed curve $C$ about $i$, but not $-i$. \\
+\begin{figure}
+\includegraphics[scale=0.3]{21_2} 
+\centering
+\end{figure}
+\newline
+\newpage
+We pick a path along $[-R, R]$ and the upper half of the disk $|z| = R$ traversed counter-clockwise. Therefore,
+$$2\pi i \, Res(f, i) = \int_{C_R}f(z) \, dz + \oint_{-R}^{R}f(z) \, dz$$
+then 
+$$ \int_{\mathbb{R}} f(x) \, dx = \lim_{R \to \infty} \oint_C f(z) \, dz = \lim_{R \to \infty} \int_{-R}^{R} f(z) \, dz$$
+provided
+$$\lim_{R \to \infty} \int_{C_R} f(z) \, dz = 0$$
+That is to say, the integral over the upper curve vanishes. We can establish this with an ML-Estimate, 
+\begin{align*}
+\abs{f(z)} &\leqslant \frac{A}{|z|^4} \text{ for z-large}, \,A > 0 \\
+\Rightarrow \abs*{\int_{C_R}f(z) \, dz} &\leqslant \int_{C_R}|f(z)||dz| \leqslant \frac{A}{R^4}\pi R = \frac{A\pi}{R^3}
+\end{align*}
+\newpage
 \section{Argument Principle and Rouche's Theorem}
 
 \iffalse
