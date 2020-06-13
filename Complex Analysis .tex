@@ -2364,6 +2364,18 @@ In this case, we need a contour in $\mathbb{C}$ that does the following:
 \includegraphics[scale=0.15]{21_6} 
 \centering
 \end{figure} 
+This means the branch cut for $\sqrt{z}$ must be along $\mathbb{R}^+$. Else, $f$ is not meromorphic on the interior of $C$. 
+\begin{align*}
+\sqrt{z} &= e^{\frac{\operatorname{Log}|z| + i\theta}{2}}, \theta \in (0, 2\pi) \\
+\oint_Cf(z) \,dz &= 2\pi i\left(Res(f, i) + Res(f, -1)\right) \\
+&= \int_{\varepsilon}^{R}f(z) \,dz + \int_{C_R}f(z) \,dz + \int_{R}^{\varepsilon} f(z) \,dz + \int_{-\tau_\varepsilon} f(z) \, dz
+\end{align*}
+Now along the branch cut, we need to study the sign of $\sqrt{x}$. 
+\begin{figure}[h]
+\includegraphics[scale=0.08]{21_7} 
+\centering
+\end{figure} 
+
 
 \newpage
 \section{Argument Principle and Rouche's Theorem}
