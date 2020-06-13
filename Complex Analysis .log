@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  12 JUN 2020 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 JUN 2020 01:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1481,15 +1481,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1794--1800
  []
 
 [53]
-<./images/p1cif.jpg, id=200, 1354.05875pt x 485.815pt>
-File: ./images/p1cif.jpg Graphic file (type jpg)
-<use ./images/p1cif.jpg>
-Package pdftex.def Info: ./images/p1cif.jpg  used on input line 1817.
+<./images/19_1.jpg, id=200, 1354.05875pt x 485.815pt>
+File: ./images/19_1.jpg Graphic file (type jpg)
+<use ./images/19_1.jpg>
+Package pdftex.def Info: ./images/19_1.jpg  used on input line 1817.
 (pdftex.def)             Requested size: 270.80695pt x 97.16127pt.
-<./images/Laurent.jpg, id=201, 609.27625pt x 602.25pt>
-File: ./images/Laurent.jpg Graphic file (type jpg)
-<use ./images/Laurent.jpg>
-Package pdftex.def Info: ./images/Laurent.jpg  used on input line 1845.
+<./images/19_2.jpg, id=201, 609.27625pt x 602.25pt>
+File: ./images/19_2.jpg Graphic file (type jpg)
+<use ./images/19_2.jpg>
+Package pdftex.def Info: ./images/19_2.jpg  used on input line 1845.
 (pdftex.def)             Requested size: 121.85309pt x 120.44786pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1832--1851
@@ -1501,18 +1501,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1832--1851
 
  []
 
-[54 <./images/p1cif.jpg> <./images/Laurent.jpg>] [55] [56]
-<./images/Laurentsine.jpg, id=211, 1293.83376pt x 1240.635pt>
-File: ./images/Laurentsine.jpg Graphic file (type jpg)
-<use ./images/Laurentsine.jpg>
-Package pdftex.def Info: ./images/Laurentsine.jpg  used on input line 1925.
-(pdftex.def)             Requested size: 258.76216pt x 248.1226pt.
+[54 <./images/19_1.jpg> <./images/19_2.jpg>] [55] [56]
+<./images/19_3.jpg, id=211, 1390.19376pt x 1335.99126pt>
+File: ./images/19_3.jpg Graphic file (type jpg)
+<use ./images/19_3.jpg>
+Package pdftex.def Info: ./images/19_3.jpg  used on input line 1925.
+(pdftex.def)             Requested size: 278.03383pt x 267.19351pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1922--1929
 
  []
 
-[57 <./images/Laurentsine.jpg>]
+[57 <./images/19_3.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 1932--1943
 
  []
@@ -1630,11 +1630,11 @@ File: ./images/20_2.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./images/20_2.jpg  used on input line 2112.
 (pdftex.def)             Requested size: 331.23163pt x 107.39934pt.
  [63 <./images/20_2.jpg>]
-<./images/20_3.jpg, id=236, 835.12pt x 774.895pt>
+<./images/20_3.jpg, id=236, 1012.78375pt x 951.555pt>
 File: ./images/20_3.jpg Graphic file (type jpg)
 <use ./images/20_3.jpg>
 Package pdftex.def Info: ./images/20_3.jpg  used on input line 2131.
-(pdftex.def)             Requested size: 250.53793pt x 232.47029pt.
+(pdftex.def)             Requested size: 303.83746pt x 285.4687pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2146--2148
 
@@ -1645,66 +1645,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 2169--2173
 
  []
 
-<./images/21_1.jpg, id=244, 1734.48pt x 1053.9375pt>
+<./images/21_1.jpg, id=244, 1725.44624pt x 1085.05376pt>
 File: ./images/21_1.jpg Graphic file (type jpg)
 <use ./images/21_1.jpg>
 Package pdftex.def Info: ./images/21_1.jpg  used on input line 2182.
-(pdftex.def)             Requested size: 294.8577pt x 179.167pt.
+(pdftex.def)             Requested size: 293.32198pt x 184.4567pt.
 [66 <./images/21_1.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 2197--2202
 
  []
 
-<./images/21_2.jpg, id=248, 778.91pt x 484.81125pt>
+<./images/21_2.jpg, id=248, 1265.72874pt x 687.56876pt>
 File: ./images/21_2.jpg Graphic file (type jpg)
 <use ./images/21_2.jpg>
 Package pdftex.def Info: ./images/21_2.jpg  used on input line 2215.
-(pdftex.def)             Requested size: 233.6748pt x 145.44449pt.
+(pdftex.def)             Requested size: 379.72156pt x 206.27222pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2212--2219
 
  []
 
 [67] [68 <./images/21_2.jpg>]
-<./images/21_3.jpg, id=255, 1535.7375pt x 989.6975pt>
+<./images/21_3.jpg, id=255, 1256.695pt x 777.90625pt>
 File: ./images/21_3.jpg Graphic file (type jpg)
 <use ./images/21_3.jpg>
 Package pdftex.def Info: ./images/21_3.jpg  used on input line 2255.
-(pdftex.def)             Requested size: 307.14206pt x 197.93599pt.
- [69 <./images/21_3.jpg>] [70] [71]
-(./Complex Analysis .aux) ) 
+(pdftex.def)             Requested size: 251.33455pt x 155.57849pt.
+ [69 <./images/21_3.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 2283--2288
+
+ []
+
+[70]
+<./images/21_4.jpg, id=262, 1478.52374pt x 1148.29pt>
+File: ./images/21_4.jpg Graphic file (type jpg)
+<use ./images/21_4.jpg>
+Package pdftex.def Info: ./images/21_4.jpg  used on input line 2304.
+(pdftex.def)             Requested size: 251.3457pt x 195.20671pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2302--2308
+
+ []
+
+[71 <./images/21_4.jpg>] [72] [73] (./Complex Analysis .aux) ) 
 Here is how much of TeX's memory you used:
- 16719 strings out of 480608
- 325889 string characters out of 5903631
- 652485 words of memory out of 5000000
- 32293 multiletter control sequences out of 15000+600000
+ 16727 strings out of 480608
+ 325920 string characters out of 5903631
+ 652484 words of memory out of 5000000
+ 32301 multiletter control sequences out of 15000+600000
  543318 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,60p,561b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
-amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
-fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
-10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb>
-Output written on "Complex Analysis .pdf" (73 pages, 1297482 bytes).
+</usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Complex Analysis .pdf" (75 pages, 1243246 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
+ 337 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

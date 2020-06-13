@@ -276,7 +276,7 @@ $$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operat
 Let $\{Z_n\}$ be a sequence in $\mathbb{C}$. \\
 \newline
 \textbf{Cauchy Sequence. }\\
-The sequence is Cauchy if for all $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for all $n, m > N$, $|z_n - z_m| < \epsilon$. \\
+The sequence is Cauchy if for all $\varepsilon > 0$, there is a $N \in \mathbb{N}$ such that for all $n, m > N$, $|z_n - z_m| < \varepsilon$. \\
 \newline
 \textbf{Convergence of Sequence.}\\ 
 The sequence converges if $|z_n - z| \to 0$ as $n \to \infty$. The distance between $z_n$ and $z$ vanishes. \\
@@ -287,7 +287,7 @@ $\{z_n\}$ converges if and only if $\{z_n\}$ is Cauchy. \\
 We show this by treating $\mathbb{C}$ as $\mathbb{R}^2$ and exploiting $\{X_n\}$ converges if and only if $\{X_n\}$ is Cauchy. \\
 ($\Longrightarrow$) (If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
 $|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$ \\
-Upper bounds can be picked to be less than $\frac{\epsilon}{2}$ for some $N$. Therefore, $|Z_n - Z_m| \to 0$. \\
+Upper bounds can be picked to be less than $\frac{\varepsilon}{2}$ for some $N$. Therefore, $|Z_n - Z_m| \to 0$. \\
 \newline 
 ($\Longleftarrow$) If $\{Z_n\}$ is Cauchy, so are $\{\Re(Z_n)\}$ and $\{\Im(Z_n)\}$. But these are $\mathbb{R}$-sequences that converge. Therefore, $\{Z_n\}$ converges. 
 
@@ -295,7 +295,7 @@ Upper bounds can be picked to be less than $\frac{\epsilon}{2}$ for some $N$. Th
 Let $\Omega \subset \mathbb{C}$. Sets can be open, closed, both, or neither. \\
 \newline
 \textbf{Open Set.} \\ 
-If for any $z_0 \in \mathbb{C}$, there exist some $\epsilon > 0$, such that the set $B_\epsilon(z_0) = \{z||z - z_0| < \epsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
+If for any $z_0 \in \mathbb{C}$, there exist some $\varepsilon > 0$, such that the set $B_\varepsilon(z_0) = \{z||z - z_0| < \varepsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
 $\Omega$ is open if and only if $\Omega^c$ is closed. \\ 
 $\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$, i.e. it does not contain its closure. \\
 \newline
@@ -316,10 +316,10 @@ If any two points in $\Omega$ can be connected by a path, then $\Omega$ is conne
 A connected but not simply connected set is an annulus, $\Omega = \{z|2< |z - c|<4\}$ \\
 \newline
 \textbf{Boundary of Set.}\\
-The boundary of $\Omega$, $\partial \Omega$ is all points with $\epsilon$-balls intersecting $\Omega$ and $\Omega^c$ for all $\epsilon > 0$. \\
+The boundary of $\Omega$, $\partial \Omega$ is all points with $\varepsilon$-balls intersecting $\Omega$ and $\Omega^c$ for all $\varepsilon > 0$. \\
 \newline
 \textbf{Interior of Set.} \\
-The interior of $\Omega$, Int$(\Omega)$, is all points in $\Omega$ with a $\epsilon$-ball contained in $\Omega$ for some $\epsilon > 0$. "Largest open set in $\Omega$". \\
+The interior of $\Omega$, Int$(\Omega)$, is all points in $\Omega$ with a $\varepsilon$-ball contained in $\Omega$ for some $\varepsilon > 0$. "Largest open set in $\Omega$". \\
 \newline
 \textbf{Closure of Set.} \\ 
 The closure of $\Omega$ is the union of $\Omega$ and its boundary $\partial \Omega$. \\
@@ -336,14 +336,14 @@ Determine whether the following sets are open or closed.
   $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{n}$. Then $z_n = \frac{1}{n} \to 0 \notin \Omega$. \\
   Therefore, $\Omega$ is open. 
   \item $\Omega = \{z||z| \geqslant 1\}$ \\
-  $\Omega$ is not open since any $\epsilon$-ball at 1 intersects $\Omega^c$. \\
+  $\Omega$ is not open since any $\varepsilon$-ball at 1 intersects $\Omega^c$. \\
   $\Omega$ is closed since $\Omega^c$ is open. \\
   Therefore, $\Omega$ is closed. 
   \item $\Omega = \{z||z| > 1\}$ \\
   $\Omega$ is open since $\Omega^c$ is closed. \\
   $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{n} + 1$. Then $z_n = \frac{1}{n} + 1 \to 1 \notin \Omega$.
   \item $\Omega = \mathbb{C} \backslash (0, 1)$ \\ 
-  $\Omega$ is not open. Its complement is $[0, 1]$. Even though it is closed in $\mathbb{R}$, it is not closed in $\mathbb{C}$, because any 2D $\epsilon$-ball will always extend outside of the set $z \in (0, i)$. Hence, $\Omega^c$ is not open and not closed. \\
+  $\Omega$ is not open. Its complement is $[0, 1]$. Even though it is closed in $\mathbb{R}$, it is not closed in $\mathbb{C}$, because any 2D $\varepsilon$-ball will always extend outside of the set $z \in (0, i)$. Hence, $\Omega^c$ is not open and not closed. \\
   $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{3} + i\frac{1}{n}$. Then $z_n = \frac{1}{3} + i\frac{1}{n} \to \frac{1}{3} \notin \Omega$. \\
   Therefore, $\Omega$ is neither open nor closed. 
   \item $\Omega = \mathbb{C} \backslash [0, 1]$
@@ -358,7 +358,7 @@ Determine whether the following sets are open or closed.
 \section{Continuity and Branch Cuts}
 \subsection{Complex Continuity} 
 Let $f:\Omega \to \mathbb{C}$, $\Omega$ is open and connected. If $z_n \to z_0$ implies $f(z_n) \to f(z_0)$, then $f$ is continuous at $z_0$. Also, $f$ is bounded near $z_0$. \\
-$f$ is continuous if for every $\epsilon > 0$, there is $\delta > 0$ such that $|z - z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \epsilon$. \\
+$f$ is continuous if for every $\varepsilon > 0$, there is $\delta > 0$ such that $|z - z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \varepsilon$. \\
 \newline 
 In either case, $\Re(f(z))$ and $\Im(f(z))$ are each continuous if and only if $f(z)$ is continuous. This follows the pattern as $\mathbb{C}$ being complete. \\
 \newline
@@ -455,10 +455,10 @@ In each of the following cases, there are branch points where $f'(z)$ does not e
 3. If $f(z) = z^\frac{1}{2}$, then $f'(z) = \frac{1}{2}z^{-\frac{1}{2}}$ \\
 
 \textbf{Proposition.} Suppose $f(z)$ is holomorphic on $\Omega$. then $g(z) = \conj{f(\conj{z})}$ is holomorphic on $\Omega^{\ast} = \{z|\conj{z} \in \Omega\}$ \\
-\textbf{Proof.} Suppose $f$ is holomorphic on $\Omega$. Let $z_0 \in \Omega^{\ast}$ and $z_n \in \Omega^{\ast}$ for all $n$ and $z_n \to z$. Then $\conj{z_n} \to \conj{z_0}$ in $\Omega$ and for $\epsilon > 0$, there is a $N \in \mathbb{N}$ such that for $n > N$. 
-$$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} < \epsilon$$ 
+\textbf{Proof.} Suppose $f$ is holomorphic on $\Omega$. Let $z_0 \in \Omega^{\ast}$ and $z_n \in \Omega^{\ast}$ for all $n$ and $z_n \to z$. Then $\conj{z_n} \to \conj{z_0}$ in $\Omega$ and for $\varepsilon > 0$, there is a $N \in \mathbb{N}$ such that for $n > N$. 
+$$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} < \varepsilon$$ 
 $$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} = \conj{\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})}} = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{\conj{\conj{z_0} - \conj{z_n}}} - \conj{f'(\conj{z_0})}} $$
-$$ = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{z_0 - z_n} - \conj{f'(\conj{z_0})}} = \abs*{\frac{g(z_0) - g(z_n)}{z_0 - z_n} - \conj{f'(\conj{z_0})}} < \epsilon$$
+$$ = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{z_0 - z_n} - \conj{f'(\conj{z_0})}} = \abs*{\frac{g(z_0) - g(z_n)}{z_0 - z_n} - \conj{f'(\conj{z_0})}} < \varepsilon$$
 $$\Longrightarrow g'(z_0) = \conj{f'(\conj{z_0})}$$
 Therefore, $g$ is holomorphic on $\Omega^\ast$. \\
 This proof is different from when we showed $\frac{d}{dz}\conj{z}$ does not exist. Conjugation must be handled with care. 
@@ -526,14 +526,14 @@ The function $u(\cdot, \cdot)$ is differentiable in $x$ and $y$, we can use the 
 $$u(x + \Delta x, y + \Delta y) - u(x, y + \Delta y) = \Delta xU_x(\underline x, y + \Delta y)$$
 where $\underline x \in (x, x + \Delta x)$. \\
 \newline 
-If $u_x$ is continuous, $u_x(\underline x, y + \Delta y) \approx u_x(x, y) + \epsilon_1$, and as $\Delta y \to 0$ and $\underline x \to x$, by Taylor approximation and linear approximation on $u_x$, we have the error function $\epsilon_1 \to 0$. \\
-Next $u(x, y + \Delta y) - u(x, y) = \Delta y u_y(x, \overline y)$ and $u_y(x, \overline y) \approx u_y(x, y) + \epsilon_2$. \\
-Likewise, for the function $v(x, y)$, we get a $v_x$ and $v_y$ with error terms $\epsilon_3$ and $\epsilon_4$. s
-$$\frac{f(z + h) - f(z)}{h} = \frac{\Delta x(u_x + \epsilon_1 + iv_x + i\epsilon_3) + \Delta y(u_y + \epsilon_2 + iv_y + i\epsilon_4)}{\Delta x + i \Delta y}$$
+If $u_x$ is continuous, $u_x(\underline x, y + \Delta y) \approx u_x(x, y) + \varepsilon_1$, and as $\Delta y \to 0$ and $\underline x \to x$, by Taylor approximation and linear approximation on $u_x$, we have the error function $\varepsilon_1 \to 0$. \\
+Next $u(x, y + \Delta y) - u(x, y) = \Delta y u_y(x, \overline y)$ and $u_y(x, \overline y) \approx u_y(x, y) + \varepsilon_2$. \\
+Likewise, for the function $v(x, y)$, we get a $v_x$ and $v_y$ with error terms $\varepsilon_3$ and $\varepsilon_4$. s
+$$\frac{f(z + h) - f(z)}{h} = \frac{\Delta x(u_x + \varepsilon_1 + iv_x + i\varepsilon_3) + \Delta y(u_y + \varepsilon_2 + iv_y + i\varepsilon_4)}{\Delta x + i \Delta y}$$
 From the Cauchy Riemann Equations, we get $f_x = \frac{f_y}{i} \Rightarrow if_x = f_y \Rightarrow i(u_x + iv_x) = u_y + iv_y$. Substituting the terms, we have 
 $$f'(z) = \frac{\Delta x(u_x + iv_x) + i \Delta y(u_x + iv_x)}{\Delta x + i \Delta y} + \frac{\lambda}{\Delta x + i\Delta y}$$
-where $\lambda = \Delta x(\epsilon_1 + i\epsilon_2) + \Delta y(\epsilon_3 + i\epsilon_4)$. However, \\
-$$\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \leqslant \abs*{\frac{\Delta x(\epsilon_1 + i\epsilon_2)}{\Delta x + i\Delta y}} + \abs*{\frac{\Delta y(\epsilon_3 + i\epsilon_4)}{\Delta x + i \Delta y}} \leqslant |\epsilon_1 + i\epsilon_2| + |\epsilon_3 + i\epsilon_4|$$ 
+where $\lambda = \Delta x(\varepsilon_1 + i\varepsilon_2) + \Delta y(\varepsilon_3 + i\varepsilon_4)$. However, \\
+$$\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \leqslant \abs*{\frac{\Delta x(\varepsilon_1 + i\varepsilon_2)}{\Delta x + i\Delta y}} + \abs*{\frac{\Delta y(\varepsilon_3 + i\varepsilon_4)}{\Delta x + i \Delta y}} \leqslant |\varepsilon_1 + i\varepsilon_2| + |\varepsilon_3 + i\varepsilon_4|$$ 
 because $\abs*{\frac{\Delta x}{\Delta x + i\Delta y}} \leqslant 1$. \\
 As $\Delta z \to 0$, $\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \to 0$, and thus $f'(z) = u_x + iv_x = f_x = \frac{f_y}{i}$. \\
 Therefore, the Cauchy Riemann Equations are an easy way to show $f'(z)$ exists and they provide a set of partial differential equations that $f$ must satisfy. \\
@@ -993,8 +993,8 @@ $$\frac{F(z+h) - F(z)}{h} - f(z) = \frac{1}{h}\int_z^{z+h}f(u) - f(z) \,du$$
 \circled{\scriptsize2} Since integrating over any closed curve $C$ gives 
 $$\oint_C f(z) \,dz = 0$$
 We can pick how we go from $z$ to $z +h$, say along a line from $z$ to $z + h$. We can do this for $h$ sufficiently small so that our path is in $\Omega$. This path is selected to make our upcoming estimate on $f(u) - f(z)$ easier to work with. \\
-Along the path we can have $|u - z| < \delta$, which implies $|f(z) - f(u)| < \epsilon$ by continuity of $f$ where $u$ is on the path. From ML-Estimate, we get 
-$$\abs*{\frac{F(z+h) - F(z)}{h} - f(z)} \leqslant \frac{1}{|h|}\int_z^{z+h}|f(u) - f(z)|\,du < \frac{1}{|h|}|h|\epsilon = \epsilon$$
+Along the path we can have $|u - z| < \delta$, which implies $|f(z) - f(u)| < \varepsilon$ by continuity of $f$ where $u$ is on the path. From ML-Estimate, we get 
+$$\abs*{\frac{F(z+h) - F(z)}{h} - f(z)} \leqslant \frac{1}{|h|}\int_z^{z+h}|f(u) - f(z)|\,du < \frac{1}{|h|}|h|\varepsilon = \varepsilon$$
 Therefore, it is proven that $F'(z) = f(z)$. \\
 \newline
 Let us take a closer look at our proof above. We needed $f$ to be continuous so that we could invoke ML-Estimate. We also needed to pick a nice path from $z$ to $z + h$. But we did not need $f$ to be holomorphic. This leads to the next Theorem. \\
@@ -1069,10 +1069,10 @@ Let $g(z)$ be holomorphic on $\Omega \backslash \{z_0\}$, $g(z)$ is continuous o
 $$\oint_C g(z) \,dz = 0$$
 for any closed curve $C$ in $\Omega$ and $g(z)$ is holomorphic in $\Omega$. \\
 \textbf{Proof.} By First Extension of Cauchy-Goursat Theorem 
-$$\oint_C g(z) \,dz = \oint_{|z - z_0| = \epsilon} g(z) \, dz$$
+$$\oint_C g(z) \,dz = \oint_{|z - z_0| = \varepsilon} g(z) \, dz$$
 and 
-$$\oint_{|z - z_0| = \epsilon} |g(z)| \, dz \leqslant M_{\epsilon}\cdot 2\pi \cdot \epsilon$$
-Since $g$ is continuous, $M_\epsilon$ is bounded and as $\epsilon \to 0$, we have 
+$$\oint_{|z - z_0| = \varepsilon} |g(z)| \, dz \leqslant M_{\varepsilon}\cdot 2\pi \cdot \varepsilon$$
+Since $g$ is continuous, $M_\varepsilon$ is bounded and as $\varepsilon \to 0$, we have 
 $$\oint_C g(z) \,dz = 0$$
 Therefore, $g$ is holomorphic on $\Omega$, $g'(z_0)$ exists by Morera's Theorem. \\
 \newline
@@ -1500,8 +1500,8 @@ A reminder about upper and lower limits. Let
 then 
 $$ L = \sup_{n \geqslant 0}(\inf_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\inf \{ |a_n|, |a_{n + 1}|, \cdots \})$$
 $$ U = \inf_{n \geqslant 0}(\sup_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\sup \{ |a_n|, |a_{n + 1}|, \cdots \}) $$
-and $L \leqslant U$. For $n$ large and $\epsilon_0$, $\epsilon_1 > 0$, 
-$$L - \epsilon_0 \leqslant |a_n| \leqslant U + \epsilon_1$$
+and $L \leqslant U$. For $n$ large and $\varepsilon_0$, $\varepsilon_1 > 0$, 
+$$L - \varepsilon_0 \leqslant |a_n| \leqslant U + \varepsilon_1$$
 If we show that $U \leqslant L$, then $|a_n|$ converges.
 $$\lim_{n \to \infty}|a_n| = L = U$$ 
 \newline
@@ -1516,15 +1516,15 @@ $$\lim_{n \to \infty} |a_n|^{\frac{1}{n}} = \frac{1}{R}$$
 Assume $z_0 = 0$ and 
 $$ L = \frac{1}{R} = \lim_{n \to \infty} \sup |a_n|^{\frac{1}{n}}$$
 $L \neq 0$ or $\infty$. Let $|z| \leqslant r < R$, and from $\lim \sup$, we have 
-$$|a_n|^{\frac{1}{n}} \leqslant L + \epsilon $$
-for $n$ large and $\epsilon > 0$. 
+$$|a_n|^{\frac{1}{n}} \leqslant L + \varepsilon $$
+for $n$ large and $\varepsilon > 0$. 
 Therefore, 
-$$ |a_n| \leqslant (L + \epsilon)^n $$
+$$ |a_n| \leqslant (L + \varepsilon)^n $$
 and 
-$$ |a_n||z|^n \leqslant ((L + \epsilon)|z|)^n \leqslant ((L + \epsilon)r)^n $$
-Since $(L + \epsilon)r = \frac{r}{R} + \epsilon r$ and $\frac{r}{R} < 1$, we can pick $\epsilon$ small enough such that the geometric series 
-$$ \sum_{n = 0}^{\infty} ((L + \epsilon)r)^n$$
-converges for $|(L + \epsilon)r| < 1$. Therefore, the partial sums 
+$$ |a_n||z|^n \leqslant ((L + \varepsilon)|z|)^n \leqslant ((L + \varepsilon)r)^n $$
+Since $(L + \varepsilon)r = \frac{r}{R} + \varepsilon r$ and $\frac{r}{R} < 1$, we can pick $\varepsilon$ small enough such that the geometric series 
+$$ \sum_{n = 0}^{\infty} ((L + \varepsilon)r)^n$$
+converges for $|(L + \varepsilon)r| < 1$. Therefore, the partial sums 
 $$ |S_n(z)| = \sum_{k = 0}^n |a_kz^k|$$
 are increasing sequence with respect to $n$, $z$-fixed, and bounded by a convergent sum. By the monotone convergence theorem, the series converges for $|z| < R$. By the Weierstrass M-Test, the convergence is uniform on $|z| \leqslant r < R$ but not on $|z| < R$, since we need a fixed radius. \\
 \newline
@@ -1578,7 +1578,7 @@ Now we must show $g(z)$ is the derivative of $f(z)$,
 $$f(z) = \sum_{n = 0}^N a_nz^n + \sum_{n = N + 1}^{\infty} a_nz^n = S_n(z) + E_n(z)$$ 
 where $|z| < r < R$, 
 $$ \frac{f(z+h) -f(z)}{h} - g(z) = \frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) + (S_N'(z) - g(z)) + \frac{E_N(z + h) - E_N(z)}{h}$$
-We have three terms to study, and we can set each of them to be $< \frac{\epsilon}{3}$.
+We have three terms to study, and we can set each of them to be $< \frac{\varepsilon}{3}$.
 \begin{equation*}
 \frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) \mbox{ derivative of a polynomial, } 
 \end{equation*}
@@ -1604,8 +1604,8 @@ Therefore,
 $$ |a_n|\frac{|(z+h)^n - z^n|}{|h|} \leqslant |a_n|\frac{|h|nR^{n - 1}}{|h|} = |a_n|nR^{n -1} $$
 Hence, we have a bound on
 $$\abs*{\frac{E_N(z+h) - E_N(h)}{h}} \leqslant \sum_{n = N + 1}^{\infty} |a_n|nr^{n - 1}$$
-which we know to be the tail of a convergent sum, $g(z)$. Thus, it can be picked such that it is less than $\frac{\epsilon}{3}$ because the tail tends to 0 as $n \to \infty$. Hence, 
-$$\abs*{\frac{f(z+h)-f(z)}{h} - g(z)} < \epsilon$$
+which we know to be the tail of a convergent sum, $g(z)$. Thus, it can be picked such that it is less than $\frac{\varepsilon}{3}$ because the tail tends to 0 as $n \to \infty$. Hence, 
+$$\abs*{\frac{f(z+h)-f(z)}{h} - g(z)} < \varepsilon$$
 or $f'(z) = g(z)$. \\
 \newline
 \textbf{Proposition.} \\
@@ -1716,21 +1716,21 @@ Let $f(z)$ be non-constant and holomorphic on $\Omega$. Let $U$ be open in $\Ome
 $$ f(U) = \{w| f(z) = w \mbox{ for some z } \in \Omega \} $$ 
 is open. \\
 \textbf{Proof.} Let $a \in \Omega$, then a neighborhood of $a$ under $f$ will contain a neighborhood of $f(a)$. Assume $f(a) = 0$. If this is not the case, we can study $g(z) = f(z) - f(a)$. Since $f$ is not constant, by the Uniqueness Theorem there is $r > 0$ such that $f(z) \neq 0$ for all $z$ where $|z - a| = r$. Consider 
-$$ 0 < 2\epsilon = \min_{|z - a| = r}|f(z)|$$
-We will show the image of the disk $B_r(a) = U$ contains $B_\epsilon(f(a)) = B_\epsilon(0)$ in the $w$-plane. Or in other words, interior points are mapped to interior points. Let $w \in B_\epsilon(0)$ and look at $f(z) - w$. If $|z - a| = r$, 
-$$|f(z) - w| \geqslant |f(z)| - |w| \geqslant \epsilon$$
-because $|f(z)| \geqslant 2\epsilon$ and $|w| < \epsilon$. Now at $z = a$, we have $|f(a) - w| = |-w| = \epsilon$. \\
-On the boundary of $U$, we have $|f(z) - w| \geqslant \epsilon$. \\
-But at the center of $U$, we have $|f(a) - w| < \epsilon$. 
+$$ 0 < 2\varepsilon = \min_{|z - a| = r}|f(z)|$$
+We will show the image of the disk $B_r(a) = U$ contains $B_\varepsilon(f(a)) = B_\varepsilon(0)$ in the $w$-plane. Or in other words, interior points are mapped to interior points. Let $w \in B_\varepsilon(0)$ and look at $f(z) - w$. If $|z - a| = r$, 
+$$|f(z) - w| \geqslant |f(z)| - |w| \geqslant \varepsilon$$
+because $|f(z)| \geqslant 2\varepsilon$ and $|w| < \varepsilon$. Now at $z = a$, we have $|f(a) - w| = |-w| = \varepsilon$. \\
+On the boundary of $U$, we have $|f(z) - w| \geqslant \varepsilon$. \\
+But at the center of $U$, we have $|f(a) - w| < \varepsilon$. 
 To sum up what we have so far: 
 \begin{enumerate}[nolistsep]
 \item $f(z) - w$ is not constant.
-\item $|f(z) - w| < \epsilon$ on $w$.
-\item $|f(z) - w| \geqslant \epsilon$ on $\partial w$.
+\item $|f(z) - w| < \varepsilon$ on $w$.
+\item $|f(z) - w| \geqslant \varepsilon$ on $\partial w$.
 \item $|f(z) - w|$ smaller on $U$ than on $\partial U$. 
 \end{enumerate}
 Therefore, $|f(z) - w|$ has a global minimum in $U$. \\
-By Minimum Modulus Principle, $f(z) - w = 0$ or $f(z) = w$ for some $z \in U$. Hence, $f(U)$ contains $B_\epsilon(0)$. \\
+By Minimum Modulus Principle, $f(z) - w = 0$ or $f(z) = w$ for some $z \in U$. Hence, $f(U)$ contains $B_\varepsilon(0)$. \\
 This concludes the proof of Open Mapping Theorem. \\
 We can also prove the Open Mapping Theorem without using Minimum Modulus Principle, and instead prove it by counting zeros. \\
 \newline
@@ -1752,7 +1752,7 @@ Let $z \in L$ and consider a ball about $z$. Let $C$ be a closed loop in the bal
 $$\oint_C f(z) \, dz = 0$$ 
 by Cauchy's Theorem. If $C$ does pass through $L$, we can break up the curve as follows: 
 %%
-$$ \oint_Cf(z)\,dz = \lim_{\epsilon \to 0} \oint_{U_\epsilon} f(z) \, dz + \oint_{L_\epsilon} f(z) \, dz = 0$$
+$$ \oint_Cf(z)\,dz = \lim_{\varepsilon \to 0} \oint_{U_\varepsilon} f(z) \, dz + \oint_{L_\varepsilon} f(z) \, dz = 0$$
 because $f$ is continuous. Then by Morera's Theorem, $f$ is holomorphic in the ball. \\
 \newline
 \textbf{Schwarz's Reflection Principle.} \\
@@ -1814,7 +1814,7 @@ Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, eac
 $$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw, z \in \Omega$$
 \textbf{Proof.}\\
 \begin{figure}[h]
-\includegraphics[scale=0.2]{p1cif} 
+\includegraphics[scale=0.2]{19_1} 
 \centering
 \end{figure}
 \\
@@ -1842,7 +1842,7 @@ We may also use different notation for the coefficients with negative indices, $
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[scale = 0.2]{Laurent}
+    \includegraphics[scale = 0.2]{19_2}
 \end{minipage} 
 \newline
 \newline
@@ -1922,7 +1922,7 @@ Therefore,
 $$f(z) = \frac{1}{\sin(z)}$$ 
 has $\infty$-many singularities in $\mathbb{C}$, we will need expansions for $k\pi < |z| < (k+1)\pi, k \in \mathbb{N}$. 
 \begin{figure}[h]
-\includegraphics[scale=0.2]{Laurentsine} 
+\includegraphics[scale=0.2]{19_3} 
 \centering
 \end{figure}
 \\
@@ -2177,7 +2177,7 @@ but
 & \int_{\mathbb{R}}|\sin(x)| \,dx = \infty
 \end{align*}
 If $f(x)$ is undefined at $c \in (a, b)$, then 
-$$ P.V. \int_b^a f(x) \, dx = \lim_{\epsilon \to 0^+}\left(\int_{a}^{c - \epsilon}f(x) \, dx + \int_{c + \epsilon}^b f(x) \right)$$
+$$ P.V. \int_b^a f(x) \, dx = \lim_{\varepsilon \to 0^+}\left(\int_{a}^{c - \varepsilon}f(x) \, dx + \int_{c + \varepsilon}^b f(x) \right)$$
 \begin{figure}[h]
 \includegraphics[scale=0.17]{21_1} 
 \centering
@@ -2188,9 +2188,9 @@ $$ f(x) = \frac{1}{x^3}$$
 then 
 \begin{align*}
 I &= P.V.\int_{-2}^{3}f(x) \, dx \\
-& = \lim_{\epsilon \to 0^+} {\int_{-2}^{-\epsilon} f(x)\, dx + \int_{\epsilon}^3 f(x) \, dx} \\
-& = \lim_{\epsilon \to 0^+} {F(3) - F(\epsilon) + F(-\epsilon) - F(-2)} \\
-& = \lim_{\epsilon \to 0^+} {F(3) - F(-2)} \\
+& = \lim_{\varepsilon \to 0^+} {\int_{-2}^{-\varepsilon} f(x)\, dx + \int_{\varepsilon}^3 f(x) \, dx} \\
+& = \lim_{\varepsilon \to 0^+} {F(3) - F(\varepsilon) + F(-\varepsilon) - F(-2)} \\
+& = \lim_{\varepsilon \to 0^+} {F(3) - F(-2)} \\
 & = \frac{-1}{2x^2} \bigg\rvert_{x = -2}^{3}
 \end{align*}
 since $F$ is even. We are "ignoring" the singularity by exploiting 
@@ -2239,7 +2239,7 @@ Hence,
 $$ \int_{\mathbb{R}}f(x) \, dx = 2\pi i \, Res(f, i) = 2\pi i \cdot \frac{1}{4i} = \frac{\pi}{2}$$
 This technique works whenever $|f(z)| \leqslant \frac{A}{|z|^a}, a > 1$ and $z$-large.
 \newpage
-\textbf{Example.} Find 
+\textbf{Example (Trigonometry).} Find 
 $$ I = \int_{\mathbb{R}}\frac{\cos(x)}{(x - 1)^2 + 1} \, dx$$
 $$ |I| = \int_{\mathbb{R}}\abs*{\frac{\cos(x)}{(x - 1)^2 + 1}} \, dx \leqslant \int_{\mathbb{R}}\frac{A}{x^2 + 1} \, dx < \infty$$
 Therefore, $I$ converges absolutely. Here $\cos(z) \to \infty$ as $z \to \infty$. \\
@@ -2255,11 +2255,56 @@ We have two poles, $z = 1 \pm i$ and only one is inside the curve $C$, $z = 1 + 
 \includegraphics[scale=0.2]{21_3} 
 \centering
 \end{figure} 
-\
-$$I ^\ast = 2\pi i\,Res(f, 1 + i) = 2\pi i \left(-\frac{i}{2}e^{i - 1}\right) = \frac{\pi e^i}{e}$$ 
-
-
-
+\begin{align*}
+I^\ast &= 2\pi i\,Res(f, 1 + i) = 2\pi i \left(-\frac{i}{2}e^{i - 1}\right) = \frac{\pi e^i}{e} \\
+Res(f, 3i) &= \frac{e^{iz}}{z - (1 - i)}\bigg\rvert_{z = 1 + i} = -\frac{i}{2}e^{i - 1} \\
+I &= \Re(I^\ast) = \Re\left(\pi \frac{e^i}{e}\right) = \frac{\pi}{e}\cos(1)
+\end{align*}
+\newpage
+\textbf{Note.} The approach we used above $I = \Re(I ^\ast)$ fails for 
+$$ I = \int_{\mathbb{R}}\frac{\cos(x)}{(x - 1)^3} \,dx$$
+because $I \neq \conj{I}$ or $| \in \mathbb{C} \backslash \mathbb{R}$. \\
+\textbf{Proof.} 
+$$ I = \int_{\mathbb{R}}\frac{\cos(x)}{(x - i)^3} \,dx = \int_{\mathbb{R}}\frac{\cos(x)}{(x^2 + i)^3}(x + i)^3 \,dx = \int_{\mathbb{R}}\frac{\cos(x)}{(x^2 + i)^3}(x^3 + 3ix^2 - 3x - i) \,dx $$
+Let $f(x) = \frac{\cos(x)}{(x^2 + 1)^3}$, it is an even function. Thus, 
+\begin{align*}
+I &= \int_{\mathbb{R}}f(x) (x^3 + 3ix^2 - 3x - i) \, dx \\
+&= \int_{\mathbb{R}}f(x)x^3 \,dx + \int_{\mathbb{R}}f(x)3ix^2 \,dx - \int_{\mathbb{R}}f(x)3x\,dx -  \int_{\mathbb{R}}if(x)\,dx \\
+&= \int_{\mathbb{R}}f(x) 3ix^2 \,dx - \int_{\mathbb{R}}if(x)\,dx 
+\end{align*}
+The equality holds because 
+$$ \int_{\mathbb{R}}f(x)x^3 \, dx = \int_{\mathbb{R}}f(x)3x \, dx = 0$$ 
+as $f(x)x^3$ and $f(x)3x$ are both odd functions. Similarly, 
+\begin{align*}
+\conj{I} &= \int_{\mathbb{R}}\frac{\cos(x)}{(x + i)^3} \,dx \\
+&= \int_{\mathbb{R}}\frac{\cos(x)}{(x^2 + i)^3}(x - i)^3 \,dx \\
+&= \int_{\mathbb{R}}\frac{\cos(x)}{(x^2 + i)^3}(x^3 - 3ix^2 - 3x + i) \,dx \\
+&= -\int_{\mathbb{R}}f(x) 3ix^2 \,dx + \int_{\mathbb{R}}if(x)\,dx
+\end{align*}
+Therefore, $I = \conj{I}$, which obviously does not satisfy $I = \conj{I}$. \\
+\newline
+\textbf{Example (Change of Variable). }\\
+For 
+$$ \int_0^{2\pi}g(\theta) \, d\theta$$ 
+Let $z = e^{i\theta} \Rightarrow dz = ie^{i\theta}d\theta \Rightarrow d\theta = \frac{dz}{iz}$. Then 
+$$ \int_0^{2\pi} \frac{d\theta}{5 + 2\cos\theta} = \oint_{|z| = 1}\frac{1}{iz}\cdot\frac{dz}{5 + z + \frac{1}{z}}$$ 
+$$\text{for } \cos\theta = \frac{z + z^{-1}}{2}$$ 
+Here the poles of the integrand are 
+\begin{align*}
+&z = \frac{-5 \pm \sqrt{21}}{2}, \abs*{\frac{-5 + \sqrt{21}}{2}} < 1 \text{ and } \abs*{\frac{-5 - \sqrt{21}}{2}} > 1 \\
+\Rightarrow &\frac{1}{i} \oint_{|z| = 1} \frac{dz}{z^2 + 5z + 1} = \frac{2\pi i}{i} \frac{1}{(z - \frac{1}{2}(-5 - \sqrt{21}))} \Bigg\rvert_{z = \frac{-5 + \sqrt{21}}{2}} = \frac{2\pi}{\sqrt{21}}
+\end{align*}
+\newline
+\textbf{Semicircle Lemma.} \\
+Let $f(z)$ have a simple pole at $z_0$ and let $C_\varepsilon$ be the curve parametrized by 
+$$ \gamma(t) = z_0 + \varepsilon e^{it}, t \in [0, \pi]$$
+Then 
+$$ \lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \pi i \, Res(f, z_0)$$
+\begin{figure}[h]
+\includegraphics[scale=0.17]{21_4} 
+\centering
+\end{figure} 
+\newline
 
 
 \newpage
