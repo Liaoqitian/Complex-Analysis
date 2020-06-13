@@ -2212,7 +2212,7 @@ and by Residue Theorem,
 $$ \oint_C f(z) \,dz = 2\pi i\, Res(f, i)$$
 for any closed curve $C$ about $i$, but not $-i$. \\
 \begin{figure}
-\includegraphics[scale=0.3]{21_2} 
+\includegraphics[scale=0.2]{21_2} 
 \centering
 \end{figure}
 \newline
@@ -2305,7 +2305,65 @@ $$ \lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \pi i \, Res(f, z
 \centering
 \end{figure} 
 \newline
-
+\textbf{Proof.} Assume $\varepsilon > 0$ but small enough for $f$ to have a Laurent expansion for $0 < |z - z_0| < \varepsilon$. Then 
+\begin{align*}
+f(z) &= \frac{b_1}{z - z_0} + a_0 + a_1(z - z_0)+ \cdots \\
+\int_Cf(z)\,dz &= \int_0^\pi f(z_0 + \varepsilon e^{it})\varepsilon i e^{it }dt \\ 
+&= \int_0^\pi b_1i + a_0i\varepsilon e^{it} + a_1i\varepsilon^2e^{2it}+ \cdots dt
+\end{align*}
+and 
+$$\lim_{\varepsilon \to 0^+}\int_C{f(z)}\, dz = \pi i b_1 = \pi i Res(f, z_0)$$
+For non-simpe poles, the limit does not exist and we can extend this argument to any angular range.
+\newpage
+\textbf{Corollary of Semicircle Lemma.} \\
+$$\lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \theta i \, Res(f, z_0)$$
+where $C_\epsilon$ is the curve parametrized by 
+$$ \gamma(t) = z_0 + \varepsilon e^{it}, t \in [\alpha, \alpha + \theta] $$ 
+\newline
+\textbf{Jordan's Lemma.}\\
+If for $z$-large, 
+$ |f(z)| \leqslant \frac{A}{|z|} $ and $C_R$ is the curve parametrized by 
+$$ \gamma(t) = Re^{it}, t \in [0, \pi]$$
+then for $\alpha > 0$, 
+$$ \lim_{R \to \infty}\int_{C_R}f(z) e^{i\alpha z}\, dz = 0$$ 
+\newline
+\newline
+\textbf{Example.} Find 
+$$ I = P.V.\int_{\mathbb{R}}\frac{e^{ix}}{x} \,dx$$
+This integrand is not continuous at $x = 0$, 
+$$ I = \lim_{R \to \infty, \varepsilon \to 0+} \int_{-R}^{\varepsilon}f(x) \, dx + \int_{\varepsilon}^{R}f(x) \, dx$$
+We approach $x = 0$ from the left and right at the same rate and distance. \\
+Let $f(z) = \frac{e^{iz}}{z}$ and consider the contour $C$.
+\begin{figure}[h]
+\includegraphics[scale=0.15]{21_5} 
+\centering
+\end{figure} 
+Then $f$ is holomorphic on $C$'s interior and by Cauchy-Goursat Theorem, 
+$$ 0 = \oint_Cf(z)\,dz = \int_{-R}^{-\varepsilon}f(z) \, dz + \int_{-\tau_\varepsilon}f(z) \, dz + \int_{\varepsilon}^{R}f(z) \, dz + \int_{C_R}f(z) \, dz$$
+By Jordan's Lemma, 
+$$\int_{C_R}f(z) \,dz \to 0 \text{ as } R\to \infty$$
+By Semicircle Lemma, 
+$$\int_{-\tau_\varepsilon}f(z) \, dz \to -\pi i \, Res(f, 0)$$
+when $\varepsilon \to 0^+$ because there is a simple pole at 0. Therefore, 
+\begin{align*}
+&\int_{-R}^{-\varepsilon}f(z) \, dz + \int_{\varepsilon}^{R}f(z) \, dz = \int_{\tau_\varepsilon}f(z) \, dz = \pi i \, Res(f, 0) \text{ as } R \to \infty \text{ and } \varepsilon \to 0+ \\
+\Rightarrow &P.V.\int_{\mathbb{R}}\frac{e^{ix}}{x} \, dx = \pi i \, Res(f, 0) = \pi i e^{iz} \bigg\rvert_{z = 0} = \pi i
+\end{align*}
+\newline
+\textbf{Example.} Find 
+$I = \int_0^{\infty} \frac{\sqrt{x}}{x^2 + 1} \, dx$
+where $\sqrt{x} > 0$.
+$$ I = \lim_{R \to \infty, \varepsilon \to 0^+} \int_{\varepsilon}^R \frac{\sqrt{x}}{x^2 + 1} \, dx$$ 
+In this case, we need a contour in $\mathbb{C}$ that does the following: 
+\begin{enumerate}[leftmargin=*, nolistsep]
+\item $f$ is holomorphic in its interior.
+\item The contour coincides with $\mathbb{R}^+$ for $f(z) = \frac{\sqrt{z}}{z^2 + 1}$. 
+\item Avoid 0, the branch point. 
+\end{enumerate}
+\begin{figure}[h]
+\includegraphics[scale=0.15]{21_6} 
+\centering
+\end{figure} 
 
 \newpage
 \section{Argument Principle and Rouche's Theorem}

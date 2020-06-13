@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 JUN 2020 01:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 JUN 2020 02:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1659,7 +1659,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2197--2202
 File: ./images/21_2.jpg Graphic file (type jpg)
 <use ./images/21_2.jpg>
 Package pdftex.def Info: ./images/21_2.jpg  used on input line 2215.
-(pdftex.def)             Requested size: 379.72156pt x 206.27222pt.
+(pdftex.def)             Requested size: 253.14127pt x 137.5113pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2212--2219
 
@@ -1682,44 +1682,61 @@ File: ./images/21_4.jpg Graphic file (type jpg)
 <use ./images/21_4.jpg>
 Package pdftex.def Info: ./images/21_4.jpg  used on input line 2304.
 (pdftex.def)             Requested size: 251.3457pt x 195.20671pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2302--2308
+ [71 <./images/21_4.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 2318--2319
 
  []
 
-[71 <./images/21_4.jpg>] [72] [73] (./Complex Analysis .aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 2328--2332
+
+ []
+
+<./images/21_5.jpg, id=267, 1690.315pt x 957.5775pt>
+File: ./images/21_5.jpg Graphic file (type jpg)
+<use ./images/21_5.jpg>
+Package pdftex.def Info: ./images/21_5.jpg  used on input line 2338.
+(pdftex.def)             Requested size: 253.5363pt x 143.63042pt.
+[72 <./images/21_5.jpg>]
+<./images/21_6.jpg, id=271, 1604.99625pt x 1044.90375pt>
+File: ./images/21_6.jpg Graphic file (type jpg)
+<use ./images/21_6.jpg>
+Package pdftex.def Info: ./images/21_6.jpg  used on input line 2364.
+(pdftex.def)             Requested size: 240.73904pt x 156.72879pt.
+ [73 <./images/21_6.jpg>] [74] [75]
+(./Complex Analysis .aux) ) 
 Here is how much of TeX's memory you used:
- 16727 strings out of 480608
- 325920 string characters out of 5903631
+ 16743 strings out of 480608
+ 326158 string characters out of 5903631
  652484 words of memory out of 5000000
- 32301 multiletter control sequences out of 15000+600000
+ 32317 multiletter control sequences out of 15000+600000
  543318 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,60p,561b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/
-2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Complex Analysis .pdf" (75 pages, 1243246 bytes).
+</usr/local/texlive/2020/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
+10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on "Complex Analysis .pdf" (77 pages, 1449678 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
+ 345 PDF objects out of 1000 (max. 8388607)
+ 232 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
