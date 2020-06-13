@@ -2375,10 +2375,74 @@ Now along the branch cut, we need to study the sign of $\sqrt{x}$.
 \includegraphics[scale=0.08]{21_7} 
 \centering
 \end{figure} 
-
+On $[\varepsilon, R]$ and $[R, \varepsilon]$, we are using different branches of $\sqrt{z}$ but the same branch cut. \\
+For $ y > 0$ and $x \in (\varepsilon, R)$, $\sqrt{x} > 0$. \\
+For $ y < 0$ and $x \in (\varepsilon, R)$, $\sqrt{x} < 0$. 
+\begin{align*}
+\int_{\varepsilon}^{R} f(z) \, dz &= \int_{\varepsilon}^R \frac{\sqrt{z}}{z^2 + 1} \, dz \\
+-\int_{R}^{\varepsilon}f(z) \, dz &= \int_{R}^{\varepsilon} \frac{-\sqrt{z}}{z^2 + 1}\,dz = \int_{\varepsilon}^{R}\frac{\sqrt{z}}{z^2 + 1}
+\end{align*}
+because $\varepsilon < R$. Therefore, 
+$$ 2\int_{\varepsilon}^R \frac{\sqrt{z}}{z^2 + 1} \, dz = \int_{\varepsilon}^R f(z) \, dz - \int_{R}^{\varepsilon} f(z) \, dz$$
+Now 
+$$\abs*{\int_{C_R}f(z)\, dz} \leqslant 2\pi R \, \frac{A\sqrt{R}}{R^2} \to 0 \text{ as } R \to \infty$$ 
+Observe for $\varepsilon \in (0, 1)$, 
+$$ 1 - \varepsilon^2 \leqslant |\varepsilon^2 + 1| = \varepsilon^2 + 1 \Rightarrow \frac{1}{|\varepsilon^2 + 1|} \leqslant \frac{1}{1 - \varepsilon^2}$$
+And so by an ML-Estimate, 
+$$\abs*{\int_{-\tau_\varepsilon}f(z) \, dz} \leqslant \underbrace{\frac{\varepsilon^{\frac{1}{2}}}{1 - \varepsilon^2}}_{M} \, \underbrace{2\pi \varepsilon}_{L} \to 0 \text{ as } \varepsilon \to 0^+$$
+As $\varepsilon \to 0^+, R \to \infty$, 
+$$ 2I = 2\int_0^{\infty}\frac{\sqrt{x}}{x^2 + 1}\,dx = 2\pi i \, (Res(f, i) + Res(f, -i)) $$
+The residues require us to use our branch of $\sqrt{z}, \operatorname{arg}(z) \in (0, 2\pi)$. 
+\begin{align*}
+Res(f, i) &= \frac{e^{\frac{\left(\operatorname{Log}|z| + i\operatorname{arg}(z)\right)}{2}}}{z + i} \Bigg\rvert_{z = i} \\
+&= \frac{e^{\frac{0 + i\frac{\pi}{2}}{2i}}}{2i} \\
+&= \frac{e^{i\frac{\pi}{4}}}{2i} \\
+&= \frac{1}{2i}\left(\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right) \\
+& \\
+Res(f, -i) &= \frac{e^{\frac{\left(\operatorname{Log}|z| + i\operatorname{arg}(z)\right)}{2}}}{z - i} \Bigg\rvert_{z = -i} \\
+&= \frac{e^{\frac{0 + i\frac{3\pi}{2}}{2i}}}{-2i} \\
+&= \frac{e^{i\frac{3\pi}{4}}}{-2i} \\
+&= -\frac{1}{2i}\left(-\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right) \\
+& \\
+\Rightarrow I &= \int_{0}^{\infty} \frac{\sqrt{x}}{x^2 + 1} \, dx \\
+&= \pi i \left(\frac{1}{2i}\left(\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right) - \frac{1}{2i}\left(-\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right)\right) \\ 
+&= \frac{\pi}{\sqrt{2}}
+\end{align*}
 
 \newpage
 \section{Argument Principle and Rouche's Theorem}
+Let $\gamma$ be a simple, piecewise smooth, closed curve in $\mathbb{C}$ oriented counter-clockwise. Let $f$ be meromorphic inside and on $\gamma$ but with no poles or zeros on $\gamma$.
+\begin{figure}[h]
+\includegraphics[scale=0.2]{22_1} 
+\centering
+\end{figure} 
+\\
+Let $p_1, p_2, \cdots, p_m$ be $f$'s poles in $\gamma$ and $z_1, \cdots, z_n$ be $f$'s zeros in $\gamma$. \\
+Define $mult(z_k)$ and $mult(p_k)$ as the orders of the root $z_k$ and pole $p_k$. \\
+Define 
+\begin{align*}
+Z_{f, \gamma} &= \sum mult(z_k) \\
+P_{f, \gamma} &= \sum mult(p_k) 
+\end{align*}
+as the sum of the orders of the poles and roots of $f$ in $\gamma$. \\
+\newline
+\textbf{Lemma.} \\
+With $f$ and $\gamma$ defined as above:
+$$ \oint_{\gamma}\frac{f'(z)}{f(z)}\, dz = 2\pi i\,\left(\sum mult(z_k) - \sum mult(p_k)\right) = 2\pi i (Z_{f, \gamma} - P_{f, \gamma}) $$
+\textbf{Proof.} Let $f$ have a zero of order $k$ at $z_0$. \\
+\begin{align*}
+&f(z) = (z - z_0)^kg(z), g(z_0) \neq 0 \\ 
+\Rightarrow &f'(z) = (z - z_0)^{k - 1}\left(kg(z) + (z - z_0)g'(z_0)\right) \\ 
+\Rightarrow & f' \text{ has a root of order } k - 1 \text{ at } z_0 \\
+\Rightarrow & \frac{f'}{f} = \underbrace{\frac{k}{z - z_0}}_{\text{Singular Part}} + \underbrace{\frac{g'(z)}{g(z)}}_{\text{Holomorphic Part}}
+\end{align*} 
+Therefore, $\frac{f'}{f}$ has a simple pole and $Res(\frac{f'}{f}, z_0) = k$, which is also the order of the root at $z_0$ of $f$. \\
+Repeat the argument with a pole at $p_0$ of order $k$, we have 
+$$ \frac{f'}{f} = \frac{-k}{z - p_0} + \frac{g'(z)}{g(z)} $$
+The result then follows by the Residue Theorem. 
+\newpage
+
+\newpage
 
 \iffalse
 Introduction to Myself
