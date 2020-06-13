@@ -65,4 +65,5 @@
 \contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{60}%
 \contentsline {section}{\numberline {21}Improper Integrals}{66}%
 \contentsline {subsection}{\numberline {21.1}Principal Value}{66}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{69}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{67}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{70}%

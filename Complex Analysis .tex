@@ -2200,9 +2200,9 @@ for $f$ odd and piecewise-smooth. \\
 \textbf{Lemma.} \\
 If $|f(x)| \leqslant g(x)$ for all $x \in \mathbb{R}$ and $\int_{\mathbb{R}}g(x) \, dx$ converges, then 
 $$ I = \int_{\mathbb{R}} f(x) \, dx$$ 
-converges absolutely. \\
-\newline
-\textbf{Example.} The improper integral 
+converges absolutely. 
+\subsection{Clever Choice of Contours.}
+\textbf{$\text{Example}^\star$.} The improper integral 
 $$ \int_{\mathbb{R}}\frac{1}{(x^2 + 1)^2} \, dx$$
 converges absolutely because 
 $$ \frac{1}{(x^2 + 1)^2} \leqslant \frac{1}{(x^2 + 1)} \text{ and } \int_{\mathbb{R}}\frac{1}{(x^2 + 1)} \, dx < \infty$$
@@ -2226,8 +2226,42 @@ $$\lim_{R \to \infty} \int_{C_R} f(z) \, dz = 0$$
 That is to say, the integral over the upper curve vanishes. We can establish this with an ML-Estimate, 
 \begin{align*}
 \abs{f(z)} &\leqslant \frac{A}{|z|^4} \text{ for z-large}, \,A > 0 \\
-\Rightarrow \abs*{\int_{C_R}f(z) \, dz} &\leqslant \int_{C_R}|f(z)||dz| \leqslant \frac{A}{R^4}\pi R = \frac{A\pi}{R^3}
+\Rightarrow \abs*{\int_{C_R}f(z) \, dz} &\leqslant \int_{C_R}|f(z)||dz| \leqslant {\underbrace{\frac{A}{R^4}}_{M}}{\underbrace{\pi R}_{L}} = \frac{A\pi}{R^3}
 \end{align*}
+Therefore, its upper bound $\to 0$ as $R \to \infty$. Therefore, 
+$$\lim_{R \to \infty} \int_{C_R} f(z) \, dz = 0$$ 
+Next we solve $Res(f, i)$. 
+\begin{align*}
+g(z) &= (z - i)^2f(z) = \frac{1}{(z + 2)^2} \\ 
+Res(f, i) &= g'(i) = \frac{d}{dz}\frac{1}{(z + i)^2}\bigg\rvert_{z = i} = \frac{-2}{(z + i)^3}\bigg\rvert_{z = i} = \frac{1}{4i}
+\end{align*}
+Hence, 
+$$ \int_{\mathbb{R}}f(x) \, dx = 2\pi i \, Res(f, i) = 2\pi i \cdot \frac{1}{4i} = \frac{\pi}{2}$$
+This technique works whenever $|f(z)| \leqslant \frac{A}{|z|^a}, a > 1$ and $z$-large.
+\newpage
+\textbf{Example.} Find 
+$$ I = \int_{\mathbb{R}}\frac{\cos(x)}{(x - 1)^2 + 1} \, dx$$
+$$ |I| = \int_{\mathbb{R}}\abs*{\frac{\cos(x)}{(x - 1)^2 + 1}} \, dx \leqslant \int_{\mathbb{R}}\frac{A}{x^2 + 1} \, dx < \infty$$
+Therefore, $I$ converges absolutely. Here $\cos(z) \to \infty$ as $z \to \infty$. \\
+Replace $\cos(x)$ with $e^{ix} = \cos(x) + i\sin(x)$. 
+$$ I^\ast = \int_{\mathbb{R}}\frac{e^{ix}}{(x - 1)^2 + 1} \, dx, \, I = \Re(I^\ast)$$
+$$ f(z) = \frac{e^{iz}}{(z - 1)^2 + 1}, \, |f(z)| = \frac{|e^{i(x + iy)}|}{|z^2 - 2z + 2|} = \frac{e^{-y}}{|z^2 - 2z + 2|}$$
+We evaluate the integral over the same contour, $C = C_R \cup [-R, R]$. With $y > 0$, for $z$-large we have 
+$$\frac{e^{-y}}{|z^2 - 2z + 2|} \leqslant \frac{A}{|z|^2} $$
+Repeating the argument from the previous example, we have 
+$$ \lim_{R \to \infty} \int_{C_R}f(z) \,dz = 0$$
+We have two poles, $z = 1 \pm i$ and only one is inside the curve $C$, $z = 1 + i$.
+\begin{figure}[h]
+\includegraphics[scale=0.2]{21_3} 
+\centering
+\end{figure} 
+\
+$$I ^\ast = 2\pi i\,Res(f, 1 + i) = 2\pi i \left(-\frac{i}{2}e^{i - 1}\right) = \frac{\pi e^i}{e}$$ 
+
+
+
+
+
 \newpage
 \section{Argument Principle and Rouche's Theorem}
 
