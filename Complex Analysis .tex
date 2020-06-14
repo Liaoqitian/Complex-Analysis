@@ -2441,6 +2441,59 @@ Repeat the argument with a pole at $p_0$ of order $k$, we have
 $$ \frac{f'}{f} = \frac{-k}{z - p_0} + \frac{g'(z)}{g(z)} $$
 The result then follows by the Residue Theorem. 
 \newpage
+\textbf{Example.} Consider
+$$\oint_{|z| = 4} \frac{f'(z)}{f(z)} \, dz \, \text{ for } \, f(z) = \frac{(z^2 + 1)^2}{(z^2 + 2z + 2)^3} $$
+$f$ has ``4" roots in $|z| < 2$ and ``6" poles in $|z| < 4$. Therefore, 
+$$\oint_{|z| = 4}\frac{f'(z)}{f(z)}\,dz = 2\pi i(4 - 6) = -4\pi i$$
+\newline
+\textbf{Example.} Consider 
+$$ f(z) = z^5 - 3i z + 2z - 1 + i$$
+$f(z)$ has 5 roots in $\mathbb{C}$ and 
+$$ \oint_{|z| = R}\frac{f'(z)}{f(z)} \, dz = 2\pi i(5) = 10\pi i$$ 
+for $R = \max|z_i|$ where $f(z_i) = 0$. \\
+\newline
+\textbf{Winding Number (Index).} \\
+For any closed curve $\gamma$ in $\mathbb{C}$, its winding number (index) about $z_0$ is 
+$$ Ind(\gamma, z_0) = \frac{1}{2\pi i}\oint_\gamma \frac{1}{z - z_0} \, dz \in \mathbb{Z}$$
+If $\gamma$ is simple, then $Ind(\gamma, z_0) \in \{1, 0, -1\}$.
+\begin{figure}[h]
+\includegraphics[scale=0.3]{22_2}
+\centering
+\end{figure} 
+\begin{figure}[h]
+\includegraphics[scale=0.2]{22_3} 
+\centering
+\end{figure} 
+\newline
+\textbf{Example.} 
+\begin{minipage}{.5\textwidth}
+       \begin{align*}
+	Ind(\gamma_1, z_0) &= 1 \\
+	Ind(\gamma_2, z_0) &= -1 \\
+	Ind(\gamma_3, z_0) &= 0 \\
+	\end{align*}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale = 0.2]{22_4}
+\end{minipage} 
+\newline
+\textbf{Example.} \\
+If $\gamma_1(t) = e^{it}$ and $f_1(z) = z^2$, then $ f_1 \circ \gamma_1 = e^{2it}$ traverses the unit circle twice for $t \in [0, 2\pi]$. \\
+Therefore, $Ind( f_1 \circ \gamma_1, 0) = 2$. \\
+\newline
+If $\gamma_2(t) = it, t \in \mathbb{R}$ and $f_2 = \frac{1}{z + 1}$, then $f_2 \circ \gamma_2$ is a circle about $\frac{1}{2}$ of radius $\frac{1}{2}$ by the Möbius transform theory. \\
+Therefore, $Ind( f_2 \circ \gamma_2, \frac{1}{2}) = -1$. \\
+The number of times $f \circ \gamma$ wraps around $w_0$ implies how many solutions exist to $f(z) = w_0$ for $z$ inside $\gamma$. \\
+\newline
+\textbf{Argument Principle. } \\
+For $f$ and $\gamma$ as in our lemma, 
+$$ \oint_{\gamma}\frac{f'(z)}{f(z)} \,dz = 2\pi i \, Ind(f\circ \gamma, 0) = 2\pi i(Z_{f, \gamma} - P_{f, \gamma})$$
+\textbf{Proof.} Let $w = f(z)$, then $z = \gamma(t)$. Then, $w = f \circ \gamma$ and $dw = f'(z) \, dz$. 
+$$ \oint_\gamma \frac{f'(z)}{f(z)} \,dz = \int_{f\circ \gamma}\frac{dw}{w} = 2\pi i\, Ind(f\circ \gamma, 0) = 2\pi i(Z_{f, \gamma} - P_{f, \gamma}) $$
+We can measure how many times a curve in $\mathbb{C}$ is wrapped around a point in the $w$=plane by $w = f(z)$ or measure the change in the curve's argument. 
+$$ \oint_{\gamma}\frac{f'}{f}\,dz = \frac{1}{2\pi i} \operatorname{Log}\left(f(z)\right)\Bigg\rvert_{z = \gamma(0)}^{\gamma(1)} = \frac{1}{2\pi} \bigtriangleup \operatorname{Arg}\left(f(z)\right)$$
+for $\gamma(0) = \gamma(1)$. (The $\mathbb{R}$-part vanishes since $|f(\gamma(0))| = |f(\gamma(1))|$).
 
 \newpage
 
