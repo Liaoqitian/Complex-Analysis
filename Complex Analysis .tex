@@ -2493,7 +2493,30 @@ $$ \oint_{\gamma}\frac{f'(z)}{f(z)} \,dz = 2\pi i \, Ind(f\circ \gamma, 0) = 2\p
 $$ \oint_\gamma \frac{f'(z)}{f(z)} \,dz = \int_{f\circ \gamma}\frac{dw}{w} = 2\pi i\, Ind(f\circ \gamma, 0) = 2\pi i(Z_{f, \gamma} - P_{f, \gamma}) $$
 We can measure how many times a curve in $\mathbb{C}$ is wrapped around a point in the $w$=plane by $w = f(z)$ or measure the change in the curve's argument. 
 $$ \oint_{\gamma}\frac{f'}{f}\,dz = \frac{1}{2\pi i} \operatorname{Log}\left(f(z)\right)\Bigg\rvert_{z = \gamma(0)}^{\gamma(1)} = \frac{1}{2\pi} \bigtriangleup \operatorname{Arg}\left(f(z)\right)$$
-for $\gamma(0) = \gamma(1)$. (The $\mathbb{R}$-part vanishes since $|f(\gamma(0))| = |f(\gamma(1))|$).
+for $\gamma(0) = \gamma(1)$. (The $\mathbb{R}$-part vanishes since $|f(\gamma(0))| = |f(\gamma(1))|$). \\
+\newline
+\textbf{Example.} Let $f(z) = z^2 + z$. It has two roots 0 and -1 and no poles. \\
+Let $\gamma_1$ be a circle of radius 2, and both roots are inside $f \circ \gamma_1$. Therefore, $Ind(f \circ \gamma_1, 0) = 2$. \\
+Let $\gamma_2$ be a circle of radius $\frac{1}{2}$, and one root is inside $f \circ \gamma_2$. Therefore, $Ind(f \circ \gamma_2, 0) = 1$. \\ 
+Let $\gamma_2$ be a circle of radius 1, and it passes through the root -1. Therefore, the Argument Principle fails. \\ 
+\newline
+Imagine you are always 10 feet or more from a tree and you are walking a dog with an 8 feet leash. Everything you walk around the tree, so must the dog. \\ 
+Let $f$ be a function and $|h| < |f|$, then the perturbed function $f + h$ has its roots near the roots of $f$. Here $h$ is a ``small" change to $f$. \\
+\newline
+\textbf{Rouche's Theorem.} \\
+Let $\gamma$ be simple closed curve in $\mathbb{C}$. Suppose $f$ and $h$ are meromorphic inside and on $\gamma$, but with no poles on $\gamma$, and $|h| < |f|$ on $\gamma$. Then 
+$$ Z_{f, \gamma} - P_{f, \gamma} = Z_{f + h, \gamma} - P_{f + h, \gamma} $$
+\textbf{Proof.} \\
+Claim 1: $f$, $f + h$ and $\frac{f + h}{f}$ have no roots on $\gamma$. 
+\begin{align*}
+0 \leqslant |h| < |f| &\Rightarrow f \text{ has no roots on } \gamma \\
+&\Rightarrow f + h \text{ has no roots on } \gamma \text{, since } |h| - |f| \neq 0
+\end{align*}
+\newline
+\newline
+\textbf{Corollary.} \\
+If $f$ and $g$ are also holomorphic inside and on $\gamma$, then 
+$$ Z_{f, \gamma} = Z_{f + h, \gamma} $$
 
 \newpage
 
