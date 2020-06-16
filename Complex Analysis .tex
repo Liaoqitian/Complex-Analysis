@@ -59,7 +59,7 @@
 \section{Algebra of the Complex Plane}
 \subsection{Introduction to Complex Numbers}
 \begin{figure}[H]
-\includegraphics[scale = 0.15]{1_1}
+\includegraphics[scale = 0.13]{1_1}
 \centering
 \end{figure}
 Let $z = a + ib \in \mathbb{C}$ where $a, b \in \mathbb{R}$ and $i ^ 2 = -1$. \\
@@ -82,8 +82,8 @@ $$\conj{z} = a - ib$$
 \includegraphics[scale = 0.19]{1_2}
 \centering
 \end{figure}
-Geometric representation: The image of $\bar z$ is the reflection of z about the Real axis. \\
-\newline
+Geometric representation: The image of $\bar z$ is the reflection of z about the Real axis. 
+\newpage
 \textbf{Properties of Conjugate.} \\
 $$\conj{\conj{z}} = z$$
 $$\conj{zw} = \conj{z}\conj{w}$$
@@ -92,7 +92,6 @@ $$\conj{z + w} = \conj{z} + \conj{w}$$
 \overline{z} = z \mbox{ if and only if } z \in \mathbb{R}
 \end{equation*}
 \textbf{Real and Imaginary Parts.} \\
-\newline
 \noindent We can project $z$ onto the Real or Imaginary axis and measure its distance from 0: 
 $$\Re(z) = a$$
 \begin{equation*}
@@ -114,22 +113,19 @@ $$|z| = (a^2 + b^2)^{\frac{1}{2}} = (z\conj{z})^{\frac{1}{2}} \in \mathbb{R}$$
 \includegraphics[scale = 0.19]{1_3}
 \centering
 \end{figure}
-\textbf{Properties of Modulus.} \\
-$$|zw| = |z||w|$$ 
-$$|z| = |\conj{z}|$$  
-$$|z| \geqslant 0$$
-\begin{equation*}
-|z| = 0 \mbox{ if and only if } z = 0
-\end{equation*}
+\textbf{Properties of Modulus.} 
+\begin {align*}
+|zw| &= |z||w| \\
+|z| &= |\conj{z}| \\  
+|z| &\geqslant 0 \\
+|z| &= 0 \text{ if and only if } z = 0
+\end{align*}
 \newline
-\textbf{Triangle Inequality and Reverse Triangle Inequality.} \\
-
-\[ \begin{cases} 
-      |z + w| \leqslant |z| + |w| \\
-      |z| - |w| \leqslant |z - w|
-   \end{cases}
-\]
-
+\textbf{Triangle Inequality and Reverse Triangle Inequality.}
+\begin{align*}
+      &\text{Triangle Inequality: } |z + w| \leqslant |z| + |w| \\
+      &\text{Reverse Triangle Inequality: }|z| - |w| \leqslant |z - w|
+\end{align*}
 $$z = z - w + w \Rightarrow |z| = |z - w + w| \Rightarrow |z| \leqslant |z - w| + |w| \Rightarrow |z| - |w| \leqslant |z - w|$$
 \newline
 \textbf{Complex Division.} \\
@@ -143,7 +139,10 @@ We also have
 \textbf{Distance in the plane.} \\
 A disk in the complex plane centered at $c$ of radius $r \in \mathbb{R}$ is of the form 
 $$\{z \in \mathbb{C} \mid |z - c| \leqslant r\}$$
-\\
+\begin{figure}[H]
+\includegraphics[scale = 0.19]{1_4}
+\centering
+\end{figure}
 \subsection{Complex Polynomial}
 A complex polynomial $p(z)$ of degree n is of the form: 
 $$p(z) = a_nz^n + a_{n - 1}z^{n - 1} + \cdots + a_1z + a_0$$
