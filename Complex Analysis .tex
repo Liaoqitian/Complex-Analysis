@@ -239,7 +239,6 @@ Let $p(z) = w^3 - i$. By Fundamental Theorem of Algebra, there are 3 roots of $p
 \centering
 \end{figure}
 
-
 \newpage
 \section{Stereographic Projections, Exponentials and Logs}
 \subsection{Stereographic Projections} 
@@ -260,7 +259,6 @@ S = (0, 0, -1) &\to 0 \\
 \mbox{lines of longitude } &\to \operatorname{Arg}(z) = \pm\theta \mbox{, lines through } (0, 0) 
 \end{align*}
 Note that in general, circles on $\mathbb{S}^2$ map to circles and lines in $\mathbb{C}$, orientation is not always preserved. 
-
 \subsection{Complex Logarithm}
 \textbf{Logarithm of Real Numbers.} \\
 Anytime we are dealing with power, the log function is very useful. 
@@ -271,12 +269,21 @@ $$\frac{d}{dx}x^x = \frac{d}{dx}e^{\ln{x^x}} = \frac{d}{dx}e^{x\ln x} = e^{x\ln 
 \newline
 \textbf{Logarithm of Complex Numbers.} \\
 Remember from Euler's Formula, $e^{i\theta}= \cos\theta + i\sin\theta$. 
-$$e^z = e^{a + ib} = e^ae^{ib}$$ 
-$$\operatorname{Arg}(e^z) = b$$
-$$|e^z| = e^a > 0$$ 
+\begin{align*}
+e^z &= e^{a + ib} = e^ae^{ib} \\
+\operatorname{Arg}(e^z) &= b \\
+|e^z| &= e^a > 0
+\end{align*}
 Therefore, if $a$ is held fixed, $e^z$ maps to a circle as $b$ changes. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{3_3}
+\centering
+\end{figure}
 On the other hand, if $b$ is held fixed, $e^z$ maps to a line through $(0, 0)$. \\
-\newline
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{3_4}
+\centering
+\end{figure}
 \textbf{Derivation of Complex Logarithm.} \\
 We want $e^{\log{(z)}} = z$ for all $z \neq 0$, and thus 
 $$e^{\Re(\log{(z)}) + i\Im(\log{(z)})} = e^{\Re(\log{(z)})}e^{i\Im(\log{(z)})} = |z|e^{i\theta} = z$$
