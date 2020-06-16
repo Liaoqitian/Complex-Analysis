@@ -26,6 +26,13 @@
 \setlength{\abovedisplayskip}{2pt}
 \setlength{\belowdisplayskip}{2pt}
 
+% Align space
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+
 
 \sectionfont{\fontsize{12}{15}\selectfont}
 \title{Introduction to Complex Analysis}
@@ -55,6 +62,7 @@
 \titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{5pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
 
+\setlength{\belowcaptionskip}{-20pt} % Space under figure
 \newpage
 \section{Algebra of the Complex Plane}
 \subsection{Introduction to Complex Numbers}
@@ -161,54 +169,75 @@ $\mathbb{R}$,  $\mathbb{Q}$, $\mathbb{Z}$, $\mathbb{N}$ are not algebraically cl
 
 \newpage
 \section{Geometry of the Complex Plane}
-\subsection{Properties of Polar Forms} 
+\begin{figure}[H]
+\includegraphics[scale = 0.19]{1_3}
+\centering
+\end{figure}
+\subsection{Polar Forms} 
 Complex numbers can be represented in polar forms: 
 $$z = |z|(\cos\theta + i\sin\theta)$$
-with modulus $|z|$ and argument $\theta$. To change between the coordinate systems it follows: 
-$$|z| = (a^2 + b^2)^{\frac{1}{2}}$$
-$$\tan\theta = \frac{b}{a}$$
-$$a = |z|\cos\theta= \Re(z)$$
-$$b = |z|\sin\theta = \Im(z)$$
+with modulus $|z|$ and argument $\theta$. To change between the coordinate systems it follows:
+\begin{align*} 
+&|z| = (a^2 + b^2)^{\frac{1}{2}} \\ 
+&\tan\theta = \frac{b}{a} \\
+&a = |z|\cos\theta= \Re(z) \\
+&b = |z|\sin\theta = \Im(z)
+\end{align*}
 Note that $\theta_R = \arctan(\frac{b}{a})$ is a reference angle of $z$. To find $\theta$ from $\theta_R$, you need to consider the signs of $a$ and $b$. \\
 \newline
 \textbf{Example.} \\
-$$z = -3 + 3i = 3\sqrt2(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4})$$
-$$\theta_R = \arctan(\frac{3}{-3})= -\frac{\pi}{4}$$
-\begin{equation*}
-\theta = \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4} \mbox{, since } \theta \mbox{ is in } \Romannum{2} .
-\end{equation*}
-\subsection{Definition of Argument and argument}
+\vspace{-0.7cm}
+\begin{figure}[H]
+\includegraphics[scale = 0.165]{2_2}
+\centering
+\end{figure}
+\vspace{-0.7cm}
+\begin{align*}
+z &= -3 + 3i = 3\sqrt2(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4}) \\ 
+\theta_R &= \arctan(\frac{3}{-3})= -\frac{\pi}{4}\\
+\theta &= \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4} \text{, since } \theta \text{ is in } \Romannum{2} .
+\end{align*}
+\textbf{Argument and argument.}\\
 $\operatorname{Arg}(z)$ is $z$'s principle polar angle $\theta$, $z \neq 0$, where $\theta \in (-\pi, \pi]$. \\
-$\operatorname{arg}(z)$ is all of $z$'s polar angles, $\theta + 2k\pi$, $k \in \mathbb{Z}$. 
-
-\subsection{Euler's Formula} 
+$\operatorname{arg}(z)$ is all of $z$'s polar angles, $\theta + 2k\pi$, $k \in \mathbb{Z}$. \\
+\newline
+\textbf{Euler's Formula.} \\
 Euler's Formula is defined as a linear combination of $\cos\theta$ and $\sin\theta$, $\mathbb{R}$-valued functions. 
 $$ e^{i\theta}= \cos\theta + i\sin\theta $$
 It allows us to express $z$ in polar form by 
 $$ z = |z|e^{i\theta}$$
 -1 has polar angle $\pi$ and modulus 1, 
 \begin{equation*}
--1 = e^{i\pi} \mbox{ or } e^{i\pi} + 1 = 0
+-1 = e^{i\pi} \text{ or } e^{i\pi} + 1 = 0
 \end{equation*}
 By the angle addition formulas from trigonometry we find: 
-$$e^{i\theta}e^{i\varphi} = e^{i(\theta + \varphi)}$$
-$$(e^{i\theta})^k = e^{i\theta k}$$
-
+\begin{align*}
+e^{i\theta}e^{i\varphi} &= e^{i(\theta + \varphi)} \\
+(e^{i\theta})^k &= e^{i\theta k}
+\end{align*}
 \subsection{Geometric Understanding of Multiplication}
 The polar angle of $zw$ is the sum of the polar angles of $z$ and $w$. The modulus is the product of the moduli. 
-$$ \operatorname{Arg}(zw) = \operatorname{Arg}(z) + \operatorname{Arg}(w)$$
-$$ \operatorname{Arg}(\conj{z}) = -\operatorname{Arg}(z)$$
-Question: How about $\frac{z}{w}$ and $z^4$? \\
-It follows from trigonometry that $|e^{i\theta}| = 1$, if $\theta \in (-\pi, \pi]$ we get a parametrization of the unit circle. \\
-\newline
+\begin{figure}[H]
+\includegraphics[scale = 0.165]{2_3}
+\centering
+\end{figure}
+\vspace{-1cm}
+\begin{align*}
+\operatorname{Arg}(zw) &= \operatorname{Arg}(z) + \operatorname{Arg}(w) \\
+\operatorname{Arg}(\conj{z}) &= -\operatorname{Arg}(z)
+\end{align*}
+\textbf{Question.} How about $\frac{z}{w}$ and $z^4$? \\
+It follows from trigonometry that $|e^{i\theta}| = 1$, if $\theta \in (-\pi, \pi]$ we get a parametrization of the unit circle. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{2_4}
+\centering
+\end{figure}
 \textbf{Example.} Discover all solutions to $w^3 = i = z$ \\
-Let $p(z) = w^3 - i$. By Fundamental Theorem of Algebra, there are 3 roots of $p(z)$. \\
-Therefore, $3\theta= \frac{\pi}{2} + 2\pi k$, $k \in \mathbb{Z}$ \\
-This gives us infinitely many solutions, but the solutions form 3 equivalence classes. \\
-All we need is $k = 0, 1, 2$, which gives $\theta_1 = \frac{\pi}{6}$, $\theta_2 = \frac{5\pi}{6}$, $\theta_3 = \frac{3\pi}{2}$ \\
-Our solutions partitioned the unit circle into 3 equally spaced wedges. \\
-The solutions to $w^3 = i$ are $w_1 = \frac{\sqrt3}{2} + \frac{1}{2}i$, $w_2 = -\frac{\sqrt3}{2} + \frac{1}{2}i$ and $w_3 = -i$. \\
-This problem of unity can be extended to solving $w^k = z$ for $k \in \mathbb{N}$, $z \in \mathbb{C}$ for unknown k-solutions w.  
+Let $p(z) = w^3 - i$. By Fundamental Theorem of Algebra, there are 3 roots of $p(z)$. Therefore, $3\theta= \frac{\pi}{2} + 2\pi k$, $k \in \mathbb{Z}$. This gives us infinitely many solutions, but the solutions form 3 equivalence classes. All we need is $k = 0, 1, 2$, which gives $\theta_1 = \frac{\pi}{6}$, $\theta_2 = \frac{5\pi}{6}$, $\theta_3 = \frac{3\pi}{2}$. Our solutions partitioned the unit circle into 3 equally spaced wedges. The solutions to $w^3 = i$ are $w_1 = \frac{\sqrt3}{2} + \frac{1}{2}i$, $w_2 = -\frac{\sqrt3}{2} + \frac{1}{2}i$ and $w_3 = -i$. This problem of unity can be extended to solving $w^k = z$ for $k \in \mathbb{N}$, $z \in \mathbb{C}$ for unknown k-solutions w.  
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{2_5}
+\centering
+\end{figure}
 
 
 \newpage
