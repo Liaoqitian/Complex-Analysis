@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  14 JUN 2020 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  15 JUN 2020 20:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1723,7 +1723,7 @@ Package pdftex.def Info: ./images/21_7.jpg  used on input line 2376.
 File: ./images/22_1.jpg Graphic file (type jpg)
 <use ./images/22_1.jpg>
 Package pdftex.def Info: ./images/22_1.jpg  used on input line 2417.
-(pdftex.def)             Requested size: 330.1792pt x 155.27806pt.
+(pdftex.def)             Requested size: 291.32587pt x 137.00597pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2427--2432
 
@@ -1749,100 +1749,142 @@ File: ./images/22_4.jpg Graphic file (type jpg)
 <use ./images/22_4.jpg>
 Package pdftex.def Info: ./images/22_4.jpg  used on input line 2468.
 (pdftex.def)             Requested size: 200.34494pt x 128.27698pt.
-<./images/22_2.jpg, id=287, 1651.16875pt x 824.07875pt>
-File: ./images/22_2.jpg Graphic file (type jpg)
-<use ./images/22_2.jpg>
-Package pdftex.def Info: ./images/22_2.jpg  used on input line 2485.
-(pdftex.def)             Requested size: 330.2279pt x 164.81282pt.
-<./images/22_3.jpg, id=288, 1321.93875pt x 1108.14pt>
-File: ./images/22_3.jpg Graphic file (type jpg)
-<use ./images/22_3.jpg>
-Package pdftex.def Info: ./images/22_3.jpg  used on input line 2489.
-(pdftex.def)             Requested size: 224.72661pt x 188.3813pt.
-[77 <./images/22_4.jpg>] [78 <./images/22_2.jpg> <./images/22_3.jpg>]
-<./images/22_5.jpg, id=296, 1330.9725pt x 425.59pt>
+<./images/22_23.jpg, id=287, 1084.05pt x 1276.77pt>
+File: ./images/22_23.jpg Graphic file (type jpg)
+<use ./images/22_23.jpg>
+Package pdftex.def Info: ./images/22_23.jpg  used on input line 2494.
+(pdftex.def)             Requested size: 249.32625pt x 293.65092pt.
+[77 <./images/22_4.jpg>]
+<./images/22_5.jpg, id=292, 1330.9725pt x 425.59pt>
 File: ./images/22_5.jpg Graphic file (type jpg)
 <use ./images/22_5.jpg>
-Package pdftex.def Info: ./images/22_5.jpg  used on input line 2497.
+Package pdftex.def Info: ./images/22_5.jpg  used on input line 2501.
 (pdftex.def)             Requested size: 239.56471pt x 76.60289pt.
-<./images/22_6.jpg, id=297, 1563.8425pt x 1020.81375pt>
+<./images/22_6.jpg, id=293, 1018.80624pt x 669.50125pt>
 File: ./images/22_6.jpg Graphic file (type jpg)
 <use ./images/22_6.jpg>
-Package pdftex.def Info: ./images/22_6.jpg  used on input line 2503.
-(pdftex.def)             Requested size: 265.8497pt x 173.53604pt.
+Package pdftex.def Info: ./images/22_6.jpg  used on input line 2507.
+(pdftex.def)             Requested size: 173.19476pt x 113.8137pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2506--2510
+Underfull \hbox (badness 10000) in paragraph at lines 2510--2514
+
+ []
+
+[78 <./images/22_23.jpg> <./images/22_5.jpg> <./images/22_6.jpg>]
+<./images/22_7.jpg, id=297, 1098.1025pt x 542.025pt>
+File: ./images/22_7.jpg Graphic file (type jpg)
+<use ./images/22_7.jpg>
+Package pdftex.def Info: ./images/22_7.jpg  used on input line 2521.
+(pdftex.def)             Requested size: 186.67494pt x 92.14302pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2518--2523
+
+ []
+
+<./images/22_8.jpg, id=298, 1812.7725pt x 827.09pt>
+File: ./images/22_8.jpg Graphic file (type jpg)
+<use ./images/22_8.jpg>
+Package pdftex.def Info: ./images/22_8.jpg  used on input line 2527.
+(pdftex.def)             Requested size: 253.78642pt x 115.79181pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2524--2529
+
+ []
+
+<./images/22_9.jpg, id=299, 1301.86375pt x 421.575pt>
+File: ./images/22_9.jpg Graphic file (type jpg)
+<use ./images/22_9.jpg>
+Package pdftex.def Info: ./images/22_9.jpg  used on input line 2532.
+(pdftex.def)             Requested size: 260.36813pt x 84.31349pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2530--2534
+
+ []
+
+<./images/22_10.jpg, id=300, 1138.2525pt x 295.1025pt>
+File: ./images/22_10.jpg Graphic file (type jpg)
+<use ./images/22_10.jpg>
+Package pdftex.def Info: ./images/22_10.jpg  used on input line 2537.
+(pdftex.def)             Requested size: 227.64647pt x 59.01944pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2535--2539
+
+ []
+
+[79 <./images/22_7.jpg> <./images/22_8.jpg> <./images/22_9.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 2540--2545
+
+ []
+
+<./images/22_11.jpg, id=304, 1615.03375pt x 744.7825pt>
+File: ./images/22_11.jpg Graphic file (type jpg)
+<use ./images/22_11.jpg>
+Package pdftex.def Info: ./images/22_11.jpg  used on input line 2563.
+(pdftex.def)             Requested size: 290.69353pt x 134.05505pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2559--2565
+
+ []
+
+[80 <./images/22_10.jpg> <./images/22_11.jpg>]
+<./images/22_12.jpg, id=308, 928.46875pt x 1255.69125pt>
+File: ./images/22_12.jpg Graphic file (type jpg)
+<use ./images/22_12.jpg>
+Package pdftex.def Info: ./images/22_12.jpg  used on input line 2582.
+(pdftex.def)             Requested size: 139.2643pt x 188.34557pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2576--2584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2514--2527
+Underfull \hbox (badness 10000) in paragraph at lines 2596--2612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2514--2527
+Underfull \hbox (badness 10000) in paragraph at lines 2596--2612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2514--2527
+Underfull \hbox (badness 10000) in paragraph at lines 2596--2612
 
  []
 
-[79 <./images/22_5.jpg> <./images/22_6.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 2554--2570
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2554--2570
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2554--2570
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2554--2570
-
- []
-
-[80] [81] [82] [83] (./Complex Analysis .aux) ) 
+[81 <./images/22_12.jpg>] [82] (./Complex Analysis .aux) ) 
 Here is how much of TeX's memory you used:
- 16849 strings out of 480608
- 327671 string characters out of 5903631
+ 16889 strings out of 480608
+ 328298 string characters out of 5903631
  653876 words of memory out of 5000000
- 32419 multiletter control sequences out of 15000+600000
+ 32459 multiletter control sequences out of 15000+600000
  543318 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,60p,561b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/symbols/msbm10.pfb>
-Output written on "Complex Analysis .pdf" (85 pages, 1914404 bytes).
+</usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Complex Analysis .pdf" (84 pages, 2229461 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
+ 379 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
