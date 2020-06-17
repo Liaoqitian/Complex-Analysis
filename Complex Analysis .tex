@@ -116,7 +116,7 @@ $z\conj{z} = (a + ib)(a - ib) = a^2 + b^2 \in \mathbb{R}$  \\
 
 \textbf{Definition of Modulus.} \\
 $|z|$ length/modulus of $z$ is defined by:
-$$|z| = (a^2 + b^2)^{\frac{1}{2}} = (z\conj{z})^{\frac{1}{2}} \in \mathbb{R}$$
+$$|z| = \left(a^2 + b^2\right)^{\frac{1}{2}} = (z\conj{z})^{\frac{1}{2}} \in \mathbb{R}$$
 \begin{figure}[H]
 \includegraphics[scale = 0.19]{1_3}
 \centering
@@ -178,7 +178,7 @@ Complex numbers can be represented in polar forms:
 $$z = |z|(\cos\theta + i\sin\theta)$$
 with modulus $|z|$ and argument $\theta$. To change between the coordinate systems it follows:
 \begin{align*} 
-&|z| = (a^2 + b^2)^{\frac{1}{2}} \\ 
+&|z| = \left(a^2 + b^2\right)^{\frac{1}{2}} \\ 
 &\tan\theta = \frac{b}{a} \\
 &a = |z|\cos\theta= \Re(z) \\
 &b = |z|\sin\theta = \Im(z)
@@ -193,8 +193,8 @@ Note that $\theta_R = \arctan(\frac{b}{a})$ is a reference angle of $z$. To find
 \end{figure}
 \vspace{-0.7cm}
 \begin{align*}
-z &= -3 + 3i = 3\sqrt2(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4}) \\ 
-\theta_R &= \arctan(\frac{3}{-3})= -\frac{\pi}{4}\\
+z &= -3 + 3i = 3\sqrt2\left(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4}\right) \\ 
+\theta_R &= \arctan\left(\frac{3}{-3}\right)= -\frac{\pi}{4}\\
 \theta &= \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4} \text{, since } \theta \text{ is in } \Romannum{2} .
 \end{align*}
 \textbf{Argument and argument.}\\
@@ -242,6 +242,10 @@ Let $p(z) = w^3 - i$. By Fundamental Theorem of Algebra, there are 3 roots of $p
 \newpage
 \section{Stereographic Projections, Exponentials and Logs}
 \subsection{Stereographic Projections} 
+\begin{figure}[H]
+\includegraphics[scale = 0.19]{3_1}
+\centering
+\end{figure}
 We can express the complex plane on the unit sphere in $\mathbb{R}^3$. To perform this we project points on the surface of the sphere along the line from the North Pole $(0, 0, 1)$ through the point and onto the plane $z = 0, \mathbb{C}$ \\ 
 $$p_1 = (x_1, x_2, x_3) \to z = a + ib = \frac{x_1 + ix_2}{1 - x_3}$$
 $$x_1 = \frac{2a}{|z|^2 + 1}$$
@@ -265,9 +269,9 @@ Anytime we are dealing with power, the log function is very useful.
 \begin{equation*}
 \log{x} = \int_{1}^{x} \frac{1}{t} dt \mbox{ for } x \in \mathbb{R}
 \end{equation*}
-$$\frac{d}{dx}x^x = \frac{d}{dx}e^{\ln{x^x}} = \frac{d}{dx}e^{x\ln x} = e^{x\ln x}(x \cdot \frac{1}{x} + \ln{x}) = x^x(1 + \ln{x})$$
+$$\frac{d}{dx}x^x = \frac{d}{dx}e^{\ln{x^x}} = \frac{d}{dx}e^{x\ln x} = e^{x\ln x}\left(x \cdot \frac{1}{x} + \ln{x}\right) = x^x(1 + \ln{x})$$
 \newline
-\textbf{Logarithm of Complex Numbers.} \\
+\textbf{How Exponentials act on Curves.} \\
 Remember from Euler's Formula, $e^{i\theta}= \cos\theta + i\sin\theta$. 
 \begin{align*}
 e^z &= e^{a + ib} = e^ae^{ib} \\
@@ -284,38 +288,56 @@ On the other hand, if $b$ is held fixed, $e^z$ maps to a line through $(0, 0)$. 
 \includegraphics[scale = 0.2]{3_4}
 \centering
 \end{figure}
+\newpage
 \textbf{Derivation of Complex Logarithm.} \\
 We want $e^{\log{(z)}} = z$ for all $z \neq 0$, and thus 
-$$e^{\Re(\log{(z)}) + i\Im(\log{(z)})} = e^{\Re(\log{(z)})}e^{i\Im(\log{(z)})} = |z|e^{i\theta} = z$$
-$$\Rightarrow |z| = e^{\Re(\log{(z)})}$$ 
-$$\Rightarrow \Re(\log{(z)}) = \log{|z|}$$
+\begin{align*}
+&e^{\Re(\log{(z)}) + i\Im(\log{(z)})} = e^{\Re(\log{(z)})}e^{i\Im(\log{(z)})} = |z|e^{i\theta} = z \\ 
+\Rightarrow \hspace{2mm} &|z| = e^{\Re(\log{(z)})} \\ 
+\Rightarrow \hspace{2mm} &\Re(\log{(z)}) = \log{|z|}
+\end{align*}
 From the imaginary part we find 
-$$e^{i\theta} = e^{i\Im(\log{(z)})}$$
-$$\Rightarrow \operatorname{arg}(z) = \theta = \Im(\log{(z)})$$
-$$\Rightarrow \Im(\log{(z)}) = \operatorname{Arg}(z)$$ 
-because $\operatorname{arg}(z)$ is not well defined. \\
+\begin{align*}
+e^{i\theta} &= e^{i\Im(\log{(z)})} \\
+\Rightarrow \operatorname{arg}(z) &= \theta = \Im(\log{(z)})
+\end{align*}
+%$$\Rightarrow \Im(\log{(z)}) = \operatorname{Arg}(z)$$ 
+%because $\operatorname{arg}(z)$ is not well defined. \\
 Our constructed inverse of $e^z$ is a multi-valued function 
 $$\log(z) = \log|z| + i\operatorname{arg}(z)$$
 \newline
-\textbf{Conclusion from Derivation.}\\
-$$\log(z) = \log|z| + i\operatorname{arg}(z)$$
-$$\operatorname{Log} (z) = \log|z| + i\operatorname{Arg}(z)$$
-\textbf{Note}: $\operatorname{Log}(z)$ does not have all the nice behavior as $\mathbb{R}$-valued $\log(x)$: $\operatorname{Log}{(z^k)}$. \\
-Sometimes they are co-terminal angles, but they are not equal. See the following example: \\
-\[ \begin{cases} 
-      \operatorname{Log}(i^3) = \operatorname{Log}(-i) = -i\frac{\pi}{2} \\
-      3\operatorname{Log}(i) = 3 \cdot (i\frac{\pi}{2}) = i\frac{3\pi}{2}
-   \end{cases}
-\]
-\textbf{Example.} Compute $3^i$: \\
-$$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operatorname{Log}{3})} + i \sin{(\operatorname{Log}{3})}$$
+\textbf{Conclusion from Derivation.}
+\begin{align*}
+\log(z) &= \log|z| + i\operatorname{arg}(z), z \neq 0 \\
+\operatorname{Log} (z) &= \log|z| + i\operatorname{Arg}(z), z \neq 0
+\end{align*}
+For the function $\operatorname{Log}(z)$ we can do the same by restricting $\operatorname{arg}(z)$ to $\theta \in (-\pi, \pi]$, which is the principal branch cut of $\operatorname{Log}$ in 
+$\mathbb{C}$. 
+$$\operatorname{Log}(z) = \underbrace{\operatorname{log}|z|}_{\text{function on } \mathbb{R}} + i\operatorname{Arg}(z), z \neq 0$$
 \newline
-\textbf{How Logarithm acts on curves. }\\
-\[ \begin{cases} 
-      \mbox{Maps a circle with radius } r \mbox{ to a vertical line passing through } (\ln(r), 0)\\
-      \mbox{Maps a line with angle } \theta \mbox{ passing through the origin to a horizontal line passing through } (0, i\theta)
-   \end{cases}
-\]
+\textbf{Note}: $\operatorname{Log}(z)$ does not have all the nice behavior as $\mathbb{R}$-valued $\log(x)$: 
+$$\operatorname{Log}{(z^k)} \neq k\operatorname{Log}(z), k \in \mathbb{N}$$
+Sometimes they are co-terminal angles, but they are not equal. \\
+\newline
+\textbf{Example.} 
+\begin{align*}
+\operatorname{Log}(i^3) &= \operatorname{Log}(-i) = -i\frac{\pi}{2} \\
+3\operatorname{Log}(i) &= 3 \cdot \left(i\frac{\pi}{2}\right) = i\frac{3\pi}{2}
+\end{align*}
+\textbf{Example.} Compute $3^i$. \\
+$$3^i = e^{\operatorname{Log}{3^i}} = e^{i\operatorname{Log}{3}} = \cos{(\operatorname{Log}{3})} + i \sin{(\operatorname{Log}{3})}$$
+\newpage
+\textbf{How Logarithm acts on Curves. }\\
+Logarithm maps a circle with radius $r$ to a vertical line passing through $(\ln(r), 0)$. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{3_5}
+\centering
+\end{figure}
+Logarithm maps a line with angle $\theta$ passing through the origin to a horizontal line passing through $(0, i\theta)$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.21]{3_6}
+\centering
+\end{figure}
 
 \newpage
 \section{Topology in $\mathbb{C}$}
@@ -332,8 +354,8 @@ The sequence converges if $|z_n - z| \to 0$ as $n \to \infty$. The distance betw
 $\{z_n\}$ converges if and only if $\{z_n\}$ is Cauchy. \\
 \textbf{Proof.} 
 We show this by treating $\mathbb{C}$ as $\mathbb{R}^2$ and exploiting $\{X_n\}$ converges if and only if $\{X_n\}$ is Cauchy. \\
-($\Longrightarrow$) (If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
-$|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$ \\
+($\Longrightarrow$) If $z_n \to z$, then $\Re(z_n) \to \Re(z)$ and $\Im(z_n) \to \Im(z)$. Since the sequences of $\mathbb{R}^2$ converge, they are Cauchy. \\
+$$|Z_n - Z_m| \leqslant |\Re(Z_n - Z_m)| +  |\Im(Z_n - Z_m)| = |\Re(Z_n) - \Re(Z_m)| + |\Im(Z_n) - \Im(Z_m)|$$ 
 Upper bounds can be picked to be less than $\frac{\varepsilon}{2}$ for some $N$. Therefore, $|Z_n - Z_m| \to 0$. \\
 \newline 
 ($\Longleftarrow$) If $\{Z_n\}$ is Cauchy, so are $\{\Re(Z_n)\}$ and $\{\Im(Z_n)\}$. But these are $\mathbb{R}$-sequences that converge. Therefore, $\{Z_n\}$ converges. 
@@ -342,42 +364,59 @@ Upper bounds can be picked to be less than $\frac{\varepsilon}{2}$ for some $N$.
 Let $\Omega \subset \mathbb{C}$. Sets can be open, closed, both, or neither. \\
 \newline
 \textbf{Open Set.} \\ 
-If for any $z_0 \in \mathbb{C}$, there exist some $\varepsilon > 0$, such that the set $B_\varepsilon(z_0) = \{z||z - z_0| < \varepsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
+If $\forall$$z_0 \in \mathbb{C}$,  $\exists \varepsilon > 0$, such that the set $B_\varepsilon(z_0) = \{z||z - z_0| < \varepsilon\}$ is contained in $\Omega$, then $\Omega$ is open. \\
 $\Omega$ is open if and only if $\Omega^c$ is closed. \\ 
 $\Omega$ is open if and only if $\Omega$ is equal to its own interior, which means it does not contain its boundary points $\partial \Omega$, i.e. it does not contain its closure. \\
 \newline
 \textbf{Closed Set.} \\ 
-If $\Omega$ contains its limit point, then $\Omega$ is closed. \\
+If $\Omega$ contains its limit point, then it is closed. \\
 $\Omega$ is closed if and only if $\Omega^c$ is open. \\ 
-$\Omega$ is closed if and only if $\Omega$ contains its boundary points. \\
-\newline
-\textbf{Compact Set.}\\ 
-If $\Omega$ can be contained in a disk of finite radius, then $\Omega$ is bounded. \\
+$\Omega$ is closed if and only if it contains its boundary points. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.19]{4_1}
+\centering
+\end{figure}
+\textbf{Bounded Set.}\\
+If $\Omega$ can be contained in a disk of finite radius, then it is bounded. \\
 \newline
 \textbf{Compact Set.} \\ 
-If $\Omega$ is closed and bounded, then $\Omega$ is compact. This resembles $[a, b]$ in $\mathbb{R}$. \\
+If $\Omega$ is closed and bounded, then it is compact. This resembles $[a, b]$ in $\mathbb{R}$. \\
 \newline
 \textbf{Connected Set.}\\ 
 If any two points in $\Omega$ can be connected by a path, then $\Omega$ is connected. \\
-\underline{Simply Connected Set}: A simply connected set has no "holes" in it. For example, $\Omega = \{z||z - c|<4\}$. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.19]{4_2}
+\centering
+\end{figure}
+In the figure above, each set is connected but their union is not. \\
+\underline{Simply Connected Set}: A simply connected set has no "holes" in it. For example, $\Omega = \{z||z - c|\leqslant4\}$. \\
 A connected but not simply connected set is an annulus, $\Omega = \{z|2< |z - c|<4\}$ \\
-\newline
+\begin{figure}[H]
+\includegraphics[scale = 0.17]{4_3}
+\centering
+\end{figure}
 \textbf{Boundary of Set.}\\
 The boundary of $\Omega$, $\partial \Omega$ is all points with $\varepsilon$-balls intersecting $\Omega$ and $\Omega^c$ for all $\varepsilon > 0$. \\
 \newline
 \textbf{Interior of Set.} \\
 The interior of $\Omega$, Int$(\Omega)$, is all points in $\Omega$ with a $\varepsilon$-ball contained in $\Omega$ for some $\varepsilon > 0$. "Largest open set in $\Omega$". \\
-\newline
+\begin{figure}[H]
+\includegraphics[scale = 0.17]{4_4}
+\centering
+\end{figure}
 \textbf{Closure of Set.} \\ 
 The closure of $\Omega$ is the union of $\Omega$ and its boundary $\partial \Omega$. \\
 \newline
 \textbf{Domain.} \\
 If a set is open and connected in $\mathbb{C}$, it is a domain. \\
 A domain can be traversed by a path of horizontal and vertical line segments. \\
-\newline
+\begin{figure}[H]
+\includegraphics[scale = 0.17]{4_5}
+\centering
+\end{figure}
 \textbf{Example.}\\
 Determine whether the following sets are open or closed. 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*]
   \item $\Omega = \mathbb{C} \backslash \{0\}$ \\
   $\Omega$ is open since it does not contain its closure, the point 0. \\
   $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{n}$. Then $z_n = \frac{1}{n} \to 0 \notin \Omega$. \\
@@ -386,6 +425,12 @@ Determine whether the following sets are open or closed.
   $\Omega$ is not open since any $\varepsilon$-ball at 1 intersects $\Omega^c$. \\
   $\Omega$ is closed since $\Omega^c$ is open. \\
   Therefore, $\Omega$ is closed. 
+\iffalse
+  \begin{figure}[H]
+  \includegraphics[scale = 0.17]{4_7}
+  \centering
+  \end{figure}
+\fi
   \item $\Omega = \{z||z| > 1\}$ \\
   $\Omega$ is open since $\Omega^c$ is closed. \\
   $\Omega$ is not closed since it does not contain its limit points. Let $z_n = \frac{1}{n} + 1$. Then $z_n = \frac{1}{n} + 1 \to 1 \notin \Omega$.
@@ -400,12 +445,11 @@ Determine whether the following sets are open or closed.
   Note: $\Omega^c$ is not open in $\mathbb{C}$. 
 \end{enumerate}
 
-
 \newpage
 \section{Continuity and Branch Cuts}
 \subsection{Complex Continuity} 
 Let $f:\Omega \to \mathbb{C}$, $\Omega$ is open and connected. If $z_n \to z_0$ implies $f(z_n) \to f(z_0)$, then $f$ is continuous at $z_0$. Also, $f$ is bounded near $z_0$. \\
-$f$ is continuous if for every $\varepsilon > 0$, there is $\delta > 0$ such that $|z - z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \varepsilon$. \\
+$f$ is continuous if $\forall \varepsilon > 0$, $\exists \delta > 0$ such that $|z - z_0| < \delta \Rightarrow |f(z) - f(z_0)| < \varepsilon$. \\
 \newline 
 In either case, $\Re(f(z))$ and $\Im(f(z))$ are each continuous if and only if $f(z)$ is continuous. This follows the pattern as $\mathbb{C}$ being complete. \\
 \newline
