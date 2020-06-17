@@ -22,9 +22,8 @@
 \contentsline {subsection}{\numberline {6.3}Geometric behavior of $f'(z)$}{18}%
 \contentsline {section}{\numberline {7}The Cauchy Riemann Equations}{20}%
 \contentsline {subsection}{\numberline {7.1}The Cauchy Riemann Equations}{20}%
-\contentsline {subsection}{\numberline {7.2}Cauchy Riemann with Logarithm}{21}%
-\contentsline {subsection}{\numberline {7.3}Lack of Complex Mean Value Theorem}{22}%
-\contentsline {subsection}{\numberline {7.4}Wirtinger Equations}{22}%
+\contentsline {subsection}{\numberline {7.2}Lack of Complex Mean Value Theorem}{22}%
+\contentsline {subsection}{\numberline {7.3}Wirtinger Equations}{22}%
 \contentsline {section}{\numberline {8}Harmonic Functions}{23}%
 \contentsline {subsection}{\numberline {8.1}Laplacian}{23}%
 \contentsline {subsection}{\numberline {8.2}Harmonic Functions}{23}%

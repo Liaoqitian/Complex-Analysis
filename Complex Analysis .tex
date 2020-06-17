@@ -622,7 +622,7 @@ The set of points on the line is not open in $\mathbb{C}$. Therefore, $f$ is now
 \newline
 \textbf{Sufficiency of the Cauchy Riemann Equations to $f'$.} \\
 The Cauchy Riemann Equations do a great job showing $f'$ does not exist. But what about it being sufficient for $f'$? We claim that satisfying the Cauchy Riemann Equations at $z_0$ implies that $f'$ exists at $z_0$. \\
-\textbf{Proof.}\\
+\textbf{Proof.} \\
 $f$ is $\mathbb{C}$-differentiable at $z_0$ if and only if $u(x, y)$ and $v(x, y)$ have continuous partial derivatives that satisfy the Cauchy Riemann Equations at $z_0$. 
 This requires us to treat $f(x + iy)$ as a function on $\mathbb{R} ^ 2$, or $f(z)$ induces a map on $\mathbb{R} ^ 2$. \\
 Let $ h = \Delta x + i\Delta y$, 
@@ -645,67 +645,67 @@ As $\Delta z \to 0$, $\abs*{\frac{\lambda}{\Delta x+ i \Delta y}} \to 0$, and th
 Therefore, the Cauchy Riemann Equations are an easy way to show $f'(z)$ exists and they provide a set of partial differential equations that $f$ must satisfy. \\
 \newline
 \textbf{Example.} Let $f(z) = e^z = e^x(\cos(y) + i\sin(y))$ 
-$$u = e^x\cos(y), v = e^x\sin(y)$$ 
-$$u_x = e^x\cos(y), v_x = e^x\sin(y)$$
-$$u_y = e^x\sin(y), v_x = e^x\cos(y)$$
-Therefore, $f(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C}$, $f$ is entire/meromorphic. $f'(z) = f_x = u_x + iv_x = f(z)$.
-
-\subsection{Cauchy Riemann with Logarithm}
+\begin{align*}
+u &= e^x\cos(y), v = e^x\sin(y) \\ 
+u_x &= e^x\cos(y), v_x = e^x\sin(y) \\
+u_y &= e^x\sin(y), v_x = e^x\cos(y)
+\end{align*}
+Therefore, $f(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C}$, $f$ is entire/meromorphic. $f'(z) = f_x = u_x + iv_x = f(z)$. \\
+\newline
+\textbf{Cauchy Riemann Equations with Logarithm.}
 $$e^{\operatorname{Log(z)}} = z \Rightarrow \frac{d}{dz}e^{\operatorname{Log(z)}} = 1 \Rightarrow z\frac{d}{dz}\operatorname{Log}(z) = 1 \Rightarrow \frac{d}{dz}\operatorname{Log}(z) = \frac{1}{z}$$
 We have a branch point in $\operatorname{Log}(z)$ where its derivative is undefined. Then $\operatorname{Log}(z)$ is $\mathbb{C}$-differentiable on $\mathbb{C} \backslash \{0\}$. This is true regardless of the branch cut on $\operatorname{Log}(z)$. 
-
+\newpage
 \subsection{Lack of Complex Mean Value Theorem}
-\textbf{Claim}: $\frac{f(z) - f(w)}{z - w} \neq f'(c)$ for some $c$ between $z$ and $w$. \\
-\textbf{Proof}: Let $z = 1$, $w = 0$ and $f(t) = e^{i\pi t}$, then $f(1) - f(0) = e^{i\pi} - 1 = -2$. However, $|f'(t)| = \pi$ for all $t \in [0, 1]$. \\
-\textbf{Follow-Up Question}: Does the lack of a Mean Value Theorem for $f'(z)$ suggest $f'(z) = 0$ not imply $f$ is constant?  \\
-\textbf{Answer}: Suppose $f$ is $\mathbb{C}$-differentiable on $\Omega$ and one of the following holds, then $f$ is constant on $\Omega$. 
-\[ \begin{cases} 
-	f'(z) = 0 \\
-	|f(z)| \mbox{ is constant} \\ 
-	Re(f(z)) \mbox{ is constant} \\ 
-	$f$ \mbox{'s conjugate is } \mathbb{C} \mbox{-differentiable on } \Omega
-   \end{cases}
-\]
+\textbf{Claim.} $\frac{f(z) - f(w)}{z - w} \neq f'(c)$ for some $c$ between $z$ and $w$. \\
+\textbf{Proof.} Let $z = 1$, $w = 0$ and $f(t) = e^{i\pi t}$, then $f(1) - f(0) = e^{i\pi} - 1 = -2$. However, $|f'(t)| = \pi$ for all $t \in [0, 1]$. \\
+\textbf{Follow-Up Question.} Does the lack of a Mean Value Theorem for $f'(z)$ suggest $f'(z) = 0$ not imply $f$ is constant?  \\
+\textbf{Answer.} Suppose $f$ is $\mathbb{C}$-differentiable on $\Omega$ and one of the following holds, then $f$ is constant on $\Omega$. 
+\begin{enumerate}[leftmargin = *, nolistsep]
+\item $f'(z) = 0$
+\item $|f(z)| \text{ is constant}$
+\item	$Re(f(z)) \text{ is constant}$
+\item $f \text{'s conjugate is } \mathbb{C} \text{-differentiable on } \Omega$
+\end{enumerate}
 
 \subsection{Wirtinger Equations}
 There is another way to study the Cauchy Riemann Equations by introducing two operators: 
-\begin{equation*}
-	\frac{\partial f}{\partial z} = f_z \mbox{ and } \frac{\partial f}{\partial \conj{z}} = f_{\conj{z}}
-\end{equation*}
-$$ f(x, y) \equiv f(x + iy) = u(x, y) + iv(x, y)$$
-$$f(x, y) = f(\Re(z), \Im(z)) = f(\frac{z + \conj{z}}{2}, \frac{z - \conj{z}}{2i})$$
+$$\frac{\partial f}{\partial z} = f_z \text{ and } \frac{\partial f}{\partial \conj{z}} = f_{\conj{z}} $$
+We can express $f(x, y)$ in the following two ways:
+\begin{align*}
+f(x, y) &\equiv f(x + iy) = u(x, y) + iv(x, y) \\
+f(x, y) &= f(\Re(z), \Im(z)) = f\left(\frac{z + \conj{z}}{2}, \frac{z - \conj{z}}{2i}\right)
+\end{align*}
 From the chain rule, we get 
-$$f_z = f_xx_z + f_yy_z = \frac{1}{2}f_x + \frac{1}{2i}f_y = \frac{1}{2}f_x - \frac{i}{2}f_y$$
-$$f_{\conj{z}} = f_xx_{\conj{z}} + f_yy_{\conj{z}} = \frac{1}{2}f_x - \frac{1}{2i}f_y = \frac{1}{2}f_x + \frac{i}{2}f_y$$
+\begin{align*}
+f_z &= f_xx_z + f_yy_z = \frac{1}{2}f_x + \frac{1}{2i}f_y = \frac{1}{2}f_x - \frac{i}{2}f_y \\
+f_{\conj{z}} &= f_xx_{\conj{z}} + f_yy_{\conj{z}} = \frac{1}{2}f_x - \frac{1}{2i}f_y = \frac{1}{2}f_x + \frac{i}{2}f_y
+\end{align*}
 where $f_x = u_x + iv_x $ and $f_y = u_y + iv_y$ \\
 These are the Wirtinger Equations. 
-\[ \begin{cases} 
-	\frac{\partial}{\partial z}  = \frac{1}{2}(\frac{\partial}{\partial x} - i\frac{\partial}{\partial y}) \\ 
-	\frac{\partial}{\partial \conj{z}}  = \frac{1}{2}(\frac{\partial}{\partial x} + i\frac{\partial}{\partial y})
-   \end{cases}
-\]
+\begin{align*}
+\frac{\partial}{\partial z} &= \frac{1}{2}\left(\frac{\partial}{\partial x} - i\frac{\partial}{\partial y}\right) \\ 
+\frac{\partial}{\partial \conj{z}} &= \frac{1}{2}\left(\frac{\partial}{\partial x} + i\frac{\partial}{\partial y}\right)
+\end{align*}
 \newline
 \textbf{Relationship with the Cauchy Riemann Equations.}\\
 From the Cauchy Riemann Equations $if_x = f_y$ we get:
-$$f_{\conj{z}} = \frac{1}{2}f_x + \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{1}{2}f_x = 0$$
-$$f_z = \frac{1}{2}f_x - \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{i^2}{2}f_x = f_x = f'(z)$$
-f is $\mathbb{C}$-differentiable at $z_0$ if and only if $f(x, y) = u(x, y) + iv(x, y)$ is $\mathbb{R}$-differentiable at $z_0$ and $f_{\conj{z}}(z_0) = 0$. Then $f'(z_0) = f_z(z_0)$. In other words, $f(z)$ does not depend on $\conj{z}$. 
+\begin{align*}
+f_{\conj{z}} &= \frac{1}{2}f_x + \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{1}{2}f_x = 0 \\
+f_z &= \frac{1}{2}f_x - \frac{i}{2}f_y = \frac{1}{2}f_x - \frac{i^2}{2}f_x = f_x = f'(z)
+\end{align*}
+$f$ is $\mathbb{C}$-differentiable at $z_0$ if and only if $f(x, y) = u(x, y) + iv(x, y)$ is $\mathbb{R}$-differentiable at $z_0$ and $f_{\conj{z}}(z_0) = 0$. Then $f'(z_0) = f_z(z_0)$. In other words, $f(z)$ does not depend on $\conj{z}$. 
 
 \newpage
 \section{Harmonic Functions}
 \subsection{Laplacian}
-Let $u: \mathbb{R}^2 \to \mathbb{R}$, then the Laplacian of $u$ is 
+Let $u: \mathbb{R}^2 \to \mathbb{R}$, then the \textit{Laplacian} of $u$ is 
 $$\Delta u = u_{xx} + u_{yy} = \nabla \cdot \nabla u$$
  where 
-$\nabla = [\frac{\partial}{\partial x}, \frac{\partial}{\partial y}]^T$ is the divergence operator and $\nabla u = [u_x, u_y]^T$ is the gradient of $u$. \\
+$\nabla = [\frac{\partial}{\partial x}, \frac{\partial}{\partial y}]^T$ is the \textit{divergence operator} and $\nabla u = [u_x, u_y]^T$ is the \textit{gradient} of $u$. 
 \subsection{Harmonic Functions}
 If $\Delta u = 0$, then $u(x, y)$ satisfies Laplace's (partial differential) equation or $u$ is a harmonic function. \\
-This means: 
-\[ \begin{cases} 
-	u \mbox{ is continuous} \\
-	u \mbox{'s } \nth{1} \mbox{ and } \nth{2} \mbox{ order partial derivatives exist and are smooth. }
-   \end{cases}
-\]
+This means: $u$ is continuous and $u$'s $\nth{1}$ and $\nth{2}$ order partial derivatives exist and are smooth. \\
 \newline
 \textbf{Proposition.} Suppose $f = u + iv$ is holomorphic on $\Omega$ where $u(x, y)$ and $v(x, y)$ have continuous $\nth{2}$ order partial derivatives, then $u$ and $v$ are harmonic and $v$ is the harmonic conjugate of $u$. \\
 \textbf{Proof.} \\
