@@ -389,7 +389,7 @@ If any two points in $\Omega$ can be connected by a path, then $\Omega$ is conne
 \centering
 \end{figure}
 In the figure above, each set is connected but their union is not. \\
-\underline{Simply Connected Set}: A simply connected set has no "holes" in it. For example, $\Omega = \{z||z - c|\leqslant4\}$. \\
+\textit{Simply Connected Set}: A simply connected set has no "holes" in it. For example, $\Omega = \{z||z - c|\leqslant4\}$. \\
 A connected but not simply connected set is an annulus, $\Omega = \{z|2< |z - c|<4\}$ \\
 \begin{figure}[H]
 \includegraphics[scale = 0.17]{4_3}
@@ -494,11 +494,13 @@ The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and 
 
 \newpage
 \section{Differentiability in $\mathbb{C}$}
-Let $f: \Omega \to \mathbb{C}$ for some domain $\Omega$. Then $f$ is differentiable at $z_0$ if the following exists. $$\frac{d}{dz}f(z)|_{z = z_0} = f'(z_0) = \lim_{h\to0}\frac{f(z + h) - f(z)}{h}$$
-This limit must exist on all paths to $z_0$, since $h \in \mathbb{C}$. We could also take $z_n \to z_0$ and use $\frac{f(z_0) - f(z_n)}{z_0 - z_n} \to f'(z_0)$. 
-Remember limits are computed by looking at the difference in the modulus, $|\frac{f(z_0) - f(z_n)}{z_0 - z_n} - f'(z_0)| \to 0$ as $n \to \infty$. \\
-If $f'(z_0)$ exists on all points $z_0 \in \Omega$, open and connected in $\mathbb{C}$, then $f$ is holomorphic/$\mathbb{C}$-differentiable/analytic on $\Omega$. The connection between $\mathbb{R}$ and $\mathbb{C}$ analytic will be clear when we cover $\mathbb{C}$-power series. \\
-If $f'(z)$ exists everywhere in $\mathbb{C}$, then $f$ is an entire/meromorphic function.  
+Let $f: \Omega \to \mathbb{C}$ for some domain $\Omega$. Then $f$ is differentiable at $z_0$ if the following exists. 
+$$\frac{d}{dz}f(z)|_{z = z_0} = f'(z_0) = \lim_{h\to0}\frac{f(z + h) - f(z)}{h} = \lim_{z_n \to z_0} \frac{f(z_0) - f(z_n)}{z_0 - z_n}$$
+This limit must exist on all paths to $z_0$, since $h \in \mathbb{C}$. \\
+Remember limits are computed by looking at the difference in the modulus, 
+$$\abs*{\frac{f(z_0) - f(z_n)}{z_0 - z_n} - f'(z_0)} \to 0 \text{ as } n \to \infty$$
+If $f'(z_0)$ exists on all points $z_0 \in \Omega$, open and connected in $\mathbb{C}$, then $f$ is \textit{holomorphic}/$\mathbb{C}$-\textit{differentiable/analytic} on $\Omega$. The connection between $\mathbb{R}$ and $\mathbb{C}$ analytic will be clear when we cover $\mathbb{C}$-power series. \\
+If $f'(z)$ exists everywhere in $\mathbb{C}$, then $f$ is an \textit{entire/meromorphic} function.  
 
 \subsection{Difference between $\mathbb{R}$ and $\mathbb{C}$ differentiability}
 $\bullet$ $f: \mathbb{R} \to \mathbb{R}$ 
@@ -511,7 +513,7 @@ $$\lim_{h\to0}\frac{f(x+h, y) - f(x, y)}{h} = f_x$$
 is also a 1D limit and a partial derivative. \\
 Tangent plane or linear approximation: 
 $$f(x,y) \approx f(a,b) + f_x(a,b)(x - a) + f_y(a, b)(y - b)$$
-$\bullet$ $f: \mathbb{R}^2 \to \mathbb{R}^2$ $f(x, y) = (u(x, y),v(x,y))$ \\
+$\bullet$ $f: \mathbb{R}^2 \to \mathbb{R}^2$ $f(x, y) = \left(u(x, y),v(x,y)\right)$ \\
 Then $f$ is differentiable if the Jacobian Matrix
 \begin{equation*}
 J(f) = 
@@ -534,8 +536,7 @@ Compare this with
 \begin{equation*} 
 \frac{g(z + ih) - g(z)}{h} = \frac{\Re(z) + h -\Re(z)}{h} = 1 \to 1 \mbox{ as } h \to 0
 \end{equation*}
-Therefore, the function is nowhere differentiable in $\mathbb{C}$. The problem with $g'(z)$ had to do with $\conj{z}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter.  \\
-
+Therefore, the function is nowhere differentiable in $\mathbb{C}$, despite reflection in $\mathbb{R}^2$ about $y = 0$ is differentiable. We will discover conditions on $u_x$, $u_y$, $v_x$, and $v_y$ that ensure $f'$ exists for $f(z) = u(x, y) + iv(x, y)$ in the next chapter. 
 \subsection{Properties of $f'(z)$}
 \textbf{Proposition.} If $f$ is differentiable on $\Omega$, it is continuous on $\Omega$. \\
 \textbf{Proposition.} The power rule holds too: $\frac{d}{dz}z^n = nz^{z - 1}$\\
@@ -547,10 +548,15 @@ In each of the following cases, there are branch points where $f'(z)$ does not e
 
 \textbf{Proposition.} Suppose $f(z)$ is holomorphic on $\Omega$. then $g(z) = \conj{f(\conj{z})}$ is holomorphic on $\Omega^{\ast} = \{z|\conj{z} \in \Omega\}$ \\
 \textbf{Proof.} Suppose $f$ is holomorphic on $\Omega$. Let $z_0 \in \Omega^{\ast}$ and $z_n \in \Omega^{\ast}$ for all $n$ and $z_n \to z$. Then $\conj{z_n} \to \conj{z_0}$ in $\Omega$ and for $\varepsilon > 0$, there is a $N \in \mathbb{N}$ such that for $n > N$. 
-$$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} < \varepsilon$$ 
-$$\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} = \conj{\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})}} = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{\conj{\conj{z_0} - \conj{z_n}}} - \conj{f'(\conj{z_0})}} $$
-$$ = \abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{z_0 - z_n} - \conj{f'(\conj{z_0})}} = \abs*{\frac{g(z_0) - g(z_n)}{z_0 - z_n} - \conj{f'(\conj{z_0})}} < \varepsilon$$
-$$\Longrightarrow g'(z_0) = \conj{f'(\conj{z_0})}$$
+\begin{align*}
+&\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} < \varepsilon \\
+%\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})} &
+= &\conj{\abs*{\frac{f(\conj{z_0}) - f(\conj{z_n})}{\conj{z_0} - \conj{z_n}} - f'(\conj{z_0})}} \\
+= &\abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{\conj{\conj{z_0} - \conj{z_n}}} - \conj{f'(\conj{z_0})}} \\
+= &\abs*{\frac{\conj{{f(\conj{z_0}) - f(\conj{z_n})}}}{z_0 - z_n} - \conj{f'(\conj{z_0})}} \\
+= &\abs*{\frac{g(z_0) - g(z_n)}{z_0 - z_n} - \conj{f'(\conj{z_0})}} < \varepsilon \\
+\Longrightarrow \hspace{2mm} &g'(z_0) = \conj{f'(\conj{z_0})}
+\end{align*}
 Therefore, $g$ is holomorphic on $\Omega^\ast$. \\
 This proof is different from when we showed $\frac{d}{dz}\conj{z}$ does not exist. Conjugation must be handled with care. 
 %\abs[\Big]
@@ -559,17 +565,26 @@ This proof is different from when we showed $\frac{d}{dz}\conj{z}$ does not exis
 $w = f(z) \approx f'(a)(z - a) + f(a)$. Small changes in $z$ should give small changes in $w$. \\
 The functions $|z|$ and $\operatorname{Arg}(z)$ are continuous on their domains. \\
 If $f'(z_0) \neq 0$ and $f'$ exists on $\Omega$, then 
-$$ |f'(z_0)| = \abs*{\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0} \abs*{\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0}\frac{|f(z_0 + h) - f(z_0)|}{|h|}$$
-$$\Longrightarrow |f'(z_0)||h| \approx |f(z + h) - f(z)|$$
+\begin{align*}
+|f'(z_0)| = \abs*{\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}} &= \lim_{h \to 0} \abs*{\frac{f(z_0 + h) - f(z_0)}{h}} = \lim_{h \to 0}\frac{|f(z_0 + h) - f(z_0)|}{|h|} \\ 
+\Longrightarrow |f'(z_0)||h| &\approx |f(z + h) - f(z)|
+\end{align*}
 The size of $|f'(z_0)|$ tells us how much $f$ is contracting/dilating near $z_0$. \\
-\newline
-\textbf{Rotation.}\\
-$$\operatorname{Arg}(f'(z_0)) = \operatorname{Arg}\left(\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}\right) = \lim_{h \to 0}\operatorname{Arg}\left(\frac{f(z_0 + h) - f(z)}{h}\right)$$
-$$ = \lim_{h \to 0} \operatorname{Arg}(f(z_0 + h) - f(z_0)) - \operatorname{Arg}(h)$$
-$$\Longrightarrow \operatorname{Arg}(f'(z_0)) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0))$$ 
-$$\Longrightarrow \operatorname{Arg}(f'(z_0)) + \operatorname{Arg}(h) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0))$$
+\newpage
+\textbf{Rotation.}
+\begin{align*}
+\operatorname{Arg}(f'(z_0)) &= \operatorname{Arg}\left(\lim_{h \to 0}\frac{f(z_0 + h) - f(z_0)}{h}\right) \\
+&= \lim_{h \to 0}\operatorname{Arg}\left(\frac{f(z_0 + h) - f(z)}{h}\right) \\
+& = \lim_{h \to 0} \operatorname{Arg}(f(z_0 + h) - f(z_0)) - \operatorname{Arg}(h) \\
+\Longrightarrow \hspace{2mm}&\operatorname{Arg}(f'(z_0)) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0)) \\
+\Longrightarrow \hspace{2mm}&\operatorname{Arg}(f'(z_0)) + \operatorname{Arg}(h) \approx \operatorname{Arg}(f(z_0 + h) - f(z_0)) 
+\end{align*}
 Therefore, $f$ rotates vectors from $z_0$ to $z_0 + h$ by the angle $\operatorname{Arg}(f'(z_0))$. \\
 \newline
+  \begin{figure}[H]
+  \includegraphics[scale = 0.3]{6_1}
+  \centering
+  \end{figure}
 \textbf{Conclusion.} \\
 In conclusion, $w = f(z) \approx f(z_0) + f'(z_0)(z - z_0) = c + \rho e^{i\theta}(z - z_0)$ \\
 \[ \begin{cases} 
@@ -578,7 +593,7 @@ c\mbox{: Translation }\\
 e^{i\theta} \mbox{: rotation about $z_0$ or complex multiplication. }
    \end{cases}
 \]
-
+If $f'(z_0) \neq 0$, the angle between elements in a neighborhood of $z_0$ is preserved. 
 \newpage
 \section{The Cauchy Riemann Equations}
 \subsection{The Cauchy Riemann Equations}
