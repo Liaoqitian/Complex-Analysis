@@ -30,38 +30,38 @@
 \contentsline {subsection}{\numberline {8.2}Harmonic Functions}{26}%
 \contentsline {section}{\numberline {9}Conformal Maps}{27}%
 \contentsline {subsection}{\numberline {9.1}Preservation of Angles}{27}%
-\contentsline {subsection}{\numberline {9.2}Conformal Function}{28}%
-\contentsline {subsection}{\numberline {9.3}Conformal Map}{28}%
-\contentsline {section}{\numberline {10}Bilinear Transformations}{29}%
-\contentsline {subsection}{\numberline {10.1}Definition of a Möbius transformation}{29}%
-\contentsline {subsection}{\numberline {10.2}Brief Review of other Transformations}{29}%
-\contentsline {subsection}{\numberline {10.3}Möbius transforming of a function}{30}%
-\contentsline {section}{\numberline {11}Contour Integral in $\mathbb {C}$}{32}%
-\contentsline {subsection}{\numberline {11.1}Piecewise Differentiable, Smooth, Simple, Closed curves}{32}%
-\contentsline {subsection}{\numberline {11.2}Interior and Exterior of curves}{32}%
-\contentsline {subsection}{\numberline {11.3}Smoothly Equivalent}{32}%
-\contentsline {subsection}{\numberline {11.4}Line Integral}{33}%
-\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{35}%
-\contentsline {subsection}{\numberline {12.1}Cauchy's Closed Curve Theorem}{35}%
-\contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{36}%
-\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{39}%
-\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{42}%
-\contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{42}%
-\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{43}%
-\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{47}%
-\contentsline {subsection}{\numberline {15.1}Convergence Tests}{48}%
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{51}%
-\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{52}%
-\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{53}%
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{55}%
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{58}%
-\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{58}%
-\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{59}%
-\contentsline {section}{\numberline {19}Laurent Series}{61}%
-\contentsline {section}{\numberline {20}Residue Theorem}{65}%
-\contentsline {subsection}{\numberline {20.1}Singularity and Root}{65}%
-\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{67}%
-\contentsline {section}{\numberline {21}Improper Integrals}{73}%
-\contentsline {subsection}{\numberline {21.1}Principal Value}{73}%
-\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{74}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{83}%
+\contentsline {subsection}{\numberline {9.2}Conformal Function}{29}%
+\contentsline {subsection}{\numberline {9.3}Conformal Map}{30}%
+\contentsline {section}{\numberline {10}Bilinear Transformations}{31}%
+\contentsline {subsection}{\numberline {10.1}Definition of a Möbius transformation}{31}%
+\contentsline {subsection}{\numberline {10.2}Brief Review of other Transformations}{31}%
+\contentsline {subsection}{\numberline {10.3}Möbius transforming of a function}{32}%
+\contentsline {section}{\numberline {11}Contour Integral in $\mathbb {C}$}{34}%
+\contentsline {subsection}{\numberline {11.1}Piecewise Differentiable, Smooth, Simple, Closed curves}{34}%
+\contentsline {subsection}{\numberline {11.2}Interior and Exterior of curves}{34}%
+\contentsline {subsection}{\numberline {11.3}Smoothly Equivalent}{34}%
+\contentsline {subsection}{\numberline {11.4}Line Integral}{35}%
+\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{37}%
+\contentsline {subsection}{\numberline {12.1}Cauchy's Closed Curve Theorem}{37}%
+\contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{38}%
+\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{41}%
+\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{44}%
+\contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{44}%
+\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{45}%
+\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{49}%
+\contentsline {subsection}{\numberline {15.1}Convergence Tests}{50}%
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{53}%
+\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{54}%
+\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{55}%
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{57}%
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{60}%
+\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{60}%
+\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{61}%
+\contentsline {section}{\numberline {19}Laurent Series}{63}%
+\contentsline {section}{\numberline {20}Residue Theorem}{67}%
+\contentsline {subsection}{\numberline {20.1}Singularity and Root}{67}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{69}%
+\contentsline {section}{\numberline {21}Improper Integrals}{75}%
+\contentsline {subsection}{\numberline {21.1}Principal Value}{75}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{76}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{85}%

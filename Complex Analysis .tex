@@ -682,7 +682,10 @@ $$f'(z) = \lim_{h \to 0} \frac{f(z + h) - f(z)}{h}$$
 Along the path $x + h + iy \to x + iy$, we get 
 $$\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \to 0} \frac{f(x + h + iy) - f(x + iy)}{h} = f_x = u_x(x,y) + iv_x(x, y)$$
 Along the path $x + iy +ih \to x + iy$, we get 
-$$\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \to 0} \frac{f(x + i(y + h)) - f(x + iy)}{ih} = \frac{f_y}{i} = -if_y = -i(u_y(x,y) + iv_y(x, y)) = v_y(x, y) -iu_y(x, y)$$
+\begin{align*}
+\lim_{h \to 0} \frac{f(z + h) - f(z)}{h} &= \lim_{h \to 0} \frac{f(x + i(y + h)) - f(x + iy)}{ih} = \frac{f_y}{i} = -if_y \\
+&= -i(u_y(x,y) + iv_y(x, y)) = v_y(x, y) -iu_y(x, y)
+\end{align*}
 Equate components in $f_x = -if_y$, and it is proven that $u_x = v_y$ and $u_y = -v_x$. \\
 
 \textbf{Proposition.} If the Cauchy Riemann Equations do not hold at $z_0$, then $f'(z_0)$ does not exist. \\
@@ -693,7 +696,7 @@ If $f(x + iy) = x^2 + iy^2$, $u_x = 2x$, $v_x = 0$, $u_y = 0$, $v_y = 2y$. Then 
 The set of points on the line is not open in $\mathbb{C}$. Therefore, $f$ is nowhere holomorphic in $\mathbb{C}$. However, we will see that $f'(z)$ does exist on the line $y = x$. \\
 \newline
 \textbf{Sufficiency of the Cauchy Riemann Equations to $f'$.} \\
-The Cauchy Riemann Equations do a great job showing $f'$ does not exist. But what about it being sufficient for $f'$? We claim that satisfying the Cauchy Riemann Equations at $z_0$ implies that $f'$ exists at $z_0$. \\
+The Cauchy Riemann Equations do a great job showing $f'$ does not exist. But is it sufficient for $f'$? We claim that satisfying the Cauchy Riemann Equations at $z_0$ implies that $f'$ exists at $z_0$. \\
 \textbf{Proof.} \\
 $f$ is $\mathbb{C}$-differentiable at $z_0$ if and only if $u(x, y)$ and $v(x, y)$ have continuous partial derivatives that satisfy the Cauchy Riemann Equations at $z_0$. 
 This requires us to treat $f(x + iy)$ as a function on $\mathbb{R} ^ 2$, or $f(z)$ induces a map on $\mathbb{R} ^ 2$. \\
@@ -736,7 +739,7 @@ We have a branch point in $\operatorname{Log}(z)$ where its derivative is undefi
 \begin{enumerate}[leftmargin = *, nolistsep]
 \item $f'(z) = 0$
 \item $|f(z)| \text{ is constant}$
-\item	$Re(f(z)) \text{ is constant}$
+\item	$\Re(f(z)) \text{ is constant}$
 \item $f \text{'s conjugate is } \mathbb{C} \text{-differentiable on } \Omega$
 \end{enumerate}
 
@@ -805,25 +808,49 @@ The simply connected statement requires future theorems to show $F'(z) = f(z)$ f
 
 \newpage
 \section{Conformal Maps}
-\textbf{Example.} Let $f(z) - (x + iy)^2 + 2(x +iy) = (x^2 + 2x - y^2) + i2(xy + y)$. When are the component functions, $u(x, y)$ and $v(x, y)$ constant? \\
-When are the component functions , $u(x, y)$ and $v(x, y)$, constant? \\
-The function $f(z) = e^z = e^x(\cos(y) + i\sin(y))$ maps the set $\Omega = \{z: \abs{\Im(z)} < \pi \}$ to circles of radius $r \in (-\infty, \infty)$, or all points in $\mathbb{C} \backslash \mathbb{R}^-$. This coincides with the branch cut of $\operatorname{Log}(z)$, or how we made $e^z$ invertible. \\
-
+\textbf{Example.} Let $f(z) = (x + iy)^2 + 2(x +iy) = \left(x^2 + 2x - y^2\right) + i2(xy + y)$. When are the component functions, $u(x, y)$ and $v(x, y)$, constant? \\
+Solve for $u = 1: u(x, y) = (x + 1)^2 - 1 - y^2 = 1 \Rightarrow (x + 1)^2 - y^2 = 2 $ This is a hyperbola. \\
+Solve for $v = 4: v(x, y) = 2(xy + y) = 4 \Rightarrow y = \frac{2}{x + 1}$. This is also a hyperbola. \\ 
+We see the level set curves of $u(x, y) = j$ and $v(x, y) = k$ are mapped to orthogonal curves in the $w$-plane. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_1}
+\centering
+\end{figure}
+\textbf{Example.} The function $f(z) = e^z = e^x\left(\cos(y) + i\sin(y)\right)$ maps the set $\Omega = \{z: \abs{\Im(z)} < \pi \}$ to circles of radius $r \in (-\infty, \infty)$, or all points in $\mathbb{C} \backslash \mathbb{R}^-$. This coincides with the branch cut of $\operatorname{Log}(z)$, or how we made $e^z$ invertible. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_2}
+\centering
+\end{figure}
 \subsection{Preservation of Angles}
-
 We will now show $e^z$ preserves the angles between curves in $\Omega$. Let us first look at the following example. \\ 
-Let $\gamma_1(t) = 2i\pi t - i\pi$, $\gamma_2(t) = t + i\frac{\pi}{4}$. $\gamma_1(0) = -i\pi$, $\gamma_1(1) = i\pi$. \\
+Let $\gamma_1(t) = 2i\pi t + a$, $a \in \mathbb{R}$, $\gamma_2(t) = t + i\frac{\pi}{4}$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_3}
+\centering
+\end{figure}
 The curves $\gamma_1$ and $\gamma_2$ intersect at an angle $\frac{\pi}{2}$. Also $f(\gamma_1)$ is a circle centered at 0 while $f(\gamma_2)$ is a line through $z = 0$. Their intersection in the $w$-plane is $\frac{\pi}{2}$ as well. \\
 We will show why $f(z) = e^z$ does this by studying the angles between curves $\gamma_1$ and $\gamma_2$ and curves $\tau_1 = f(\gamma_1)$ and $\tau_2 = f(\gamma_2)$. 
 If $\gamma(t)$ parameterizes a smooth curve in $\mathbb{C}$, then its tangent vector is $\gamma'(t)$. The angle between any two curves at $z_0$ is the angle between their tangent vectors at $z_0$. \\
-Assume the curves intersect at $\gamma(r_0) = \gamma(s_0) = z_0$. \\
-Let the angle of intersection, $\theta$, measured from $\gamma_1'$ to $\gamma_2'$ in the counter-clockwise direction. \\
-Let the angle of intersection after transformation of $f$, $\varphi$, measured from $\tau_1'$ to $\tau_2'$ in the counter-clockwise direction. From past chapters, we know $\theta \approx \varphi$ if $f$ is holomorphic. Now, let us assume $f$ is only $\mathbb{R}$-differentiable and see how $f$ acts on the angle $\theta$. \\
+Assume the curves intersect at $\gamma(r_0) = \gamma(s_0) = z_0$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_4}
+\centering
+\end{figure}
+Let the angle of intersection, $\theta$, be measured from $\gamma_1'$ to $\gamma_2'$ in the counter-clockwise direction. 
+\begin{figure}[H]
+\includegraphics[scale = 0.25]{9_5}
+\centering
+\end{figure}
+Let the angle of intersection after transformation of $f$, $\varphi$, measured from $\tau_1'$ to $\tau_2'$ in the counter-clockwise direction. From Chapter 6, we know 
+$$w = f(z) \approx f(z_0) + f'(z_0)(z - z_0) = c + \rho e^{i\theta}(z - z_0)$$
+Therefore, $\theta \approx \varphi$ if $f$ is holomorphic. Now, let us assume $f$ is only $\mathbb{R}$-differentiable and see how $f$ acts on the angle $\theta$. \\
 Curve: $\gamma(t) = (x(t), y(t))$ \\
 New curve, $f$ on $\gamma$: $\tau(t) = f(\gamma(t)) = u(\gamma(t)) + iv(\gamma(t)) = (\overline{\underline {X}}(t), \overline{\underline {Y}}(t))$ \\
-New tangent vector: $\tau'(t) = \frac{t}{dt}\tau(t) = (\overline{\underline {X}}'(t), \overline{\underline {Y}}'(t))$, where we can invoke the chain rule: \\
-$$\overline{\underline {X}}'(t) = u_x(\gamma(t))x'(t) + u_y(\gamma(t))y'(t)$$ 
-$$\overline{\underline {Y}}'(t) = v_x(\gamma(t))x'(t) + v_y(\gamma(t))y'(t)$$
+New tangent vector: $\tau'(t) = \frac{t}{dt}\tau(t) = (\overline{\underline {X}}'(t), \overline{\underline {Y}}'(t))$, where we can invoke the chain rule: 
+\begin{align*}
+\overline{\underline {X}}'(t) &= u_x(\gamma(t))x'(t) + u_y(\gamma(t))y'(t) \\ 
+\overline{\underline {Y}}'(t) &= v_x(\gamma(t))x'(t) + v_y(\gamma(t))y'(t)
+\end{align*}
 If we have $f = u(x, y) + iv(x, y)$ is $\mathbb{R}$-differentiable, then 
 \begin{equation*}
 J(f) = 
@@ -833,28 +860,33 @@ J(f) =
 \end{bmatrix}
 \end{equation*}
 is the Jacobian Matrix of $f$ and $\tau'(t) = \gamma'(t) \cdot J(f)^T$ \\
-If $f$ is $\mathbb{C}$-differentiable and $\gamma(r_0) = z_0$ where $\gamma(t) = x(t) + iy(t)$, then $f'(z) = u_x + iv_x$ and $\gamma'(t) = x' + iy'$. \\
+If $f$ is $\mathbb{C}$-differentiable and $\gamma(r_0) = z_0$ where $\gamma(t) = x(t) + iy(t)$, then $f'(z) = u_x + iv_x$ and $\gamma'(t) = x' + iy'$. 
 $$f'(z_0)\gamma'(r_0) = f'(\gamma(r_0))\gamma'(r_0) = (u_x + iv_x)(x' + iy') = (u_xx' - v_xy') + i(u_xy' + v_xx')$$
 Applying the Cauchy Riemann Equations, 
-\begin{equation*}
-(u_xx' - v_xy') + i(u_xy' + v_xx') = (u_xx' + u_yy') + i(v_xx' + v_yy') = (u_xx' + u_yy', v_xx' + v_yy') \mbox{ in } \mathbb{R}^2 
-\end{equation*}
-$$ = \gamma'(r_0) \mbox{Jf}(z_0)^T = \tau'$$ 
+\begin{align*}
+&(u_xx' - v_xy') + i(u_xy' + v_xx') \\
+=& (u_xx' + u_yy') + i(v_xx' + v_yy') \\
+=& (u_xx' + u_yy', v_xx' + v_yy') \mbox{ in } \mathbb{R}^2  \\
+=& \gamma'(r_0) \text{Jf}(z_0)^T \\
+=& \tau'
+\end{align*}
 By now, we have an understanding of how $f$ acts on tangent vectors when $f' \neq 0$, namely $\theta = \varphi$.
 
 \subsection{Conformal Function}
 \textbf{Conditions of Conformal Functions.}\\
-We say $f$ is a conformal map at $z_0$ if the following hold: \\
-\circled{\scriptsize1} $f$ is $\mathbb{R}^2$-differentiable at $z_0$ \\
-\circled{\scriptsize2} $\abs{\mbox{Jf}} \neq 0$ \\
-\circled{\scriptsize3} $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. \\
-\newline
+We say $f$ is a conformal map at $z_0$ if the following hold: 
+\begin{enumerate}[leftmargin = *, nolistsep]
+\item $f$ is $\mathbb{R}^2$-differentiable at $z_0$.
+\item $\abs{\mbox{Jf}} \neq 0$.
+\item $f$ preserves the oriented angle $\theta$, between $\gamma_1$ and $\gamma_2$ and $\tau_1$ and $\tau_2$ at $z_0$ and $f(z_0)$. \\
+\end{enumerate} 
+
 \textbf{$e^z$ is conformal.}\\
 Now let us take a closer look at $e^z$ and figure out why it is conformal. \\
 \circled{\scriptsize1} holds apparently. \\
 \circled{\scriptsize2} $f(z) = e^z = e^x\cos(y) + ie^x\sin(y)$, then 
-\begin{equation*}
-J(f(x, y)) = 
+\begin{align*}
+J(f(x, y)) &= 
 \begin{bmatrix}
  e^x\cos(y) & -e^x\sin(y) \\
  e^x\sin(y) & e^x\cos(y)
@@ -863,24 +895,28 @@ J(f(x, y)) =
 \begin{bmatrix}
 \cos(y) & -\sin(y) \\
 \sin(y) & \cos(y)
-\end{bmatrix}
-\end{equation*}
-$\Rightarrow \abs{J(f(x,y))} \neq 0$\\
-\circled{\scriptsize3} Now we have shown in the previous part that Jf is the product of a dilation matrix, $e^xI$, and a rotation matrix, which means $f$ preserves the angles between $\gamma_1'$ and $\gamma_2'$. Their image under $f$: \\
-$$\tau_1'(t) = \gamma_1'(t) \cdot J(f)^T$$
-$$\tau_2'(t) = \gamma_2'(t) \cdot J(f)^T$$
+\end{bmatrix} \\ 
+\Rightarrow \abs{J(f(x,y))} &\neq 0\\
+\end{align*}
+\circled{\scriptsize3} Now we have shown in the previous part that Jf is the product of a dilation matrix, $e^xI$, and a rotation matrix, which means $f$ preserves the angles between $\gamma_1'$ and $\gamma_2'$. Their image under $f$: 
+\begin{align*}
+\tau_1'(t) &= \gamma_1'(t) \cdot J(f)^T\\
+\tau_2'(t) &= \gamma_2'(t) \cdot J(f)^T
+\end{align*}
 In fact, $f$ preserving oriented angles implies Jf is a rotation $\otimes$ dilation matrix. \\
 Hence, it is proven that $e^z$ is conformal.
 \subsection{Conformal Map} 
 
 \textbf{Definition.} If $f$ is conformal, infinitely differentiable, and one-to-one on a domain $\Omega$ to $V$, then $f$ is a conformal map from $\Omega$ to $V$. \\
 For example, $e^z$ is conformal map from $\Omega = \{z:\abs{\Im(z)} < \pi \}$ to $V = \mathbb{C} \backslash \mathbb{R}^-$. \\
+\newline
 \textbf{Proposition.} If $f$ is complex differentiable and $f'(z_0) \neq 0$, it is a linear transform of a dilation by $\abs{f'(z_0)}$ and a rotation by $\operatorname{Arg}(f'(z_0))$. Hence, $f$ is conformal because \circled{3} is satisfied. \\
-\textbf{Example.} $f(z) = z^2$ on $\Omega = \{z| 1< |z| < 3 \mbox{ and } \Im(z) > 0 \}$ is conformal. \\
+\newline
+\textbf{Example.} $f(z) = z^2$ on $\Omega = \{z| 1< |z| < 3 \text{ and } \Im(z) > 0 \}$ is conformal. \\
 \newline
 \textbf{Inverse Function Theorem.} \\ 
 If $f$ is a continuously differentiable function with nonzero derivative at the point $a$, then $f$ is invertible in a neighborhood of a, the inverse is continuously differentiable, and the derivative of the inverse function at $b=f(a)$ is the reciprocal of the derivative of $f$ at $a$: 
-$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
+$$\left(f^{-1}\right)'(b) = \frac{1}{f'(a)} = \frac{1}{f'\left(f^{-1}(b)\right)}$$
 \textbf{Proposition.} If $f$ is invertible at $z_0$ and conformal, then $f^{-1}$ is conformal at $f(z_0)$ by the inverse function theorem provided $f$ is continuously differentiable. \\
 \newline 
 From the proposition above, we know that $\operatorname{Log}(z)$ is conformal on $\mathbb{C} \backslash \mathbb{R}^-$.
