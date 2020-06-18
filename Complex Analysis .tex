@@ -453,7 +453,7 @@ $f$ is continuous if $\forall \varepsilon > 0$, $\exists \delta > 0$ such that $
 \newline 
 In either case, $\Re(f(z))$ and $\Im(f(z))$ are each continuous if and only if $f(z)$ is continuous. This follows the pattern as $\mathbb{C}$ being complete. \\
 \newline
-If $f$ and $g$ are continuous, then so are $f + g$m $f \times g$ and $\frac{f}{g}$ (provided $g(z) \nrightarrow 0$)
+If $f$ and $g$ are continuous, then so are $f + g$, $f \times g$ and $\frac{f}{g}$ (provided $g(z) \nrightarrow 0$)
 
 \subsection{Complex Limits}
 Just like in $\mathbb{R}^2$, limits are direction independent. Do not restrict limits to just $\Re \to 0$ or $\Im \to 0$. See the following example. \\
@@ -467,31 +467,48 @@ $\operatorname{Log}$, $z^\frac{1}{2}$ and $\arctan(z)$ are constructed by restri
 For example, in creating $\operatorname{Log}(z) = \ln|z| + i\operatorname{Arg}(z)$, we made a choice that $\operatorname{Arg}(z) \in (-\pi, \pi]$, $\operatorname{Arg}(0)$ does not exist. \\
 \newline
 \textbf{Example.} 
-Consider a path around $z_0 \neq 0$, $\gamma(t) = z_0 + re^{it}$. $\theta(t) = \operatorname{arg}(\gamma(t))$. \\
-As we traverse the circle, $t \in (-\pi, \pi]$, \\
-$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(z_0 + re^{it}) + 2\pi k = \operatorname{Arg}(z_0 + re^{i(t + 2\pi)}) + 2\pi k = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
+Consider a path around $z_0 \neq 0$, $\gamma(t) = z_0 + re^{it}$. $\theta(t) = \operatorname{arg}(\gamma(t))$.
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{5_1}
+\centering
+\end{figure}
+As we traverse the circle, $t \in (-\pi, \pi]$, 
+$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}\left(z_0 + re^{it}\right) + 2\pi k = \operatorname{Arg}\left(z_0 + re^{i(t + 2\pi)}\right) + 2\pi k = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
 Therefore, the angle $\theta(t)$ changes smoothly for all $t$ and we stay on the same branch of $\operatorname{Arg}(\gamma(t))$. That is to say, the $k \in \mathbb{Z}$ is the same for all $t$.\\
 \newline
-Compare this with any circular path about $z = 0$, $\gamma_0$. Let $\gamma_0(t) = re^{it}$, $t \in (-\pi, \pi]$. As we traverse the circle once, we have a discontinuity in the principal angle of $\gamma_0(t)$. In particular, $\theta(\gamma_0(t)) \neq \theta(\gamma_0(t + 2\pi))$ \\
-$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}(re^{it}) + 2\pi k \neq \operatorname{Arg}(re^{i(t + 2\pi)}) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
+Compare this with any circular path about $z = 0$, $\gamma_0$. Let $\gamma_0(t) = re^{it}$, $t \in (-\pi, \pi]$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.22]{5_2}
+\centering
+\end{figure}
+As we traverse the circle once, we have a discontinuity in the principal angle of $\gamma_0(t)$. In particular, $\theta(\gamma_0(t)) \neq \theta(\gamma_0(t + 2\pi))$.
+$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}\left(re^{it}\right) + 2\pi k \neq \operatorname{Arg}\left(re^{i(t + 2\pi)}\right) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
 We jump from the $k$th to the $(k+1)$th branch of $\operatorname{Arg}$. Therefore, $\operatorname{Arg}(z)$ has a branch point at $z = 0$. \\
 
 \textbf{Definition of Branch Cuts and Branch Points.}\\
-If every neighborhood of $z_0$ contains a path $\gamma(t)$ around $z_0$ that leads to a jump discontinuity in $f$, then $z_0$ is a branch point of $f(z)$. \\ 
+If every neighborhood of $z_0$ contains a path $\gamma(t)$ around $z_0$ that leads to a jump discontinuity in $f$, then $z_0$ is a branch point of $f(z)$. This behavior need only be local, it holds for all paths $\gamma$ ``near'' $z_0$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.22]{5_3}
+\centering
+\end{figure}
 In order to find branches, at this point, it suffices to study paths of the form $\gamma(t) = z_0 + re^{it}$ for $t \in (-\pi, \pi)$, and see if $f(\gamma(t)) = f(\gamma(t + 2\pi))$ holds for all $t$. \\
 \newline
 \textbf{Example.} $\operatorname{Arg}$ is discontinuous for all $x$ on the negative $\mathbb{R}$-axis, $\mathbb{R}^-$. \\
-We call this the principal branch cut of the multi-valued function $\operatorname{arg}$. Specifically, \\
-\begin{equation*} 
-\operatorname{Arg}(\gamma_0(t)) \to \pi \mbox{ as } t \to \pi^- 
-\end{equation*}
-\begin{equation*} 
-\operatorname{Arg}(\gamma_0(t)) \to -\pi \mbox{ as } t \to -\pi^+
-\end{equation*} 
+We call this the principal branch cut of the multi-valued function $\operatorname{arg}$. Specifically, 
+\begin{align*} 
+\operatorname{Arg}(\gamma_0(t)) &\to \pi \mbox{ as } t \to \pi^- \\
+\operatorname{Arg}(\gamma_0(t)) &\to -\pi \mbox{ as } t \to -\pi^+
+\end{align*} 
 but $\gamma_0(\pi) = \gamma_0(-\pi)$ since $\pi$ and $-\pi$ are coterminal. \\
 $\mathbb{R}^-$ is the principal branch of $\operatorname{Log}$, $\operatorname{Arg}$, and $z^{\frac{1}{2}}$. \\
-The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and $\infty$ as its branch points. 
-
+The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and $\infty$ as its branch points. \\
+\newline
+\textbf{Example.} Let $\gamma(t) = re^{it}$, as $t$ increases from $-\pi$ to $\pi$, $\operatorname{Log}(\gamma(t))$ increases from $-\pi i$ to $\pi i$. This means $\operatorname{Log}$ is not continuous along $\mathbb{R}^{-}$, the negative $\mathbb{R}$-axis. This is not a surprise since $\operatorname{Log}(z)$ is defined by $\operatorname{Arg}(z)$ and they share branch points.  
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{5_4}
+\centering
+\end{figure}
+The negative $\mathbb{R}$-axis is the principal branch of $\operatorname{Log}(z)$, $\operatorname{Arg}(z)$ and $z^{\frac{1}{2}}$.
 \newpage
 \section{Differentiability in $\mathbb{C}$}
 Let $f: \Omega \to \mathbb{C}$ for some domain $\Omega$. Then $f$ is differentiable at $z_0$ if the following exists. 
