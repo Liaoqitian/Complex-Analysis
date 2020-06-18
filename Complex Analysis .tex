@@ -195,7 +195,7 @@ Note that $\theta_R = \arctan(\frac{b}{a})$ is a reference angle of $z$. To find
 \begin{align*}
 z &= -3 + 3i = 3\sqrt2\left(\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4}\right) \\ 
 \theta_R &= \arctan\left(\frac{3}{-3}\right)= -\frac{\pi}{4}\\
-\theta &= \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4} \text{, since } \theta \text{ is in } \Romannum{2} .
+\theta &= \pi + \theta_R = \pi -\frac{\pi}{4} = \frac{3\pi}{4} \text{, since } \theta \text{ is in \Romannum{2}}
 \end{align*}
 \textbf{Argument and argument.}\\
 $\operatorname{Arg}(z)$ is $z$'s principle polar angle $\theta$, $z \neq 0$, where $\theta \in (-\pi, \pi]$. \\
@@ -458,7 +458,7 @@ If $f$ and $g$ are continuous, then so are $f + g$, $f \times g$ and $\frac{f}{g
 \subsection{Complex Limits}
 Just like in $\mathbb{R}^2$, limits are direction independent. Do not restrict limits to just $\Re \to 0$ or $\Im \to 0$. See the following example. \\
 \begin{equation*}
-\lim_{(x, y) \to (0, 0)} \frac{2x^2y}{x^4 + y^2} \mbox{ does not exist}
+\lim_{(x, y) \to (0, 0)} \frac{2x^2y}{x^4 + y^2} \text{ does not exist}
 \end{equation*} 
 as $x \to 0$, $y = 0$, then $f \to 0$, while $y = x^2, x \to 0$, then $f \to 1$.
 
@@ -482,7 +482,7 @@ Compare this with any circular path about $z = 0$, $\gamma_0$. Let $\gamma_0(t) 
 \centering
 \end{figure}
 As we traverse the circle once, we have a discontinuity in the principal angle of $\gamma_0(t)$. In particular, $\theta(\gamma_0(t)) \neq \theta(\gamma_0(t + 2\pi))$.
-$$\theta(t) = \operatorname{arg}(\gamma(t)) = \operatorname{Arg}\left(re^{it}\right) + 2\pi k \neq \operatorname{Arg}\left(re^{i(t + 2\pi)}\right) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
+$$\theta(t) = \operatorname{arg}\left(\gamma(t)\right) = \operatorname{Arg}\left(re^{it}\right) + 2\pi k \neq \operatorname{Arg}\left(re^{i(t + 2\pi)}\right) + 2\pi (k + 1) = \operatorname{arg}(\gamma(t + 2\pi)) = \theta(t + 2\pi)$$
 We jump from the $k$th to the $(k+1)$th branch of $\operatorname{Arg}$. Therefore, $\operatorname{Arg}(z)$ has a branch point at $z = 0$. \\
 
 \textbf{Definition of Branch Cuts and Branch Points.}\\
@@ -499,16 +499,62 @@ We call this the principal branch cut of the multi-valued function $\operatornam
 \operatorname{Arg}(\gamma_0(t)) &\to \pi \mbox{ as } t \to \pi^- \\
 \operatorname{Arg}(\gamma_0(t)) &\to -\pi \mbox{ as } t \to -\pi^+
 \end{align*} 
-but $\gamma_0(\pi) = \gamma_0(-\pi)$ since $\pi$ and $-\pi$ are coterminal. \\
+but $\gamma_0(\pi) = \gamma_0(-\pi)$ since $\pi$ and $-\pi$ are co-terminal. \\
 $\mathbb{R}^-$ is the principal branch of $\operatorname{Log}$, $\operatorname{Arg}$, and $z^{\frac{1}{2}}$. \\
 The endpoints of a branch cut are branch points, $\operatorname{Arg}$ has 0 and $\infty$ as its branch points. \\
 \newline
 \textbf{Example.} Let $\gamma(t) = re^{it}$, as $t$ increases from $-\pi$ to $\pi$, $\operatorname{Log}(\gamma(t))$ increases from $-\pi i$ to $\pi i$. This means $\operatorname{Log}$ is not continuous along $\mathbb{R}^{-}$, the negative $\mathbb{R}$-axis. This is not a surprise since $\operatorname{Log}(z)$ is defined by $\operatorname{Arg}(z)$ and they share branch points.  
+$\operatorname{log}(z)$ has infinitely many branches. 
 \begin{figure}[H]
 \includegraphics[scale = 0.2]{5_4}
 \centering
 \end{figure}
-The negative $\mathbb{R}$-axis is the principal branch of $\operatorname{Log}(z)$, $\operatorname{Arg}(z)$ and $z^{\frac{1}{2}}$.
+The negative $\mathbb{R}$-axis is the principal branch of $\operatorname{Log}(z)$, $\operatorname{Arg}(z)$ and $z^{\frac{1}{2}}$.\\
+\newline
+\textbf{Example.} Let $\gamma(t) = re^{it}$, as $t$ increases from $-\pi$ to $\pi$. $\gamma^{\frac{1}{3}} = |r|^{\frac{1}{3}}e^{i\frac{t}{3}}$. We see that $t = -\pi$ and $t = \pi$ give different values for $z^{\frac{1}{3}}$, also $-\frac{\pi}{3}$ and $\frac{\pi}{3}$ are not co-terminal. This is not a surprise because we found this already in the roots of unity problem before, $w^3 = i$. 
+$$ \gamma^{\frac{1}{3}} = |r|^{\frac{1}{3}}e^{i\frac{t}{3}} \text{ if } \gamma(t) = re^{it}$$
+As we cross the branch cut, we are changing which $k \in \mathbb{Z}$ is defining $z^{\frac{1}{3}}$. Namely, we change the function's branch. Therefore, branch point is at $z = 0$ and branch cut is $\mathbb{R}^{-} = \{x \in \mathbb{R}|x<0\}$. $z^{\frac{1}{3}}$ has 3 branches. \\
+\newline
+\textbf{Example.} Let $f(z) = \left(z^2 + 9\right)^{\frac{1}{2}} = (z + 3i)^{\frac{1}{2}}(z - 3i)^{\frac{1}{2}}$. Let us figure out how to define a branch cut for $f(z)$. There are two steps to follow: 
+\begin{enumerate}[leftmargin = *, nolistsep]
+\item Find the branch points.
+\item Test what happens when we loop around multiple branch points.
+\end{enumerate}
+We start by defining the curves as 
+\begin{align*}
+\gamma_1(t) - 3i &= r_1e^{it}, \gamma_2(t) + 3i = r_2e^{it} \\
+f(z) = \theta(t) &= \left(r_1r_2e^{i(t_1 + t_2)}\right)^{\frac{1}{2}} = (r_1r_2)^{\frac{1}{2}}e^{i\frac{t_1}{2}}e^{i\frac{it_2}{2}}
+\end{align*}
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{5_5}
+\centering
+\end{figure}
+As we traverse the upper circle, $t_1$ varies over all angles from $-\pi$ to $\pi$ but $t_2$ varies over a range of angles in \Romannum{1} and \Romannum{2}. 
+\begin{align*}
+&\operatorname{Arg}(\gamma_1(-\pi) - 3i) = -\pi \\ 
+&\operatorname{Arg}(\gamma_1(\pi) - 3i) = \pi \\
+&\operatorname{Arg}(\gamma_2(t) + 3i) = \operatorname{Arg}\left(\gamma_2(t + 2\pi) + 3i\right)
+\end{align*}
+This means after taking one cycle, $t_1$ is incremented by $2\pi$, but $t_2$ stays the same. Therefore, 
+$$ f(z) = \left(r_1r_2e^{i(t_1 + 2\pi + t_2)}\right)^{\frac{1}{2}} = \left(r_1r_2e^{i(t_1 + t_2)}\right)^{\frac{1}{2}}e^{i\pi} \neq \left(r_1r_2e^{i(t_1 + t_2)}\right)^{\frac{1}{2}}$$
+Since this happens for all circles about $3i$, of radius 3 or less, $z = 3i$ is a branch point of $f(z)$. Similarly, $z = -3i$ has the same behavior with $t_2$ ranging over $(-\pi, \pi]$, and so it is a branch point of $f(z)$ too. \\
+A natural thing to investigate is what would happen if the circle path contains both branch points. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{5_6}
+\centering
+\end{figure}
+By the figure above, we see $t_1$ and $t_2$ both change by $2\pi$. Therefore, 
+\begin{align*}
+f(z) =&(r_1r_2)^{\frac{1}{2}}e^{i\frac{t_1 + 2\pi}{2}}e^{i\frac{t_2 + 2\pi}{2}} \\
+= &(r_1r_2)^{\frac{1}{2}}e^{i\frac{t_1}{2}}e^{i\frac{it_2}{2}}e^{i2\pi}\\
+= &(r_1r_2)^{\frac{1}{2}}e^{i\frac{t_1}{2}}e^{i\frac{it_2}{2}} \text{ since } e^{2\pi i} = 1
+\end{align*}
+Therefore, so far we know that the function is going to have a jump discontinuity for any path around $3i$ or $-3i$, but not both. Furthermore, there is no change if we traverse around neither branch point. Hence, we have two different branch cuts for $f(z)$.
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{5_7}
+\centering
+\end{figure}
+
 \newpage
 \section{Differentiability in $\mathbb{C}$}
 Let $f: \Omega \to \mathbb{C}$ for some domain $\Omega$. Then $f$ is differentiable at $z_0$ if the following exists. 
