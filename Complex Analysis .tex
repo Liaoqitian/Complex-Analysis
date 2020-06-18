@@ -912,14 +912,49 @@ For example, $e^z$ is conformal map from $\Omega = \{z:\abs{\Im(z)} < \pi \}$ to
 \newline
 \textbf{Proposition.} If $f$ is complex differentiable and $f'(z_0) \neq 0$, it is a linear transform of a dilation by $\abs{f'(z_0)}$ and a rotation by $\operatorname{Arg}(f'(z_0))$. Hence, $f$ is conformal because \circled{3} is satisfied. \\
 \newline
-\textbf{Example.} $f(z) = z^2$ on $\Omega = \{z| 1< |z| < 3 \text{ and } \Im(z) > 0 \}$ is conformal. \\
-\newline
+\textbf{Example.} $f(z) = z^2$ on $\Omega = \{z| 1< |z| < 3 \text{ and } \Im(z) > 0 \}$ is conformal. 
+\begin{figure}[H]
+\includegraphics[scale = 0.25]{9_6}
+\centering
+\end{figure}
 \textbf{Inverse Function Theorem.} \\ 
 If $f$ is a continuously differentiable function with nonzero derivative at the point $a$, then $f$ is invertible in a neighborhood of a, the inverse is continuously differentiable, and the derivative of the inverse function at $b=f(a)$ is the reciprocal of the derivative of $f$ at $a$: 
 $$\left(f^{-1}\right)'(b) = \frac{1}{f'(a)} = \frac{1}{f'\left(f^{-1}(b)\right)}$$
-\textbf{Proposition.} If $f$ is invertible at $z_0$ and conformal, then $f^{-1}$ is conformal at $f(z_0)$ by the inverse function theorem provided $f$ is continuously differentiable. \\
-\newline 
-From the proposition above, we know that $\operatorname{Log}(z)$ is conformal on $\mathbb{C} \backslash \mathbb{R}^-$.
+\textbf{Proposition.} If $f$ is invertible at $z_0$ and conformal, then $f^{-1}$ is conformal at $f(z_0)$ by the inverse function theorem provided $f$ is continuously differentiable. Therefore $\operatorname{Log}(z)$ is conformal on $\mathbb{C} \backslash \mathbb{R}^-$. \\
+\newpage
+\textbf{Example.} $f(z) = \frac{1}{z} = \frac{1}{re^{i\theta}} = \frac{1}{r}e^{-i\theta}$, $f'(z) = \frac{-1}{z^2}$ reverses the direction of the circle since the sign of $\theta$ is flipped. 
+Let $z_1 = \frac{\sqrt{2}}{4} + i\frac{\sqrt{2}}{4}$ and $z_2 = \sqrt{2} + i\sqrt{2}$.
+\begin{align*}
+f(z_1) &= f\left(\frac{\sqrt{2}}{4} + i\frac{\sqrt{2}}{4}\right) = \frac{1}{\frac{1}{2}}e^{-i\frac{\pi}{4}} = 2e^{-i\frac{\pi}{4}} = w_1\\
+f(z_2) &= f\left(\sqrt{2} + i\sqrt{2}\right) = \frac{1}{2}e^{-i\frac{\pi}{4}} = \frac{1}{2}e^{-i\frac{\pi}{4}} = w_2
+\end{align*}
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_7}
+\centering
+\end{figure}
+$\frac{1}{z}$ maps 0 to $\infty$ and $\infty$ to 0. Furthermore, $\frac{1}{z}$ maps $\Omega = \{z||z| < 1\}$ to $\{z||z| > 1\}$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_8}
+\centering
+\end{figure}
+Next let us investigate how $\frac{1}{z}$ maps the set $\Omega= \{z|\Im(z) = 0\}$. Notice that $f^{-1}(z) = f(z)$. Let $w = u + iv$ and $z = x + iy$. \\
+The line $y = 1$ is outside $|z| < 1$ for $x \neq 0$, so it should be mapped into $|w| < 1$. In order to find all points that map onto the horizontal line $y = 1$, we need to solve the nonlinear equation: 
+$$f^{-1}(w) = \frac{1}{w} = \frac{1}{u + iv} = \frac{u}{u^2 + v^2} - i\frac{v}{u^2 + v^2} = x + i$$
+Equate imaginary components and express a relationship between $u$ and $v$ in the $w$-plane. 
+\begin{align*}
+&\frac{-v}{u^2 + v^2} = 1 \\
+\Rightarrow \hspace{2mm}&-v = u^2 + v^2 \\
+\Rightarrow \hspace{2mm}&u^2 + v^2 + v = 0 \\
+%\Rightarrow &u^2 + v^2 + v + \frac{1}{4} = \frac{1}{4} \\ 
+\Rightarrow \hspace{2mm}&u^2 + \left(v + \frac{1}{2}\right)^2 = \left(\frac{1}{2}\right)^2 
+\end{align*}
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_9}
+\centering
+\end{figure}
+If we wanted the image of $\Re(z) = 1$, we would have solved a similar equation but set $\Re(f^{-1}(w)) = 1$ and found similar conditions on $u$ and $v$ because $\frac{1}{z}$ has radial symmetry. \\
+\newline
+\textbf{Follow-Up Question.} How does the orientation of the circle behave if we traverse the horizontal line from left to right? Counter-clockwise! \\
 
 \newpage
 \section{Bilinear Transformations}
@@ -931,19 +966,21 @@ where $a, b, c, d \in \mathbb{C}$. \\
 Now, $f(\infty) = \frac{a}{c}$ by L'Hospital argument and we say $f(-\frac{d}{c}) = \infty$. \\
 If $ad - bc \neq 0$, then $f' \neq 0$ by the quotient rule and $f$ is not constant. The constants are not unique, as $f(z) = \frac{az + b}{cz + d} = \frac{(az+b)k}{(cz + d)k}$. Therefore, we only have 3 degrees of freedom. \\
 \subsection{Brief Review of other Transformations}
-We have already seen these functions of this form before $f$ is: \\
-\circled{\scriptsize1} Composition of a finite number of 
-\[ \begin{cases} 
-	\mbox{Translations}, f(z) = z + k \\
-	\mbox{Rotations}, f(z) = e^{i\theta}z \\
-	\mbox{Dilations}, f(z) = kz, k \in \mathbb{R} \\
-	\mbox{Inversions}, f(z) = \frac{1}{z}\\
-   \end{cases}
-\]
-\circled{\scriptsize2} Conformal, $f$ is holomorphic away from $z = -\frac{d}{c}$, $f' \neq 0$, and f is one-to-one. \\
-\circled{\scriptsize3} Maps circles/lines to either lines or circles, "lines are circles of $\infty$-radius in $\mathbb{C}$ or $\mathbb{C} \cup \{\infty\}$. \\
-If the line or circle passes through $z = -\frac{d}{c}$, where $f$ is undefined, then it will be mapped to a line. Otherwise, it is mapped to a circle. \\
-\circled{\scriptsize4} $f$ can be identified by 
+We have already seen these functions of this form before $f$ is: 
+\begin{enumerate}[leftmargin = *, nolistsep]
+\item Composition of a finite number of 
+$$
+\begin{cases} 
+	\text{Translations}, f(z) = z + k \\
+	\text{Rotations}, f(z) = e^{i\theta}z \\
+	\text{Dilations}, f(z) = kz, k \in \mathbb{R} \\
+	\text{Inversions}, f(z) = \frac{1}{z}\\
+\end{cases}
+$$
+\item Conformal, $f$ is holomorphic away from $z = -\frac{d}{c}$, $f' \neq 0$, and f is one-to-one. 
+\item Maps circles/lines to either lines or circles, "lines are circles of $\infty$-radius in $\mathbb{C}$ or $\mathbb{C} \cup \{\infty\}$. \\
+If the line or circle passes through $z = -\frac{d}{c}$, where $f$ is undefined, then it will be mapped to a line. Otherwise, it is mapped to a circle. 
+\item $f$ can be identified by 
 \begin{equation*}
 A = 
 \begin{bmatrix}
@@ -960,74 +997,82 @@ Then,
 \]
 and so there is a group homomorphism with Möbius transforms and invertible matrices in $\mathbb{C}^{2 \times 2}$. \\
 $f(z) = (3 + 2i)z - i^3 = \frac{(3 + 2i)z - i^3}{\delta z + 1}$ \\
-\circled{\scriptsize5} We can conformally map 3 points in $\mathbb{C} \cup \{\infty\}$ to any 3 points in $\mathbb{C} \cup \{\infty\}$. \\
-This type of argument is similar to showing norms are equivalent in $\mathbb{R}^n$ or uniqueness of power series expansions. \\
+\item We can conformally map 3 points in $\mathbb{C} \cup \{\infty\}$ to any 3 points in $\mathbb{C} \cup \{\infty\}$. \\
+This type of argument is similar to showing norms are equivalent in $\mathbb{R}^n$ or uniqueness of power series expansions. 
+\end{enumerate}
 \subsection{Möbius transforming of a function}
 Given any 3 points $z_0$, $z_1$, $z_2$ $\in \mathbb{C}$, we can create a Möbius transformation $T$ such that  
-
 \begin{alignat*}{2}
     & \begin{aligned} & \begin{cases}
   T(z_0) = 0\\
   T(z_1) = 1\\
-  T(z_2) = \infty \\
-  \end{cases}\\
+  T(z_2) = \infty 
+  \end{cases}
   \MoveEqLeft[-1]\text{}
   \end{aligned}
     & \hskip 6em &
-  \begin{aligned}
-  & \begin{cases}
+  \begin{aligned} & \begin{cases}
   T^{-1}(0) = z_0\\
   T^{-1}(1) = z_1\\
-  T^{-1}(\infty) = z_2\\
-  \end{cases} \\[0ex]
+  T^{-1}(\infty) = z_2
+  \end{cases} 
   \MoveEqLeft[-1]\text{}
   \end{aligned}
 \end{alignat*}
-
-Then 
+Then the \textit{cross-ratio} of $z$, $z_0$, $z_1$, and $z_2$ is defined as: 
 $$T(z) = (z, z_0, z_1, z_2) = \frac{(z -z_0)(z_1 - z_2)}{(z - z_2)(z_1 - z_0)}$$
-is called the cross-ratio of $z$, $z_0$, $z_1$, and $z_2$. \\
 There are some special cases: 
-\[ \begin{cases} 
+$$
+\begin{cases} 
 	(z, \infty, z_1, z_2) = \frac{z_1 - z_2}{z - z_2} \\
 	(z, z_0, \infty, z_2) = \frac{z - z_0}{z - z_2} \\
 	(z, z_0, z_1, \infty) = \frac{z - z_0}{z_1 - z_0}\\
-   \end{cases}
-\]
+\end{cases}
+$$
 Given 3 more points $w_0, w_1, w_2 \in \mathbb{C}$, we get $S(w) = (w, w_0, w_1, w_2)$. Then, we can construct the function map: 
-$$ z_0 \overset{T}{\longrightarrow} 0 \overset{S}{\longleftarrow} w_0 $$
-$$ z_1 \longrightarrow 0 \longleftarrow w_1$$
-$$ z_2 \longrightarrow 0 \longleftarrow w_2$$
-
-%$$A\xleftarrow{n+\mu-1}B \xrightarrow[T]{n\pm i-1}C$$
-%$\overset{x}{\longrightarrow} ( $ \overset{x}{\longrightarrow}$).$
-Then $w = f(z) = S^{-1} \circ T(z)$ maps $z_0 \to w_0$, $z_1 \to w_1$, and $z_2 \to w_2$. \\
-The points must be distinct, because $f$ is one-to-one. \\
-To find $f$ from above, we solve $(z, z_0, z_1, z_2) = (w, w_0, w_1, w_2)$ for $w$. \\
+\begin{align*}
+z_0 &\overset{T}{\longrightarrow} 0 \overset{S}{\longleftarrow} w_0 \\
+z_1 &\longrightarrow 0 \longleftarrow w_1\\
+z_2 &\longrightarrow 0 \longleftarrow w_2
+\end{align*}
+Then $w = f(z) = S^{-1} \circ T(z)$ maps $z_0 \to w_0$, $z_1 \to w_1$, and $z_2 \to w_2$. The points must be distinct, because $f$ is one-to-one. To find $f$ from above, we solve $(z, z_0, z_1, z_2) = (w, w_0, w_1, w_2)$ for $w$. \\
 \newline
 \textbf{Example.} \\
-Suppose 
-$$z_0 = 1 \to i = w_0$$
-$$z_1 = -1 \to 1 = w_1$$
-$$z_2 = 1 \to -1 = w_2$$
-then 
-$$\frac{(w - i)(1 - (-1))}{(w - (-1))(1-i)} = \frac{2(w - i)}{(w + 1)(1 - i)} = \frac{(z - i)(-1-1)}{(z - 1)(-1 - i)} = \frac{-2(z - i)}{(z-1)(-1-i)} = \frac{2(z-i)}{(z-1)(1+i)}$$
-$$ \Rightarrow \frac{w - i}{(w +1)(1 -i )} = \frac{z - i}{(z - 1)(1 + i)}$$
-$$ \Rightarrow (w - i)(z - 1)(1 + i) = (w + 1)(1 - i)(z - i)$$
-$$ \Rightarrow w = -\frac{1}{z}$$
-It is much work to find a simple function. Mapping a set of three points to another set of three points is time-consuming. If we study Möbius transforms as conformal mappings, then we can introduce another way to move the three points around. \\
+Let us find a Möbius transformation that maps the following points: 
+\begin{align*}
+z_0 &= 1 \to i = w_0 \\ 
+z_1 &= -1 \to 1 = w_1 \\
+z_2 &= 1 \to -1 = w_2 
+\end{align*}
+Therefore, we need to solve the equation:
+\begin{align*}
+&\frac{(w - i)(1 - (-1))}{(w - (-1))(1-i)} = \frac{2(w - i)}{(w + 1)(1 - i)} = \frac{(z - i)(-1-1)}{(z - 1)(-1 - i)} \\
+= &\frac{-2(z - i)}{(z-1)(-1-i)} = \frac{2(z-i)}{(z-1)(1+i)}\\
+\Longrightarrow \hspace{2mm}&\frac{w - i}{(w +1)(1 -i )} = \frac{z - i}{(z - 1)(1 + i)} \\
+\Longrightarrow \hspace{2mm}&(w - i)(z - 1)(1 + i) = (w + 1)(1 - i)(z - i) \\
+\Longrightarrow \hspace{2mm}&w = -\frac{1}{z}
+\end{align*}
+It is much work to find a simple function to mapping a set of three points to another set of three points. If we study Möbius transforms as conformal mappings, then we can introduce another way to move the three points around. 
 
 \textbf{Example.} Find a Möbius transform to map the unit disk $|z| < 1$ to $\Im(z) > 0$. \\
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_10}
+\centering
+\end{figure}
 If we pick where 3 points go, say on the boundary of $\Omega$, to the boundary of $\Im(z) > 0$, which is the $\mathbb{R}$-axis, then we can construct $f(z)$. We also need one point to get mapped to $\infty$, but we have $\infty$-many choices for the three points. \\
 We want $f(-1) = 0$, $f(-1) = 1$, and $f(1) = \infty$, that will be 
 $$f(z) = (z, -1, -i, 1) = \frac{(z - z_0)(z_1 - z_2)}{(z - z_2)(z_1 - z_0)} = \frac{(z + 1)(-i - 1)}{(z - 1)(-i + 1)} = -i\frac{z + 1}{z - 1}$$
 Our path's direction around the circle has to be preserved because $f$ is conformal. \\
 This means points on the interior of the circle will get mapped to the upper half of $\mathbb{C}$. \\
 To check, we see that $f(0) = i, \Im(f(0)) > 0$. Therefore, the function we found out is correct. \\
-
+\newline
 \textbf{Example.} Find a Möbius transform to map the unit disk $|z| < 1$ to $\Im(z) > 0$ and $\Re(z) > 0$. \\
 Using the conclusion from the example above, the new desired function is simply 
 $g(z) = (f(z))^{\frac{1}{2}}$.
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{9_11}
+\centering
+\end{figure}
 
 \newpage
 \section{Contour Integral in $\mathbb{C}$}
