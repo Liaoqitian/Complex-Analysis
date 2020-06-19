@@ -1253,7 +1253,7 @@ and the Cauchy Riemann Equations imply $if_x = f_y$. Therefore,
 $$\oint_{\partial \Omega} f(z) \, dz = 0$$
 Do not worry about how the proof above works in different kinds of sets, assume $\Omega$ is simply-connected. Some book build up to simply-connected over triangles, rectangles or circles, but the end result is the same. \\
 \newline
-\textbf{Corollary of Cauchy's Theorem.} \\
+\textbf{Corollary of Cauchy-Goursat Theorem.} \\
 Let $C_1$ and $C_2$ be paths from $z_0$ to $z_1$. Then $C_1 \cup -C_2$ is a closed loop in $\mathbb{C}$. 
 \begin{figure}[H]
 \includegraphics[scale = 0.2]{12_1}
@@ -1380,50 +1380,89 @@ Each approach, path integration or directly invoking the F.T.C, works but we nee
 
 \newpage
 \section{Cauchy's Integral Formula}
+Where a function is holomorphic changes the value of line integrals. 
+\begin{align*}
+\oint_{|z| = \varepsilon} \frac{1}{z} \, dz &= 2\pi i \\
+\oint_{|z| = \varepsilon} \conj{z} \, dz &= 2\pi i \varepsilon^2
+\end{align*}
+Note that $\frac{1}{z}$ is not holomorphic on sets containing 0. However, if $0 \notin \Omega$, then $\oint_{\partial \Omega}\frac{dz}{z} = 0$. But $\conj{z}$ is nowhere holomorphic. We know 
+$$ \int_0^3 f(x) \, dx - \int_1^2f(x) \, dx = \int_{[0, 1]\cup[2, 3]}f(x) \, dx$$
+\vspace{-5mm}
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{13_1}
+\centering
+\end{figure}
+This result can be generalized into if $\Omega_2 \subset \Omega_1$, 
+$$ \oint_{\partial(\Omega_1 \backslash \Omega_2)}f(z) \, dz = \oint_{\partial \Omega_1} f(z) \, dz - \oint_{\partial \Omega_2} f(z) \, dz$$
+Applying Cauchy-Goursat Theorem to a connected set with disjoint boundaries is easy: 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{13_2}
+\centering
+\end{figure}
+Let us now look at something more complicated, such as $\Omega_1 \cap \Omega_2^C$. We traverse outer curve $C_1$ counter-clockwise and inner curve $C_2$ counter-clockwise. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{13_3}
+\centering
+\end{figure}
+We construct the big curve $C: C_1 \cup C_3 \cup -C_2 \cup -C_3$. Notice that we need $-C_2$ so that our path keeps the interior of $\Omega$ on its left. The curve $C_3$ cuts our set and so we can have a simply-connected region and can invoke Cauchy-Goursat Theorem. 
+\begin{align*}
+0 = \oint_{C}f(z) \, dz = \oint_{C_1} f(z) \, &dz - \oint_{C_2} f(z) \, dz - \oint_{C_3} f(z) \, dz - \oint_{C_3} f(z) \, dz \\ 
+\Longrightarrow &\int_{C_1}f(z) \, dz = \int_{C_2}f(z) \, dz
+\end{align*}
+
+
 \textbf{First Extension of Cauchy-Goursat Theorem.} \\
 Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, each oriented counter-clockwise. If $f$ is holomorphic on $\Omega$, then 
 $$ \oint_{C_1}f(z) \,dz = \oint_{C_2}f(z) \,dz $$
-or
-$$\oint_{C_1 \cup -C_2}f(z) \, dz$$
-\newline
+in other words, 
+$$\oint_{C_1 \cup -C_2}f(z) \, dz = 0$$
 \newline
 \textbf{Second Extension of Cauchy-Goursat Theorem. } \\
-Let $g(z)$ be holomorphic on $\Omega \backslash \{z_0\}$, $g(z)$ is continuous on $\Omega$, $g(z_0)$ is finite. Then
+Suppose $g(z)$ is holomorphic on $\Omega \backslash \{z_0\}$, $g(z)$ is continuous on $\Omega$, $g(z_0)$ is finite. Then
 $$\oint_C g(z) \,dz = 0$$
-for any closed curve $C$ in $\Omega$ and $g(z)$ is holomorphic in $\Omega$. \\
+for any closed curve $C$ in $\Omega$ and $g(z)$ is holomorphic in $\Omega$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{13_4}
+\centering
+\end{figure}
 \textbf{Proof.} By First Extension of Cauchy-Goursat Theorem 
 $$\oint_C g(z) \,dz = \oint_{|z - z_0| = \varepsilon} g(z) \, dz$$
-and 
+and by ML-Estimate
 $$\oint_{|z - z_0| = \varepsilon} |g(z)| \, dz \leqslant M_{\varepsilon}\cdot 2\pi \cdot \varepsilon$$
 Since $g$ is continuous, $M_\varepsilon$ is bounded and as $\varepsilon \to 0$, we have 
-$$\oint_C g(z) \,dz = 0$$
+$\oint_C g(z) \,dz = 0$.
 Therefore, $g$ is holomorphic on $\Omega$, $g'(z_0)$ exists by Morera's Theorem. \\
-\newline
-The second extension of Cauchy-Goursat Theorem gives us Cauchy Integral Formula. \\
+The second extension of Cauchy-Goursat Theorem gives us Cauchy's Integral Formula. \\
 Assume $f$ is holomorphic on $\Omega$, $0 \in \Omega$. Let 
 $$g(z) = \frac{f(z) - f(0)}{z - 0} = \frac{f(z) - f(0)}{z}$$ 
 as $z \to 0$, $g(0) = f'(0)$. Our function $g(z)$ is holomorphic on $\Omega \backslash \{z_0\}$ and continuous on $\Omega$, so the second extension of Cauchy-Goursat Theorem holds. \\
 Let $C$ be a curve in $\Omega$, by our last result 
-$$\oint_C g(z) \, dz = \oint_C \frac{f(z) - f(0)}{z} \, dz = 0$$
-$$\Rightarrow \oint_C \frac{f(z)}{z} \, dz = \oint_C \frac{f(0)}{z} \, dz = f(0)\oint_C \frac{dz}{z} = 2\pi if(0)$$
-We showed before that 
-$$ \oint_C \frac{dz}{z} = 2\pi i$$
-Therefore, 
+\begin{align*}
+&\oint_C g(z) \, dz = \oint_C \frac{f(z) - f(0)}{z} \, dz = 0 \\ 
+\Rightarrow &\oint_C \frac{f(z)}{z} \, dz = \oint_C \frac{f(0)}{z} \, dz = f(0)\oint_C \frac{dz}{z} = 2\pi if(0) 
+\end{align*}
+We showed before that $ \oint_C \frac{dz}{z} = 2\pi i$. Therefore, 
 $$f(0) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z} \,dz$$
 This means that the value of $f$ at $z = 0$ only depends on the value of $\frac{f(z)}{z}$ over circles centered at 0. This result can be further generalized to Cauchy Integral Formula. \\
 \newline
 \textbf{Cauchy's Integral Formula. (C.I.F)} \\
 Let $C$ be a smooth closed curve with interior domain $\Omega$. If $f$ is holomorphic on $\Omega$ and continuous on $\Omega$'s closure, 
 $$f(z) = \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \, dw, z \in \Omega$$
-\newline 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{13_5}
+\centering
+\end{figure} 
 \textbf{Example.}
 $$ \oint_{|z| = 6} \frac{e^{z^2}}{z - 4} = 2\pi if(4) = 2\pi i e^{16}, f(z) = e^{z^2}$$
-However, 
-\begin{equation*}
-\oint_{|z| = 3} \frac{e^{z^2}}{z - 4} = 0 \mbox{ by Cauchy-Goursat Theorem }
-\end{equation*}
-\newline 
-\newline
+However, we have to be careful about the $z \in \Omega$ constraint. 
+$$ \oint_{|z| = 3} \frac{e^{z^2}}{z - 4} = 0 \text{ by Cauchy-Goursat Theorem }$$
+\textbf{Example.}
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{13_6}
+\centering
+\end{figure} 
+\vspace{-5mm}
+$$\oint_{C}\frac{e^{z^2}}{z - 4} \, dz= \oint_{C_1\cup C_2}\frac{e^{z^2}}{z - 4} \, dz = \oint_{C_1}\frac{e^{z^2}}{z - 4}\, dz + \oint_{C_2}\frac{e^{z^2}}{z - 4}\, dz$$
 \textbf{Extension of Cauchy's Integral Formula.} \\
 Cauchy's Integral Formula can be naturally expanded to $f'(z)$, 
 $$ f'(z) = \frac{1}{2\pi i}\oint_C \frac{f'(w)}{w - z} \, dw = \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z)^2} \, dw, z \in \Omega$$
