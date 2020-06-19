@@ -1056,7 +1056,7 @@ It is much work to find a simple function to mapping a set of three points to an
 
 \textbf{Example.} Find a Möbius transform to map the unit disk $|z| < 1$ to $\Im(z) > 0$. \\
 \begin{figure}[H]
-\includegraphics[scale = 0.2]{9_10}
+\includegraphics[scale = 0.2]{10_1}
 \centering
 \end{figure}
 If we pick where 3 points go, say on the boundary of $\Omega$, to the boundary of $\Im(z) > 0$, which is the $\mathbb{R}$-axis, then we can construct $f(z)$. We also need one point to get mapped to $\infty$, but we have $\infty$-many choices for the three points. \\
@@ -1070,47 +1070,56 @@ To check, we see that $f(0) = i, \Im(f(0)) > 0$. Therefore, the function we foun
 Using the conclusion from the example above, the new desired function is simply 
 $g(z) = (f(z))^{\frac{1}{2}}$.
 \begin{figure}[H]
-\includegraphics[scale = 0.2]{9_11}
+\includegraphics[scale = 0.2]{10_2}
 \centering
 \end{figure}
+
 
 \newpage
 \section{Contour Integral in $\mathbb{C}$}
 Let $\gamma(t) = x(t) + iy(t)$ be a curve in $\mathbb{C}$ where $\gamma(a) = z_0$ and $\gamma(b) = z_1$. \\
 Let $C$ be the graph of $\gamma(t)$, $C = \{z | z = \gamma(t) \mbox{ for some } t \in [a, b] \}$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{11_1}
+\centering
+\end{figure}
 \subsection{Piecewise Differentiable, Smooth, Simple, Closed curves}
 \textbf{Piecewise Differentiable curves.} \\
-The curve determined by $\gamma$, its graph $C$, is considered piecewise differentiable if 
-\begin{enumerate}
+The curve determined by $\gamma$, its graph $C$, is considered \textit{piecewise differentiable} if 
+\begin{enumerate}[leftmargin = *, nolistsep]
 \item $x$ and $y$ are continuous on [a, b]
-\item $x'$ and $y'$ are continuous on a partition of $[a, b]$, $[x_0, x_1] \cup [x_1, x_2] \cup [x_2, x_3] \cup \cdots \cup [x_{n - 1}, x_n]$
+\item $x'$ and $y'$ are continuous on a partition of $[a, b]$, $[x_0, x_1] \cup [x_1, x_2] \cup [x_2, x_3] \cup \cdots \cup [x_{n - 1}, x_n]$ \\
 \end{enumerate} 
-
 \textbf{Smooth curves.} \\
 If $\gamma' \neq 0$ for only finitely many points, then the curve is considered smooth. \\
 
 \textbf{Simple curves.} \\
 A curve is simple if it does not intersect itself, i.e. $\gamma(t) = \gamma(s)$ if and only if $s = t$. \\
-
+\begin{figure}[H]
+\includegraphics[scale = 0.18]{11_2}
+\centering
+\end{figure}
 \textbf{Closed curves.} \\
-$C$ is a closed curve if it starts and stops at the same point, i.e. $\gamma(a) = \gamma(b), t \in [a, b]$ 
-
-\subsection{Interior and Exterior of curves} 
-A closed and simple curve keeps the interior of the set on its left side and its exterior to the right. \\
-This means we traverse circles counter-clockwise to describe their interior correctly. \\
+$C$ is a closed curve if it starts and stops at the same point, i.e. $\gamma(a) = \gamma(b), t \in [a, b]$ \\
 \newline
+\textbf{Interior and Exterior of Curves.} \\
+A closed and simple curve keeps the interior of the set on its left side and its exterior to the right. \\
+This means we traverse circles counter-clockwise to describe their interior correctly. 
+\begin{figure}[H]
+\includegraphics[scale = 0.18]{11_3}
+\centering
+\end{figure}
 \textbf{Jordan Curve Theorem.} \\
 A closed and simple curve partitions $\mathbb{C}$ into two regions, one of them bounded, defined as the interior of the curve. 
 
 \subsection{Smoothly Equivalent}
-The parameter $t$ provides an orientation or direction to $C$. \\
-Let 
+The parameter $t$ provides an orientation or direction to $C$. Let 
 \[ \begin{cases} 
 	C_1: \gamma_1(t), t \in [a, b] \\
 	C_2: \gamma_2(t), t \in [c, d]\\
    \end{cases}
 \]
-We say $C_1$ and $C_2$ are smoothly equivalent if there exists a one-to-one, continuous derivative mapping $\lambda(t)$, 
+We say $C_1$ and $C_2$ are \textit{smoothly equivalent} if there exists a one-to-one, continuous derivative mapping $\lambda(t)$, 
 $$\lambda(t): [c, d] \to [a, b]$$ 
 $$\lambda(c) = a$$
 $$\lambda(d) = b$$ 
@@ -1118,36 +1127,40 @@ $$\lambda'(t) > 0$$
 \begin{equation*}
 \mbox{where } \gamma_1(\lambda(t)) = \gamma_2(t)
 \end{equation*}
-\textbf{Example.}
+\textbf{Example.} Suppose we have the following two curves. 
 \[ \begin{cases} 
 	C_1: \gamma_1(t) = \cos(t) + i\sin(t), t \in [0, 2\pi] \\
 	C_2: \gamma_2(t) = \cos(2t) + i\sin(2t),  t \in [0, \pi]\\
    \end{cases}
 \]
-Here $C_1$ and $C_2$ are smoothly equivalent, since we can let $\lambda(t) = 2t$. \\
-Both parametrize the unit circle, preserve the orientation, and pass through each point the same number of times. \\
+Here $C_1$ and $C_2$ are smoothly equivalent, since we can let $\lambda(t) = 2t$. Both parametrize the unit circle, preserve the orientation, and pass through each point the same number of times. \\
 Let us look at other two curves: 
-\[ \begin{cases} 
+$$
+\begin{cases} 
 	\gamma_3(t) = \cos(4t) + i\sin(4t), t \in [0, \pi] \\
 	\gamma_4(t) = \cos(t) + i\sin(-t),  t \in [0, 2\pi]\\
-   \end{cases}
-\]
-$\gamma_3$ traverses the circle multiple times and $\gamma_4$ has the opposite orientation of $\gamma_1$ and $\gamma_2$. \\
-\newline
+\end{cases}
+$$
+$\gamma_3$ traverses the circle multiple times and $\gamma_4$ has the opposite orientation of $\gamma_1$ and $\gamma_2$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.18]{11_4}
+\centering
+\end{figure}
 Let $-C$ be the curve $C$ but with a reversed orientation, $\gamma_{R}(t) = \gamma(b + a -t)$. 
-\[ \begin{cases} 
+$$
+\begin{cases} 
 	C_1: \gamma_1(t) = \cos(t) + i\sin(t), t \in [0, 2\pi] \\
 	-C_1: \gamma_4(t) = \cos(t) + i\sin(-t),  t \in [0, 2\pi]\\
-   \end{cases}
-\]
-We want to integrate $f(z)$ over curves $C$ in $\mathbb{C}$. These will factor into the computation: 
-\[ \begin{cases} 
-	\mbox{Orientation of } C\\
-	\mbox{Number of times } C \mbox{ traverses itself} \\
-	C \mbox{ is closed} \\
-	f \mbox{ is holomorphic on the interior of } C \mbox{ and } C
-   \end{cases}
-\]
+\end{cases}
+$$
+\newpage
+When we want to integrate $f(z)$ over curves $C$ in $\mathbb{C}$, the following will factor into the computation: 
+\begin{enumerate}[leftmargin = *, nolistsep]
+\item Orientation of $C$. 
+\item Number of times $C$ traverses itself.
+\item	$C$ is closed. 
+\item	$f$ is holomorphic on the interior of $C$ and $C$.
+\end{enumerate}
 \subsection{Line Integral}
 The line integral of $f$ over $C$ is given by 
 $$\int_C f(z) \,dz = \int_C u(z) + iv(z) \,dz = \int_C u(z) + iv(z) \,{(dx + idy)} = \int_{a}^{b} f(\gamma(t))\gamma'(t) \,dt$$
