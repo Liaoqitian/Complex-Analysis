@@ -1164,47 +1164,76 @@ When we want to integrate $f(z)$ over curves $C$ in $\mathbb{C}$, the following 
 \subsection{Line Integral}
 The line integral of $f$ over $C$ is given by 
 $$\int_C f(z) \,dz = \int_C u(z) + iv(z) \,dz = \int_C u(z) + iv(z) \,{(dx + idy)} = \int_{a}^{b} f(\gamma(t))\gamma'(t) \,dt$$
-If $C$ is a closed curve, $\gamma(a) = \gamma(b)$, then we can use a closed loop in our $\int$ symbol, $\oint_C f(z) \,dz$ \\
+If $C$ is a closed curve, $\gamma(a) = \gamma(b)$, then we can use a closed loop in our $\int$ symbol, $\oint_C f(z) \,dz$. \\
 The term $\gamma'(t)dt$ controls for how fast we traverse the curve. The integral is independent of our choice of smoothly equivalent curve, $C_1$ or $C_2$. \\
 \newline
-\textbf{Proposition.} Let $C_1$ and $C_2$ be smoothly equivalent, \\
+\textbf{Proposition.} Let $C_1$ and $C_2$ be smoothly equivalent,
 $$\int_{C_1} f(z) \,dz = \int_{C_2} f(z) \,dz$$
 \textbf{Proof.} Let $\gamma_1(\lambda(t)) = \gamma_2(t)$ and apply change of variables. \\
 Because $u = \lambda(t), u(c) = a, u(d) = b$ and $\gamma_1'(\lambda(t))\lambda'(t) = \gamma_2'(t)$, 
 $$\int_{c}^{d} f(\gamma_2(t))\gamma_2'(t)\,dt = \int_{c}^{d}f(\gamma_1(\lambda(t)))\gamma_1'(\lambda(t))\lambda'(t)\,dt = \int_{a}^{b}f(\gamma_1(u))\gamma_1'(u)\,du$$
-\textbf{Proposition.} 
+\textbf{Proposition.} For any curve $C$, 
 $$-\int_{C} f(z) \,dz = \int_{-C} f(z) \,dz$$
-\textbf{Proof.}
+\textbf{Proof.} Let $\gamma_R(t)$ be $\gamma(t)$ with reversed orientation. 
 $$\int_{-C} f(z) \,dz = \int_{b}^{a}f(\gamma_R(t))\gamma_R'(t) \,dt = \int_{b}^{a}f(\gamma(t))\gamma'(t) \,dt$$
-\newline
-\textbf{Proposition.} Linearity holds: 
+\textbf{Proposition.} Linearity holds with integrals. 
 $$\int_C \alpha f(z) + g(z) \,dz = \alpha \int_C f(z) \,dz + \int_C g(z) \,dz$$
-
-\textbf{Example.} Find $\oint_{|z| = 1} \frac{1}{z} \,dz = \int_{0}^{2\pi} f(\gamma(t))\gamma'(t) \,dt$ \\
-We parametrize the curve as follows: \\
-$C$: $\gamma(t) = \cos(t) + i\sin(t)$, $t \in [0, 2\pi]$,  $\gamma'(t) = -\sin(t) + i\cos(t)$ \\
-$$\frac{1}{z} = \frac{x}{x^2 + y^2} - i\frac{y}{x^2 + y^2}$$
+\textbf{Example.} Suppose we have a function $f$ and a curve $C$ defined as follows and then derive $\int_C f(z) \, dz$. 
+\begin{align*}
+f(z) &= \Re(z)^2 + i\Im(z)^2 = x^2 + iy^2 \\ 
+C: \gamma(t) &= t + 2it, t \in [0, 1] \\
+\gamma'(t) &= 1 + 2i
+\end{align*}
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{11_5}
+\centering
+\end{figure}
+Then we use the formula for line integrals.
+\begin{align*}
+\int_C f(z) \, dz &= \int_0^1f(\gamma(t))\gamma'(t) \,dt \\ 
+&= \int_0^1\left((t)^2 + i(2t)^2\right)(1 + 2i) \, dt \\
+&= (1 + 2i)\int_0^1t^2 \, dt + (1 + 2i)i\int_0^14t^2 \, dt \\ 
+&= (1 + 2i)\frac{t^3}{3} \bigg\rvert_{t = 0}^1 + (-2 + i)\frac{4}{3}t^3\bigg\rvert_{t = 0}^1 \\ 
+&= \frac{1}{3} + \frac{2}{3}i - \frac{8}{3} + \frac{4}{3}i \\
+&= -\frac{7}{3} + 2i
+\end{align*}
+\textbf{Example.} Let us find 
+$$\oint_{|z| = 1} \frac{1}{z} \,dz = \int_{0}^{2\pi} f(\gamma(t))\gamma'(t) \,dt, \text{ and } \frac{1}{z} = \frac{x}{x^2 + y^2} - i\frac{y}{x^2 + y^2} $$ 
+where the curve is parametrized as
+$C$: $\gamma(t) = \cos(t) + i\sin(t)$, $t \in [0, 2\pi]$. So $\gamma'(t) = -\sin(t) + i\cos(t)$. 
 $$\int_0^{2\pi}f(\gamma(t))\gamma'(t) \,dt = \int_0^{2\pi}(\cos(t) - i\sin(t))(-\sin(t) + i\cos(t)) \,dt = \int_0^{2\pi}i \,dt = 2\pi i$$
-There is another way to parametrize the curve: \\
-$\gamma(t) = re^{it}$, $\gamma'(t) = ire^{it}$
-$$\oint_{|z| = r} \frac{1}{z} \,dz = \int_0^{2\pi} f(re^{it})ire^{it} \,dt = i\int_0^{2\pi}e^{-it}e^{it} \,dt = \int_0^{2\pi}i \,dt = 2\pi i$$
+There is another way to parametrize the curve: let $\gamma(t) = re^{it}$, so $\gamma'(t) = ire^{it}$.
+$$\oint_{|z| = r} \frac{1}{z} \,dz = \int_0^{2\pi} f\left(re^{it}\right)ire^{it} \,dt = i\int_0^{2\pi}e^{-it}e^{it} \,dt = \int_0^{2\pi}i \,dt = 2\pi i$$
 From this example, we have the following famous result. \\
 \newline
 \textbf{Proposition.} The following holds with proof shown above.
-\begin{equation*} 
-\oint_{|z| = r} z^k \,dz = 0 \mbox{ for all } k \in \mathbb{Z}, k \neq -1, r > 0. 
-\end{equation*}
-\begin{equation*}
-\oint_{|z| = r} \frac{1}{z} \,dz = \int_0^{2\pi} i \,dt = 2\pi i \mbox{ for r} > 0 
-\end{equation*}
+\begin{align*}
+\oint_{|z| = r} z^k \,dz &= 0 \text{ for all } k \in \mathbb{Z}, k \neq -1, r > 0. \\
+\oint_{|z| = r} \frac{1}{z} \,dz &= \int_0^{2\pi} i \,dt = 2\pi i \text{ for r} > 0 
+\end{align*}
 \newline
-\textbf{ML Estimate.} \\
+\textbf{Example.} Suppose $G(t)$ is a continuous complex function of $t$, $G: \mathbb{R} \to \mathbb{C}$. Then 
+\begin{align*}
+&\abs*{\int_a^bG(t)\,dt} \leqslant \int_a^b|G(t)|\,dt \text{, let } Re^{i\theta} = \int_a^b G(t) \,dt \\
+\Longrightarrow \hspace{2mm}&R = \int_a^be^{-i\theta}G(t)\,dt = \int_a^b\Re\left(e^{-i\theta}G(t)\right)\,dt 
+\end{align*}
+The equations hold because $e^{-i\theta}$ is constant in $t$ and the imaginary part of $\int_a^be^{-i\theta}G(t) \, dt$ can be removed since $R \in \mathbb{R}$. 
+But we know $\Re(z) \leqslant |\Re(z)| \leqslant |z|$, and thus by monotonicity of Riemann integration, we get 
+\begin{align*}
+0 < R &= \int_a^b\Re\left(e^{-i\theta}G(t)\right)\,dt \\
+&\leqslant \int_a^b \abs*{\Re\left(e^{-i\theta}G(t)\right)} \,dt \\
+&\leqslant \int_a^b \abs[\Big]{e^{-i\theta}G(t)} \,dt \\
+&= \int_a^b|G(t)| \, dt \text{ because } \abs[\Big]{e^{-i\theta}} = 1 
+\end{align*}
+This leads to a useful result on line integrals in $\mathbb{C}$, which is ML-Estimate. \\
+\newline
+\textbf{ML-Estimate.} \\
 Let $f$ be a complex-valued, continuous function and $|f(z)| < M$ on $C$, a curve of length $L$, then 
-$$|\int_Cf(z) \,dz| \leqslant M \cdot L$$
+$$\abs*{\int_Cf(z) \,dz} \leqslant M \cdot L$$
 \textbf{Proof.}
 $$ \abs*{\int_a^b f(\gamma(t))\gamma'(t) \,dt} \leqslant \int_a^b|f(\gamma(t))\gamma'(t)| \,dt \leqslant M\int_a^b|\gamma_1'(t)| \,dt = M \cdot L$$
 where $\int_a^b|\gamma_1'(t)| \,dt$ is the arclength of $\gamma$. \\
-We do not have to worry about the orientation of $C$, 
+Furthermore, we do not have to worry about the orientation of $C$, 
 $$ \abs*{\int_{-C}f(z) \,dz} \leqslant M \cdot L$$
 \newpage
 

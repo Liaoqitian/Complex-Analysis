@@ -40,27 +40,27 @@
 \contentsline {subsection}{\numberline {11.1}Piecewise Differentiable, Smooth, Simple, Closed curves}{36}%
 \contentsline {subsection}{\numberline {11.2}Smoothly Equivalent}{37}%
 \contentsline {subsection}{\numberline {11.3}Line Integral}{38}%
-\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{40}%
-\contentsline {subsection}{\numberline {12.1}Cauchy's Closed Curve Theorem}{40}%
-\contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{41}%
-\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{44}%
-\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{47}%
-\contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{47}%
-\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{48}%
-\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{52}%
-\contentsline {subsection}{\numberline {15.1}Convergence Tests}{53}%
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{56}%
-\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{57}%
-\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{58}%
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{60}%
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{63}%
-\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{63}%
-\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{64}%
-\contentsline {section}{\numberline {19}Laurent Series}{66}%
-\contentsline {section}{\numberline {20}Residue Theorem}{70}%
-\contentsline {subsection}{\numberline {20.1}Singularity and Root}{70}%
-\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{72}%
-\contentsline {section}{\numberline {21}Improper Integrals}{78}%
-\contentsline {subsection}{\numberline {21.1}Principal Value}{78}%
-\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{79}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{88}%
+\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{41}%
+\contentsline {subsection}{\numberline {12.1}Cauchy's Closed Curve Theorem}{41}%
+\contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{42}%
+\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{45}%
+\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{48}%
+\contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{48}%
+\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{49}%
+\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{53}%
+\contentsline {subsection}{\numberline {15.1}Convergence Tests}{54}%
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{57}%
+\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{58}%
+\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{59}%
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{61}%
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{64}%
+\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{64}%
+\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{65}%
+\contentsline {section}{\numberline {19}Laurent Series}{67}%
+\contentsline {section}{\numberline {20}Residue Theorem}{71}%
+\contentsline {subsection}{\numberline {20.1}Singularity and Root}{71}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{73}%
+\contentsline {section}{\numberline {21}Improper Integrals}{79}%
+\contentsline {subsection}{\numberline {21.1}Principal Value}{79}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{80}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{89}%
