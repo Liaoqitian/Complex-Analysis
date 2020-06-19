@@ -1238,7 +1238,7 @@ $$ \abs*{\int_{-C}f(z) \,dz} \leqslant M \cdot L$$
 \newpage
 
 \section{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}
-We now study contour integrals of holomorphic functions over closed curves. 
+We will now study contour integrals of holomorphic functions over closed curves. 
 \subsection{Cauchy's Closed Curve Theorem}
 \textbf{Green's Theorem.} \\
 If $P(x, y)$ and $Q(x, y)$ have continuous first order derivatives on $\Omega$ and its boundary $\partial \Omega$, $\Omega$ is a domain, 
@@ -1247,19 +1247,18 @@ $$\oint_{\partial \Omega} P \,dx + Q \,dy = \int_\Omega Q_x - P_y \,dxdy$$
 \textbf{Cauchy-Goursat Theorem.} \\
 If $f(z)$ is holomorphic on $\Omega$ and $C$ is any closed curve in $\Omega$, where $\Omega$ is simply connected. Then
 $$\oint_{C} f(z) \, dz = 0$$
-\textbf{Proof.}
+\textbf{Proof.} Assume $f$ is holomorphic on $\Omega$ and $\partial \Omega$ and let $dz = dx + idy$. Then if $f$'s first order derivative is continuous,
 $$\oint_{\partial \Omega} f(z) \, dz = \oint_{\partial \Omega} u + iv \,{(dx + idy)} = \int_{\Omega}{if_x - f_y} \, dA$$
-and the Cauchy Riemann Equations imply 
-$$if_x = f_y$$
-Therefore, 
+and the Cauchy Riemann Equations imply $if_x = f_y$. Therefore, 
 $$\oint_{\partial \Omega} f(z) \, dz = 0$$
+Do not worry about how the proof above works in different kinds of sets, assume $\Omega$ is simply-connected. Some book build up to simply-connected over triangles, rectangles or circles, but the end result is the same. \\
 \newline
 \textbf{Corollary of Cauchy's Theorem.} \\
 Let $C_1$ and $C_2$ be paths from $z_0$ to $z_1$. Then $C_1 \cup -C_2$ is a closed loop in $\mathbb{C}$. $C_1$ and $C_2$ are in a simply connected subset of where $f$ is holomorphic. Then by Cauchy-Goursat Theorem, 
-$$ 0 = \oint_{C_1 \cup -C_2}f(z) \,dz  = \int_{C_1}f(z) \,dz + \int_{-C_2}f(z) \,dz = \int_{C_1}f(z) \,dz - \int_{C_2}f(z) \,dz$$ 
-Hence, 
-$$\int_{C_1}f(z) \,dz = \int_{C_2}f(z) \,dz$$
-\newline
+\begin{align*}
+0 = \oint_{C_1 \cup -C_2}f(z) \,dz  = \int_{C_1}&f(z) \,dz + \int_{-C_2}f(z) \,dz = \int_{C_1}f(z) \,dz - \int_{C_2}f(z) \,dz \\
+\Longrightarrow &\int_{C_1}f(z) \,dz = \int_{C_2}f(z) \,dz
+\end{align*}
 This means it does not matter how you go from $z_0$ to $z_1$ as long as $f$ is $\mathbb{C}$ -differentiable along the way. This means we can use 
 $$\int_{z_0}^{z_1}f(z)\,dz$$ 
 to denote the integral from $z_0$ to $z_1$. But we still have to watch out for branch cuts. \\
