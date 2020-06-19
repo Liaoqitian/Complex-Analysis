@@ -1254,7 +1254,12 @@ $$\oint_{\partial \Omega} f(z) \, dz = 0$$
 Do not worry about how the proof above works in different kinds of sets, assume $\Omega$ is simply-connected. Some book build up to simply-connected over triangles, rectangles or circles, but the end result is the same. \\
 \newline
 \textbf{Corollary of Cauchy's Theorem.} \\
-Let $C_1$ and $C_2$ be paths from $z_0$ to $z_1$. Then $C_1 \cup -C_2$ is a closed loop in $\mathbb{C}$. $C_1$ and $C_2$ are in a simply connected subset of where $f$ is holomorphic. Then by Cauchy-Goursat Theorem, 
+Let $C_1$ and $C_2$ be paths from $z_0$ to $z_1$. Then $C_1 \cup -C_2$ is a closed loop in $\mathbb{C}$. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{12_1}
+\centering
+\end{figure}
+Assume $C_1$ and $C_2$ are in a simply connected subset of where $f$ is holomorphic. Then by Cauchy-Goursat Theorem, 
 \begin{align*}
 0 = \oint_{C_1 \cup -C_2}f(z) \,dz  = \int_{C_1}&f(z) \,dz + \int_{-C_2}f(z) \,dz = \int_{C_1}f(z) \,dz - \int_{C_2}f(z) \,dz \\
 \Longrightarrow &\int_{C_1}f(z) \,dz = \int_{C_2}f(z) \,dz
@@ -1262,12 +1267,13 @@ Let $C_1$ and $C_2$ be paths from $z_0$ to $z_1$. Then $C_1 \cup -C_2$ is a clos
 This means it does not matter how you go from $z_0$ to $z_1$ as long as $f$ is $\mathbb{C}$ -differentiable along the way. This means we can use 
 $$\int_{z_0}^{z_1}f(z)\,dz$$ 
 to denote the integral from $z_0$ to $z_1$. But we still have to watch out for branch cuts. \\
-Even non-simple curves are allowed, because Cauchy-Goursat Theorem tells us the integral over the loops in the non-simple curves are 0. \\
-\newline
+Even non-simple curves are allowed, because Cauchy-Goursat Theorem tells us the integral over the loops in $C_3$ are 0. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{12_2}
+\centering
+\end{figure}
 \textbf{Path Independence.} We can characterize Cauchy-Goursat Theorem with path independence. We have path independence of $\int_{z_0}^{z_1}f(z) \,dz$ in $\Omega$ if and only if 
-\begin{equation*}
-\oint_C f(z) \,dz = 0 \mbox{ for all closed curves } C \mbox{ in } \Omega
-\end{equation*}
+$$ \oint_C f(z) \,dz = 0 \text{ for all closed curves } C \text{ in } \Omega $$
 These conditions tell us holomorphic functions must have antiderivatives. 
 \subsection{Fundamental Theorem of Calculus (F.T.C)} 
 Path independence leads to introduction of Fundamental Theorem of Calculus. \\
@@ -1277,21 +1283,17 @@ Assume $f$ is holomorphic on $\Omega$, open and simply connected in $\mathbb{C}$
 $$F(z) = \int_a^z f(u) \,du$$
 is holomorphic on $\Omega$ and $F'(z) = f(z)$. \\
 \textbf{Proof.} This is completely analogous to the proof on $\mathbb{R}$, which has two steps.
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*, nolistsep]
 \item Compute difference quotient 
 \item Bound integrand by invoking continuity of $f$ 
 \end{enumerate}
-\circled{\scriptsize1}
-\begin{equation*}
-\frac{F(z+h) - F(z)}{h} = \frac{1}{h}\int_z^{z+h} f(u) \,du 
-\end{equation*}
-$$\frac{1}{h}\int_z^{z+h}\,du = \frac{h}{h} = 1$$
-implies
-$$f(z) = f(z)\frac{1}{h}\int_z^{z+h}\,du = \frac{1}{h}\int_z^{z+h}f(z) \,du$$
-Then 
-$$\frac{F(z+h) - F(z)}{h} - f(z) = \frac{1}{h}\int_z^{z+h}f(u) - f(z) \,du$$
-\circled{\scriptsize2} Since integrating over any closed curve $C$ gives 
-$$\oint_C f(z) \,dz = 0$$
+\circled{\scriptsize1} We first compute the difference quotient. 
+\begin{align*}
+&\frac{F(z+h) - F(z)}{h} = \frac{1}{h}\int_z^{z+h} f(u) \,du \text{ and } \frac{1}{h}\int_z^{z+h}\,du = \frac{h}{h} = 1 \\
+\Longrightarrow \hspace{2mm} &f(z) = f(z)\frac{1}{h}\int_z^{z+h}\,du = \frac{1}{h}\int_z^{z+h}f(z) \,du \\
+\Longrightarrow \hspace{2mm} &\frac{F(z+h) - F(z)}{h} - f(z) = \frac{1}{h}\int_z^{z+h}f(u) - f(z) \,du
+\end{align*}
+\circled{\scriptsize2} Since integrating over any closed curve $C$ gives $\oint_C f(z) \,dz = 0$, 
 We can pick how we go from $z$ to $z +h$, say along a line from $z$ to $z + h$. We can do this for $h$ sufficiently small so that our path is in $\Omega$. This path is selected to make our upcoming estimate on $f(u) - f(z)$ easier to work with. \\
 Along the path we can have $|u - z| < \delta$, which implies $|f(z) - f(u)| < \varepsilon$ by continuity of $f$ where $u$ is on the path. From ML-Estimate, we get 
 $$\abs*{\frac{F(z+h) - F(z)}{h} - f(z)} \leqslant \frac{1}{|h|}\int_z^{z+h}|f(u) - f(z)|\,du < \frac{1}{|h|}|h|\varepsilon = \varepsilon$$
@@ -1299,44 +1301,41 @@ Therefore, it is proven that $F'(z) = f(z)$. \\
 \newline
 Let us take a closer look at our proof above. We needed $f$ to be continuous so that we could invoke ML-Estimate. We also needed to pick a nice path from $z$ to $z + h$. But we did not need $f$ to be holomorphic. This leads to the next Theorem. \\
 \newline
-\newline
 \textbf{Morera's Theorem.} Let $f$ be a continuous, complex-valued function defined on an open set D in the complex plane. If for all closed paths $C$ in $\Omega$, $\oint_C f(z) \,dz = 0$, then $F(z)$ is holomorphic on $\Omega$, $F'(z) = f(z)$ and $f$ is holomorphic. \\
 Later we will show that $f'(z)$ is holomorphic when $f$ is holomorphic. \\
 \newline
 Let $f_n \to f$ uniformly on every compact subset of $\Omega$. We say $f_n$ converges on compacta to $f$. If $f_n$ is holomorphic on $\Omega$ for all $n$ and $C$ is any closed curve in $\Omega$, 
-\begin{equation*}
-\oint_C f_n(z) \,dz = 0 \mbox{ for all } n
-\end{equation*}
-$$\Rightarrow \lim_{n\to \infty}{\oint_Cf_n(z) \, dz} = 0$$
+$$\oint_C f_n(z) \,dz = 0 \mbox{ for all } n \Longrightarrow \lim_{n\to \infty}{\oint_Cf_n(z) \, dz} = 0$$
 Since the convergence is uniform, $f$ is continuous and 
 $$ \lim_{n\to \infty}{\oint_C f_n(z) \,dz} = \oint_C f(z) \, dz = 0$$
 Hence $f$ is holomorphic on $\Omega$ by Morera's Theorem. \\
 \newline 
-\textbf{Example.} Let $f(z) = \int_0^{\infty} \frac{e^{zt}}{1 + t} \, dt$, $\Re(z) < 0$. \\
-Because $\Re(z) < 0$, 
+\textbf{Example.} Let $f(z) = \int_0^{\infty} \frac{e^{zt}}{1 + t} \, dt$, $\Re(z) < 0$. Because $\Re(z) < 0$, 
 $$\int_0^{\infty} \frac{|e^{zt}|}{1 + t} \,dt \leqslant \int_0^{\infty} e^{\Re(z)t} \,dt = \Eval{\frac{e^{\Re(z)t}}{\Re(z)}}{\infty}{t = 0} = \frac{-1}{\Re(z)}$$
 And so we have an absolute convergent integral that is bounded. 
 $$|f(z)| \leqslant \frac{1}{|\Re(z)|}$$
 Then, since the integral converges absolutely,
 $$\oint_C f(z) \,dz = \oint_C \int_0^{\infty} \frac{e^{zt}}{1 + t}\,dtdz = \int_0^{\infty} \frac{1}{1+t} \oint_C e^{zt} \,dzdt = \int_0^{\infty} \frac{1}{1+t}0 \,dt = 0$$
 by Cauchy-Goursat Theorem since $e^zt$ is entire for $t$ fixed. Therefore, $f(z)$ is holomorphic on $\Re(z) < 0$. \\
-\newline 
 We can generalize our result to handle other types of integral transforms $F(z) = \int_0^{\infty} K(t, z, f(t)) \,dt$. \\
 We also have an easy way to evaluate the line integrals. \\
 \newline
 \textbf{Fundamental Theorem of Calculus (Part Two).} \\
 Let $F(z)$ be $\mathbb{C}$-differentiable on a smooth curve $C$ where $F'(z) = f(z)$, then
 $$\int_a^b f(z) \,dz = F(z)\Big|_{z = a}^{b}$$
-\textbf{Proof.} Let $a, b, c \in \Omega$, where $c$ is in the middle of $a$ and $b$. Then, \\
+\textbf{Proof.} Let $a, b, c \in \Omega$. Then, 
+\begin{figure}[H]
+\includegraphics[scale = 0.18]{12_3}
+\centering
+\end{figure}
 $$F(b) - F(a) = \int_c^b f(u) \,du - \int_c^a f(u) \,du = \int_c^b f(u) \,du + \int_a^c f(u) \,du = \int_a^b f(z) \,dz$$
 The result can also be shown with variable substitution. 
-$$ \int_b^a f(z) \,dz = \int_0^1 f(\gamma(t))\gamma'(t) \,dt = F(\gamma(t))\Big|_{t = 0}^{1} = F(b) - F(a)$$
+$$ \int_b^a f(z) \,dz = \int_0^1 f(\gamma(t))\gamma'(t) \,dt = F(\gamma(t))\bigg\rvert_{t = 0}^{1} = F(b) - F(a)$$
 \newline
-\textbf{Proposition.} If $f'(z) = 0$ on $\Omega$, then $f$ is constant on $\Omega$. i.e. $0 = u_x = v_y$ and $u_y = -v_x = 0$. \\
+\textbf{Proposition.} If $f'(z) = 0$ on $\Omega$, then $f$ is constant on $\Omega$. i.e. $0 = u_x = v_y = u_y = -v_x $. \\
 \textbf{Proof.} Integrate $f'$ along a staircase path in $\Omega$, 
 $$f(z) = f(a) + \int_a^z 0 \, du = f(a)$$
 Or we can use the Cauchy Riemann Equations.\\
-\newline
 Let $F'(z) = G'(z) = f(z)$, then $H(z) = F(z) - G(z)$ satisfies $H'(z) = F'(z) - G'(z) = 0$. This means $H$ is constant. This leads to the theorem below.  \\
 \newline
 \textbf{Theorem.} Any antiderivative of holomorphic $f(z)$ is of the form 
@@ -1347,13 +1346,37 @@ $$F(z) = \int_{z_0}^z \frac{1}{w} \,dw + \operatorname{log} z_0$$
 is a branch of $\operatorname{Log} z $ in $\Omega$.\\
 \textbf{Proof.} $F$ is well-defined since $\frac{1}{w}$ is holomorphic in $\Omega$, we have path independence from $z_0$ to $z$, $f' = \frac{1}{z}$. 
 We still need $e^{F(z)} = z$.
-Define 
-$$g(z) = ze^{-F(z)}$$
-$$g'(z) = e^{-F(z)}(1 - zF'(z)) = e^{-F(z)}(1 - \frac{z}{z}) = 0$$
-Therefore, $g(z)$ is constant. 
-$$g(z) = g(z_0) = z_0e^{-F(z_0)} = z_0 e^{-\operatorname{log}(z_0)} = 1$$
-Therefore, 
-$$e^{F(z)} = z$$
+Define $g(z) = ze^{-F(z)}$, then
+$$g'(z) = e^{-F(z)}(1 - zF'(z)) = e^{-F(z)}\left(1 - \frac{z}{z}\right) = 0$$
+Thus, $g(z)$ is constant. 
+$$g(z) = g(z_0) = z_0e^{-F(z_0)} = z_0 e^{-\operatorname{log}(z_0)} = 1 \Longrightarrow e^{F(z)} = z$$
+\newpage
+We can use the integral form to express $\operatorname{Log}(f(z))$ for $f$ holomorphic and $f(z) \neq 0$. 
+$$ \operatorname{Log}(f(z)) = \int_{z_0}^z\frac{f'(w)}{f(w)}\, dw + \operatorname{log}f(z_0)$$
+We need a branch $F(z)$ that is holomorphic along our path. 
+\begin{figure}[H]
+\includegraphics[scale = 0.17]{12_4}
+\centering
+\end{figure}
+\vspace{-5mm}
+$$ \int_{-i}^i \frac{1}{z} \, dz = \operatorname{log}(z) \bigg\rvert_{z = -i}^i = \operatorname{Log}|z| + i\operatorname{arg}(z)\bigg\rvert_{z = -i}^{i} = i\left(\frac{\pi}{2}+ 2\pi k\right) - i\left(-\frac{\pi}{2} + 2\pi k\right) = \pi i$$
+We need the same $k \in \mathbb{Z}$, so we stay on the same branch of $\operatorname{log}(z)$. But what would happen if the contour was in $\Re(z) < 0$? In this case, the standard branch cut would not work. Therefore, we define $\operatorname{Log}(z) = \operatorname{Log}|z| + i\theta, \theta \in [0, 2\pi]$
+\begin{figure}[H]
+\includegraphics[scale = 0.17]{12_5}
+\centering
+\end{figure}
+\vspace{-5mm}
+$$ \int_{-i}^i \frac{1}{z} \, dz = \operatorname{log}(z) \bigg\rvert_{z = -i}^i = \operatorname{Log}|z| + i\operatorname{arg}(z)\bigg\rvert_{z = -i}^{i} = i\left(\frac{\pi}{2}+ 2\pi k\right) - i\left(\frac{3\pi}{2} + 2\pi k\right) = -\pi i$$
+We can choose any path on the $\Re(z) < 0$ since we have path independence, in other words $\frac{1}{z}$ is holomorphic there. 
+\begin{figure}[H]
+\includegraphics[scale = 0.17]{12_6}
+\centering
+\end{figure}
+$$\int_{C_3}\frac{1}{z} \, dz = \int_{\frac{3\pi}{2}}^{\frac{\pi}{2}} \frac{1}{e^{i\theta}}ie^{i\theta}\, d\theta = i \int_{\frac{3\pi}{2}}^{\frac{\pi}{2}} \,d\theta = -i\pi$$
+Here $\frac{3\pi}{2}$ is picked such that we approach $\frac{\pi}{2}$ as the curve shows, in other words the curve we picked is oriented clockwise from $-i$ to $i$. \\
+Likewise, for the first branch cut, 
+$$\int_{C_1}\frac{1}{z} \, dz = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{1}{e^{i\theta}}ie^{i\theta}\,d\theta = i\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\,d\theta = i\pi$$
+Each approach, path integration or directly invoking the F.T.C, works but we need to be aware of branch cuts. 
 
 \newpage
 \section{Cauchy's Integral Formula}
