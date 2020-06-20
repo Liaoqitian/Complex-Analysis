@@ -1461,8 +1461,16 @@ $$ \oint_{|z| = 3} \frac{e^{z^2}}{z - 4} = 0 \text{ by Cauchy-Goursat Theorem }$
 \includegraphics[scale = 0.2]{13_6}
 \centering
 \end{figure} 
-\vspace{-5mm}
-$$\oint_{C}\frac{e^{z^2}}{z - 4} \, dz= \oint_{C_1\cup C_2}\frac{e^{z^2}}{z - 4} \, dz = \oint_{C_1}\frac{e^{z^2}}{z - 4}\, dz + \oint_{C_2}\frac{e^{z^2}}{z - 4}\, dz$$
+%\vspace{-5mm}
+Notice $C$ in this case is clockwise, we have to be extra careful with the direction of the curves. 
+\begin{align*}
+\oint_{C}\frac{e^{z^2}}{z - 4} \, dz&= \oint_{C_1\cup C_2}\frac{e^{z^2}}{z - 4} \, dz \\
+&= \oint_{C_1}\frac{e^{z^2}}{z - 4}\, dz + \oint_{C_2}\frac{e^{z^2}}{z - 4}\, dz \\
+&= -\oint_{-C_1}\frac{e^{z^2}}{z - 4}\, dz - \oint_{-C_2}\frac{e^{z^2}}{z - 4}\, dz \\
+&= -4\pi i e^{16}
+\end{align*}
+Since both $C_1$ and $C_2$ capture $z = 4$, we can apply Cauchy-Goursat Theorem. And because they are clockwise, we need to reverse their direction into $-C_1$ and $-C_2$. \\
+\newline
 \textbf{Extension of Cauchy's Integral Formula.} \\
 Cauchy's Integral Formula can be naturally expanded to $f'(z)$, 
 $$ f'(z) = \frac{1}{2\pi i}\oint_C \frac{f'(w)}{w - z} \, dw = \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z)^2} \, dw, z \in \Omega$$
@@ -1470,8 +1478,8 @@ Therefore, the result can be generalized to
 $$f^{(k)}(z) = \frac{k!}{2\pi i}\oint_C \frac{f(w)}{(w - z)^{k + 1}} \, dw, z \in \Omega$$
 provided we can justify 
 $$\frac{d}{dz} \oint_C \,dw = \oint_C \frac{d}{dz} \, dw$$
-\textbf{Proof.} The proof of this depends on $\frac{1}{w - z}$ being differentiable in $w$ along any curve that does not pass through $z$. \\
-Let $f$ be holomorphic on $\Omega$, then for any circle $C$ in $\Omega$ about $z_0$, we have a formula for $f^{(k)}(z_0)$ in terms of integrating over $C$. Hence $f^{(k)}$ exists on $\Omega$, $f^{(k + 1)}$ does 
+\textbf{Proof.} The proof of this depends on $\frac{1}{w - z}$ being differentiable in $w$ along any curve that does not pass through $z$. 
+Let $f$ be holomorphic on $\Omega$, then for any circle $C$ in $\Omega$ about $z_0$, we have a formula for $f^{(k)}(z_0)$ in terms of integrating over $C$. Hence $f^{(k)}$ exists on $\Omega$, $f^{(k + 1)}$ exists too. 
 \begin{align*}
 &\Rightarrow f^{(k)}(z) \mbox{ is holomorphic on } \Omega \mbox{ for all } k \\ 
 &\Rightarrow f \mbox{ is infinitely differentiable on } \Omega \\ 
@@ -1484,28 +1492,25 @@ $$\oint_{|z| = 9} \frac{\sin(z)}{z^2} \,dz$$
 The first approach is to apply C.I.F directly. Here, $f(z) = \sin(z)$, $f'(z) = \cos(z)$. 
 $$ \oint_{|z| = 9} \frac{\sin(z)}{z^2} \,dz = 2\pi i f'(0) = 2\pi i \cos(0) = 2\pi i$$
 The second approach is to apply C.I.F indirectly. The function
-\[ 
+$$
 g(z) = 
 \begin{cases} 
-	\frac{\sin(z) - \sin(0)}{z - 0}, z \neq 0 \\
-	1, z = 0\\
-   \end{cases}
-\]
+	\frac{\sin(z) - \sin(0)}{z - 0}, &z \neq 0 \\
+	1, &z = 0\\
+\end{cases}
+$$
 is entire by the second extension of Cauchy-Goursat Theorem. 
 $$\oint_{|z| = 9} \frac{\frac{\sin(z)}{z}}{z} \,dz = 2\pi i g(0) = 2\pi i$$
 \newline
 \textbf{Gauss's Mean Value Theorem.} \\
 Let $f(z)$ be an analytic function in $|z - z_0| < r$. Then 
-$$f(z) = \frac{1}{2\pi}\int_0^{2\pi} f(z + re^{i\theta}) \,d\theta$$ 
-\textbf{Proof.} Let $\Omega = \{z|\abs{z - z_0} < r\}$ \\
-Let 
-$$\gamma(t) = z_0 + re^{2\pi i t}$$
-Then, 
+$$f(z) = \frac{1}{2\pi}\int_0^{2\pi} f\left(z + re^{i\theta}\right) \,d\theta$$ 
+\textbf{Proof.} Let $\Omega = \{z|\abs{z - z_0} < r\}$. Let $\gamma(t) = z_0 + re^{2\pi i t}$. Then, 
 \begin{align*}
 f(z_0) &= \frac{1}{2\pi i} \oint_{\partial \Omega} \frac{f(z)}{z - z_0} \,dz \\
 &= \frac{1}{2\pi i }\int_0^1 \frac{f(\gamma(t))}{\gamma(t) - z_0} \gamma'(t) \, dt \\
-&= \int_0^1 f(z_0 + re^{2\pi it}) \,dt \\ 
-&= \frac{1}{2\pi}\int_0^{2\pi} f(z_0 + re^{it}) \,dt
+&= \int_0^1 f\left(z_0 + re^{2\pi it}\right) \,dt \\ 
+&= \frac{1}{2\pi}\int_0^{2\pi} f\left(z_0 + re^{it}\right) \,dt
 \end{align*}
 
 \newpage
