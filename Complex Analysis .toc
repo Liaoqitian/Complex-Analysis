@@ -52,15 +52,15 @@
 \contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{63}%
 \contentsline {subsection}{\numberline {16.1}Radius of Convergence}{64}%
 \contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{65}%
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{67}%
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{70}%
-\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{70}%
-\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{71}%
-\contentsline {section}{\numberline {19}Laurent Series}{73}%
-\contentsline {section}{\numberline {20}Residue Theorem}{77}%
-\contentsline {subsection}{\numberline {20.1}Singularity and Root}{77}%
-\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{79}%
-\contentsline {section}{\numberline {21}Improper Integrals}{85}%
-\contentsline {subsection}{\numberline {21.1}Principal Value}{85}%
-\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{86}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{95}%
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{68}%
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{71}%
+\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{71}%
+\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{72}%
+\contentsline {section}{\numberline {19}Laurent Series}{74}%
+\contentsline {section}{\numberline {20}Residue Theorem}{78}%
+\contentsline {subsection}{\numberline {20.1}Singularity and Root}{78}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{80}%
+\contentsline {section}{\numberline {21}Improper Integrals}{86}%
+\contentsline {subsection}{\numberline {21.1}Principal Value}{86}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{87}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{96}%
