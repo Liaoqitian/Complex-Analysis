@@ -1625,13 +1625,13 @@ which maps $|z| < 1$ to $\Re(z) > 0$. Then we have $f \circ g^{-1}: \{z| |z| < 1
 \newline
 \textbf{Example.} Assume $f$ is holomorphic and bounded by 1 for $|z| < 1$, and $f\left(\frac{1}{2}\right) = 0$. Estimate $\abs[\big]{f\left(\frac{3}{5}\right)}$.
 Let 
-$$
-g(z) = 
-\begin{cases} 
-	\frac{f(z)}{B_{1/2}(z)}, &z \neq \frac{1}{2} \\
-	\frac{f'\left(\frac{1}{2}\right)}{B_{1/2}(z)} = \frac{3}{4}f'\left(\frac{1}{2}\right), &z = \frac{1}{2}\\
-   \end{cases}
-$$
+\begin{equation*}
+g(z) = \left \{
+  \begin{aligned}
+    &\frac{f(z)}{B_{\frac{1}{2}}(z)}, && z \neq \frac{1}{2} \\
+    &\frac{f'\left(\frac{1}{2}\right)}{B_{\frac{1}{2}}(z)} = \frac{3}{4}f'\left(\frac{1}{2}\right), && z = \frac{1}{2} 
+  \end{aligned} \right.
+\end{equation*} 
 is holomorphic on $|z| < 1$. Here we used L'Hospital's Rule to define $g\left(\frac{1}{2}\right)$. \\
 As $|z| \to 1$, $|g| \leqslant 1$ since $|f| \leqslant 1 $ and $\abs[\big]{B_{\frac{1}{2}}\left(e^{i\theta}\right)} = 1$. \\
 This means $|f(z)| \leqslant |B_{\frac{1}{2}}(z)|$ for all $|z| < 1$. \\
@@ -1693,42 +1693,42 @@ $$f(z) = kg(z) + c$$
 
 \newpage
 \section{Convergence of Infinite Series in $\mathbb{C}$}
-We want to study series in $\mathbb{C}$. 
+We want to study series in $\mathbb{C}$. They are of the form 
 $$\sum_{k = 0}^{\infty}a_k$$
 We start with the most famous series. \\
 \newline
 \textbf{Geometric Series.}
 $$S_n = a + ar + \cdots ar^n = \sum_{k = 0}^n ar^k$$
-Observe 
+Let us find a general formula for geometric series. Observe 
 \begin{align*}
 (1 - r)S_n &= S_n - rS_n \\ 
 &= a + ar + \cdots + ar^n - (ar + \cdots + ar^{n + 1}) \\ 
-&= a(1 - r^{n + 1})
+&= a(1 - r^{n + 1}) \\ 
+\Longrightarrow S_n &= \sum_{k = 0}^n ar^k = \frac{a(1-r^{n + 1})}{1 - r} 
 \end{align*}
-Thus 
-$$S_n = \sum_{k = 0}^n ar^k = \frac{a(1-r^{n + 1})}{1 - r}$$
-r is the ratio of the geometric sum. \\
-The geometric series is 
+r is the ratio of the geometric sum. The geometric series is 
 \begin{equation*}
-S = \sum_{k = 0}^{\infty}ar^k = \frac{a}{1 - r} \mbox{ provided } |r| < 1
-\end{equation*}
-If $|r| \geqslant 1$, then the sum diverges and does not converge. \\
+\left \{
+  \begin{aligned}
+    &S = \sum_{k = 0}^{\infty}ar^k = \frac{a}{1 - r} , && |r| < 1\\
+    &S_n = \sum_{k = 0}^n ar^k = \frac{a(1-r^{n + 1})}{1 - r}, && |r| \geqslant 1, \text{ the sum diverges and does not converge.} 
+  \end{aligned} \right.
+\end{equation*} 
 \newline
 \textbf{Absolute Convergence.} \\
 If $\sum {|a_n|}$ converges, then $\sum {a_n}$ converges absolutely. \\
 \newline
-\textbf{Example.} The following series converges absolutely. 
-$$\sum \frac{(-1)^n}{n^2}$$ 
+\textbf{Example.} $\sum \frac{(-1)^n}{n^2}$ converges absolutely. \\
+\newline
 \textbf{Conditional Convergence.} \\
 If $\sum {|a_n|}$ diverges and $\sum {a_n}$ converges, then the series converges conditionally. \\
 \newline 
-\textbf{Example.} The following series converges conditionally. 
-$$ \sum \frac{(-1)^n}{n}$$
+\textbf{Example.} $ \sum \frac{(-1)^n}{n}$ converges conditionally. \\
 \newpage
 \subsection{Convergence Tests}
 \textbf{Alternating Series Test (A.S.T).} \\
 Suppose that we have a series $\sum {a_n}$ and either $a_n = (-1)^nb_n$ or $a_n = (-1)^{n + 1}b_n$ where $b_n > 0$ for all n. Then if,
-\begin{enumerate}[nolistsep]
+\begin{enumerate}[leftmargin = *, nolistsep]
 \item $\lim_{n \to \infty} b_n = 0$ and,
 \item$ \{b_n\}$ is a decreasing sequence
 \end{enumerate}
@@ -1738,7 +1738,7 @@ the series $\sum a_n$ is convergent. \\
 Suppose that we have a series $\sum {a_n}$. Define 
 $$L = \lim_{n \to \infty} \sqrt[n]{|a_n|} = \lim_{n \to \infty} |a_n|^{\frac{1}{n}}$$
 Then, 
-\begin{enumerate}[nolistsep]
+\begin{enumerate}[leftmargin = *, nolistsep]
 \item if $L < 1$, the series is absolutely convergent (and hence convergent). 
 \item if $L > 1$, the series is divergent.  
 \item if $L = 1$, the series may be divergent, conditionally convergent, or absolutely convergent. 
@@ -1748,7 +1748,7 @@ $$ \lim_{n \to \infty}n ^ {\frac{1}{n}} = 1$$
 Suppose that we have a series $\sum {a_n}$. Define 
 $$L = \lim_{n \to \infty} {\abs*{\frac{a_{n+1}}{a_n}}} $$
 Then, 
-\begin{enumerate}[nolistsep] 
+\begin{enumerate}[leftmargin = *, nolistsep] 
 \item if $L < 1$ the series is absolutely convergent (and hence convergent). 
 \item if $L > 1$, the series is divergent.  
 \item if $L = 1$, the series may be divergent, conditionally convergent, or absolutely convergent. 
@@ -1756,7 +1756,7 @@ Then,
 \  \\
 \textbf{Basic Comparison Test (B.S.T).} \\
 Suppose that we have two series $\sum {a_n}$ and $\sum {b_n}$ with $a_n, b_n \geqslant 0$ for all $n$ and $a_n < b_n$ for all $n$. Then, 
-\begin{enumerate}
+\begin{enumerate}[leftmargin = *, nolistsep]
 \item If $\sum{b_n}$ is convergent, then so is $\sum a_n$. 
 \item If $\sum{a_n}$ is divergent, then so is $\sum b_n$.
 \end{enumerate}
@@ -1768,7 +1768,7 @@ If $c$ is positive and is finite, then either both series converge or both serie
 \newline
 \textbf{Integral Test.} \\
 Suppose that $f(x)$ is a continuous, positive and decreasing function on the interval $[k, \infty)$ and that $f(n) = a_n$ then, 
-\begin{enumerate}
+\begin{enumerate}[leftmargin = *, nolistsep]
 \item If $\int_k^\infty f(x) \, dx$ is convergent so is $\sum_{n = k}^{\infty} a_n$.
 \item If $\int_k^\infty f(x) \, dx$ is divergent so is $\sum_{n = k}^{\infty} a_n$.
 \end{enumerate}
@@ -1790,19 +1790,17 @@ In general, $f_n \to f$ uniformly does imply $\int f_n \to \int f$ uniformly, bu
 However, for holomorphic functions $f_n \to f$ uniformly on compacta implies $f_n' \to f'$ uniformly. \\
 \newline
 \textbf{Example.}\\
-Let 
-\begin{equation*}
-f_n(z) = \frac{\sin(nz)}{\sqrt{n}} \to 0 \mbox{ uniformly }
-\end{equation*}
-and 
-$$f_n'(z) = \sqrt{n}\cos(nz), f_n'(0) \to \infty \neq f'(0)$$
-\newline 
+Let us look at a counter-example in regards to the proposition above: 
+\begin{align*}
+f_n(z) &= \frac{\sin(nz)}{\sqrt{n}} \text{ converges to 0 uniformly, but } \\ 
+f_n'(z) &= \sqrt{n}\cos(nz), f_n'(0) \to \infty \neq f'(0)
+\end{align*}
 \textbf{Cauchy Condensation Test.} \\
 Let $\{a_n\}$ be a series of positive terms with $a_{n + 1} \leqslant a_n$. Then $\sum_{n = 1}^{\infty} a_n$ converges if and only if 
-$$\sum_{k = 0}^{\infty} 2^ka_{2^k}$$ converges. \\
+$$\sum_{k = 0}^{\infty} 2^ka_{2^k} \text{ converges} $$. \\
 \textbf{Proof.} 
 \begin{align*}
-&\hspace{9mm} \sum {2^nf(2^n)} < \infty \\
+&\hspace{9mm} \sum {2^nf\left(2^n\right)} < \infty \\
 &\Longleftrightarrow \int_{1}^{\infty}2^x f(2^x)\,dx \\ 
 &\Longleftrightarrow \log{(2)}\int_1^{\infty}2^x f(2^x) \,dx < \infty \\
 &\Longleftrightarrow \int_2^{\infty} f(u) \, du < \infty \\
@@ -1819,11 +1817,8 @@ $$ \sum_{n = 1}^{\infty} \frac{1}{n} = \infty$$
 \textbf{Dirichlet Test.} \\
 Let $a_1, a_2, \cdots$ be a monotonically decreasing infinite real sequence. \\
 Let $\sum {b_n}$ be an infinite complex series such that its partial sums are bounded. i.e. 
-$$\abs*{\sum_{n = 1}^N {b_n}} \leqslant M $$
-for all $N \in \mathbb{N}$. \\
-Then 
-$$\sum_{n = 1}^{\infty} a_nb_n$$
-converges. \\
+$$\abs*{\sum_{n = 1}^N {b_n}} \leqslant M \text{ for all } N \in \mathbb{N}$$ 
+Then $\sum_{n = 1}^{\infty} a_nb_n$ converges. \\
 \newline
 \textbf{Example.} Determine whether the following series converge. 
 $$\sum_{n = 1}^{\infty} \frac{(e^{2\pi i /3})}{\sqrt{n}}$$
