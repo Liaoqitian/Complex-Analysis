@@ -49,18 +49,18 @@
 \contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{54}%
 \contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{58}%
 \contentsline {subsection}{\numberline {15.1}Convergence Tests}{59}%
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{62}%
-\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{63}%
-\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{64}%
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{66}%
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{69}%
-\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{69}%
-\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{70}%
-\contentsline {section}{\numberline {19}Laurent Series}{72}%
-\contentsline {section}{\numberline {20}Residue Theorem}{76}%
-\contentsline {subsection}{\numberline {20.1}Singularity and Root}{76}%
-\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{78}%
-\contentsline {section}{\numberline {21}Improper Integrals}{84}%
-\contentsline {subsection}{\numberline {21.1}Principal Value}{84}%
-\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{85}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{94}%
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{63}%
+\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{64}%
+\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{65}%
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{67}%
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{70}%
+\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{70}%
+\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{71}%
+\contentsline {section}{\numberline {19}Laurent Series}{73}%
+\contentsline {section}{\numberline {20}Residue Theorem}{77}%
+\contentsline {subsection}{\numberline {20.1}Singularity and Root}{77}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{79}%
+\contentsline {section}{\numberline {21}Improper Integrals}{85}%
+\contentsline {subsection}{\numberline {21.1}Principal Value}{85}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{86}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{95}%

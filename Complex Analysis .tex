@@ -1768,7 +1768,7 @@ If $c$ is positive and is finite, then either both series converge or both serie
 \newline
 \textbf{Integral Test.} \\
 Suppose that $f(x)$ is a continuous, positive and decreasing function on the interval $[k, \infty)$ and that $f(n) = a_n$ then, 
-\begin{enumerate}[leftmargin = *, nolistsep]
+\begin{enumerate}[leftmargin = *]
 \item If $\int_k^\infty f(x) \, dx$ is convergent so is $\sum_{n = k}^{\infty} a_n$.
 \item If $\int_k^\infty f(x) \, dx$ is divergent so is $\sum_{n = k}^{\infty} a_n$.
 \end{enumerate}
@@ -1796,8 +1796,8 @@ f_n(z) &= \frac{\sin(nz)}{\sqrt{n}} \text{ converges to 0 uniformly, but } \\
 f_n'(z) &= \sqrt{n}\cos(nz), f_n'(0) \to \infty \neq f'(0)
 \end{align*}
 \textbf{Cauchy Condensation Test.} \\
-Let $\{a_n\}$ be a series of positive terms with $a_{n + 1} \leqslant a_n$. Then $\sum_{n = 1}^{\infty} a_n$ converges if and only if 
-$$\sum_{k = 0}^{\infty} 2^ka_{2^k} \text{ converges} $$. \\
+Let $\{a_n\}$ be a series of positive terms with $a_{n + 1} \leqslant a_n$. Then 
+$$\sum_{n = 1}^{\infty} a_n \text{ converges if and only if } \sum_{k = 0}^{\infty} 2^ka_{2^k} \text{ converges} $$. 
 \textbf{Proof.} 
 \begin{align*}
 &\hspace{9mm} \sum {2^nf\left(2^n\right)} < \infty \\
@@ -1816,17 +1816,41 @@ $$ \sum_{n = 1}^{\infty} \frac{1}{n} = \infty$$
 \newline
 \textbf{Dirichlet Test.} \\
 Let $a_1, a_2, \cdots$ be a monotonically decreasing infinite real sequence. \\
-Let $\sum {b_n}$ be an infinite complex series such that its partial sums are bounded. i.e. 
-$$\abs*{\sum_{n = 1}^N {b_n}} \leqslant M \text{ for all } N \in \mathbb{N}$$ 
+Let $\sum {b_n}$ be an infinite complex series such that its partial sums are bounded. In other words, 
+$\abs*{\sum_{n = 1}^N {b_n}} \leqslant M \text{ for all } N \in \mathbb{N}$.
 Then $\sum_{n = 1}^{\infty} a_nb_n$ converges. \\
 \newline
 \textbf{Example.} Determine whether the following series converge. 
-$$\sum_{n = 1}^{\infty} \frac{(e^{2\pi i /3})}{\sqrt{n}}$$
-When viewed as vectors, $b_1 + b_2 + b_3 = 0$ and $\sum_{n = 1}^{3k} b_n = 0$\\
-We have $\abs*{\sum_{n = 1}^{\infty} b_n}$ is bounded but does not converge, just like $\abs*{\sum_{n = 1}^{\infty} (-1)^n}$. \\
-Therefore, $\frac{b_n}{\sqrt{n}}$ converges. \\
-Using the same technique, one can also show $\sum_{n = 1}^{\infty} \frac{\sin(n)}{n}$ converges.
-
+$$\sum_{n = 1}^{\infty} \frac{\left(e^{2\pi i /3}\right)^n}{\sqrt{n}}$$
+When viewed as vectors, 
+\begin{align*}
+&b_1 + b_2 + b_3 = 0 \text{ and } \sum_{n = 1}^{3k} b_n = 0 \\ 
+\Longrightarrow \hspace{2mm}&\sum_{n = 1}^{3k}b_n + b_{3k + 1} < \infty. \\
+\Longrightarrow \hspace{2mm}&\sum_{n = 1}^{3k}b_n + b_{3k + 1} + b_{3k + 2} < \infty \\ 
+\Longrightarrow \hspace{2mm}&\sum_{n = 1}^{3k}b_n + b_{3k + 1} + b_{3k + 2} + b_{3k + 3} = \sum_{n = 1}^{3(k + 1)}b_n = 0
+\end{align*}
+\vspace{-2mm}
+\begin{figure}[H]
+\includegraphics[scale = 0.3]{15_1}
+\centering
+\end{figure} 
+Thus, we have $\abs*{\sum_{n = 1}^{\infty} b_n}$ is bounded but does not converge, just like $\abs*{\sum_{n = 1}^{\infty} (-1)^n}$. \\
+Since $\frac{1}{\sqrt{n}}$ is a monotonically decreasing infinite real sequence, $\frac{b_n}{\sqrt{n}}$ converges by Dirichlet Test. \\
+\newline
+\textbf{Example.} Determine whether the following series converge. 
+$$\sum_{n = 1}^{\infty} \frac{\sin(n)}{n}$$ 
+Just as the example above, we use Dirichlet Test to prove its convergence. 
+\begin{align*}
+\sin(n) &= \frac{e^{in} - e^{-in}}{2i} \\
+\sum_{n = 1}^k \sin(n) &= \frac{1}{2i}\sum_{n = 1}^k\left(e^i\right)^n - \frac{1}{2i}\sum_{n = 1}^k\left(e^{-i}\right)^n \\
+& = \frac{1}{2i}\frac{e^i - e^{i(k + 1)}}{1 - e^i} - \frac{1}{2i}\frac{e^{-i} - e^{-i(k + 1)}}{1 - e^{-i}} \\ 
+& = \frac{i}{2} \frac{-1 - e^i + e^{-ik} + e^{i(k + 1)}}{1 - e^i} \\
+\Longrightarrow \abs[\big]{\sum_{n = 1}^k \sin(n)} &= \frac{1}{2} \abs*{\frac{-1 - e^i + e^{-ik} + e^{i(k + 1)}}{1 - e^i}}\\ 
+&= \frac{1}{2|1- e^i|}\cdot \abs[\Big]{-1 - e^i + e^{-ik} + e^{i(k + 1)}} \\
+&\leqslant \frac{1}{2|1- e^i|}(1 + 1 + 1 + 1) < 3
+\end{align*}
+By Dirichlet's Test, $\sum_{n = 1}^{\infty} \frac{\sin(n)}{n} < \infty$. 
+However, we did not show $\sum_{n = 1}^\infty\sin(n)$ converges. 
 \newpage
 \section{Power Series in $\mathbb{C}$}
 We want to express holomorphic functions in $\mathbb{C}$ by series in $z$ instead of integrals and the Cauchy Riemann Equations. Cauchy-Goursat Theorem will provide the connection between the two forms, 
