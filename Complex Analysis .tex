@@ -13,6 +13,17 @@
 \usepackage{tikz}
 \usepackage{ragged2e}
 \usepackage{pagecolor,lipsum}
+\usepackage{adjustbox,expl3,etoolbox} % longsum
+\letcs\replicate{prg_replicate:nn}
+\newcommand*\longsum[1][1]{%
+  \mathop{\textnormal{%
+    \clipbox{0pt 0pt {.5\width} 0pt}{$\displaystyle\sum$}%
+    \replicate{#1}{\clipbox{{.5\width} 0pt {.4\width} 0pt}{$\displaystyle\sum$}}%
+    \clipbox{{.6\width} 0pt 0pt 0pt}{$\displaystyle\sum$}}}%
+}
+
+
+\usepackage{relsize} %Summation size
 \usepackage{float} % figure placement
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
@@ -1873,17 +1884,14 @@ We have no clue about what happens with $|z - z_0| = R$, then we have to check f
 If $R = \infty$, then $f(z)$ is entire. \\
 If $R = 0$, then $f$ is not holomorphic on disks centered at $z_0$. \\
 \newline
-Before we move on to more specifics about the radius of convergence, a brief review of terminology is in order. \\ 
-A reminder about upper and lower limits. Let 
-\begin{equation*}
-\mbox{Largest lower bound: } \lim_{n \to \infty} \inf|a_n| = L
-\end{equation*}
-\begin{equation*}
-\mbox{Smallest upper bound: }\lim_{n \to \infty} \sup|a_n| = U
-\end{equation*}
-then 
-$$ L = \sup_{n \geqslant 0}(\inf_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\inf \{ |a_n|, |a_{n + 1}|, \cdots \})$$
-$$ U = \inf_{n \geqslant 0}(\sup_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\sup \{ |a_n|, |a_{n + 1}|, \cdots \}) $$
+Before we move on to more specifics about the radius of convergence, a brief review of terminology is in order. A reminder about upper and lower limits. Let 
+\begin{align*}
+&\text{Largest lower bound: } \lim_{n \to \infty} \inf|a_n| = L \\ 
+&\text{Smallest upper bound: } \lim_{n \to \infty} \sup|a_n| = U \\
+\Longrightarrow \hspace{2mm}&L = \sup_{n \geqslant 0}(\inf_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\inf \{ |a_n|, |a_{n + 1}|, \cdots \}) \\
+&U = \inf_{n \geqslant 0}(\sup_{k \geqslant n}|a_k|) = \lim_{n \to \infty} (\sup \{ |a_n|, |a_{n + 1}|, \cdots \}) 
+\end{align*}
+
 and $L \leqslant U$. For $n$ large and $\varepsilon_0$, $\varepsilon_1 > 0$, 
 $$L - \varepsilon_0 \leqslant |a_n| \leqslant U + \varepsilon_1$$
 If we show that $U \leqslant L$, then $|a_n|$ converges.
@@ -1903,43 +1911,43 @@ $L \neq 0$ or $\infty$. Let $|z| \leqslant r < R$, and from $\lim \sup$, we have
 $$|a_n|^{\frac{1}{n}} \leqslant L + \varepsilon $$
 for $n$ large and $\varepsilon > 0$. 
 Therefore, 
-$$ |a_n| \leqslant (L + \varepsilon)^n $$
-and 
-$$ |a_n||z|^n \leqslant ((L + \varepsilon)|z|)^n \leqslant ((L + \varepsilon)r)^n $$
+\begin{align*}
+&|a_n| \leqslant (L + \varepsilon)^n \\
+&|a_n||z|^n \leqslant ((L + \varepsilon)|z|)^n \leqslant ((L + \varepsilon)r)^n 
+\end{align*}
 Since $(L + \varepsilon)r = \frac{r}{R} + \varepsilon r$ and $\frac{r}{R} < 1$, we can pick $\varepsilon$ small enough such that the geometric series 
 $$ \sum_{n = 0}^{\infty} ((L + \varepsilon)r)^n$$
 converges for $|(L + \varepsilon)r| < 1$. Therefore, the partial sums 
-$$ |S_n(z)| = \sum_{k = 0}^n |a_kz^k|$$
+$$ |S_n(z)| = \sum_{k = 0}^n \abs[\big]{a_kz^k}$$
 are increasing sequence with respect to $n$, $z$-fixed, and bounded by a convergent sum. By the monotone convergence theorem, the series converges for $|z| < R$. By the Weierstrass M-Test, the convergence is uniform on $|z| \leqslant r < R$ but not on $|z| < R$, since we need a fixed radius. \\
 \newline
-\textbf{Example.} If 
+\textbf{Example.} Determine the radius of convergence of the following series. 
 $$f(z) = \sum_{n = 1}^{\infty} \frac{z^n}{n!} $$
-Then $a_n = \frac{1}{n!}$
-$$ \lim_{n \to \infty} \abs*{\frac{a_{n + 1}}{a_n}} = \lim_{n \to \infty} \frac{n!}{(n+1)!} = \lim_{n \to \infty} \frac{1}{n + 1} = 0 = \frac{1}{R}, R = \infty$$
-Therefore, 
-$$ f(z) = \sum_{n = 1}^{\infty} \frac{z^n}{n!} = e^z - 1$$
-converges for all $z \in \mathbb{C}$. \\
+Then in this case, $a_n = \frac{1}{n!}$
+\begin{align*}
+&\lim_{n \to \infty} \abs*{\frac{a_{n + 1}}{a_n}} = \lim_{n \to \infty} \frac{n!}{(n+1)!} = \lim_{n \to \infty} \frac{1}{n + 1} = 0 = \frac{1}{R}, R = \infty \\
+\Longrightarrow \hspace{2mm} &f(z) = \sum_{n = 1}^{\infty} \frac{z^n}{n!} = e^z - 1 \text{ converges for all } z \in \mathbb{C}. 
+\end{align*}
 \newpage
-\textbf{Example.} If 
+\textbf{Example.} Determine the radius of convergence of the following series. 
 $$ f(z) = \sum_{n = 0}^{\infty} (-1)^n \frac{z^{2n}}{3^{2n}} $$
+Then in this case, 
 $$|a_n|^{\frac{1}{n}} = \frac{|z^2|}{|9|} $$
 If $\frac{|z|^2}{|9|} < 1$, the sum converges absolutely on $|z| < 3$. Here, 
-$$ \sum_{n = 0} ^ {\infty} (-1)^n \frac{z^{2n}}{3^{2n}} = \frac{1}{1 - (-\frac{z}{3})^2} = \frac{1}{1 + \frac{z^2}{9}} = \frac{9}{9 + z^2} = \frac{d}{dz}3\arctan(\frac{z}{3})$$
+$$ \sum_{n = 0} ^ {\infty} (-1)^n \frac{z^{2n}}{3^{2n}} = \frac{1}{1 - \left(-\frac{z}{3}\right)^2} = \frac{1}{1 + \frac{z^2}{9}} = \frac{9}{9 + z^2} = \frac{d}{dz}3\arctan\left(\frac{z}{3}\right)$$
 Most of the power series with reals still work here in complex. 
 $$\sin(z) = \sum_{n = 0}^{\infty} \frac{(-1)^nz^{2n + 1}}{(2n + 1)!}, z \in \mathbb{C}$$
-However, 
+However, because $\sqrt{z}$ is not differentiable at $z = 0$. 
 $$ \sqrt{z} \neq \sum_{n = 0}^{\infty} a_nz^n $$ 
-because $\sqrt{z}$ is not differentiable at $z = 0$. \\ 
-\newline
 \subsection{Derivative of Power Series}
-Now let us prove the claim we made before.\\ 
+Now let us prove the claim we made about the derivative of a power series.\\ 
 \textbf{Claim.} The derivative of a power series is given as below. 
 $$f'(z) = \sum_{n = 0}^{\infty}na_nz^{n - 1}, |z| < R$$ 
-\textbf{Proof.} Define 
+\textbf{Proof.} Define $g(z)$ as 
 $$g(z) = \sum_{n = 0}^{\infty} a_n\cdot nz^{n - 1}$$ 
 and if 
 $$ L = \frac{1}{R} = \lim_{n \to \infty}\sup |a_n|^{\frac{1}{n}} $$
-$$ \Rightarrow \lim_{n \to \infty} \sup |na_n|^{\frac{1}{n}} = \lim_{n \to \infty}\sup |n|^{\frac{1}{n}}|a_n|^{\frac{1}{n}} = \lim_{n \to \infty}\sup|n|^{\frac{1}{n}}\lim_{n \to \infty} \sup |a_n|^{\frac{1}{n}}$$
+$$ \Longrightarrow \lim_{n \to \infty} \sup |na_n|^{\frac{1}{n}} = \lim_{n \to \infty}\sup |n|^{\frac{1}{n}}|a_n|^{\frac{1}{n}} = \lim_{n \to \infty}\sup|n|^{\frac{1}{n}}\lim_{n \to \infty} \sup |a_n|^{\frac{1}{n}}$$
 because $|n^k|^{\frac{1}{n}} \to 1$ as $n \to \infty$, $k \in \mathbb{R}$, $k \neq 0$. Hence $g(z)$ and $f(z)$ have the same radius of convergence. 
 \iffalse
 $$n ^{\frac{k}{n}} = e^{\ln(n^{\frac{k}{n}})} = e^{\frac{k}{n}\ln(n)}$$
@@ -1959,38 +1967,36 @@ $$ \lim_{n \to \infty} e^{\frac{k}{n}\ln(n)} = e^0 = 1 = \lim_{n \to \infty} n^{
 by the continuity of $e^x$. \\
 \fi
 Now we must show $g(z)$ is the derivative of $f(z)$, 
-$$f(z) = \sum_{n = 0}^N a_nz^n + \sum_{n = N + 1}^{\infty} a_nz^n = S_n(z) + E_n(z)$$ 
+$$f(z) = \sum_{n = 0}^N a_nz^n + \longsum[10]_{n = N + 1}^{\infty} a_nz^n = S_n(z) + E_n(z)$$ 
 where $|z| < r < R$, 
 $$ \frac{f(z+h) -f(z)}{h} - g(z) = \frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) + (S_N'(z) - g(z)) + \frac{E_N(z + h) - E_N(z)}{h}$$
 We have three terms to study, and we can set each of them to be $< \frac{\varepsilon}{3}$.
-\begin{equation*}
-\frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) \mbox{ derivative of a polynomial, } 
-\end{equation*}
-\begin{equation*}
-S_N'(z) - g(z), S_N'(z) \to g(z) \mbox{ for } N > M \mbox{ for some } M,
-\end{equation*}
-\begin{equation*}
-\frac{E_N(z + h) - E_N(z)}{h}, \mbox{ this is more technical and we will investigate more}
-\end{equation*}
-$$\abs*{\frac{E_N(z + h) - E_N(z)}{h}} \leqslant \sum_{n = N + 1}^{\infty} |a_n|\abs*{\frac{(z + h)^n - z^n}{h}} $$
+\begin{align*}
+&\frac{S_N(z + h) - S_N(z)}{h} - S_N'(z) \text{ derivative of a polynomial, }  \\
+&S_N'(z) - g(z), S_N'(z) \to g(z) \text{ for } N > M \text{ for some } M, \\
+&\frac{E_N(z + h) - E_N(z)}{h}, \text{ this is more technical and we will investigate more} \\
+&\abs*{\frac{E_N(z + h) - E_N(z)}{h}} \leqslant \longsum[10]_{n = N + 1}^{\infty} |a_n|\abs*{\frac{(z + h)^n - z^n}{h}} 
+\end{align*}
 This means we need a bound on $(z + h)^n - z^n$. Remember 
-$$1 + x + x^2 + \cdots + x^{n - 1} = \frac{1 - x^n}{1 - x}$$
-$$\Rightarrow (1 - x) (1 + x + x^2 + \cdots + x^{n - 1}) = 1 - x^n$$
+\begin{align*}
+&1 + x + x^2 + \cdots + x^{n - 1} = \frac{1 - x^n}{1 - x} \\
+\Longrightarrow \hspace{2mm} &(1 - x) (1 + x + x^2 + \cdots + x^{n - 1}) = 1 - x^n
+\end{align*}
 If we let $x = \frac{b}{a}$, then we have a more generalized formula, 
 $$a^n - b^n = (a - b)(a^{n - 1} + a^{n - 2}b + \cdots + ab^{n - 2} + b^{n - 1})$$
 Apply the formula above to $a = z + h$ and $b = z$, 
-$$|(z + h)^n - z^n| = |h||(z+h)^{n - 1} + (z+h)^{n - 2}z + \cdots + z^{n - 1}|$$
+$$|(z + h)^n - z^n| = |h|\abs[\big]{(z+h)^{n - 1} + (z+h)^{n - 2}z + \cdots + z^{n - 1}}$$
 We have n terms of the form 
 $$(z + h)^{n - 1 - k} \cdot z^k$$
 and if $h$ is small, $|z+h| \leqslant r < R$, then 
-$$|(z + h)^{n - 1 - k} \cdot z^k| \leqslant r^{n -1} \leqslant R^{n - 1}$$
+$$\abs[\big]{(z + h)^{n - 1 - k} \cdot z^k} \leqslant r^{n -1} \leqslant R^{n - 1}$$
 Therefore, 
 $$ |a_n|\frac{|(z+h)^n - z^n|}{|h|} \leqslant |a_n|\frac{|h|nR^{n - 1}}{|h|} = |a_n|nR^{n -1} $$
 Hence, we have a bound on
-$$\abs*{\frac{E_N(z+h) - E_N(h)}{h}} \leqslant \sum_{n = N + 1}^{\infty} |a_n|nr^{n - 1}$$
+$$\abs*{\frac{E_N(z+h) - E_N(h)}{h}} \leqslant \longsum[10]_{n = N + 1}^{\infty} |a_n|nr^{n - 1}$$
 which we know to be the tail of a convergent sum, $g(z)$. Thus, it can be picked such that it is less than $\frac{\varepsilon}{3}$ because the tail tends to 0 as $n \to \infty$. Hence, 
 $$\abs*{\frac{f(z+h)-f(z)}{h} - g(z)} < \varepsilon$$
-or $f'(z) = g(z)$. \\
+or in other words, $f'(z) = g(z)$. \\
 \newline
 \textbf{Proposition.} \\
 Power series functions are holomorphic in $|z - z_0| < R$ and are naturally $\infty$-differentiable, i.e. $\mathbb{C}^\infty$.
