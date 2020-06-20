@@ -2088,17 +2088,20 @@ But $\sin \left(\frac{1}{0}\right)$ does not exist and $\sin \left(\frac{1}{z}\r
 \subsection{Open Mapping Theorem}
 \textbf{Question.} Let $f$ be continuous on $\mathbb{R}$, does $f$ map open sets to open sets? \\
 \textbf{Answer.} No. See the following counter-example. \\
-Let $ f(x) = |x| $, then $ f(-3) = f(3)$ and $f((-3, 3)) = [0, 3)$ \\
+Let $ f(x) = |x| $, then $ f(-3) = f(3)$ and $f((-3, 3)) = [0, 3)$ 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{18_1}
+\centering
+\end{figure} 
 The continuous function does not map open sets to open sets.\\
 \textbf{Follow-Up (Alternative Definition of Continuity).} \\
 The pre-image of open sets under a continuous function $f$ is open. \\
 \newline
-Let $f$ be non-constant. Then Cauchy-Riemann Equations imply $|f(z)|$ is not constant. Uniqueness Theorem implies $f(\Omega) \neq 0$ on an open subset of $\Omega$. Therefore, non-constant holomorphic functions cannot map open sets to points or arcs. \\
+Let $f$ be non-constant. Then Cauchy-Riemann Equations imply $|f(z)|$ is not constant. The Uniqueness Theorem implies $f(\Omega) \neq 0$ on an open subset of $\Omega$. Therefore, non-constant holomorphic functions cannot map open sets to points or arcs. \\
 \newline
 \textbf{Open Mapping Theorem.} \\
-Let $f(z)$ be non-constant and holomorphic on $\Omega$. Let $U$ be open in $\Omega$ then, 
-$$ f(U) = \{w| f(z) = w \mbox{ for some z } \in \Omega \} $$ 
-is open. \\
+Let $f(z)$ be non-constant and holomorphic on $\Omega$. Let $U$ be open in $\Omega$, then 
+$$ f(U) = \{w| f(z) = w \mbox{ for some z } \in \Omega \} \text{ is open.}$$ 
 \textbf{Proof.} Let $a \in \Omega$, then a neighborhood of $a$ under $f$ will contain a neighborhood of $f(a)$. Assume $f(a) = 0$. If this is not the case, we can study $g(z) = f(z) - f(a)$. Since $f$ is not constant, by the Uniqueness Theorem there is $r > 0$ such that $f(z) \neq 0$ for all $z$ where $|z - a| = r$. Consider 
 $$ 0 < 2\varepsilon = \min_{|z - a| = r}|f(z)|$$
 We will show the image of the disk $B_r(a) = U$ contains $B_\varepsilon(f(a)) = B_\varepsilon(0)$ in the $w$-plane. Or in other words, interior points are mapped to interior points. Let $w \in B_\varepsilon(0)$ and look at $f(z) - w$. If $|z - a| = r$, 
@@ -2107,7 +2110,7 @@ because $|f(z)| \geqslant 2\varepsilon$ and $|w| < \varepsilon$. Now at $z = a$,
 On the boundary of $U$, we have $|f(z) - w| \geqslant \varepsilon$. \\
 But at the center of $U$, we have $|f(a) - w| < \varepsilon$. 
 To sum up what we have so far: 
-\begin{enumerate}[nolistsep]
+\begin{enumerate}[leftmargin = *, nolistsep]
 \item $f(z) - w$ is not constant.
 \item $|f(z) - w| < \varepsilon$ on $w$.
 \item $|f(z) - w| \geqslant \varepsilon$ on $\partial w$.
@@ -2131,11 +2134,17 @@ If $f(z)$ is a boundary point, then any neighborhood of $f(z)$ intersects points
 \textbf{Symmetry Principle.} \\
 Let $f$ be continuous on an open set $\Omega$ and holomorphic on $\Omega$ except on a line segment $L$. Then $f$ is holomorphic on $\Omega$. \\
 \textbf{Proof.} 
-Assume $L$ is on $\mathbb{R}-axis$, otherwise apply affine transform to move $L$, $f(z) = f(az + b)$. \\
-Let $z \in L$ and consider a ball about $z$. Let $C$ be a closed loop in the ball. If $C$ does not cross $L$, then 
-$$\oint_C f(z) \, dz = 0$$ 
-by Cauchy's Theorem. If $C$ does pass through $L$, we can break up the curve as follows: 
-%%
+Assume $L$ is on $\mathbb{R}$-axis, otherwise apply affine transform to move $L$, $f(z) = f(az + b)$. \\
+Let $z \in L$ and consider a ball about $z$. Let $C$ be a closed loop in the ball. 
+\begin{figure}[H]
+\includegraphics[scale = 0.25]{18_2}
+\centering
+\end{figure} 
+If $C$ does not cross $L$, then $\oint_C f(z) \, dz = 0$ by Cauchy's Theorem. If $C$ does pass through $L$, we can break up the curve as follows: 
+\begin{figure}[H]
+\includegraphics[scale = 0.25]{18_3}
+\centering
+\end{figure} 
 $$ \oint_Cf(z)\,dz = \lim_{\varepsilon \to 0} \oint_{U_\varepsilon} f(z) \, dz + \oint_{L_\varepsilon} f(z) \, dz = 0$$
 because $f$ is continuous. Then by Morera's Theorem, $f$ is holomorphic in the ball. \\
 \newline
@@ -2160,10 +2169,9 @@ $$g(x) = \conj{g(x)}$$
 for $x \in L$. Thus, $g$ extends continuously up to $L$. By Symmetry Principle $g$ is holomorphic. \\
 \newline
 \textbf{Corollary.} 
-If $f$ is holomorphic in a region symmetric with respect to $\mathbb{R}$-axis and $f(z)$ is $\mathbb{R}$ for $z \in \mathbb{R}$, then
+If $f$ is holomorphic in a region symmetric with respect to $\mathbb{R}$-axis and $f(z)$ is $\mathbb{R}$ for $z \in \mathbb{R}$, then by the Uniqueness Theorem
 $$f(z) = \conj{f(\conj{z})} $$
-by Uniqueness Theorem. \\
-\newpage
+\newline
 \textbf{Example.} By the corollary above, 
 $$\cos(z) = \conj{\cos(\conj{z})}$$ 
 for all $z$. \\
@@ -2684,19 +2692,17 @@ Let $f(z)$ have a simple pole at $z_0$ and let $C_\varepsilon$ be the curve para
 $$ \gamma(t) = z_0 + \varepsilon e^{it}, t \in [0, \pi]$$
 Then 
 $$ \lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \pi i \, Res(f, z_0)$$
-\begin{figure}[h]
-\includegraphics[scale=0.17]{21_4} 
+\begin{figure}[H]
+\includegraphics[scale=0.2]{21_4} 
 \centering
 \end{figure} 
-\newline
 \textbf{Proof.} Assume $\varepsilon > 0$ but small enough for $f$ to have a Laurent expansion for $0 < |z - z_0| < \varepsilon$. Then 
 \begin{align*}
 f(z) &= \frac{b_1}{z - z_0} + a_0 + a_1(z - z_0)+ \cdots \\
 \int_Cf(z)\,dz &= \int_0^\pi f(z_0 + \varepsilon e^{it})\varepsilon i e^{it }dt \\ 
-&= \int_0^\pi b_1i + a_0i\varepsilon e^{it} + a_1i\varepsilon^2e^{2it}+ \cdots dt
+&= \int_0^\pi b_1i + a_0i\varepsilon e^{it} + a_1i\varepsilon^2e^{2it}+ \cdots dt \\
+\lim_{\varepsilon \to 0^+}\int_C{f(z)}\, dz &= \pi i b_1 = \pi i Res(f, z_0)
 \end{align*}
-and 
-$$\lim_{\varepsilon \to 0^+}\int_C{f(z)}\, dz = \pi i b_1 = \pi i Res(f, z_0)$$
 For non-simpe poles, the limit does not exist and we can extend this argument to any angular range.
 \newpage
 \textbf{Corollary of Semicircle Lemma.} \\
@@ -2719,7 +2725,7 @@ $$ I = \lim_{R \to \infty, \varepsilon \to 0+} \int_{-R}^{\varepsilon}f(x) \, dx
 We approach $x = 0$ from the left and right at the same rate and distance. \\
 Let $f(z) = \frac{e^{iz}}{z}$ and consider the contour $C$.
 \begin{figure}[h]
-\includegraphics[scale=0.15]{21_5} 
+\includegraphics[scale=0.2]{21_5} 
 \centering
 \end{figure} 
 Then $f$ is holomorphic on $C$'s interior and by Cauchy-Goursat Theorem, 
@@ -2744,8 +2750,8 @@ In this case, we need a contour in $\mathbb{C}$ that does the following:
 \item The contour coincides with $\mathbb{R}^+$ for $f(z) = \frac{\sqrt{z}}{z^2 + 1}$. 
 \item Avoid 0, the branch point. 
 \end{enumerate}
-\begin{figure}[h]
-\includegraphics[scale=0.15]{21_6} 
+\begin{figure}[H]
+\includegraphics[scale=0.2]{21_6} 
 \centering
 \end{figure} 
 This means the branch cut for $\sqrt{z}$ must be along $\mathbb{R}^+$. Else, $f$ is not meromorphic on the interior of $C$. 
@@ -2755,8 +2761,8 @@ This means the branch cut for $\sqrt{z}$ must be along $\mathbb{R}^+$. Else, $f$
 &= \int_{\varepsilon}^{R}f(z) \,dz + \int_{C_R}f(z) \,dz + \int_{R}^{\varepsilon} f(z) \,dz + \int_{-\tau_\varepsilon} f(z) \, dz
 \end{align*}
 Now along the branch cut, we need to study the sign of $\sqrt{x}$. 
-\begin{figure}[h]
-\includegraphics[scale=0.08]{21_7} 
+\begin{figure}[H]
+\includegraphics[scale=0.5]{21_7} 
 \centering
 \end{figure} 
 On $[\varepsilon, R]$ and $[R, \varepsilon]$, we are using different branches of $\sqrt{z}$ but the same branch cut. \\
@@ -2796,11 +2802,10 @@ Res(f, -i) &= \frac{e^{\frac{\left(\operatorname{Log}|z| + i\operatorname{arg}(z
 \newpage
 \section{Argument Principle and Rouche's Theorem}
 Let $\gamma$ be a simple, piecewise smooth, closed curve in $\mathbb{C}$ oriented counter-clockwise. Let $f$ be meromorphic inside and on $\gamma$ but with no poles or zeros on $\gamma$.
-\begin{figure}[h]
-\includegraphics[scale=0.15]{22_1} 
+\begin{figure}[H]
+\includegraphics[scale=0.2]{22_1} 
 \centering
 \end{figure} 
-\\
 Let $p_1, p_2, \cdots, p_m$ be $f$'s poles in $\gamma$ and $z_1, \cdots, z_n$ be $f$'s zeros in $\gamma$. \\
 Define $mult(z_k)$ and $mult(p_k)$ as the orders of the root $z_k$ and pole $p_k$. \\
 Define 
