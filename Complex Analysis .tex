@@ -1851,21 +1851,23 @@ Just as the example above, we use Dirichlet Test to prove its convergence.
 \end{align*}
 By Dirichlet's Test, $\sum_{n = 1}^{\infty} \frac{\sin(n)}{n} < \infty$. 
 However, we did not show $\sum_{n = 1}^\infty\sin(n)$ converges. 
+
 \newpage
 \section{Power Series in $\mathbb{C}$}
 We want to express holomorphic functions in $\mathbb{C}$ by series in $z$ instead of integrals and the Cauchy Riemann Equations. Cauchy-Goursat Theorem will provide the connection between the two forms, 
 $$ f(z) = e^z = \sum_{n = 0}^{\infty} \frac{z^n}{n!} $$
-Let 
+Let the power series centered at $z_0$ be
 $$ f(z) = \sum_{n = 0}^{\infty} a_n(z - z_0)^n $$
-be a power series centered at $z_0$. \\
 The coefficients are unique: 
 $$ a = \frac{f^{(n)} (z_0)}{n!} = \frac{1}{2\pi i} \oint_C \frac{f(w)}{(w - z_0)^{n + 1}} \, dw$$
 where $C$ is a path about $z_0$. \\
 \newline
 \textbf{Derivative and Anit-derivative of a Power Series.} \\
 $f'(z)$ and $F(z)$ are given by 
-$$f'(z) = \sum_{n = 0}^{\infty} a_n \cdot n(z-z_0)^{n -1}$$
-$$F(z) = \int f(z) \, dz = \sum_{n = 0}^{\infty} \frac{a_n}{n + 1}(z - z_0)^{n + 1} + C_0$$
+\begin{align*}
+f'(z) &= \sum_{n = 0}^{\infty} a_n \cdot n(z-z_0)^{n -1} \\
+F(z) &= \int f(z) \, dz = \sum_{n = 0}^{\infty} \frac{a_n}{n + 1}(z - z_0)^{n + 1} + c_0
+\end{align*}
 and are holomorphic and converge for $|z -z _0| < R$. $R$ denotes the radius of convergence. \\
 We have no clue about what happens with $|z - z_0| = R$, then we have to check for each $f(z)$ and point. \\
 If $R = \infty$, then $f(z)$ is entire. \\
@@ -2394,7 +2396,7 @@ $$
 $$
 for any closed simple curve about 0. \\
 \begin{figure}[h]
-\includegraphics[scale=0.17]{20_1} 
+\includegraphics[scale=0.25]{20_1} 
 \centering
 \end{figure}
 \\
