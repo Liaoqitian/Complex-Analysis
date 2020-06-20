@@ -46,21 +46,21 @@
 \contentsline {section}{\numberline {13}Cauchy's Integral Formula}{47}%
 \contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{52}%
 \contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{52}%
-\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{53}%
-\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{57}%
-\contentsline {subsection}{\numberline {15.1}Convergence Tests}{58}%
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{61}%
-\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{62}%
-\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{63}%
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{65}%
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{68}%
-\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{68}%
-\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{69}%
-\contentsline {section}{\numberline {19}Laurent Series}{71}%
-\contentsline {section}{\numberline {20}Residue Theorem}{75}%
-\contentsline {subsection}{\numberline {20.1}Singularity and Root}{75}%
-\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{77}%
-\contentsline {section}{\numberline {21}Improper Integrals}{83}%
-\contentsline {subsection}{\numberline {21.1}Principal Value}{83}%
-\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{84}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{93}%
+\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{54}%
+\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{58}%
+\contentsline {subsection}{\numberline {15.1}Convergence Tests}{59}%
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{62}%
+\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{63}%
+\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{64}%
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{66}%
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{69}%
+\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{69}%
+\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{70}%
+\contentsline {section}{\numberline {19}Laurent Series}{72}%
+\contentsline {section}{\numberline {20}Residue Theorem}{76}%
+\contentsline {subsection}{\numberline {20.1}Singularity and Root}{76}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{78}%
+\contentsline {section}{\numberline {21}Improper Integrals}{84}%
+\contentsline {subsection}{\numberline {21.1}Principal Value}{84}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{85}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{94}%
