@@ -2205,33 +2205,29 @@ is holomorphic except at the reflected zeros in $|z| < 1$. Reflection is about t
 \centering
 \end{figure} 
 
-
 \newpage
 \section{Laurent Series}
 \textbf{First Extension of Cauchy's Integral Formula.} \\
 Let $\Omega$ be the domain between two simple closed curves $C_1$ and $C_2$, each oriented counter-clockwise. If $f$ is holomorphic on $\Omega$, then
 $$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw, z \in \Omega$$
-\textbf{Proof.}\\
-\begin{figure}[h]
+\textbf{Proof.}
+\vspace{-5mm}
+\begin{figure}[H]
 \includegraphics[scale=0.2]{19_1} 
 \centering
 \end{figure}
-\\
 Let $z \in \Omega$ and $C: C_1 \cup C_3 \cup -C_2 \cup -C_3$ be a closed curve about $z$ in $\Omega$. \\
 Now Cauchy's Integral Formula applies
 $$ f(z) = \frac{1}{2\pi i}\oint_C \frac{f(w)}{w - z} \, dw = \frac{1}{2\pi i}\oint_{C_1\cup -C_2} \frac{f(w)}{w - z} \,dw = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw$$
 \newline
 \textbf{Laurent's Theorem.} \\
-For $z \in A$ and $f$ holomorphic in 
-$$A = \{z|r_1 < |z - z_0| < r_2\}$$
-we have 
+For $z \in A$ and $f$ holomorphic in $A = \{z|r_1 < |z - z_0| < r_2\}$, we have 
 \begin{align*}
 f(z) &= \sum_{n = -\infty}^{\infty} a_n(z - z_0)^n \\
 a_n & = \frac{1}{2\pi i}\oint_C \frac{f(w)}{(w - z_0)^{n + 1}}\, dw
 \end{align*}
 where $C$ is any closed simple path in $A$ about $z_0$. \\
 We may also use different notation for the coefficients with negative indices, $b_n = -a_n$. \\
-\newline
 \begin{minipage}{.5\textwidth}
        \begin{align*}
 	f(z) &= \sum_{n = 1}^{\infty}\frac{b_n}{(z - z_0)^n} + \sum_{n = 0}^{\infty} a_n (z-z_0)^n \\
@@ -2241,7 +2237,9 @@ We may also use different notation for the coefficients with negative indices, $
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
+    \begin{figure}[H]
     \includegraphics[scale = 0.2]{19_2}
+    \end{figure}
 \end{minipage} 
 \newline
 \newline
@@ -2250,8 +2248,8 @@ Let $A = \{z|r_1 < |z - z_0| < r_2\}$ be an annulus centered at $z_0$. Choose $C
 $$f(z) = \frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw - \frac{1}{2\pi i} \oint_{C_2} \frac{f(w)}{w - z} \,dw$$
 As shown earlier with Taylor Series: 
 \begin{align*}
-\frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw &= \sum_{n = 0}^{\infty} a_n z^n \\
-a_n &= \frac{1}{2\pi i}\oint_{C_1} \frac{f(w)}{w^{n + 1}} \, dw
+&\frac{1}{2\pi i} \oint_{C_1} \frac{f(w)}{w - z} \,dw = \sum_{n = 0}^{\infty} a_n z^n \\
+&a_n = \frac{1}{2\pi i}\oint_{C_1} \frac{f(w)}{w^{n + 1}} \, dw
 \end{align*}
 provided $|z| < r_2$.
 Then we transform the integral over $C_2$ as follows. 
@@ -2262,17 +2260,17 @@ And since the Geometric Series converges uniformly for $\abs*{\frac{w}{z}} \leqs
 $$\frac{-1}{2\pi i}\oint_{C_1}\sum_{n = 0}^{\infty} f(w)\frac{w^n}{z^{n + 1}} \, dw = \frac{-1}{2\pi i}\sum_{n = 0}^{\infty}\oint_{C_1} f(w)w^n \, dw \, \frac{1}{z^{n + 1}}$$
 We rewrite $\frac{1}{z^{n + 1}}$ with $z^{-n - 1}$ and reindex our sum to start at $n = 1$. Therefore, 
 \begin{align*}
-\frac{1}{2\pi i}\oint_{-C_2}\frac{f(w)}{w - z} \,dw &= \sum_{n = 1}^{\infty} b_n z^{-n}, |z| > r \\
-b_n &= \frac{1}{2\pi i}\oint_{C_1}f(w)w^{n - 1}\, dw 
+&\frac{1}{2\pi i}\oint_{-C_2}\frac{f(w)}{w - z} \,dw = \sum_{n = 1}^{\infty} b_n z^{-n}, |z| > r \\
+&b_n = \frac{1}{2\pi i}\oint_{C_1}f(w)w^{n - 1}\, dw 
 \end{align*}
 \newline
 \textbf{Techniques.}
  We have two tricks to transform Power Series into forms we can manipulate. 
-\begin{enumerate}
+\begin{enumerate}[leftmargin = *]
 \item Treat $r = \frac{z}{w}$. If $|\frac{z}{w}| < 1$, $|z| < |w|$, the sum converges. 
 $$\frac{1}{w - z} = \frac{1}{w}\cdot \frac{1}{1 - \frac{z}{w}} = \frac{1}{w}\left(1 + \frac{z}{w} + \left(\frac{z}{w}\right)^2+\cdots \right)$$
 \item Treat $r = \frac{w}{z}$. If $|\frac{w}{z}| < 1$, $|w| < |z|$, the sum converges. 
-$$\frac{1}{w - z} = \frac{-1}{z}\cdot \frac{1}{1 - \frac{w}{z}} = \frac{-1}{z}\left(1 + \frac{w}{z} + \left(\frac{w}{z}\right)^2+\cdots \right)$$
+$$\frac{1}{w - z} = -\frac{1}{z}\cdot \frac{1}{1 - \frac{w}{z}} = -\frac{1}{z}\left(1 + \frac{w}{z} + \left(\frac{w}{z}\right)^2+\cdots \right)$$
 \end{enumerate}
 \newpage
 Laurent Series can be differentiated and integrated term by term to get $f'(z)$ or $F(z)$, since we have uniform convergence on closed annuli in $A$. We can understand Laurent Series as a "double-ended" Taylor Series. 
@@ -2282,14 +2280,13 @@ f(z) &= \cdots + \frac{a_{-2}}{z^2} + \frac{a_{-1}}{z} + a_0 + a_1z + a_2z^2 + \
 \end{align*}
 The structure of the principal part will tell us about $f$'s singularities at $z_0$. \\
 We do not often find $a_n$'s from the formula, but follow the three rules. 
-\begin{enumerate}
+\begin{enumerate}[leftmargin = *]
 \item Break up $f(z)$ by Prime Factor Decomposition. 
 \item Expand each term in $|z - z_0| < r$ or $|z - z_0| > R$. \\
 The radius is often the distance to the next closest singularity of $f(z)$. 
 \item Collect the needed terms from the step above for each element of the Prime Factor Decomposition. 
 \end{enumerate} 
-
-\textbf{Example.} Expand 
+\textbf{Example.} Expand the following function into a Laurent Series. 
 $$\frac{z}{z^2 + 1}, \, z_0 = i$$ 
 There is a root of $z^2 + 1$ at $i$. 
 $$\frac{z}{z^2 + 1} = \frac{1}{2}\cdot \frac{1}{z - i} + \frac{1}{2}\cdot \frac{1}{z + i}$$
@@ -2298,17 +2295,16 @@ $$\frac{1}{2}\cdot \frac{1}{z + i} = \frac{1}{2}\cdot \frac{1}{2i}\cdot \frac{1}
 Therefore, we have the Laurent series of $\frac{z}{z^2 + 1}$ around $z_0 = i$ for $\abs*{\frac{z - i}{2i}} < 1$.
 $$\Rightarrow \frac{z}{z^2 + 1} = {\underbrace{\frac{1}{2} \cdot \frac{1}{z - i}}_\text{Principal Part}} + {\underbrace{\frac{1}{4i}\sum_{n = 0}^{\infty}(-1)^n\left(\frac{z - i}{2i}\right)^n}_\text{Regular Part}}$$
 \newline
-\textbf{Example.} Expand 
+\textbf{Example.} Expand the following function into a Laurent Series. 
 $$ f(z) = \frac{1}{z + 1} + \frac{1}{z + 3}, \, z_0 = 0$$
 In this case, we have three annuli. And we have two expressions for each simple partial fraction. 
-
 \begin{align*}
 \mbox{For } |z| < 1: \frac{1}{z + 1} &= \frac{1}{1 - (-z)} = \sum_{n = 0}^{\infty} (-1)^nz^n\\
 \mbox{For } |z| > 1: \frac{1}{z + 1} &= \frac{1}{z} \cdot \frac{1}{1 - \left(\frac{-1}{z}\right)} = \frac{1}{z} \sum_{n = 0}^{\infty}\frac{(-1)^n}{z^n} = \sum_{n = 0}^{\infty}\frac{(-1)^n}{z^{n + 1}}\\ 
 \mbox{For } |z| < 3: \frac{1}{z + 3} &= \frac{1}{3} \cdot \frac{1}{1 - \left(\frac{-z}{3}\right)} = \frac{1}{3} \sum_{n = 0}^{\infty}(-1)^n\left(\frac{z}{3}\right)^n \\
 \mbox{For } |z| > 3: \frac{1}{z + 3} &= \frac{1}{z} \cdot \frac{1}{1 - \left(\frac{-3}{z}\right)} = \frac{1}{z} \sum_{n = 0}^{\infty}(-1)^n\left(\frac{3}{z}\right)^n = \sum_{n = 0}^{\infty}(-1)^n\frac{3^n}{z^{n + 1}}
 \end{align*}
-Therefore, 
+Therefore, we have the following cases
 \begin{align*}
 \mbox{If } |z| < 1: f(z) &= \sum_{n = 0}^{\infty}(-1)^nz^n + \frac{1}{3} \sum_{n = 0}^{\infty}(-1)^n\left(\frac{z}{3}\right)^n \\
 \mbox{It only has regular} &\mbox{ terms since } f \mbox{ is holomorphic on } |z| < 1. \\
@@ -2340,16 +2336,16 @@ On the other hand, $\frac{1}{z}$ has an isolated singularity at 0. \\
 \newline
 There is a natural connection between an isolated singularity and a root of a holomorphic function. If $f$ is $\mathbb{C}$-differentiable at $z_0$ and its Taylor expansion is of the form 
 $$f(z) = \sum_{k = n}^{\infty} a_k(z - z_0)^k = a_n(z-z_0)^n + a_{n + 1}(z - z_0)^{n + 1}+ \cdots$$
-If $n = 1$, then $f$ has a simple root at $z_0$. \\
+If $n = 1$, then $f$ has a \textit{simple root} at $z_0$. \\
 \newline
 \textbf{Pole.} \\
 We want to do the same thing for the principal/singular expansion for $f(z)$. For simplicity, let $b_n = a_{-n}$ to identify the singular coefficients. If 
-$$f(z) = \sum_{k = -n}^{\infty} a_k(z - z_0)^k = \frac{b_n}{(z - z_0)^n} + \frac{b_{n - 1}}{(z - z_0)^{n - 1}} + \cdots$$
-for $n > 0$ and $b_n \neq 0$, then $f$ has a pole of order $n$ at $z_0$. \\
-If $b_n = 0$ for $n > 1$ and $|b_1| \neq 0$, then $f$ has a simple pole at $z_0$. \\
+$$f(z) = \longsum[4]_{k = -n}^{\infty} a_k(z - z_0)^k = \frac{b_n}{(z - z_0)^n} + \frac{b_{n - 1}}{(z - z_0)^{n - 1}} + \cdots$$
+for $n > 0$ and $b_n \neq 0$, then $f$ has \textit{a pole of order $n$} at $z_0$. \\
+If $b_n = 0$ for $n > 1$ and $|b_1| \neq 0$, then $f$ has \textit{a simple pole} at $z_0$. \\
 \newline
 \textbf{Essential Singularity.} \\
-If the principal part of $f(z)$ has $\infty$-many terms in it at $z_0$, then $f$ has an essential singularity or a non-removable pole at $z_0$. On the other hand, order-n poles are removable. \\
+If the principal part of $f(z)$ has $\infty$-many terms in it at $z_0$, then $f$ has an \textit{essential singularity} or a \textit{non-removable pole} at $z_0$. On the other hand, order-n poles are removable. \\
 \newline
 \textbf{Example.} $\sin(\frac{1}{x})$ has a non-removable pole at 0. \\
 \newline
@@ -2370,16 +2366,15 @@ A function is meromorphic on a domain $\Omega$ if $f$ is holomorphic on $\Omega$
 \newline
 On a bounded domain, a meromorphic function can only have finitely many isolated poles. Similar to the Uniqueness Theorem for holomorphic functions, zeros have to be isolated. \\
 \newline
-\textbf{Example.} \\
-$\frac{1}{z}$ is meromorphic on $\mathbb{C}$. \\
-$\csc(z)$ is meromorphic on $\mathbb{C}$, but it has $\infty$-many poles, namely $z = k\pi$ for $k \in \mathbb{Z}$. \\
+\textbf{Example.} 
+$\frac{1}{z}$ is meromorphic on $\mathbb{C}$. $\csc(z)$ is meromorphic on $\mathbb{C}$, but it has $\infty$-many poles, namely $z = k\pi$ for $k \in \mathbb{Z}$. \\
 \newline
 \textbf{Example.} The meromorphic function 
 $$ \frac{1}{1 - z} = \sum_{n = 0}^{\infty}z^n$$
 has no singularity at $z = 0$, but does have a simple pole at $z = 1$. 
 $$ \frac{1}{1 - z} = \frac{-1}{z - 1} + 0\cdot (z - 1)^0 + 0\cdot(z - 1)^1 + \cdots $$
 Namely, the function is its singular part at $z = 1$. However, \\
-$$ \frac{1}{1 - z} = \frac{-1}{z}\cdot \frac{1}{1 - \frac{1}{z}} = \sum_{n = 1}^{\infty} \frac{-1}{z^n}, \, |z| > 1$$
+$$ \frac{1}{1 - z} = -\frac{1}{z}\cdot \frac{1}{1 - \frac{1}{z}} = \sum_{n = 1}^{\infty} -\frac{1}{z^n}, \, |z| > 1$$
 does have an essential singularity under a change of variables $w = \frac{1}{z}$. \\
 Therefore, $\frac{1}{1-z}$ has an essential singularity at $\infty$. \\
 \newline
@@ -2390,8 +2385,7 @@ has $\nth{3}$-order pole at $z = 0$ and $\nth{1}$-order poles at $z = \pm i$ \\
 \newline
 \textbf{Example.} 
 $$ f(z) = \frac{\sin(z)}{z} = \frac{1}{z}\sum_{n = 0}^{\infty}\frac{z^{2n + 1}}{(2n)!} = 1 - \frac{z^2}{6} + \frac{z^4}{120} + \cdots$$
-has no pole at $z = 0$, since $\sin(z)$ and $z$ have simple roots at 0. \\
-Therefore, $f(z)$ has an isolated, removable singularity at 0.
+has no pole at $z = 0$, since $\sin(z)$ and $z$ have simple roots at 0. Therefore, $f(z)$ has an isolated, removable singularity at 0.
 \newpage
 \subsection{Residue and Laurent Series}
 \textbf{Residue.} \\
@@ -2401,58 +2395,50 @@ $$A = \{z\,|\, 0 < |z - z_0| < r\}$$
 The residue of $f(z)$ at $z_0$ is given by 
 $$Res(f, z_0) = b_1 = a_{-1}$$
 \newline
-Remember 
+Remember, for any closed simple curve about 0, we have 
 $$
 \oint_C z^k \, dz = 
 \begin{cases}
-	0, \mbox{ if } k \neq -1 \\
-	2\pi i \mbox{ if } k = -1
+	0, &\text{ if } k \neq -1 \\
+	2\pi i, &\text{ if } k = -1
 \end{cases}
 $$
-for any closed simple curve about 0. \\
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.25]{20_1} 
 \centering
 \end{figure}
-\\
 For any closed simple counter-clockwise curve $C$ in $A$ about $z_0$, we have 
 $$
 \oint_C (z - z_0)^k \, dz = 
 \begin{cases}
-	0, \mbox{ if } k \neq -1 \\
-	2\pi i \mbox{ if } k = -1
+	0, &\text{ if } k \neq -1 \\
+	2\pi i, &\text{ if } k = -1
 \end{cases}
 $$
 Therefore, 
 $$ \oint_C f(z) \, dz = \oint_C \sum_{k = -n} ^ {\infty} a_k (z - z_0)^k \, dz = 2\pi i a_{-1} = 2\pi ib_1 = 2\pi i Res(f, z_0)$$
 \newline
-\textbf{Example.} If 
+\textbf{Example.} Suppose $f(z)$ is defined as 
 $$ f(z) = \frac{1}{z^3} + \frac{2}{z^2} + \frac{4}{z} + 5$$
 then we have a pole of order 3 at 0 and $Res(f, 0) = 4$. \\
 \newline
 Not every Laurent expansion about a pole may be used to compute residues. \\
 \newline
-\textbf{Example.} Let 
-$$ f(z) = \frac{-1}{z}\cdot \frac{1}{1-z} = -\frac{1}{z}\sum_{n = 0}^{\infty}z^n = -\frac{1}{z} - 1 - z - z^2 - \cdots$$
+\textbf{Example.} Suppose $f(z)$ is defined as 
+$$ f(z) = -\frac{1}{z}\cdot \frac{1}{1-z} = -\frac{1}{z}\sum_{n = 0}^{\infty}z^n = -\frac{1}{z} - 1 - z - z^2 - \cdots$$
 for $0 < |z| < 1$. Therefore, $f(z)$ has a simple pole and $Res(f, 0) = -1$. However, 
 $$ f(z) = \frac{1}{z^2}\cdot \frac{1}{1 - \frac{1}{z}} = \frac{1}{z^2}\sum_{n = 0}^{\infty} \frac{1}{z^n} = \frac{1}{z^2} + \frac{1}{z^3} + \frac{1}{z^4} + \cdots$$
 for $|z| > 1$. But $Res(f, 0) \neq 0$ because this Laurent Series is not valid in a punctured disk containing 0. Hence, we must use the first result. 
 $$ Res\left(\frac{1}{z(z-1)}, 0\right) = -1$$
 \newline
-\textbf{Example.} $\operatorname{Log}(z)$ has a non-isolated singularity at 0. \\
-Therefore, $Res(\operatorname{Log}(z), 0)$ does not exist. \\
+\textbf{Example.} $\operatorname{Log}(z)$ has a non-isolated singularity at 0. Therefore, $Res(\operatorname{Log}(z), 0)$ does not exist. \\
 \newline
 \textbf{Empirical Rules.} 
 \begin{enumerate}[leftmargin=*]
-\item If 
-$$ f(z) = \sum_{n = -1}^{\infty} a_n (z-z_0)^n $$
-then 
-$$Res(f(z), z_0) = a_{-1} = b_1$$
-and $f$ has a simple pole at $z_0$.
+\item If $ f(z) = \sum_{n = -1}^{\infty} a_n (z-z_0)^n $, then $Res(f(z), z_0) = a_{-1} = b_1$, and $f$ has a simple pole at $z_0$.
 \item If $ g(z) = (z - z_0)f(z) $ is $\mathbb{C}$-differentiable at $z_0$, then $ Res(f(z), z_0) = g(z_0)$.
 \item If $f$ has a simple pole at $z_0$, then $$ \lim_{z \to z_0} (z-z_0)f(z) = Res(f(z), z_0)$$
-(The limit exists and we have equality.) \\
-Conversely, if $$ \lim_{z \to z_0} (z-z_0)f(z)$$ exists, then $f$ has a simple pole at $z_0$ or $f$ is $\mathbb{C}$-differentiable at $z_0$ and 
+(The limit exists and we have equality.) Conversely, if $ \lim_{z \to z_0} (z-z_0)f(z)$ exists, then $f$ has a simple pole at $z_0$ or $f$ is $\mathbb{C}$-differentiable at $z_0$ and 
 $$ \lim_{z \to z_0}(z - z_0)f(z) = Res(f(z), z_0)$$
 \item If $f$ has a simple pole at $z_0$ and $g(z)$ is $\mathbb{C}$-differentiable at $z_0$, 
 $$ Res(fg, z_0) = g(z_0)\,Res(f, z_0)$$
@@ -2470,15 +2456,14 @@ Each of these can be shown by studying $f$'s Laurent expansion in $ 0 < |z - z_0
 \textbf{Example.} 
 $$f(z) = \frac{z^2 + z + 2}{(z - 2)(z - 3)(z - 4)(z - 5)}$$ 
 at $z = 2$ we have a simple pole and $g(z) = (z - 2)f(z)$ is holomorphic. \\
-Therefore by \circled{\scriptsize3} $Res(f, 2) = g(2) = -\frac{4}{3}$. \\
-We do not need to compute the Laurent Series at $z_0 = 2$. \\
+Therefore, by \circled{\scriptsize3} $Res(f, 2) = g(2) = -\frac{4}{3}$. In this case, we do not need to compute the Laurent Series at $z_0 = 2$. \\
 \newline
 \textbf{Example.}
 $$ f(z) = \frac{1}{\sin(z)}$$ 
 Then by \circled{\scriptsize5} 
 $$Res(f(z), \pi k) = \frac{1}{\cos(\pi k)} = (-1)^k $$
 \newline
-\textbf{Example.} Since 
+\textbf{Example.} 
 $$\sinh(z) = z + \frac{z^3}{3!} + \frac{z^5}{5!} + \cdots = \sum_{n = 0}^{\infty}\frac{z^{2n + 1}}{(2n + 1)!}$$
 Then 
 $$ f(z) = \frac{\sinh(z)}{z^5} = \frac{1}{z^4} + \frac{1}{6z^2} + \frac{1}{120} + \cdots $$
@@ -2497,9 +2482,9 @@ $$ Res(f, 2) = \frac{g''(2)}{2} = \frac{1}{z^3} \bigg\rvert_{z = 2} = \frac{1}{8
 \textbf{Example.} 
 $$\cot(z) = \frac{\cos(t)}{\sin(t)} = \frac{b_1}{z} + a_0 + a_1z + a_2z^2 + \cdots = \frac{1 - \frac{z^2}{2} + \frac{z^4}{4!} - \cdots}{z - \frac{z^3}{6} + \frac{z^5}{5!} - \cdots}$$
 We have a system of equations
-$$(\frac{b_1}{z} + a_0 + a_1z + a_2z^2 + \cdots)(z - \frac{z^3}{6} + \frac{z^5}{5!} - \cdots) = 1 - \frac{z^2}{2} + \frac{z^4}{4!} - \cdots$$
+$$\left(\frac{b_1}{z} + a_0 + a_1z + a_2z^2 + \cdots\right)\left(z - \frac{z^3}{6} + \frac{z^5}{5!} - \cdots\right) = 1 - \frac{z^2}{2} + \frac{z^4}{4!} - \cdots$$
 After we equate the powers of $z$, we have
-$$b_1 + a_0z + (-\frac{b_1}{6} + a_1)z^2 + (-\frac{a_0}{6} + a_2)z^3 + (\frac{b_1}{5} - \frac{a_1}{6} + a_3)z^4 = 1 - \frac{z^2}{2} + \frac{z^4}{4!}$$
+$$b_1 + a_0z + \left(-\frac{b_1}{6} + a_1\right)z^2 + \left(-\frac{a_0}{6} + a_2\right)z^3 + \left(\frac{b_1}{5} - \frac{a_1}{6} + a_3\right)z^4 = 1 - \frac{z^2}{2} + \frac{z^4}{4!}$$
 Therefore, $a_0 = 0, a_1 = -\frac{1}{3}, a_2 = 0, a_3 = -\frac{1}{45}, b_1 = 1$. This means 
 $$\cot(z) = \frac{1}{z} - \frac{z}{3} - \frac{z^3}{45} + \cdots $$
 \newline
@@ -2512,15 +2497,15 @@ $$ \oint_C f(z) \, dz = 2\pi i \sum \mbox{residues of } f \mbox{ in } C$$
 \centering
 \end{figure}
 \begin{align*}
-C_0 &= C_1 \cup C_2 \cup -C_3 \cup -C_2 \cup C_4 \cup C_5 \cup -C_6 \cup -C_5 \\
-C &= C_1 \cup C_4
+C &= C_1 \cup C_4 \\ 
+C_0 = C_1 \cup C_2 \cup -C_3 \cup &-C_2 \cup C_4 \cup C_5 \cup -C_6 \cup -C_5 
 \end{align*}
 By Cauchy-Goursat Theorem, 
 $$ \oint_{C_0}f(z) \, dz = 0$$
 And the integrals over $\pm C_2$ and $\pm C_5$ sum to zero. Therefore, 
 \begin{align*}
 0 &= \oint_{C_0}f(z) \, dz = \oint_{C_1 \cup -C_3 \cup C_4 \cup -C_6} f(z) \, dz = \oint_{C_1 \cup C_4}f(z) \,dz + \oint_{-C_3 \cup -C_6} f(z) \,dz\\
-\Rightarrow \oint_Cf(z) \, dz &= \oint_{C_3 \cup C_6} f(z) \, dz = \oint_{C_3}f(z) \,dz + \oint_{C_6}f(z)\,dz = 2\pi i(Res(f, z_1) + Res(f, z_2)) 
+\Longrightarrow \oint_Cf(z) \, dz &= \oint_{C_3 \cup C_6} f(z) \, dz = \oint_{C_3}f(z) \,dz + \oint_{C_6}f(z)\,dz = 2\pi i(Res(f, z_1) + Res(f, z_2)) 
 \end{align*}
 Hence, this concludes the proof. 
 \newpage
