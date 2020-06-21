@@ -1,66 +1,67 @@
-\contentsline {section}{\numberline {1}Algebra of the Complex Plane}{2}%
-\contentsline {subsection}{\numberline {1.1}Introduction to Complex Numbers}{2}%
-\contentsline {subsection}{\numberline {1.2}Conjugate of Complex Numbers}{2}%
-\contentsline {subsection}{\numberline {1.3}Modulus of Complex Numbers.}{3}%
-\contentsline {subsection}{\numberline {1.4}Complex Polynomial}{4}%
-\contentsline {section}{\numberline {2}Geometry of the Complex Plane}{5}%
-\contentsline {subsection}{\numberline {2.1}Polar Forms}{5}%
-\contentsline {subsection}{\numberline {2.2}Geometric Understanding of Multiplication}{6}%
-\contentsline {section}{\numberline {3}Stereographic Projections, Exponentials and Logs}{8}%
-\contentsline {subsection}{\numberline {3.1}Stereographic Projections}{8}%
-\contentsline {subsection}{\numberline {3.2}Complex Logarithm}{9}%
-\contentsline {section}{\numberline {4}Topology in $\mathbb {C}$}{12}%
-\contentsline {subsection}{\numberline {4.1}Sequence}{12}%
-\contentsline {subsection}{\numberline {4.2}Complex Set}{12}%
-\contentsline {section}{\numberline {5}Continuity and Branch Cuts}{15}%
-\contentsline {subsection}{\numberline {5.1}Complex Continuity}{15}%
-\contentsline {subsection}{\numberline {5.2}Complex Limits}{15}%
-\contentsline {subsection}{\numberline {5.3}Branch Cuts}{15}%
-\contentsline {subsection}{\numberline {5.4}Behavior of $z^{\frac {1}{2}}$}{19}%
-\contentsline {section}{\numberline {6}Differentiability in $\mathbb {C}$}{20}%
-\contentsline {subsection}{\numberline {6.1}Difference between $\mathbb {R}$ and $\mathbb {C}$ differentiability}{20}%
-\contentsline {subsection}{\numberline {6.2}Properties of $f'(z)$}{21}%
-\contentsline {subsection}{\numberline {6.3}Geometric behavior of $f'(z)$}{21}%
-\contentsline {section}{\numberline {7}The Cauchy Riemann Equations}{23}%
-\contentsline {subsection}{\numberline {7.1}The Cauchy Riemann Equations}{23}%
-\contentsline {subsection}{\numberline {7.2}Lack of Complex Mean Value Theorem}{25}%
-\contentsline {subsection}{\numberline {7.3}Wirtinger Equations}{25}%
-\contentsline {section}{\numberline {8}Harmonic Functions}{26}%
-\contentsline {subsection}{\numberline {8.1}Laplacian}{26}%
-\contentsline {subsection}{\numberline {8.2}Harmonic Functions}{26}%
-\contentsline {section}{\numberline {9}Conformal Maps}{27}%
-\contentsline {subsection}{\numberline {9.1}Preservation of Angles}{27}%
-\contentsline {subsection}{\numberline {9.2}Conformal Function}{29}%
-\contentsline {subsection}{\numberline {9.3}Conformal Map}{30}%
-\contentsline {section}{\numberline {10}Bilinear Transformations}{33}%
-\contentsline {subsection}{\numberline {10.1}Definition of a Möbius transformation}{33}%
-\contentsline {subsection}{\numberline {10.2}Brief Review of other Transformations}{33}%
-\contentsline {subsection}{\numberline {10.3}Möbius transforming of a function}{34}%
-\contentsline {section}{\numberline {11}Contour Integral in $\mathbb {C}$}{36}%
-\contentsline {subsection}{\numberline {11.1}Piecewise Differentiable, Smooth, Simple, Closed curves}{36}%
-\contentsline {subsection}{\numberline {11.2}Smoothly Equivalent}{37}%
-\contentsline {subsection}{\numberline {11.3}Line Integral}{38}%
-\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{41}%
-\contentsline {subsection}{\numberline {12.1}Cauchy's Closed Curve Theorem}{41}%
-\contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{42}%
-\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{47}%
-\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{52}%
-\contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{52}%
-\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{54}%
-\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{58}%
-\contentsline {subsection}{\numberline {15.1}Convergence Tests}{59}%
-\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{63}%
-\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{64}%
-\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{65}%
-\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{68}%
-\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{71}%
-\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{71}%
-\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{72}%
-\contentsline {section}{\numberline {19}Laurent Series}{75}%
-\contentsline {section}{\numberline {20}Residue Theorem}{79}%
-\contentsline {subsection}{\numberline {20.1}Singularity and Root}{79}%
-\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{81}%
-\contentsline {section}{\numberline {21}Improper Integrals}{87}%
-\contentsline {subsection}{\numberline {21.1}Principal Value}{87}%
-\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{88}%
-\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{97}%
+\contentsline {section}{\numberline {1}Algebra of the Complex Plane}{1}%
+\contentsline {subsection}{\numberline {1.1}Introduction to Complex Numbers}{1}%
+\contentsline {subsection}{\numberline {1.2}Conjugate of Complex Numbers}{1}%
+\contentsline {subsection}{\numberline {1.3}Modulus of Complex Numbers.}{2}%
+\contentsline {subsection}{\numberline {1.4}Complex Polynomial}{3}%
+\contentsline {section}{\numberline {2}Geometry of the Complex Plane}{4}%
+\contentsline {subsection}{\numberline {2.1}Polar Forms}{4}%
+\contentsline {subsection}{\numberline {2.2}Geometric Understanding of Multiplication}{5}%
+\contentsline {section}{\numberline {3}Stereographic Projections, Exponentials and Logs}{7}%
+\contentsline {subsection}{\numberline {3.1}Stereographic Projections}{7}%
+\contentsline {subsection}{\numberline {3.2}Complex Logarithm}{8}%
+\contentsline {section}{\numberline {4}Topology in $\mathbb {C}$}{11}%
+\contentsline {subsection}{\numberline {4.1}Sequence}{11}%
+\contentsline {subsection}{\numberline {4.2}Complex Set}{11}%
+\contentsline {section}{\numberline {5}Continuity and Branch Cuts}{14}%
+\contentsline {subsection}{\numberline {5.1}Complex Continuity}{14}%
+\contentsline {subsection}{\numberline {5.2}Complex Limits}{14}%
+\contentsline {subsection}{\numberline {5.3}Branch Cuts}{14}%
+\contentsline {subsection}{\numberline {5.4}Behavior of $z^{\frac {1}{2}}$}{18}%
+\contentsline {section}{\numberline {6}Differentiability in $\mathbb {C}$}{19}%
+\contentsline {subsection}{\numberline {6.1}Difference between $\mathbb {R}$ and $\mathbb {C}$ differentiability}{19}%
+\contentsline {subsection}{\numberline {6.2}Properties of $f'(z)$}{20}%
+\contentsline {subsection}{\numberline {6.3}Geometric behavior of $f'(z)$}{20}%
+\contentsline {section}{\numberline {7}The Cauchy Riemann Equations}{22}%
+\contentsline {subsection}{\numberline {7.1}The Cauchy Riemann Equations}{22}%
+\contentsline {subsection}{\numberline {7.2}Lack of Complex Mean Value Theorem}{24}%
+\contentsline {subsection}{\numberline {7.3}Wirtinger Equations}{24}%
+\contentsline {section}{\numberline {8}Harmonic Functions}{25}%
+\contentsline {subsection}{\numberline {8.1}Laplacian}{25}%
+\contentsline {subsection}{\numberline {8.2}Harmonic Functions}{25}%
+\contentsline {section}{\numberline {9}Conformal Maps}{26}%
+\contentsline {subsection}{\numberline {9.1}Preservation of Angles}{26}%
+\contentsline {subsection}{\numberline {9.2}Conformal Function}{28}%
+\contentsline {subsection}{\numberline {9.3}Conformal Map}{29}%
+\contentsline {section}{\numberline {10}Bilinear Transformations}{32}%
+\contentsline {subsection}{\numberline {10.1}Definition of a Möbius transformation}{32}%
+\contentsline {subsection}{\numberline {10.2}Brief Review of other Transformations}{32}%
+\contentsline {subsection}{\numberline {10.3}Möbius transforming of a function}{33}%
+\contentsline {section}{\numberline {11}Contour Integral in $\mathbb {C}$}{35}%
+\contentsline {subsection}{\numberline {11.1}Piecewise Differentiable, Smooth, Simple, Closed curves}{35}%
+\contentsline {subsection}{\numberline {11.2}Smoothly Equivalent}{36}%
+\contentsline {subsection}{\numberline {11.3}Line Integral}{37}%
+\contentsline {section}{\numberline {12}Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{40}%
+\contentsline {subsection}{\numberline {12.1}Cauchy's Closed Curve Theorem}{40}%
+\contentsline {subsection}{\numberline {12.2}Fundamental Theorem of Calculus (F.T.C)}{41}%
+\contentsline {section}{\numberline {13}Cauchy's Integral Formula}{46}%
+\contentsline {section}{\numberline {14}Growth Conditions of Holomorphic Functions}{51}%
+\contentsline {subsection}{\numberline {14.1}Maximum/Minimum Modulus Principles}{51}%
+\contentsline {subsection}{\numberline {14.2}Mapping and $\mathbb {C}$-differentiability}{53}%
+\contentsline {section}{\numberline {15}Convergence of Infinite Series in $\mathbb {C}$}{57}%
+\contentsline {subsection}{\numberline {15.1}Convergence Tests}{58}%
+\contentsline {section}{\numberline {16}Power Series in $\mathbb {C}$}{62}%
+\contentsline {subsection}{\numberline {16.1}Radius of Convergence}{63}%
+\contentsline {subsection}{\numberline {16.2}Derivative of Power Series}{64}%
+\contentsline {section}{\numberline {17}Series Expansion of Holomorphic Functions}{67}%
+\contentsline {section}{\numberline {18}Open Mapping Theorem and Reflection Principle}{70}%
+\contentsline {subsection}{\numberline {18.1}Open Mapping Theorem}{70}%
+\contentsline {subsection}{\numberline {18.2}Reflection Principle.}{71}%
+\contentsline {section}{\numberline {19}Laurent Series}{74}%
+\contentsline {section}{\numberline {20}Residue Theorem}{78}%
+\contentsline {subsection}{\numberline {20.1}Singularity and Root}{78}%
+\contentsline {subsection}{\numberline {20.2}Residue and Laurent Series}{80}%
+\contentsline {section}{\numberline {21}Improper Integrals}{86}%
+\contentsline {subsection}{\numberline {21.1}Principal Value}{86}%
+\contentsline {subsection}{\numberline {21.2}Clever Choice of Contours.}{87}%
+\contentsline {section}{\numberline {22}Argument Principle and Rouche's Theorem}{96}%
+\contentsline {section}{\numberline {A}Exercises}{103}%
