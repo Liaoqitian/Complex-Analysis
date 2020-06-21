@@ -16,13 +16,6 @@
 \usepackage{pagecolor,lipsum}
 \usepackage{adjustbox,expl3,etoolbox} % longsum
 \letcs\replicate{prg_replicate:nn}
-\newcommand*\longsum[1][1]{%
-\mathop{\textnormal{%
-    \clipbox{0pt 0pt {.5\width} 0pt}{$\displaystyle\sum$}%
-    \replicate{#1}{\clipbox{{.5\width} 0pt {.4\width} 0pt}{$\displaystyle\sum$}}%
-    \clipbox{{.6\width} 0pt 0pt 0pt}{$\displaystyle\sum$}}}%
-}
-
 \usepackage{relsize} %Summation size
 \usepackage{float} % figure placement
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
@@ -55,26 +48,56 @@
 \titlespacing\subsubsection{0pt}{5pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
 
 \sectionfont{\fontsize{12}{15}\selectfont}
-\title{Introduction to Complex Analysis}
-\author{Qitian Liao}
-%\date{Aug 3, 2020} 
 \usepackage[left=2cm, right=2cm, top=2cm]{geometry}
 \setlength\parindent{0pt}
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\newcommand*\longsum[1][1]{%
+\mathop{\textnormal{%
+    \clipbox{0pt 0pt {.5\width} 0pt}{$\displaystyle\sum$}%
+    \replicate{#1}{\clipbox{{.5\width} 0pt {.4\width} 0pt}{$\displaystyle\sum$}}%
+    \clipbox{{.6\width} 0pt 0pt 0pt}{$\displaystyle\sum$}}}%
+}
+
 
 \begin{document}
-%\pagenumbering{gobble}
-\maketitle
+\begin{titlepage}
+	\begin{center} 
+	\line(1, 0){400}\\
+	[0.25in]
+	\huge{\bfseries Introduction to Complex Analysis} \\
+	[2mm]
+	\line(1, 0){300} \\
+	[1.5cm]
+	\textsc{\LARGE Qitian Liao} \\
+	[0.5cm]
+	\textsc{\large University of California, Berkeley} \\
+	[15cm]
+	\end{center}
+	\begin{flushright}	
+	\end{flushright}
+\end{titlepage}
+\pagenumbering{roman} 
+\section*{Preface}
+My name is Qitian Liao. I was born in Shanghai, China. I recently graduated from University of California, Berkeley on May $\nth{16}$, 2020, with a double degree in Computer Science and Applied Mathematics. With Corona Virus still rampaging and many BLM activities, our society has sunk into chaos. As I had to spend most of my time at home, there is no better time to reflect upon my undergraduate life. \\
+\newline
+I took Math 185 - Introduction to Complex Analysis with Professor Ryan Hass during my Junior year and it is definitely one of the most challenging classes I have had. I have a compulsion to get A's for all of my classes. Therefore, I have seriously considered late dropping the course right before the final in order to maintain my 4.0. I know this might sound as a joke to many of you, but this has truly happened to me. Thankfully, my friends and my professor persuaded me to hang in there till the end, and the results were not disappointing. But nevertheless, the class reminds me that there is barely anything I could not achieve as long as I put my mind into it. \\
+\newline
+This thought motivates me to write this book. On one hand, it helps me review what I know about Complex Analysis. On the other hand, this book is like no other on the market right now. It has contents easy to read, with examples easy to understand, and generally, I find it useful for people just started learning Complex Analysis and do not wish for something too complicated just yet. It is my first time writing a book, so I apologize beforehand if anything does not meet your satisfaction. Thank you for reading, I put in a great amount of effort into this. 
+
+
+\addcontentsline{toc}{section}{\numberline{}Preface}
+\cleardoublepage
 \thispagestyle{empty}
 \newpage
 \tableofcontents
 \thispagestyle{empty}
-\pagenumbering{arabic}
+
 \cleardoublepage
 \setcounter{page}{1}
 
+\pagenumbering{arabic}
 \setlength{\belowcaptionskip}{-20pt} % Space under figure
 \newpage
 \section{Algebra of the Complex Plane}
@@ -2543,22 +2566,18 @@ $$\oint_{|z - 2| = \frac{1}{3}}f(z) \, dz = 2\pi i \, Res(f, 2) = -\frac{\pi i}{
 \newpage
 \section{Improper Integrals}
 \subsection{Principal Value}
-Suppose 
-$$ I = \int_{\mathbb{R}}f(x) \,dx$$
-converges absolutely. Then
-$$ I = \lim_{R\to\infty}\int_{-R}^{R}f(x) \, dx = P.V.\int_{\mathbb{R}}f(x) \, dx$$
-Here 
-$$ P.V.\int_{\mathbb{R}}f(x) \, dx = \lim_{R\to\infty}\int_{-R}^{R}f(x) \, dx $$ 
-denotes the principal value of 
-$$ \int_{\mathbb{R}}f(x)\, dx$$
+Suppose $ I = \int_{\mathbb{R}}f(x) \,dx$ converges absolutely. Then
+\begin{align*}
+&I = \lim_{R\to\infty}\int_{-R}^{R}f(x) \, dx = P.V.\int_{\mathbb{R}}f(x) \, dx \\
+\text{where } &P.V.\int_{\mathbb{R}}f(x) \, dx = \lim_{R\to\infty}\int_{-R}^{R}f(x) \, dx  
+\end{align*}
+denotes the principal value of $ \int_{\mathbb{R}}f(x)\, dx$. 
 However, without absolute convergence of $I$, this does not hold. \\
 \newline
 \textbf{Example.}
-$$ \lim_{R \to \infty} \int_{-R} ^{R} \sin(x) \,dx = 0$$
-but 
 \begin{align*}
-& \int_{\mathbb{R}}\sin(x) \, dx \text{ does not exist} \\
-& \int_{\mathbb{R}}|\sin(x)| \,dx = \infty
+&\lim_{R \to \infty} \int_{-R} ^{R} \sin(x) \,dx = 0 \\
+\text{but } \int_{\mathbb{R}}\sin(x) \, dx &\text{ does not exist, since } \int_{\mathbb{R}}|\sin(x)| \,dx = \infty
 \end{align*}
 If $f(x)$ is undefined at $c \in (a, b)$, then 
 $$ P.V. \int_b^a f(x) \, dx = \lim_{\varepsilon \to 0^+}\left(\int_{a}^{c - \varepsilon}f(x) \, dx + \int_{c + \varepsilon}^b f(x) \right)$$
@@ -2567,9 +2586,7 @@ $$ P.V. \int_b^a f(x) \, dx = \lim_{\varepsilon \to 0^+}\left(\int_{a}^{c - \var
 \centering
 \end{figure}
 \newpage
-\textbf{Example.} Let 
-$$ f(x) = \frac{1}{x^3}$$
-then 
+\textbf{Example.} Suppose $ f(x) = \frac{1}{x^3}$ and we want to compute $I = P.V.\int_{-2}^{3}f(x) \, dx$. 
 \begin{align*}
 I &= P.V.\int_{-2}^{3}f(x) \, dx \\
 & = \lim_{\varepsilon \to 0^+} {\int_{-2}^{-\varepsilon} f(x)\, dx + \int_{\varepsilon}^3 f(x) \, dx} \\
@@ -2577,36 +2594,31 @@ I &= P.V.\int_{-2}^{3}f(x) \, dx \\
 & = \lim_{\varepsilon \to 0^+} {F(3) - F(-2)} \\
 & = \frac{-1}{2x^2} \bigg\rvert_{x = -2}^{3}
 \end{align*}
-since $F$ is even. We are "ignoring" the singularity by exploiting 
-$$ \int_{-a}^{a}f(x) \, dx = 0$$
-for $f$ odd and piecewise-smooth. \\
+We canceled out $-F(\varepsilon)$ and $F(-\varepsilon)$ since $F$ is even. We are ``ignoring'' the singularity by exploiting $\int_{-a}^{a}f(x) \, dx = 0$ for $f$ odd and piecewise-smooth. \\
 \newline
 \textbf{Lemma.} \\
-If $|f(x)| \leqslant g(x)$ for all $x \in \mathbb{R}$ and $\int_{\mathbb{R}}g(x) \, dx$ converges, then 
-$$ I = \int_{\mathbb{R}} f(x) \, dx$$ 
-converges absolutely. 
+If $|f(x)| \leqslant g(x)$ for all $x \in \mathbb{R}$ and $\int_{\mathbb{R}}g(x) \, dx$ converges, then $I = \int_{\mathbb{R}} f(x) \, dx$ converges absolutely. 
 \subsection{Clever Choice of Contours.}
 \textbf{$\text{Example}^\star$.} The improper integral 
 $$ \int_{\mathbb{R}}\frac{1}{(x^2 + 1)^2} \, dx$$
 converges absolutely because 
 $$ \frac{1}{(x^2 + 1)^2} \leqslant \frac{1}{(x^2 + 1)} \text{ and } \int_{\mathbb{R}}\frac{1}{(x^2 + 1)} \, dx < \infty$$
-Let 
+Then we define $f(z)$ as 
 $$ f(z) = \frac{1}{(z^2 + 1)^2} = \frac{1}{(z + i)^2(z - i)^2} $$
 and by Residue Theorem, 
 $$ \oint_C f(z) \,dz = 2\pi i\, Res(f, i)$$
 for any closed curve $C$ about $i$, but not $-i$. \\
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[scale=0.2]{21_2} 
 \centering
 \end{figure}
-\newline
 \newpage
 We pick a path along $[-R, R]$ and the upper half of the disk $|z| = R$ traversed counter-clockwise. Therefore,
 $$2\pi i \, Res(f, i) = \int_{C_R}f(z) \, dz + \oint_{-R}^{R}f(z) \, dz$$
-then 
-$$ \int_{\mathbb{R}} f(x) \, dx = \lim_{R \to \infty} \oint_C f(z) \, dz = \lim_{R \to \infty} \int_{-R}^{R} f(z) \, dz$$
-provided
+then if 
 $$\lim_{R \to \infty} \int_{C_R} f(z) \, dz = 0$$
+we have 
+$$ \int_{\mathbb{R}} f(x) \, dx = \lim_{R \to \infty} \oint_C f(z) \, dz = \lim_{R \to \infty} \int_{-R}^{R} f(z) \, dz$$
 That is to say, the integral over the upper curve vanishes. We can establish this with an ML-Estimate, 
 \begin{align*}
 \abs{f(z)} &\leqslant \frac{A}{|z|^4} \text{ for z-large}, \,A > 0 \\
@@ -2635,14 +2647,15 @@ $$\frac{e^{-y}}{|z^2 - 2z + 2|} \leqslant \frac{A}{|z|^2} $$
 Repeating the argument from the previous example, we have 
 $$ \lim_{R \to \infty} \int_{C_R}f(z) \,dz = 0$$
 We have two poles, $z = 1 \pm i$ and only one is inside the curve $C$, $z = 1 + i$.
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.2]{21_3} 
 \centering
 \end{figure} 
+\vspace{-10mm}
 \begin{align*}
-I^\ast &= 2\pi i\,Res(f, 1 + i) = 2\pi i \left(-\frac{i}{2}e^{i - 1}\right) = \frac{\pi e^i}{e} \\
-Res(f, 3i) &= \frac{e^{iz}}{z - (1 - i)}\bigg\rvert_{z = 1 + i} = -\frac{i}{2}e^{i - 1} \\
-I &= \Re(I^\ast) = \Re\left(\pi \frac{e^i}{e}\right) = \frac{\pi}{e}\cos(1)
+&I^\ast = 2\pi i\,Res(f, 1 + i) = 2\pi i \left(-\frac{i}{2}e^{i - 1}\right) = \frac{\pi e^i}{e} \\
+&Res(f, 3i) = \frac{e^{iz}}{z - (1 - i)}\bigg\rvert_{z = 1 + i} = -\frac{i}{2}e^{i - 1} \\
+&I = \Re(I^\ast) = \Re\left(\pi \frac{e^i}{e}\right) = \frac{\pi}{e}\cos(1)
 \end{align*}
 \newpage
 \textbf{Note.} The approach we used above $I = \Re(I ^\ast)$ fails for 
@@ -2667,8 +2680,7 @@ as $f(x)x^3$ and $f(x)3x$ are both odd functions. Similarly,
 \end{align*}
 Therefore, $I = \conj{I}$, which obviously does not satisfy $I = \conj{I}$. \\
 \newline
-\textbf{Example (Change of Variable). }\\
-For 
+\textbf{Example (Change of Variable). }
 $$ \int_0^{2\pi}g(\theta) \, d\theta$$ 
 Let $z = e^{i\theta} \Rightarrow dz = ie^{i\theta}d\theta \Rightarrow d\theta = \frac{dz}{iz}$. Then 
 $$ \int_0^{2\pi} \frac{d\theta}{5 + 2\cos\theta} = \oint_{|z| = 1}\frac{1}{iz}\cdot\frac{dz}{5 + z + \frac{1}{z}}$$ 
@@ -2676,14 +2688,15 @@ $$\text{for } \cos\theta = \frac{z + z^{-1}}{2}$$
 Here the poles of the integrand are 
 \begin{align*}
 &z = \frac{-5 \pm \sqrt{21}}{2}, \abs*{\frac{-5 + \sqrt{21}}{2}} < 1 \text{ and } \abs*{\frac{-5 - \sqrt{21}}{2}} > 1 \\
-\Rightarrow &\frac{1}{i} \oint_{|z| = 1} \frac{dz}{z^2 + 5z + 1} = \frac{2\pi i}{i} \frac{1}{(z - \frac{1}{2}(-5 - \sqrt{21}))} \Bigg\rvert_{z = \frac{-5 + \sqrt{21}}{2}} = \frac{2\pi}{\sqrt{21}}
+\Longrightarrow \hspace{2mm}&\frac{1}{i} \oint_{|z| = 1} \frac{dz}{z^2 + 5z + 1} = \frac{2\pi i}{i} \frac{1}{\left(z - \frac{1}{2}(-5 - \sqrt{21})\right)} \Bigg\rvert_{z = \frac{-5 + \sqrt{21}}{2}} = \frac{2\pi}{\sqrt{21}}
 \end{align*}
 \newline
 \textbf{Semicircle Lemma.} \\
 Let $f(z)$ have a simple pole at $z_0$ and let $C_\varepsilon$ be the curve parametrized by 
-$$ \gamma(t) = z_0 + \varepsilon e^{it}, t \in [0, \pi]$$
-Then 
-$$ \lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \pi i \, Res(f, z_0)$$
+\begin{align*}
+&\gamma(t) = z_0 + \varepsilon e^{it}, t \in [0, \pi] \\
+\text{then } &\lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \pi i \, Res(f, z_0)
+\end{align*}
 \begin{figure}[H]
 \includegraphics[scale=0.2]{21_4} 
 \centering
@@ -2691,7 +2704,7 @@ $$ \lim_{\varepsilon \to 0^+} \int_{C_\varepsilon}f(z) \, dz = \pi i \, Res(f, z
 \textbf{Proof.} Assume $\varepsilon > 0$ but small enough for $f$ to have a Laurent expansion for $0 < |z - z_0| < \varepsilon$. Then 
 \begin{align*}
 f(z) &= \frac{b_1}{z - z_0} + a_0 + a_1(z - z_0)+ \cdots \\
-\int_Cf(z)\,dz &= \int_0^\pi f(z_0 + \varepsilon e^{it})\varepsilon i e^{it }dt \\ 
+\int_Cf(z)\,dz &= \int_0^\pi f\left(z_0 + \varepsilon e^{it}\right)\varepsilon i e^{it }dt \\ 
 &= \int_0^\pi b_1i + a_0i\varepsilon e^{it} + a_1i\varepsilon^2e^{2it}+ \cdots dt \\
 \lim_{\varepsilon \to 0^+}\int_C{f(z)}\, dz &= \pi i b_1 = \pi i Res(f, z_0)
 \end{align*}
@@ -2710,13 +2723,13 @@ then for $\alpha > 0$,
 $$ \lim_{R \to \infty}\int_{C_R}f(z) e^{i\alpha z}\, dz = 0$$ 
 \newline
 \newline
-\textbf{Example.} Find 
+\textbf{Example.} Suppose we want to find 
 $$ I = P.V.\int_{\mathbb{R}}\frac{e^{ix}}{x} \,dx$$
 This integrand is not continuous at $x = 0$, 
 $$ I = \lim_{R \to \infty, \varepsilon \to 0+} \int_{-R}^{\varepsilon}f(x) \, dx + \int_{\varepsilon}^{R}f(x) \, dx$$
 We approach $x = 0$ from the left and right at the same rate and distance. \\
 Let $f(z) = \frac{e^{iz}}{z}$ and consider the contour $C$.
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.2]{21_5} 
 \centering
 \end{figure} 
@@ -2729,7 +2742,7 @@ $$\int_{-\tau_\varepsilon}f(z) \, dz \to -\pi i \, Res(f, 0)$$
 when $\varepsilon \to 0^+$ because there is a simple pole at 0. Therefore, 
 \begin{align*}
 &\int_{-R}^{-\varepsilon}f(z) \, dz + \int_{\varepsilon}^{R}f(z) \, dz = \int_{\tau_\varepsilon}f(z) \, dz = \pi i \, Res(f, 0) \text{ as } R \to \infty \text{ and } \varepsilon \to 0+ \\
-\Rightarrow &P.V.\int_{\mathbb{R}}\frac{e^{ix}}{x} \, dx = \pi i \, Res(f, 0) = \pi i e^{iz} \bigg\rvert_{z = 0} = \pi i
+\Longrightarrow \hspace{2mm}&P.V.\int_{\mathbb{R}}\frac{e^{ix}}{x} \, dx = \pi i \, Res(f, 0) = \pi i e^{iz} \bigg\rvert_{z = 0} = \pi i
 \end{align*}
 \newline
 \textbf{Example.} Find 
@@ -2765,9 +2778,10 @@ For $ y < 0$ and $x \in (\varepsilon, R)$, $\sqrt{x} < 0$.
 -\int_{R}^{\varepsilon}f(z) \, dz &= \int_{R}^{\varepsilon} \frac{-\sqrt{z}}{z^2 + 1}\,dz = \int_{\varepsilon}^{R}\frac{\sqrt{z}}{z^2 + 1}
 \end{align*}
 because $\varepsilon < R$. Therefore, 
-$$ 2\int_{\varepsilon}^R \frac{\sqrt{z}}{z^2 + 1} \, dz = \int_{\varepsilon}^R f(z) \, dz - \int_{R}^{\varepsilon} f(z) \, dz$$
-Now 
-$$\abs*{\int_{C_R}f(z)\, dz} \leqslant 2\pi R \, \frac{A\sqrt{R}}{R^2} \to 0 \text{ as } R \to \infty$$ 
+\begin{align*}
+2\int_{\varepsilon}^R \frac{\sqrt{z}}{z^2 + 1} \, dz = \int_{\varepsilon}^R f(z) \, dz - \int_{R}^{\varepsilon} f(z) \, dz \\
+\abs*{\int_{C_R}f(z)\, dz} \leqslant 2\pi R \, \frac{A\sqrt{R}}{R^2} \to 0 \text{ as } R \to \infty 
+\end{align*}
 Observe for $\varepsilon \in (0, 1)$, 
 $$ 1 - \varepsilon^2 \leqslant |\varepsilon^2 + 1| = \varepsilon^2 + 1 \Rightarrow \frac{1}{|\varepsilon^2 + 1|} \leqslant \frac{1}{1 - \varepsilon^2}$$
 And so by an ML-Estimate, 
@@ -2810,14 +2824,14 @@ as the sum of the orders of the poles and roots of $f$ in $\gamma$. \\
 \textbf{Lemma.} \\
 With $f$ and $\gamma$ defined as above:
 $$ \oint_{\gamma}\frac{f'(z)}{f(z)}\, dz = 2\pi i\,\left(\sum mult(z_k) - \sum mult(p_k)\right) = 2\pi i (Z_{f, \gamma} - P_{f, \gamma}) $$
-\textbf{Proof.} Let $f$ have a zero of order $k$ at $z_0$. \\
+\textbf{Proof.} Let $f$ have a zero of order $k$ at $z_0$. 
 \begin{align*}
 &f(z) = (z - z_0)^kg(z), g(z_0) \neq 0 \\ 
 \Rightarrow &f'(z) = (z - z_0)^{k - 1}\left(kg(z) + (z - z_0)g'(z_0)\right) \\ 
 \Rightarrow & f' \text{ has a root of order } k - 1 \text{ at } z_0 \\
 \Rightarrow & \frac{f'}{f} = \underbrace{\frac{k}{z - z_0}}_{\text{Singular Part}} + \underbrace{\frac{g'(z)}{g(z)}}_{\text{Holomorphic Part}}
 \end{align*} 
-Therefore, $\frac{f'}{f}$ has a simple pole and $Res(\frac{f'}{f}, z_0) = k$, which is also the order of the root at $z_0$ of $f$. \\
+Therefore, $\frac{f'}{f}$ has a simple pole and $Res\left(\frac{f'}{f}, z_0\right) = k$, which is also the order of the root at $z_0$ of $f$. \\
 Repeat the argument with a pole at $p_0$ of order $k$, we have 
 $$ \frac{f'}{f} = \frac{-k}{z - p_0} + \frac{g'(z)}{g(z)} $$
 The result then follows by the Residue Theorem. 
@@ -2834,7 +2848,7 @@ $$ \oint_{|z| = R}\frac{f'(z)}{f(z)} \, dz = 2\pi i(5) = 10\pi i$$
 for $R = \max|z_i|$ where $f(z_i) = 0$. \\
 \newline
 \textbf{Winding Number (Index).} \\
-For any closed curve $\gamma$ in $\mathbb{C}$, its winding number (index) about $z_0$ is 
+For any closed curve $\gamma$ in $\mathbb{C}$, its \textit{winding number (index)} about $z_0$ is 
 $$ Ind(\gamma, z_0) = \frac{1}{2\pi i}\oint_\gamma \frac{1}{z - z_0} \, dz \in \mathbb{Z}$$
 If $\gamma$ is simple, then $Ind(\gamma, z_0) \in \{1, 0, -1\}$. \\
 \newline
@@ -2848,28 +2862,6 @@ If $\gamma$ is simple, then $Ind(\gamma, z_0) \in \{1, 0, -1\}$. \\
 \includegraphics[scale=0.2]{22_4}
 \centering
 \end{figure} 
-\iffalse
-\begin{minipage}{.5\textwidth}
-       \begin{align*}
-	Ind(\gamma_1, z_0) &= 1 \\
-	Ind(\gamma_2, z_0) &= -1 \\
-	Ind(\gamma_3, z_0) &= 0 \\
-	\end{align*}
-  \end{minipage}%
-  \begin{minipage}{.5\textwidth}
-    \centering
-    \includegraphics[scale = 0.2]{22_4}
-\end{minipage} 
-
-\begin{figure}[H]
-\includegraphics[scale=0.2]{22_2}
-\centering
-\end{figure} 
-\begin{figure}[H]
-\includegraphics[scale=0.17]{22_3} 
-\centering
-\end{figure}
-\fi
 \begin{figure}[H]
 \includegraphics[scale=0.23]{22_23} 
 \centering
@@ -2898,23 +2890,24 @@ We can measure how many times a curve in $\mathbb{C}$ is wrapped around a point 
 $$ \oint_{\gamma}\frac{f'}{f}\,dz = \frac{1}{2\pi i} \operatorname{Log}\left(f(z)\right)\Bigg\rvert_{z = \gamma(0)}^{\gamma(1)} = \frac{1}{2\pi} \bigtriangleup \operatorname{Arg}\left(f(z)\right)$$
 for $\gamma(0) = \gamma(1)$. (The $\mathbb{R}$-part vanishes since $|f(\gamma(0))| = |f(\gamma(1))|$). \\
 \begin{figure}[H]
-\includegraphics[scale = 0.17]{22_7}
+\includegraphics[scale = 0.25]{22_7}
 \centering
 \end{figure}
 \textbf{Example.} Let $f(z) = z^2 + z$. It has two roots 0 and -1 and no poles. \\
-Let $\gamma_1$ be a circle of radius 2, and both roots are inside $f \circ \gamma_1$. Therefore, $Ind(f \circ \gamma_1, 0) = 2$. \\
+Let $\gamma_1$ be a circle of radius 2, and both roots are inside $f \circ \gamma_1$. Therefore, $Ind(f \circ \gamma_1, 0) = 2$. 
 \begin{figure}[H]
-\includegraphics[scale = 0.14]{22_8}
+\includegraphics[scale = 0.17]{22_8}
 \centering
 \end{figure}
-Let $\gamma_2$ be a circle of radius $\frac{1}{2}$, and one root is inside $f \circ \gamma_2$. Therefore, $Ind(f \circ \gamma_2, 0) = 1$. \\ 
-\begin{figure}[H]
-\includegraphics[scale = 0.2]{22_9}
-\centering
-\end{figure}
-Let $\gamma_3$ be a circle of radius 1, and it passes through the root -1. Therefore, the Argument Principle fails. \\ 
+\newpage
+Let $\gamma_2$ be a circle of radius $\frac{1}{2}$, and one root is inside $f \circ \gamma_2$. Therefore, $Ind(f \circ \gamma_2, 0) = 1$. 
 \begin{figure}[H]
 \includegraphics[scale = 0.2]{22_10}
+\centering
+\end{figure}
+Let $\gamma_3$ be a circle of radius 1, and it passes through the root -1. Therefore, the Argument Principle fails. 
+\begin{figure}[H]
+\includegraphics[scale = 0.2]{22_9}
 \centering
 \end{figure}
 Imagine you are always 10 feet or more from a tree and you are walking a dog with an 8 feet leash. Everything you walk around the tree, so must the dog. \\ 
@@ -2997,7 +2990,4 @@ Let $R = \max \{1, n|a_{n - 1}|, \cdots, n|a_0|\} + 1$, then on $|z| = R$
 \end{align*}
 On $|z| = R, |f(z)| = R^n \Rightarrow |h| < |f|$ for $|z| = R$. \\
 Then $f + h$ and $f$ have the same number of zeros on $|z| < R$, $n$, by Rouche's Theorem. As $R \to \infty$, we have exactly $n$ roots in $\mathbb{C}$. 
-\newpage
-\appendix
-\section{Exercises}
 \end{document}
