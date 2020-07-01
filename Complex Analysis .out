@@ -1,0 +1,67 @@
+\BOOKMARK [1][-]{Doc-Start}{Preface}{}% 1
+\BOOKMARK [1][-]{section.1}{Algebra of the Complex Plane}{}% 2
+\BOOKMARK [2][-]{subsection.1.1}{Introduction to Complex Numbers}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.2}{Conjugate of Complex Numbers}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.3}{Modulus of Complex Numbers.}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.4}{Complex Polynomial}{section.1}% 6
+\BOOKMARK [1][-]{section.2}{Geometry of the Complex Plane}{}% 7
+\BOOKMARK [2][-]{subsection.2.1}{Polar Forms}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.2}{Geometric Understanding of Multiplication}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Stereographic Projections, Exponentials and Logs}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Stereographic Projections}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Complex Logarithm}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Topology in C}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Sequence}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Complex Set}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Continuity and Branch Cuts}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Complex Continuity}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Complex Limits}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Branch Cuts}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.4}{Behavior of z12}{section.5}% 20
+\BOOKMARK [1][-]{section.6}{Differentiability in C}{}% 21
+\BOOKMARK [2][-]{subsection.6.1}{Difference between R and C differentiability}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.2}{Properties of f'\(z\)}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.3}{Geometric behavior of f'\(z\)}{section.6}% 24
+\BOOKMARK [1][-]{section.7}{The Cauchy Riemann Equations}{}% 25
+\BOOKMARK [2][-]{subsection.7.1}{The Cauchy Riemann Equations}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.2}{Lack of Complex Mean Value Theorem}{section.7}% 27
+\BOOKMARK [2][-]{subsection.7.3}{Wirtinger Equations}{section.7}% 28
+\BOOKMARK [1][-]{section.8}{Harmonic Functions}{}% 29
+\BOOKMARK [2][-]{subsection.8.1}{Laplacian}{section.8}% 30
+\BOOKMARK [2][-]{subsection.8.2}{Harmonic Functions}{section.8}% 31
+\BOOKMARK [1][-]{section.9}{Conformal Maps}{}% 32
+\BOOKMARK [2][-]{subsection.9.1}{Preservation of Angles}{section.9}% 33
+\BOOKMARK [2][-]{subsection.9.2}{Conformal Function}{section.9}% 34
+\BOOKMARK [2][-]{subsection.9.3}{Conformal Map}{section.9}% 35
+\BOOKMARK [1][-]{section.10}{Bilinear Transformations}{}% 36
+\BOOKMARK [2][-]{subsection.10.1}{Definition of a M\366bius transformation}{section.10}% 37
+\BOOKMARK [2][-]{subsection.10.2}{Brief Review of other Transformations}{section.10}% 38
+\BOOKMARK [2][-]{subsection.10.3}{M\366bius transforming of a function}{section.10}% 39
+\BOOKMARK [1][-]{section.11}{Contour Integral in C}{}% 40
+\BOOKMARK [2][-]{subsection.11.1}{Piecewise Differentiable, Smooth, Simple, Closed curves}{section.11}% 41
+\BOOKMARK [2][-]{subsection.11.2}{Smoothly Equivalent}{section.11}% 42
+\BOOKMARK [2][-]{subsection.11.3}{Line Integral}{section.11}% 43
+\BOOKMARK [1][-]{section.12}{Cauchy's Closed Curve Theorem and the Fundamental Theorem of Calculus}{}% 44
+\BOOKMARK [2][-]{subsection.12.1}{Cauchy's Closed Curve Theorem}{section.12}% 45
+\BOOKMARK [2][-]{subsection.12.2}{Fundamental Theorem of Calculus \(F.T.C\)}{section.12}% 46
+\BOOKMARK [1][-]{section.13}{Cauchy's Integral Formula}{}% 47
+\BOOKMARK [1][-]{section.14}{Growth Conditions of Holomorphic Functions}{}% 48
+\BOOKMARK [2][-]{subsection.14.1}{Maximum/Minimum Modulus Principles}{section.14}% 49
+\BOOKMARK [2][-]{subsection.14.2}{Mapping and C-differentiability}{section.14}% 50
+\BOOKMARK [1][-]{section.15}{Convergence of Infinite Series in C}{}% 51
+\BOOKMARK [2][-]{subsection.15.1}{Convergence Tests}{section.15}% 52
+\BOOKMARK [1][-]{section.16}{Power Series in C}{}% 53
+\BOOKMARK [2][-]{subsection.16.1}{Radius of Convergence}{section.16}% 54
+\BOOKMARK [2][-]{subsection.16.2}{Derivative of Power Series}{section.16}% 55
+\BOOKMARK [1][-]{section.17}{Series Expansion of Holomorphic Functions}{}% 56
+\BOOKMARK [1][-]{section.18}{Open Mapping Theorem and Reflection Principle}{}% 57
+\BOOKMARK [2][-]{subsection.18.1}{Open Mapping Theorem}{section.18}% 58
+\BOOKMARK [2][-]{subsection.18.2}{Reflection Principle.}{section.18}% 59
+\BOOKMARK [1][-]{section.19}{Laurent Series}{}% 60
+\BOOKMARK [1][-]{section.20}{Residue Theorem}{}% 61
+\BOOKMARK [2][-]{subsection.20.1}{Singularity and Root}{section.20}% 62
+\BOOKMARK [2][-]{subsection.20.2}{Residue and Laurent Series}{section.20}% 63
+\BOOKMARK [1][-]{section.21}{Improper Integrals}{}% 64
+\BOOKMARK [2][-]{subsection.21.1}{Principal Value}{section.21}% 65
+\BOOKMARK [2][-]{subsection.21.2}{Clever Choice of Contours.}{section.21}% 66
+\BOOKMARK [1][-]{section.22}{Argument Principle and Rouche's Theorem}{}% 67
