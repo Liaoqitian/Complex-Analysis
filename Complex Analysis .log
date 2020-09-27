@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  14 JUL 2020 11:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  27 SEP 2020 00:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2487,7 +2487,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2992.
 Here is how much of TeX's memory you used:
  22703 strings out of 480608
  417860 string characters out of 5903631
- 759914 words of memory out of 5000000
+ 759912 words of memory out of 5000000
  37818 multiletter control sequences out of 15000+600000
  545173 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2511,7 +2511,7 @@ ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Complex Analysis .pdf" (106 pages, 5663546 bytes).
+Output written on "Complex Analysis .pdf" (106 pages, 5663514 bytes).
 PDF statistics:
  1180 PDF objects out of 1200 (max. 8388607)
  954 compressed objects within 10 object streams
