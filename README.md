@@ -1,2 +1,2 @@
 # Complex-Analysis-
-Written Notes for Complex Analysis 
+Compiled Written Notes for Complex Analysis 
