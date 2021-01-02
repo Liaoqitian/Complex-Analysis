@@ -1,2 +1,2 @@
 # Complex-Analysis-
-Compiled Written Notes for Complex Analysis (Math 185 at UC Berkeley)
+Compiled written notes for Complex Analysis (Math 185 at UC Berkeley)
